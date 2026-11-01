@@ -1,0 +1,3 @@
+mapped   0xfd000 .. 0xfe9ff  first 0x0000000000800003 last 0x00000000021ff003  bad 0
+reg  = 0xfd000000  SURFLIVE = 0xfd000000
+latch            SURF 0xfd000000  SURFLIVE 0xfd000000

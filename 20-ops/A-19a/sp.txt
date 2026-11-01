@@ -1,0 +1,3 @@
+      Metal: Supported
+          Resolution: 3120 x 2080
+          UI Looks like: 3120 x 2080

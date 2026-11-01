@@ -1,0 +1,16 @@
+== 13:22:42 buf1080 ==
+verify           ok (0 bad)
+surf             0x20000000  (1920 x 1080 pattern, 2025 pages)
+buf_phys0        0x42c34000   max 0x444f5000
+phys readback    [0]=0xffffffff [+64]=0xffff0000 [+1M]=0xff0000ff
+pattern sum      0xfc536afd470
+pattern px       [0]=0xffffffff mid=0xff0000ff last=0xffffffff
+== peek desktop 0x800000 (control) ==
+  [0x800000] 0x5a5a5a5a
+  [0x800004] 0x396e69d6
+  [0x800008] 0x3d171c0c
+  [0x80000c] 0xdca9956e
+  [0x800010] 0x4cee3233
+  [0x800014] 0xa2f51aa5
+  [0x800018] 0xdbf1c0d0
+  [0x80001c] 0x6510a259

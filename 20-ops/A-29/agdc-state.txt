@@ -1,0 +1,39 @@
+== agdc sysctls @19:57:34 ==
+debug.xegfx_agdc: 1
+debug.xegfx_agdc_fbmap: n=1 [0]id 0x100000657
+debug.xegfx_agdc_cmds: 16
+== fb props ==
+"XeGfxFbOpenDenied" = 1
+"XeGfxFbOpened" = No
+"XeGfxFbRegistered" = Yes
+"XeGfxM3dOpenDeniedReason" = "present-failed"
+"XeGfxM3dChecks" = 63
+"XeGfxM3dArmed" = Yes
+== gpuwrangler ==
+2026-10-31 19:54:25.892405+0800 0x1b83     Default     0x0                  1377   0    WindowServer: (GPUWrangler) [com.apple.GPUWrangler:default] (reg) gpu 0x3a7c flags 0x10 (IG) vid.did=8086.7d51 b:d:f=0:2:0 
+gpu 0x3a7c        pci 0x100000307 IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/IGPU@2
+gpu 0x3a7c       agdc 0x100000693     /XeGfxDeviceControl
+gpu 0x3a7c       gpuc 0x000000000 
+gpu 0x3a7c agdpclient 0x000000000 
+gpu 0x3a7c      accel 0x000000000 
+gpu 0x3a7c     fb0:-1 0x10000052e     /.Display_boot
+gpu 0x3a7c     fb1:-1 0x100000657     /XeGfxDisplayNub/XeGfxIntelKMSFramebuffer
+== deny ==
+2026-10-31 19:54:27.118289+0800 0x1b83     Default     0x0                  0      0    kernel: (XeGfxDisplay) XEGFX_DISPLAY: M3d: open() denied (present-failed, checks 0x3f lastRc 0xe00002d8, denied=1) -- panel keeps the firmware frame; the watchdog will count this boot as failed
+2026-10-31 19:54:27.118354+0800 0x1b83     Default     0x0                  0      0    kernel: (XeGfxDisplay) XEGFX_DISPLAY: M3d open/deny: gate=1 armed=1 candidate=1 checks=0x3f scanout=1 (handle 0x101 phys 0x2be68000 3120x2080 pitch 12480 ggtt 0x80000000) presented=0 fails=8 accel=0 vbl src=0 count=0 ready=0 why=-
+== ws ==
+03:11  1377
+== 彩噪带 Report 20:00:48 ==
+debug.xegfx_agdc: 1
+debug.xegfx_agdc_fbmap: n=1 [0]id 0x100000657
+debug.xegfx_agdc_cmds: 16
+xegfx-disp-expose	%01
+xegfx-auto-boot	0
+xegfx-disp-phase	%02
+xegfx-disp-starts	%01%00%00%00
+xegfx-disp-fail	%00
+xegfx.autostage	6
+xegfx-disp-bootarm	%01
+xegfx-disp-trial	%01
+xegfx-p44-used	1
+06:23  1377

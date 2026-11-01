@@ -1,0 +1,113 @@
+== final state Sat Oct 31 12:39:11 CST 2026 ==
+magic            0x5845
+switched         0
+gtt_mapped       1
+gtt_entries      1048576
+live_pte         0x800003
+plan_offset      0x1000000
+SURF             0xfe600000
+SURFLIVE         0xfe600000
+PS_CTRL          0x80000200
+PIPESRC          0x077f0437
+PLANE_SIZE       0x0437077f
+PLANE_STRIDE     120
+PLANE_CTL        0x84000008
+SURF_before      0xfe600000
+phys_base        0x71800000
+FRMCOUNT         1749304
+== scan ==
+nonzero_entries  1048576
+present_entries  528279
+live_run_pages   6656
+live_phys        0x800000
+ptes_around_live:
+  [liveIdx-1] 0x83431f047526a2cb
+  [liveIdx+0] 0x0000000000800003
+  [liveIdx+1] 0x0000000000801003
+  [liveIdx+2] 0x0000000000802003
+  [liveIdx+3] 0x0000000000803003
+  [liveIdx+4] 0x0000000000804003
+  [liveIdx+5] 0x0000000000805003
+  [liveIdx+6] 0x0000000000806003
+  [liveIdx+7] 0x0000000000807003
+  [liveIdx+8] 0x0000000000808003
+  [liveIdx+9] 0x0000000000809003
+  [liveIdx+10] 0x000000000080a003
+== ioreg xn ==
+"xnBar2Bytes" = 268435456
+"xnCandAEntries" = 32505856
+"xnCandAPte" = 0
+"xnCandBEntries" = 1048576
+"xnCandBPte" = 8388611
+"xnChosenTable" = "gsm"
+"xnDsmBase64" = 1887436800
+"xnEntries" = 1048576
+"xnGgc" = 1216
+"xnGgms" = 3
+"xnGms" = 4
+"xnGsmBase64" = 1879048192
+"xnGttBytes" = 8388608
+"xnGttPhysGsm" = 1879048192
+"xnLivePte" = 8388611
+"xnLivePtePhys" = 8388608
+"xnLiveRun" = 6656
+"xnLiveSurfIdx" = 1041920
+"xnNeededBytes" = 25958400
+"xnPatternPx00" = 18446744073709551615
+"xnPatternPxCenter" = 18446744073692839680
+"xnPatternPxLastRow" = 18446744073709551615
+"xnPhysBase" = 1904214016
+"xnPhysMapped" = Yes
+"xnPipesrcBefore" = 125764663
+"xnPlan" = "preferred-free"
+"xnPlanOffset" = 16777216
+"xnPlanPreferred" = Yes
+"xnPlaneCtlBefore" = 18446744071629176840
+"xnPsCtrlBefore" = 18446744071562068480
+"xnPteFlags" = 3
+"xnSizeBefore" = 70715263
+"xnState" = "ready"
+"xnStolenBytes" = 134217728
+"xnStolenEnd" = 2021654528
+"xnStrideBefore" = 120
+"xnSurfBefore" = 18446744073682288640
+"xnSurfLiveBefore" = 18446744073682288640
+"xnTileOffBefore" = 0
+== screen ==
+      VRAM (Total): 7 MB
+      VRAM (Dynamic, Max): 
+          Resolution: 1920 x 1080 (1080p FHD - Full High Definition)
+          Online: Yes
+== WS ==
+201
+== L/E ==
+HighPointIOP.kext
+HighPointRR.kext
+IGPUConsoleRange.kext
+XeDiag.kext
+XeGfx.kext
+XeNative.kext
+== KC ==
+f004b87c5e28bd1f52ed2498dcce2651cda030db75285378089a41fb07885dab  /Library/KernelCollections/AuxiliaryKernelExtensions.kc
+== kmutil ids ==
+auxiliary kext collection at /Library/KernelCollections/AuxiliaryKernelExtensions.kc (5E89013C-6DC0-ACF8-2F84-DD04A53C33A1):
+Extension Information:
+org.watchthelight.IGPUConsoleRange	0.4	/Library/Extensions/IGPUConsoleRange.kext	
+org.xenative.XeNative	0.7	/Library/Extensions/XeNative.kext	
+org.watchthelight.XeGfx	0.0.46	/Library/Extensions/XeGfx.kext	
+com.highpoint-tech.kext.HighPointRR	4.22.1	/Library/Extensions/HighPointRR.kext	
+com.highpoint-tech.kext.HighPointIOP	4.4.5	/Library/Extensions/HighPointIOP.kext	
+com.apple.driver.AppleMobileDevice	4.0	/Library/Apple/System/Library/Extensions/AppleMobileDevice.kext	
+org.xediag.XeDiag	0.2	/Library/Extensions/XeDiag.kext	
+
+== guard ==
+0
+attempts
+guard.err
+guard.log
+guard.out
+ok
+== panics ==
+/Library/Logs/DiagnosticReports/Kernel-2026-10-30-182724.panic
+/Library/Logs/DiagnosticReports/Kernel-2026-10-30-181718.panic
+/Library/Logs/DiagnosticReports/Kernel-2026-10-30-173730.panic

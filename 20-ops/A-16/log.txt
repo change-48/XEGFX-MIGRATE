@@ -1,0 +1,60 @@
+2026-10-31 14:55:07.497232+0800 0x11df     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 233 pid 555 -> errno 19
+2026-10-31 14:55:07.497283+0800 0x11df     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 233 pid 555 -> errno 19
+2026-10-31 14:55:07.614073+0800 0x2031     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0186473 (nr 0x73) inst 266 pid 583 -> errno 22
+2026-10-31 14:55:07.614149+0800 0x2031     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 266 pid 583 -> errno 19
+2026-10-31 14:55:07.614285+0800 0x2031     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0x80104e42 (nr 0x42) inst 266 pid 583 -> errno 2
+2026-10-31 14:55:07.614376+0800 0x2031     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0186475 (nr 0x75) inst 266 pid 583 -> errno 1
+2026-10-31 14:55:07.615566+0800 0x2031     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 266 pid 583 -> errno 19
+2026-10-31 14:55:07.615580+0800 0x2031     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 266 pid 583 -> errno 19
+2026-10-31 14:55:07.714406+0800 0xfdd      Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0186473 (nr 0x73) inst 293 pid 603 -> errno 22
+2026-10-31 14:55:07.714446+0800 0xfdd      Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 293 pid 603 -> errno 19
+2026-10-31 14:55:07.714553+0800 0xfdd      Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0x80104e42 (nr 0x42) inst 293 pid 603 -> errno 2
+2026-10-31 14:55:07.714647+0800 0xfdd      Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0186475 (nr 0x75) inst 293 pid 603 -> errno 1
+2026-10-31 14:55:07.715955+0800 0xfdd      Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 293 pid 603 -> errno 19
+2026-10-31 14:55:07.715968+0800 0xfdd      Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 293 pid 603 -> errno 19
+2026-10-31 14:55:07.946178+0800 0x27e2     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0186473 (nr 0x73) inst 320 pid 567 -> errno 22
+2026-10-31 14:55:07.946226+0800 0x27e2     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 320 pid 567 -> errno 19
+2026-10-31 14:55:07.946350+0800 0x27e2     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0x80104e42 (nr 0x42) inst 320 pid 567 -> errno 2
+2026-10-31 14:55:07.946442+0800 0x27e2     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0186475 (nr 0x75) inst 320 pid 567 -> errno 1
+2026-10-31 14:55:07.947575+0800 0x27e2     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 320 pid 567 -> errno 19
+2026-10-31 14:55:07.947588+0800 0x27e2     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 320 pid 567 -> errno 19
+2026-10-31 14:55:07.977365+0800 0x2523     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0186473 (nr 0x73) inst 344 pid 706 -> errno 22
+2026-10-31 14:55:07.977441+0800 0x2523     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 344 pid 706 -> errno 19
+2026-10-31 14:55:07.977632+0800 0x2523     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0x80104e42 (nr 0x42) inst 344 pid 706 -> errno 2
+2026-10-31 14:55:07.977752+0800 0x2523     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0186475 (nr 0x75) inst 344 pid 706 -> errno 1
+2026-10-31 14:55:07.979225+0800 0x2523     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 344 pid 706 -> errno 19
+2026-10-31 14:55:07.979254+0800 0x2523     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 344 pid 706 -> errno 19
+2026-10-31 14:55:08.135484+0800 0x1438     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0186473 (nr 0x73) inst 368 pid 702 -> errno 22
+2026-10-31 14:55:08.135529+0800 0x1438     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 368 pid 702 -> errno 19
+2026-10-31 14:55:08.135658+0800 0x1438     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0x80104e42 (nr 0x42) inst 368 pid 702 -> errno 2
+2026-10-31 14:55:08.135744+0800 0x1438     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0186475 (nr 0x75) inst 368 pid 702 -> errno 1
+2026-10-31 14:55:08.137025+0800 0x1438     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 368 pid 702 -> errno 19
+2026-10-31 14:55:08.137040+0800 0x1438     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 368 pid 702 -> errno 19
+2026-10-31 14:55:08.190370+0800 0x1f7b     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0186473 (nr 0x73) inst 397 pid 500 -> errno 22
+2026-10-31 14:55:08.190400+0800 0x1f7b     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 397 pid 500 -> errno 19
+2026-10-31 14:55:08.190490+0800 0x1f7b     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0x80104e42 (nr 0x42) inst 397 pid 500 -> errno 2
+2026-10-31 14:55:08.191552+0800 0x1f7b     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 397 pid 500 -> errno 19
+2026-10-31 14:55:08.191568+0800 0x1f7b     Default     0x0                  0      0    kernel: (XeGfx) xegfx: ioctl 0xc0106446 (nr 0x46) inst 397 pid 500 -> errno 19
+2026-10-31 14:55:23.617805+0800 0x2a4f     Default     0x0                  1      0    launchd: [system:] service inactive: org.xegfx.guard
+2026-10-31 14:55:34.762383+0800 0x2da7     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: getStampMemory(<private>) -> descriptor <private> (4096 stamps, 16 KB)
+2026-10-31 14:55:34.762394+0800 0x2da7     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: getStampMemory(<private>) -> descriptor <private> (4096 stamps, 16 KB)
+2026-10-31 14:55:34.762673+0800 0x2da7     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: createUserGPUTask -> <private> init=1
+2026-10-31 14:55:34.762677+0800 0x2da7     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: createUserGPUTask -> <private> init=1
+2026-10-31 14:55:36.046308+0800 0x2ad1     Default     0xf894               204    0    tccd: [com.apple.TCC:access] AUTHREQ_ATTRIBUTION: msgID=1437.1, attribution={responsible={TCCDProcess: identifier=com.apple.sshd-keygen-wrapper, pid=1432, auid=501, euid=0, responsible_path=/usr/libexec/sshd-keygen-wrapper, binary_path=/usr/libexec/sshd-session}, requesting={TCCDProcess: identifier=<ID of InvalidCode>, pid=1437, auid=501, euid=501, binary_path=/Users/change48/xegfx-probes/mtlprobe}, },
+2026-10-31 14:55:36.098740+0800 0x2db9     Default     0xd94f               204    0    tccd: [com.apple.TCC:access] AUTHREQ_ATTRIBUTION: msgID=201.95, attribution={responsible={TCCDProcess: identifier=com.apple.sshd-keygen-wrapper, pid=1432, auid=501, euid=0, responsible_path=/usr/libexec/sshd-keygen-wrapper, binary_path=/usr/libexec/sshd-session}, accessing={TCCDProcess: identifier=<ID of InvalidCode>, pid=1437, auid=501, euid=501, binary_path=/Users/change48/xegfx-probes/mtlprobe}, requesting={TCCDProcess: identifier=com.apple.WindowServer, pid=201, auid=88, euid=88, binary_path=/System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/Resources/WindowServer}, },
+2026-10-31 14:55:36.098769+0800 0x2db9     Default     0xd94f               204    0    tccd: [com.apple.TCC:access] requestor: TCCDProcess: identifier=com.apple.WindowServer, pid=201, auid=88, euid=88, binary_path=/System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/Resources/WindowServer is checking access for accessor TCCDProcess: identifier=<ID of InvalidCode>, pid=1437, auid=501, euid=501, binary_path=/Users/change48/xegfx-probes/mtlprobe
+2026-10-31 14:57:13.948440+0800 0x369d     Default     0x0                  126    0    kernelmanagerd: [com.apple.km.logging:UnloadRequest] unloadExtensions(withIdentifiers:withClassNames:options:withReply:): Unloading identifiers: ["org.watchthelight.XeGfxAccel"], classNames: []
+2026-10-31 14:57:16.676853+0800 0x6f       Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: stop
+2026-10-31 14:57:16.676872+0800 0x6f       Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: stop
+2026-10-31 14:57:16.677010+0800 0x6f       Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: teardownDevice(<private>)
+2026-10-31 14:57:16.680440+0800 0x369d     Default     0x0                  0      0    kernel: Can't unload kext org.watchthelight.XeGfxAccel; classes have instances:
+2026-10-31 14:57:16.680457+0800 0x369d     Default     0x0                  0      0    kernel:     Kext org.watchthelight.XeGfxAccel class NMXEventMachine has 1 instance.
+2026-10-31 14:57:16.680464+0800 0x369d     Default     0x0                  0      0    kernel:     Kext org.watchthelight.XeGfxAccel class IOAccelNMXCarrier has 32 instances.
+2026-10-31 14:57:16.680468+0800 0x369d     Default     0x0                  0      0    kernel:     Kext org.watchthelight.XeGfxAccel class NMXAccel has 1 instance.
+2026-10-31 14:57:16.682114+0800 0x369d     Default     0x0                  0      0    kernel: Can't remove kext org.watchthelight.XeGfxAccel; kext failed to unload - 0xdc008018.
+2026-10-31 14:57:16.682590+0800 0x369d     Error       0x0                  126    0    kernelmanagerd: [com.apple.km.logging:Kernel] (kernel): Can't unload kext org.watchthelight.XeGfxAccel; classes have instances:
+2026-10-31 14:57:16.682599+0800 0x369d     Error       0x0                  126    0    kernelmanagerd: [com.apple.km.logging:Kernel] (kernel):     Kext org.watchthelight.XeGfxAccel class NMXEventMachine has 1 instance.
+2026-10-31 14:57:16.682607+0800 0x369d     Error       0x0                  126    0    kernelmanagerd: [com.apple.km.logging:Kernel] (kernel):     Kext org.watchthelight.XeGfxAccel class IOAccelNMXCarrier has 32 instances.
+2026-10-31 14:57:16.682613+0800 0x369d     Error       0x0                  126    0    kernelmanagerd: [com.apple.km.logging:Kernel] (kernel):     Kext org.watchthelight.XeGfxAccel class NMXAccel has 1 instance.
+2026-10-31 14:57:16.682617+0800 0x369d     Error       0x0                  126    0    kernelmanagerd: [com.apple.km.logging:Kernel] (kernel): Can't remove kext org.watchthelight.XeGfxAccel; kext failed to unload - 0xdc008018.
+2026-10-31 14:57:28.966176+0800 0x393b     Default     0x0                  1786   0    log: [com.apple.log:] log run noninteractively, parent: 1784 (sudo), args: 'log' 'show' '--last' '15m' '--predicate' 'eventMessage CONTAINS[c] "XeGfx" OR eventMessage CONTAINS[c] "NMXAccel" OR eventMessage CONTAINS[c] "Presentment"'

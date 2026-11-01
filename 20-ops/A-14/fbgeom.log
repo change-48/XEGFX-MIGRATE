@@ -1,0 +1,26 @@
+[2026-10-31 14:23:21] start (pid 2752)
+[2026-10-31 14:26:15] start (pid 307)
+[2026-10-31 14:26:43] 检测到原生控制台（          Resolution: 3120 x 2080），应用 3120 几何
+reg[2] wrote 0x000000c3  read 0x000000c3
+reg[1] wrote 0x081f0c2f  read 0x081f0c2f
+reg[3] wrote 0x0c2f081f  read 0x0c2f081f
+SURFLIVE         0xfe600000
+PS_CTRL          0x00000200
+latch            SURF 0xfe600000  SURFLIVE 0xfe600000
+magic            0x5845
+switched         0
+gtt_mapped       1
+gtt_entries      1048576
+live_pte         0x800003
+plan_offset      0x1000000
+SURF             0xfe600000
+SURFLIVE         0xfe600000
+PS_CTRL          0x00000200
+PIPESRC          0x0c2f081f
+PLANE_SIZE       0x081f0c2f
+PLANE_STRIDE     195
+PLANE_CTL        0x84000008
+SURF_before      0xfe600000
+phys_base        0x71800000
+FRMCOUNT         1749304
+[2026-10-31 14:26:47] 完成

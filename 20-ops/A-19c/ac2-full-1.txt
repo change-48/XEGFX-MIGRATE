@@ -1,0 +1,148 @@
+Machine model: MacBookPro16,2
+SMC version: Unknown
+EFI version: 2094.80.5.0.0
+OS version: 25F84
+Boot arguments: -v keepsyms=1 -vi2c-force-polling -amfipassbeta amfi_get_out_of_my_way=0x1 amfi=0x80 ipc_control_port_options=0 itlwm_cc=CN
+Boot time: Sat Oct 31 15:59:34 2026
+
+
+
+*** Sampled system activity (Sat Oct 31 16:06:59 2026 +0800) (5005.65ms elapsed) ***
+
+*** Running tasks ***
+
+Name                               ID     CPU ms/s  User%  Deadlines (<2 ms, 2-5 ms)  Wakeups (Intr, Pkg idle)
+WindowServer                       2357   706.35    65.89  3.59    0.60               33.94   23.16             
+SecurityAgent                      2391   321.64    77.24  0.00    0.00               22.36   4.79              
+ReportCrash                        431    190.73    43.94  0.00    0.00               0.40    0.40              
+DEAD_TASKS                         -1     158.59    43.86  0.00    0.00               33.56   0.00              
+bluetoothd                         2400   84.71     61.75  0.00    0.00               9.03    2.84              
+kernel_task                        0      29.70     0.00   0.60    0.00               209.81  58.89             
+ctkahp                             2397   45.16     83.11  0.00    0.00               0.00    0.00              
+ctkd                               2399   47.83     78.64  0.00    0.00               0.25    0.00              
+coresymbolicationd                 436    37.24     36.43  0.00    0.00               0.20    0.20              
+airportd                           239    34.54     69.50  0.00    0.00               2.40    0.80              
+com.apple.AppleUserHIDDrivers      379    21.03     27.53  0.00    0.00               0.00    0.00              
+com.apple.AmbientDisplayAgent      2395   20.89     64.68  0.00    0.00               0.45    0.00              
+launchd                            1      18.62     48.46  0.00    0.00               0.40    0.00              
+cfprefsd                           202    15.84     57.93  0.00    0.00               0.00    0.00              
+opendirectoryd                     137    13.98     55.83  0.00    0.00               0.00    0.00              
+universalaccessd                   2355   13.52     56.63  0.00    0.00               0.20    0.00              
+securityd                          142    11.11     76.29  0.60    0.00               0.60    0.00              
+coreaudiod                         223    10.65     34.89  0.00    0.00               0.00    0.00              
+runningboardd                      215    10.69     69.85  0.00    0.00               1.80    0.40              
+tccd                               203    9.14      60.61  0.00    0.00               0.20    0.20              
+trustd                             224    9.12      87.17  0.00    0.00               0.20    0.00              
+logd                               94     8.35      50.95  0.00    0.00               0.00    0.00              
+locationd                          144    7.40      82.98  0.00    0.00               2.20    0.40              
+mds                                124    4.51      45.23  0.00    0.00               17.97   0.40              
+mediaremoted                       100    4.12      35.21  0.00    0.00               0.00    0.00              
+WirelessRadioManagerd              424    3.90      57.47  0.00    0.00               0.00    0.00              
+loginwindow                        2352   3.75      58.19  0.00    0.00               0.60    0.00              
+notifyd                            162    3.94      33.47  0.00    0.00               0.00    0.00              
+pkd                                2360   4.52      73.51  0.00    0.00               0.20    0.00              
+fseventsd                          99     3.28      52.09  0.00    0.00               18.57   0.60              
+mDNSResponder                      234    3.22      90.82  1.60    0.00               2.60    0.00              
+secinitd                           262    3.05      58.75  0.00    0.00               0.40    0.40              
+diagnosticservicesd                513    3.00      52.84  0.00    0.00               0.20    0.00              
+powermetrics                       2394   2.71      22.74  0.00    0.00               0.20    0.20              
+symptomsd                          237    2.65      64.87  0.00    0.00               0.20    0.20              
+authd                              247    2.37      58.33  0.00    0.00               0.00    0.00              
+com.apple.ColorSyncXPCAgent        2396   2.69      55.70  0.00    0.00               0.23    0.00              
+containermanagerd_system           209    2.25      61.39  0.00    0.00               0.00    0.00              
+distnoted                          151    2.24      47.09  0.00    0.00               0.00    0.00              
+powerd                             109    2.15      52.68  0.00    0.00               0.40    0.00              
+configd                            107    2.05      35.30  0.00    0.00               0.40    0.20              
+launchservicesd                    139    2.04      55.67  0.00    0.00               0.20    0.00              
+gamepolicyd                        447    1.69      60.36  0.00    0.00               1.00    0.60              
+audioclocksyncd                    422    1.65      43.35  0.00    0.00               0.00    0.00              
+ctkahp                             464    1.47      44.74  0.00    0.00               0.00    0.00              
+PerfPowerServices                  153    1.46      60.79  0.00    0.00               0.00    0.00              
+storagekitd                        294    1.12      65.02  0.00    0.00               0.00    0.00              
+contextstored                      135    1.13      60.75  0.00    0.00               0.40    0.40              
+mDNSResponderHelper                244    0.78      79.73  0.00    0.00               1.00    0.60              
+com.apple.cmio.registerassistant   166    0.78      54.84  0.00    0.00               0.40    0.40              
+systemstats                        103    1.01      35.55  0.00    0.00               0.40    0.20              
+apsd                               138    0.83      53.71  0.00    0.00               0.40    0.00              
+secd                               531    0.75      73.44  0.00    0.00               0.20    0.00              
+colorsyncd                         445    0.63      46.88  0.00    0.00               0.00    0.00              
+searchpartyd                       374    0.73      56.60  0.00    0.00               0.00    0.00              
+corebrightnessd                    164    0.60      56.29  0.00    0.00               0.20    0.00              
+hidd                               427    0.60      47.97  0.00    0.00               0.00    0.00              
+audiomxd                           271    0.59      40.09  0.00    0.00               0.20    0.00              
+com.apple.geod                     612    0.73      69.11  0.00    0.00               0.00    0.00              
+systemstatusd                      265    0.55      78.09  0.00    0.00               0.00    0.00              
+dasd                               148    0.48      54.16  0.00    0.00               0.20    0.20              
+mobileassetd                       248    0.58      43.49  0.00    0.00               0.00    0.00              
+osanalyticshelper                  301    0.41      49.43  0.00    0.00               0.20    0.00              
+coreauthd                          463    0.39      70.94  0.00    0.00               0.00    0.00              
+BlueTool                           423    0.40      41.92  0.00    0.00               0.00    0.00              
+WiFiAgent                          2358   0.42      71.34  0.00    0.00               0.20    0.00              
+AssetCacheLocatorService           1016   0.42      52.12  0.00    0.00               0.00    0.00              
+analyticsd                         206    0.40      55.50  0.00    0.00               0.00    0.00              
+ctkd                               469    0.32      58.17  0.00    0.00               0.00    0.00              
+nearbyd                            640    0.35      38.40  0.00    0.00               0.00    0.00              
+mds_stores                         348    0.36      41.66  0.00    0.00               0.00    0.00              
+systemstats                        449    0.36      33.07  0.00    0.00               0.00    0.00              
+lsd                                216    0.34      63.16  0.00    0.00               0.00    0.00              
+findmybeaconingd                   425    0.28      62.16  0.00    0.00               0.00    0.00              
+clash-verge-service                303    0.09      51.01  0.00    0.00               1.80    0.80              
+com.apple.hiservices-xpcservice    2392   0.30      50.14  0.00    0.00               0.20    0.00              
+UserEventAgent                     96     0.23      26.87  0.00    0.00               0.00    0.00              
+UserEventAgent                     2354   0.29      51.23  0.00    0.00               0.00    0.00              
+syspolicyd                         259    0.23      50.13  0.00    0.00               0.00    0.00              
+mdmclient                          2163   0.28      49.53  0.00    0.00               0.00    0.00              
+diskarbitrationd                   127    0.22      55.18  0.00    0.00               0.00    0.00              
+ViewBridgeAuxiliary                2390   0.16      34.00  0.00    0.00               0.20    0.20              
+watchdogd                          120    0.14      41.93  0.00    0.00               0.20    0.20              
+com.apple.hiservices-xpcservice    613    0.20      46.27  0.00    0.00               0.00    0.00              
+UVCAssistant                       308    0.15      55.92  0.00    0.00               0.20    0.00              
+AppSSODaemon                       687    0.15      51.15  0.00    0.00               0.00    0.00              
+com.apple.hiservices-xpcservice    458    0.18      48.97  0.00    0.00               0.00    0.00              
+cloudd                             277    0.17      48.33  0.00    0.00               0.00    0.00              
+gamecontrollerd                    540    0.12      47.90  0.00    0.00               0.40    0.20              
+coreservicesd                      210    0.12      40.96  0.00    0.00               0.00    0.00              
+wifip2pd                           313    0.14      41.85  0.00    0.00               0.00    0.00              
+kernelmanagerd                     126    0.11      39.45  0.00    0.00               0.00    0.00              
+logind                             155    0.05      46.97  0.00    0.00               0.20    0.20              
+trustd                             567    0.11      35.38  0.00    0.00               0.00    0.00              
+filecoordinationd                  594    0.05      37.29  0.00    0.00               0.20    0.20              
+systemsoundserverd                 470    0.09      35.37  0.00    0.00               0.00    0.00              
+imklaunchagent                     2353   0.08      59.37  0.00    0.00               0.00    0.00              
+distnoted                          270    0.07      32.28  0.00    0.00               0.00    0.00              
+distnoted                          384    0.07      38.08  0.00    0.00               0.00    0.00              
+distnoted                          292    0.07      33.59  0.00    0.00               0.00    0.00              
+kernelmanager_helper               380    0.08      45.14  0.00    0.00               0.00    0.00              
+cfprefsd                           536    0.08      31.19  0.00    0.00               0.20    0.00              
+appleeventsd                       448    0.03      44.85  0.00    0.00               0.20    0.20              
+AirPlayXPCHelper                   165    0.02      33.34  0.00    0.00               0.20    0.20              
+eligibilityd                       409    0.08      31.67  0.00    0.00               0.20    0.00              
+nesessionmanager                   145    0.08      36.26  0.00    0.00               0.00    0.00              
+backgroundtaskmanagementd          257    0.08      43.73  0.00    0.00               0.00    0.00              
+colorsync.displayservices          443    0.07      32.18  0.00    0.00               0.20    0.00              
+distnoted                          332    0.06      38.45  0.00    0.00               0.00    0.00              
+XPCKeychainSandboxCheck            2285   0.07      21.46  0.00    0.00               0.00    0.00              
+distnoted                          851    0.05      34.92  0.00    0.00               0.00    0.00              
+coreduetd                          130    0.06      32.95  0.00    0.00               0.00    0.00              
+familycircled                      2366   0.06      35.56  0.00    0.00               0.20    0.00              
+distnoted                          776    0.04      23.66  0.00    0.00               0.00    0.00              
+distnoted                          246    0.03      27.07  0.00    0.00               0.00    0.00              
+wifianalyticsd                     386    0.04      35.50  0.00    0.00               0.00    0.00              
+distnoted                          256    0.03      28.80  0.00    0.00               0.00    0.00              
+distnoted                          944    0.03      30.67  0.00    0.00               0.00    0.00              
+distnoted                          1355   0.02      24.69  0.00    0.00               0.00    0.00              
+com.apple.CodeSigningHelper        263    0.03      34.20  0.00    0.00               0.20    0.00              
+distnoted                          385    0.02      38.55  0.00    0.00               0.00    0.00              
+SCHelper                           2232   0.02      31.40  0.00    0.00               0.20    0.00              
+distnoted                          529    0.02      55.37  0.00    0.00               0.00    0.00              
+GSSCred                            516    0.02      33.72  0.00    0.00               0.00    0.00              
+system_installd                    2244   0.02      25.98  0.00    0.00               0.20    0.00              
+netbiosd                           418    0.02      33.65  0.00    0.00               0.20    0.00              
+distnoted                          429    0.01      35.37  0.00    0.00               0.00    0.00              
+fskitd                             208    0.01      29.40  0.00    0.00               0.20    0.00              
+distnoted                          311    0.01      33.76  0.00    0.00               0.00    0.00              
+distnoted                          606    0.01      33.78  0.00    0.00               0.00    0.00              
+nsurlsessiond                      240    0.02      26.77  0.00    0.00               0.20    0.00              
+distnoted                          404    0.01      33.81  0.00    0.00               0.00    0.00              
+revisiond                          156    0.01      19.37  0.00    0.00               0.20    0.00              
+ALL_TASKS                          -2     1874.65   61.21  6.39    0.60               368.98  98.09             

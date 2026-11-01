@@ -1,0 +1,5 @@
+Identifier=org.watchthelight.XeGfxAccel
+Signature=adhoc
+TeamIdentifier=not set
+/Library/Extensions/XeGfxAccel.kext: valid on disk
+/Library/Extensions/XeGfxAccel.kext: satisfies its Designated Requirement

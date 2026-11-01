@@ -1,0 +1,25 @@
+2026-10-31 23:02:40.948635+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: lazy air: 2 texts decoded on first use across 1 disk-indexed libraries holding 4 names (0 failed)
+2026-10-31 23:02:40.948821+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: library: TextureCopy (fragment) -> 3852 bytes of SPIR-V (cache hit)
+2026-10-31 23:02:40.948874+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: library entry: spvcache 2 hit, 0 miss, 0 stored
+2026-10-31 23:02:40.949291+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: library: ColorFill (fragment) -> 920 bytes of SPIR-V (cache hit)
+2026-10-31 23:02:40.949361+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: library entry: spvcache 3 hit, 0 miss, 0 stored
+2026-10-31 23:02:40.949687+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: lazy air: 4 texts decoded on first use across 1 disk-indexed libraries holding 4 names (0 failed)
+2026-10-31 23:02:40.950168+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: fc cache: HIT GPUPass 10928 B 0.1 ms [1 hit, 0 miss, 0 stored]
+2026-10-31 23:02:40.950237+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: newFunctionWithName:constantValues: "GPUPass" specialized with 2 constant(s)
+2026-10-31 23:02:40.951049+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: refl cache: HIT GPUPass 5258 B 0.26 ms [1 hit, 0 miss, 0 stored]
+2026-10-31 23:02:40.951339+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: pipeline: rt slot 0/1 cfmt 58 blend 0 rgb(1,0,op 0) alpha(1,0,op 0) vkmask f
+2026-10-31 23:02:40.951628+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: refl cache: HIT ViewportToNDC 2101 B 0.12 ms [2 hit, 0 miss, 0 stored]
+2026-10-31 23:02:40.951844+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: read-only metadata: preserved 3 descriptor guarantees
+2026-10-31 23:02:40.951910+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: G1: address table (binding 640) is a UNIFORM_BUFFER_DYNAMIC - an NVK constant bank, read with ldc (NVMTL_TABLE_SSBO=unset, scalarBlockLayout 1, translator lower_ex yes)
+2026-10-31 23:02:40.951961+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: align guard: ON - a misaligned binding runs the SAFE module, as Apple runs it (NVMTL_NO_ALIGN_GUARD=unset, translator reports promises)
+2026-10-31 23:02:40.952624+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: physical bounds: relaxed 7 allocation-relative access chains
+2026-10-31 23:02:40.952768+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: align guard: 1 render module(s) built SAFE - 3 access(es) rested on a promised 16-byte alignment (bindings 0x4)
+2026-10-31 23:02:40.952958+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: read-only metadata: preserved 3 descriptor guarantees
+2026-10-31 23:02:40.953513+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: physical bounds: relaxed 7 allocation-relative access chains
+2026-10-31 23:02:40.953738+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: read-only metadata: preserved 7 descriptor guarantees
+2026-10-31 23:02:40.955315+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: physical bounds: relaxed 29 allocation-relative access chains
+2026-10-31 23:02:40.955426+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: align guard: 2 render module(s) built SAFE - 8 access(es) rested on a promised 16-byte alignment (bindings 0, untraceable)
+2026-10-31 23:02:40.955664+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: read-only metadata: preserved 7 descriptor guarantees
+2026-10-31 23:02:40.957002+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: physical bounds: relaxed 29 allocation-relative access chains
+2026-10-31 23:02:40.957121+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: vk: framebuffer fetch off in WindowServer (NVMTL_FBFETCH_WS=1 opts in)
+2026-10-31 23:02:41.329214+0800 0x3711     Default     0x0                  1760   0    WindowServer: (NVMTLDriver) NVMTL: vk: placement-heap memory types: 0x3

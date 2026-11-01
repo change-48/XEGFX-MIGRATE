@@ -1,0 +1,11 @@
+=== WS instances (9) in A-33 stream ===
+ 126 plist invalid for pluginType <private>
+ 126 onePlugin invalid for pluginType <private>
+ 126 no factories for plugin
+ 126 bundle invalid for pluginType <private>
+  90 io_service_t has no plugin
+  36 io_service_t has no IOCFPlugInTypes
+--- per instance ---
+has no IOCFPlugInTypes: 4/instance (36 total / 9)
+has no plugin          : 10/instance
+no factories           : 14/instance

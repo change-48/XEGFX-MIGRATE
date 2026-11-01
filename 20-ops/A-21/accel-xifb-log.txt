@@ -1,0 +1,207 @@
+XeGfxIntelFB: boot guard: start 1 without WindowServer so far (off after 2)
+XeGfxIntelFB: VRAM,totalMB 24576
+XeGfxIntelFB: EDID 256 B, maker 148f product 4179, 310x210 mm
+XeGfxIntelFB: refresh measured 120.07 Hz, reported 120.07 Hz
+XeGfxIntelFB: panel timing: 3120x2080 active, 3332..3336 / 2202..2203 sync, 3400x2208 total, 900045 kHz, 119.891 Hz (transcoder 0x60000, conf 0xc0000000 plane 0x84000008 surf 0xfe600000)
+XeGfxIntelFB: published IOFBDetailedTimings: 3120x2080, 900045 kHz (ok 1)
+XeGfxIntelFB: published IOFBDetailedTimings: 3120x2080, 900045 kHz (ok 1)
+XeGfxIntelFB: start complete: XeGfxL0Ready published -- the accelerator may register this framebuffer now
+XeGfxIntelFB: detailed timing for mode 0x64: 3120x2080, 900045 kHz
+XeGfxIntelFB: detailed timing for mode 0x64: 3120x2080, 900045 kHz
+XeGfxIntelFB: detailed timing for mode 0x64: 3120x2080, 900045 kHz
+NMXAccel: probe(IGPU) score 100
+NMXAccel: probe(IGPU) score 100
+NMXAccel: AMD/Intel display device 8086:7d51 class 03.00 - claiming
+NMXAccel: AMD/Intel display device 8086:7d51 class 03.00 - claiming
+NMXAccel: NMXGPU drives 8086:7d51 - starting
+NMXAccel: NMXGPU drives 8086:7d51 - starting
+NMXAccel: start(IGPU): calling IOGraphicsAccelerator2::start — the family's own bring-up
+NMXAccel: start(IGPU): calling IOGraphicsAccelerator2::start — the family's own bring-up
+NMXAccel: configureDevice(<private>) 8086:7d51 — RM owns the card (NVRM.kext); nothing to do here yet
+NMXAccel: configureDevice(<private>) 8086:7d51 — RM owns the card (NVRM.kext); nothing to do here yet
+NMXAccel: populateAccelConfig(<private>) — what the FAMILY pre-filled, before we write a byte:
+NMXAccel: populateAccelConfig(<private>) — what the FAMILY pre-filled, before we write a byte:
+NMXAccel:    cfg+0x00 = 0x0000000000000000
+NMXAccel:    cfg+0x00 = 0x0000000000000000
+NMXAccel:    cfg+0x08 = 0x0000000000000000
+NMXAccel:    cfg+0x08 = 0x0000000000000000
+NMXAccel:    cfg+0x10 = 0x0000000000000000
+NMXAccel:    cfg+0x10 = 0x0000000000000000
+NMXAccel:    cfg+0x18 = 0x0000000000000001
+NMXAccel:    cfg+0x18 = 0x0000000000000001
+NMXAccel:    cfg+0x20 = 0x0000000000000000
+NMXAccel:    cfg+0x20 = 0x0000000000000000
+NMXAccel:    cfg+0x28 = 0x0000000100000001
+NMXAccel:    cfg+0x28 = 0x0000000100000001
+NMXAccel:    cfg+0x30 = 0x0000400010001000
+NMXAccel:    cfg+0x30 = 0x0000400010001000
+NMXAccel:    cfg+0x38 = 0x0000020000040000
+NMXAccel:    cfg+0x38 = 0x0000020000040000
+NMXAccel:    cfg+0x40 = 0x0000000100010000
+NMXAccel:    cfg+0x40 = 0x0000000100010000
+NMXAccel:    cfg+0x48 = 0x000000030000000c
+NMXAccel:    cfg+0x48 = 0x000000030000000c
+NMXAccel:    cfg+0x50 = 0x00007fff00000003
+NMXAccel:    cfg+0x50 = 0x00007fff00000003
+NMXAccel:    cfg+0x58 = 0x0000000000000000
+NMXAccel:    cfg+0x58 = 0x0000000000000000
+NMXAccel:    cfg+0x60 = 0x0000000000000000
+NMXAccel:    cfg+0x60 = 0x0000000000000000
+NMXAccel:    cfg+0x68 = 0x0000000100000005
+NMXAccel:    cfg+0x68 = 0x0000000100000005
+NMXAccel: populateAccelConfig(<private>) — filled: AccelCaps=15, flags=0x30844300, maxtex=16384x16384, maxfb=5 written (cfg+0x2c left 1)
+NMXAccel: newEventMachine -> <private> (family inits it)
+NMXAccel: newEventMachine -> <private> (family inits it)
+NMXAccel: newDisplayMachine -> <private>
+NMXAccel: newDisplayMachine -> <private>
+NMXAccel: createKernelGPUTask -> <private> init=1
+NMXAccel: createKernelGPUTask -> <private> init=1
+NMXAccel: IOGraphicsAccelerator2::start -> 1
+NMXAccel: IOGraphicsAccelerator2::start -> 1
+NMXAccel: registerService() called — Metal can now find MetalPluginName=NVMTLDriver
+NMXAccel: registerService() called — Metal can now find MetalPluginName=NVMTLDriver
+NMXAccel: user-client carriers: 32 of 32 ready (each holds ~1019 clients before IOService::attach starts sleeping)
+NMXAccel: user-client carriers: 32 of 32 ready (each holds ~1019 clients before IOService::attach starts sleeping)
+NMXAccel: enableAccelerator() from start (call #1)
+NMXAccel: enableAccelerator() from start (call #1)
+NMXAccel: display MMIO <private>: frames are copied right after the panel's vblank
+NMXAccel: display MMIO <private>: frames are copied right after the panel's vblank
+NMXAccel: PLANE ctl=84000008 stride=000000c3 size=081f0c2f pos=00000000 surf=fd000000
+NMXAccel: PLANE ctl=84000008 stride=000000c3 size=081f0c2f pos=00000000 surf=fd000000
+NMXAccel:   PS[0a0] = 00000000
+NMXAccel:   PS[0a0] = 00000000
+NMXAccel:   PS[0a4] = 00000000
+NMXAccel:   PS[0a4] = 00000000
+NMXAccel:   PS[0a8] = 00000000
+NMXAccel:   PS[0a8] = 00000000
+NMXAccel:   PS[0ac] = fd000000
+NMXAccel:   PS[0ac] = fd000000
+NMXAccel:   PS[0b0] = 00000000
+NMXAccel:   PS[0b0] = 00000000
+NMXAccel:   PS[0b4] = 00000000
+NMXAccel:   PS[0b4] = 00000000
+NMXAccel:   PS[0b8] = 00000000
+NMXAccel:   PS[0b8] = 00000000
+NMXAccel:   PS[0bc] = 00000000
+NMXAccel:   PS[0bc] = 00000000
+NMXAccel:   PS[0c0] = 00000000
+NMXAccel:   PS[0c0] = 00000000
+NMXAccel:   PS[0c4] = 00000000
+NMXAccel:   PS[0c4] = 00000000
+NMXAccel:   PS[0c8] = 00000000
+NMXAccel:   PS[0c8] = 00000000
+NMXAccel:   PS[0cc] = 00002000
+NMXAccel:   PS[0cc] = 00002000
+NMXAccel:   PS[0d0] = 00000401
+NMXAccel:   PS[0d0] = 00000401
+NMXAccel:   PS[0d4] = 03367337
+NMXAccel:   PS[0d4] = 029bfa6b
+NMXAccel:   PS[0d8] = 00000401
+NMXAccel:   PS[0d8] = 00000401
+NMXAccel:   PS[0dc] = 02f8939f
+NMXAccel:   PS[0dc] = 035be3db
+NMXAccel:   PS[0e0] = 00000000
+NMXAccel:   PS[0e0] = 00000000
+NMXAccel:   PS[0e4] = 00000000
+NMXAccel:   PS[0e4] = 00000000
+NMXAccel:   PS[0e8] = 00000000
+NMXAccel:   PS[0e8] = 00000000
+NMXAccel:   PS[0ec] = 00000000
+NMXAccel:   PS[0ec] = 00000000
+NMXAccel:   PS[0f0] = 00000000
+NMXAccel:   PS[0f0] = 00000000
+NMXAccel:   PS[0f4] = 00000000
+NMXAccel:   PS[0f4] = 00000000
+NMXAccel:   PS[0f8] = 00000000
+NMXAccel:   PS[0f8] = 00000000
+NMXAccel:   PS[0fc] = 00000000
+NMXAccel:   PS[0fc] = 00000000
+NMXAccel: display machine framebuffer count after the family sweep = 0
+NMXAccel: display machine framebuffer count after the family sweep = 0
+NMXAccel: multi-head: up to 5 heads, registration lock <private>
+NMXAccel: multi-head: up to 5 heads, registration lock <private>
+NMXAccel: sysctl debug.xegfxaccelfb installed -- `sudo sysctl -w debug.xegfxaccelfb=1` registers the framebuffer
+NMXAccel: sysctl debug.xegfxaccelfb installed -- `sudo sysctl -w debug.xegfxaccelfb=1` registers the framebuffer
+NMXAccel: Intel accelerator over XeGfx: watching for NMIntelFB / XeGfxFramebuffer (head 4); register with sysctl debug.xegfxaccelfb=1
+NMXAccel: Intel accelerator over XeGfx: watching for NMIntelFB / XeGfxFramebuffer (head 4); register with sysctl debug.xegfxaccelfb=1
+NMXAccel: .Display_boot: XeGfxIntelFramebuffer accepted as head 4
+NMXAccel: .Display_boot: XeGfxIntelFramebuffer accepted as head 4
+NMXAccel: .Display_boot published -- display machine framebuffer count = 0 (index 4 kept)
+NMXAccel: .Display_boot published -- display machine framebuffer count = 0 (index 4 kept)
+NMXAccel:   to register it:  sudo sysctl -w debug.xegfxaccelfb=1   (2 = re-run the family's own sweep)
+NMXAccel:   to register it:  sudo sysctl -w debug.xegfxaccelfb=1   (2 = re-run the family's own sweep)
+NMXAccel: .Display_boot: XeGfxIntelFramebuffer accepted as head 4
+NMXAccel: .Display_boot: XeGfxIntelFramebuffer accepted as head 4
+NMXAccel: .Display_boot published -- display machine framebuffer count = 0 (index 4 DUPLICATE -- the first one keeps the slot)
+NMXAccel: .Display_boot published -- display machine framebuffer count = 0 (index 4 DUPLICATE -- the first one keeps the slot)
+NMXAccel:   to register it:  sudo sysctl -w debug.xegfxaccelfb=1   (2 = re-run the family's own sweep)
+NMXAccel:   to register it:  sudo sysctl -w debug.xegfxaccelfb=1   (2 = re-run the family's own sweep)
+NMXAccel: serviceMatching(NVRMFramebuffer) returned NULL -- cannot watch for the framebuffer
+NMXAccel: serviceMatching(NVRMFramebuffer) returned NULL -- cannot watch for the framebuffer
+XeGfxIntelFB: boot guard cleared: still up 120 s after start
+NMXAccel: registerFramebuffer(1): framebuffer count before = 0
+NMXAccel: registerFramebuffer(1): framebuffer count before = 0
+NMXAccel:   sysctl: XeGfxIntelFramebuffer at index 4 passed the start gate XeGfxL0Ready -- registering it
+NMXAccel:   sysctl: XeGfxIntelFramebuffer at index 4 passed the start gate XeGfxL0Ready -- registering it
+NMXAccel:   sysctl: calling found_framebuffer(.Display_boot index 4) -- count before 0
+NMXAccel:   sysctl: calling found_framebuffer(.Display_boot index 4) -- count before 0
+NMXAccel: newDisplayPipe -> <private>
+NMXAccel: newDisplayPipe -> <private>
+NMXAccel: pipe init BEGIN index=0 controller=READY
+NMXAccel: pipe init BEGIN index=0 controller=READY
+NMXAccel: newResource -> <private>
+NMXAccel: newResource -> <private>
+NMXAccel: resource init BEGIN flags=0x40 shared=0x0
+NMXAccel: resource init BEGIN flags=0x40 shared=0x0
+NMXAccel: resource init END ok=1
+NMXAccel: resource init END ok=1
+NMXAccel: pipe init END index=0 ok=1
+NMXAccel: pipe init END index=0 ok=1
+NMXAccel:   sysctl: index 4 -> pipe 0 (<private>), count 1 (matched after registration)
+NMXAccel:   sysctl: index 4 -> pipe 0 (<private>), count 1 (matched after registration)
+NMXAccel:   framebuffer count after = 1
+NMXAccel:   framebuffer count after = 1
+NMXAccel:   delivering display_mode_will_change/did_change (nest 0, pipes 1)
+NMXAccel:   delivering display_mode_will_change/did_change (nest 0, pipes 1)
+NMXAccel: DM displayModeWillChange
+NMXAccel: DM displayModeWillChange
+NMXAccel: DM displayModeDidChange -> true
+NMXAccel: DM displayModeDidChange -> true
+NMXAccel: enableAccelerator() from displayModeDidChange (call #2)
+NMXAccel: enableAccelerator() from displayModeDidChange (call #2)
+NMXAccel: NVDisplayPipe::initFramebufferResource(index 0): scanout gate CLOSED -- returning NULL, which is the family's own default (sysctl debug.xegfxaccelfb=3 opens it)
+NMXAccel: NVDisplayPipe::initFramebufferResource(index 0): scanout gate CLOSED -- returning NULL, which is the family's own default (sysctl debug.xegfxaccelfb=3 opens it)
+NMXAccel:   GATES after deliverModeChange: accel+0xc78 = 0x02 (enabled bit 0x2 SET)
+NMXAccel:   GATES after deliverModeChange: accel+0xc78 = 0x02 (enabled bit 0x2 SET)
+NMXAccel:   GATES after deliverModeChange: pipe 0 active(+0x298) = 0, wsaaDefer(+0x282) = 0
+NMXAccel:   GATES after deliverModeChange: pipe 0 active(+0x298) = 0, wsaaDefer(+0x282) = 0
+NMXAccel:   IOGLBundleName=AppleMetalOpenGLRenderer -- NEW GL processes get a hardware renderer over Metal
+NMXAccel:   IOGLBundleName=AppleMetalOpenGLRenderer -- NEW GL processes get a hardware renderer over Metal
+NMXAccel:   debug.xegfxaccelfb now reads 1 -- armed-only Metal clients may have a device THIS BOOT ONLY (heads published 0x10, registered 0x10, piped 0x10)
+NMXAccel:   debug.xegfxaccelfb now reads 1 -- armed-only Metal clients may have a device THIS BOOT ONLY (heads published 0x10, registered 0x10, piped 0x10)
+NMXAccel:   level 3: registering any published head that has no pipe yet
+NMXAccel:   level 3: registering any published head that has no pipe yet
+NMXAccel: registerFramebuffer(1): framebuffer count before = 1
+NMXAccel: registerFramebuffer(1): framebuffer count before = 1
+NMXAccel:   framebuffer count after = 1
+NMXAccel:   framebuffer count after = 1
+NMXAccel: sysctl debug.xegfxaccelfb=3: scanout-backed display pipe ENABLED, re-delivering the mode change
+NMXAccel: sysctl debug.xegfxaccelfb=3: scanout-backed display pipe ENABLED, re-delivering the mode change
+NMXAccel:   delivering display_mode_will_change/did_change (nest 0, pipes 1)
+NMXAccel:   delivering display_mode_will_change/did_change (nest 0, pipes 1)
+NMXAccel: DM displayModeWillChange
+NMXAccel: DM displayModeWillChange
+NMXAccel: DM displayModeDidChange -> true
+NMXAccel: DM displayModeDidChange -> true
+NMXAccel: enableAccelerator() from displayModeDidChange (call #3)
+NMXAccel: enableAccelerator() from displayModeDidChange (call #3)
+NMXAccel: describeBootFramebuffer: DISABLED by experiment -- no copy target
+NMXAccel: describeBootFramebuffer: DISABLED by experiment -- no copy target
+NMXAccel: NVDisplayPipe::initFramebufferResource: framebuffer would not describe its scanout (0xe00002c7)
+NMXAccel: NVDisplayPipe::initFramebufferResource: framebuffer would not describe its scanout (0xe00002c7)
+NMXAccel:   GATES after deliverModeChange: accel+0xc78 = 0x02 (enabled bit 0x2 SET)
+NMXAccel:   GATES after deliverModeChange: accel+0xc78 = 0x02 (enabled bit 0x2 SET)
+NMXAccel:   GATES after deliverModeChange: pipe 0 active(+0x298) = 0, wsaaDefer(+0x282) = 0
+NMXAccel:   GATES after deliverModeChange: pipe 0 active(+0x298) = 0, wsaaDefer(+0x282) = 0
+NMXAccel:   debug.xegfxaccelfb now reads 1 -- armed-only Metal clients may have a device THIS BOOT ONLY (heads published 0x10, registered 0x10, piped 0x10)
+NMXAccel:   debug.xegfxaccelfb now reads 1 -- armed-only Metal clients may have a device THIS BOOT ONLY (heads published 0x10, registered 0x10, piped 0x10)

@@ -1,0 +1,73 @@
+=== windows dumped by XeDiag (19) ===
+  w40    base 0x40000  1024 bytes
+  w44    base 0x44000  1024 bytes
+  w45    base 0x45000  1024 bytes
+  w50    base 0x50000  1024 bytes
+  w60    base 0x60000  1024 bytes
+  w61    base 0x61000  1024 bytes
+  w62    base 0x62000  1024 bytes
+  w63    base 0x63000  1024 bytes
+  w64    base 0x64000  1024 bytes
+  w65    base 0x65000  1024 bytes
+  w66    base 0x66000  1024 bytes
+  w67    base 0x67000  1024 bytes
+  w68    base 0x68000  1024 bytes
+  w69    base 0x69000  1024 bytes
+  w70    base 0x70000  1024 bytes
+  w71    base 0x71000  1024 bytes
+  w72    base 0x72000  1024 bytes
+  w73    base 0x73000  1024 bytes
+  misc   base 0x108000  1024 bytes
+
+=== Q1/Q2  which plane is scanning ===
+pipe0 plane1 CTL=0x84000008 STRIDE=0x00000078(7680 B) SIZE=0x0437077F(1920x1080) SURF=0xFE600000 TILEOFF=0x00000000 SURFLIVE=0xFE600000
+   >>> pipe0 is the LIVE one. SURF == SURFLIVE ? YES (latched, no pending flip)
+pipe1 plane1 CTL=0x00000008 STRIDE=0x46C00000(75967234048 B) SIZE=0x00000000(0x0) SURF=0x00000000 TILEOFF=0x00000000 SURFLIVE=0x00000000
+pipe2 plane1 CTL=0x00000008 STRIDE=0x00000000(0 B) SIZE=0x00000000(0x0) SURF=0x00000000 TILEOFF=0x00000000 SURFLIVE=0x00000000
+pipe3 plane1 CTL=0x00000000 STRIDE=0x00000000(0 B) SIZE=0x00000000(0x0) SURF=0x00000000 TILEOFF=0x00000000 SURFLIVE=0x00000000
+
+=== Q3  PLANE_CTL decode ===
+pipe0 CTL=0x84000008 ENABLE(31)=1 FORMAT 27:24=4(XRGB8888) [ICL 27:23=8] TILING 12:10=0(LINEAR) bit10=0
+pipe1 CTL=0x00000008 ENABLE(31)=0 FORMAT 27:24=0(YUV422) [ICL 27:23=0] TILING 12:10=0(LINEAR) bit10=0
+pipe2 CTL=0x00000008 ENABLE(31)=0 FORMAT 27:24=0(YUV422) [ICL 27:23=0] TILING 12:10=0(LINEAR) bit10=0
+
+=== transcoder timing (HTOTAL 0x00 VTOTAL 0x0C VSYNC 0x14 PIPESRC 0x1C FRMCOUNT 0x40) ===
+pipe0 HTOTAL=0x0D470C2F  htotal=3400 hblank_start=3120 hsync_start=3332
+      VTOTAL=0x089F081F  vtotal=2208 vblank_start=2080 vsync_start=2202
+      PIPESRC=0x077F0437  source = 1920 x 1080   FRMCOUNT=0x001AB138
+pipe1  all zero (inactive)
+pipe2  all zero (inactive)
+pipe3  all zero (inactive)
+
+=== pipe scaler (0x68174 / 0x68180) ===
+PS_WIN_SZ 0x68174=0x0C300820 -> 3120 x 2080
+PS_CTRL   0x68180=0x80000200 -> scaler enable bit31 = 1
+
+=== Q4  GGC / DSMBASE / stolen ===
+GGC      0x108040 = 0x000004C0
+  GGMS(7:6) = 3   GMS(15:8) = 0x04
+  mtl_get_gms_size() -> 128 MB = 134217728 bytes
+  26 MB (27262976 B) fits ? YES
+DSMBASE  0x1080C0 = 0x0000000070800000 -> 0x70800000
+
+=== raw words 0x60000..0x6004F (pipe A transcoder) ===
+  0x60000 = 0x0D470C2F
+  0x60004 = 0x0D470C2F
+  0x60008 = 0x0D070D03
+  0x6000C = 0x089F081F
+  0x60010 = 0x089F081F
+  0x60014 = 0x089A0899
+  0x60018 = 0x00000000
+  0x6001C = 0x077F0437
+  0x60020 = 0x00000000
+  0x60024 = 0x00000000
+  0x60028 = 0x00000000
+  0x6002C = 0x00000000
+  0x60030 = 0x7E6AC4E1
+  0x60034 = 0x00800000
+  0x60038 = 0x00000000
+  0x6003C = 0x00000000
+  0x60040 = 0x001AB138
+  0x60044 = 0x00080000
+  0x60048 = 0x00000000
+  0x6004C = 0x00000000

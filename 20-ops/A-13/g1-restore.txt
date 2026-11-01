@@ -1,0 +1,6 @@
+SURF             0xfe600000
+SURFLIVE         0xfe600000
+PS_CTRL          0x80000200
+PIPESRC          0x077f0437
+PLANE_SIZE       0x0437077f
+PLANE_STRIDE     120

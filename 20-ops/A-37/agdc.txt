@@ -1,0 +1,8 @@
+2026-10-31 22:37:56.643335+0800 0x292      Default     0x0                  0      0    kernel: (XeGfxAGDC) NVRM-agdc: AGDC: no PCI device or no framebuffer yet (pci 0x0 fb 0x0)
+2026-10-31 22:37:57.727263+0800 0x292      Default     0x0                  0      0    kernel: (XeGfxAGDC) NVRM-agdc: AGDC: no PCI device or no framebuffer yet (pci 0x0 fb 0x0)
+2026-10-31 22:37:58.844565+0800 0x292      Default     0x0                  0      0    kernel: (XeGfxAGDC) NVRM-agdc: AGDC: no PCI device or no framebuffer yet (pci 0x0 fb 0x0)
+2026-10-31 22:37:59.962642+0800 0x292      Default     0x0                  0      0    kernel: (XeGfxAGDC) NVRM-agdc: AGDC: no PCI device or no framebuffer yet (pci 0x0 fb 0x0)
+2026-10-31 22:38:01.111390+0800 0x292      Default     0x0                  0      0    kernel: (XeGfxAGDC) NVRM-agdc: AGDC: no PCI device or no framebuffer yet (pci 0x0 fb 0x0)
+2026-10-31 22:38:02.203756+0800 0x292      Default     0x0                  0      0    kernel: (XeGfxAGDC) NVRM-agdc: AGDC: no PCI device or no framebuffer yet (pci 0x0 fb 0x0)
+2026-10-31 22:38:03.247282+0800 0x292      Default     0x0                  0      0    kernel: (XeGfxAGDC) NVRM-agdc: AGDC: no PCI device or no framebuffer yet (pci 0x0 fb 0x0)
+2026-10-31 22:39:20.021165+0800 0x5012     Default     0x0                  2386   0    log: [com.apple.log:] log run noninteractively, parent: 2383 (sudo), args: 'log' 'show' '--last' '12m' '--predicate' 'eventMessage CONTAINS "AGDC"'

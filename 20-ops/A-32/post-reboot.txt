@@ -1,0 +1,29 @@
+== date ==
+Sat Oct 31 21:36:07 CST 2026
+== nvram ==
+xegfx-disp-expose	%00
+xegfx-disp-phase	%00
+xegfx-disp-starts	%01%00%00%00
+xegfx-disp-fail	%01
+xegfx-disp-trial	%00
+== armed ==
+ls: /var/db/xegfx/armed: No such file or directory
+== loaded ==
+  139    0 0xffffff7f96cdc000 0x2d05     0x2d05     org.watchthelight.XeGfxIntelFB (0.8) D5E3F45B-564C-3B0F-895F-749618804B47 <138 130 19 6 3 1>
+  142    0 0xffffff7f966bd000 0x2db2     0x2db2     com.nullmoth.NMIntelFB (0.3) DEC058CB-B1EB-3D2B-8B2E-0564E186EC53 <130 19 7 6 3>
+  162    0 0xffffff7f96c89000 0x35c4     0x35c4     org.watchthelight.XeGfxAGDC (0.1.1) D3BC8646-C9B1-3328-BA79-0038D8463596 <140 7 6 3 1>
+== ws ==
+204
+== screen ==
+          Resolution: 3120 x 2080
+          Online: Yes
+== panic ==
+/Library/Logs/DiagnosticReports/Kernel-2026-10-31-211427.panic
+/Library/Logs/DiagnosticReports/Kernel-2026-10-31-184440.panic
+/Library/Logs/DiagnosticReports/Kernel-2026-10-31-175433.panic
+== samples ==
+-rw-r--r--  1 root  staff   175742 Oct 31 21:33 /Users/change48/xegfx-log/A-32/sample-1.txt
+-rw-r--r--  1 root  staff   168408 Oct 31 21:33 /Users/change48/xegfx-log/A-32/sample-2.txt
+-rw-r--r--  1 root  staff   122517 Oct 31 21:34 /Users/change48/xegfx-log/A-32/sample-3.txt
+-rw-r--r--  1 root  staff  1323913 Oct 31 21:34 /Users/change48/xegfx-log/A-32/sample-4.txt
+-rw-r--r--  1 root  staff   125767 Oct 31 21:34 /Users/change48/xegfx-log/A-32/sample-5.txt

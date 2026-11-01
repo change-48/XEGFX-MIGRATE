@@ -1,0 +1,4 @@
+IONDRVFramebuffer
+Identifier=org.watchthelight.XeGfxAGDC
+Signature=adhoc
+TeamIdentifier=not set

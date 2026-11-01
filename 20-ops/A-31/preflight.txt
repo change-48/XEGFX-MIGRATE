@@ -1,0 +1,35 @@
+== date ==
+Sat Oct 31 21:11:56 CST 2026
+== nvram ==
+xegfx-disp-expose	%01
+xegfx-auto-boot	0
+xegfx-disp-phase	%02
+xegfx-disp-starts	%01%00%00%00
+xegfx-disp-fail	%00
+xegfx.autostage	6
+xegfx-disp-bootarm	%01
+xegfx-disp-trial	%01
+xegfx-p44-used	1
+== loaded ==
+  134    0 0xffffff7f966b9000 0x1e62     0x1e62     org.watchthelight.IGPUConsoleRange (0.4) 501286BF-A0FA-35DF-AE94-8C3D51D274AA <19 17 9 7 6 3 1>
+  136    0 0xffffff7f96cdc000 0x2d05     0x2d05     org.watchthelight.XeGfxIntelFB (0.8) D5E3F45B-564C-3B0F-895F-749618804B47 <135 125 19 6 3 1>
+  140    0 0xffffff7f966bd000 0x2db2     0x2db2     com.nullmoth.NMIntelFB (0.3) DEC058CB-B1EB-3D2B-8B2E-0564E186EC53 <125 19 7 6 3>
+  163    0 0xffffff7f96c89000 0x35c4     0x35c4     org.watchthelight.XeGfxAGDC (0.1.1) D3BC8646-C9B1-3328-BA79-0038D8463596 <126 7 6 3 1>
+  178    0 0xffffff7f966c3000 0x31d03e   0x31d03e   org.watchthelight.XeGfx (0.0.46) 64F2BDD3-E85F-357E-BA02-39A418A62046 <20 19 9 7 6 3 1>
+  179    0 0xffffff7f96ccb000 0xd8e4     0xd8e4     org.watchthelight.XeGfxDisplay (0.5) 53666958-7DBB-3CDC-BBD0-F4F52B2F2F4B <125 19 7 6 3 1>
+  181    0 0xffffff7f96c8f000 0x1c61d    0x1c61d    org.watchthelight.XeGfxAccel (0.1) 377180CB-CB75-3970-AE6A-69525509E732 <180 125 109 19 7 6 3 1>
+== stage/results ==
+debug.xegfx_stage: 7
+                        0               1               1               1
+                        1               1               1               1
+
+== NMXAccel ==
+1
+== agdc ==
+debug.xegfx_agdc: 1
+== screen ==
+== ws ==
+2736
+== panic ==
+/Library/Logs/DiagnosticReports/Kernel-2026-10-31-184440.panic
+/Library/Logs/DiagnosticReports/Kernel-2026-10-31-175433.panic

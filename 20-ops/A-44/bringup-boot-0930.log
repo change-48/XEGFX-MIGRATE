@@ -1,0 +1,13 @@
+2026-11-01 09:30:47 === bringup start (boot=2026-11-01 09:30:41) ===
+2026-11-01 09:31:10 console user=change48 (uid 501) after 25s
+2026-11-01 09:31:10 GUI session + WindowServer up after 1s
+2026-11-01 09:31:40 core loaded (debug.xegfx_stage present, attempt 1)
+2026-11-01 09:31:46 stages ok: 0 1 1 1 1 1 1 1 (after 1s)
+2026-11-01 09:31:49 accel already loaded
+2026-11-01 09:31:54 accelfb=3 written (read-back 1)
+2026-11-01 09:32:11 scanout-backed display pipe ENABLED seen
+2026-11-01 09:32:36 no frames yet -- restarting WindowServer so it re-registers against the open pipe
+2026-11-01 09:32:55 WindowServer back (pid 1549)
+2026-11-01 09:34:06   sample 23: iop_ok 0 -> 8
+2026-11-01 09:34:07 iop=1  iop_ok=8 (fail=0 empty=0)
+2026-11-01 09:34:07 OK: frames are reaching the panel

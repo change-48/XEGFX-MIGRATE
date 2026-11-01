@@ -1,0 +1,2 @@
+Timestamp                       Thread     Type        Activity             PID    TTL  
+2026-10-31 23:19:43.961355+0800 0x6b09     Default     0x0                  3210   0    log: [com.apple.log:] log run noninteractively, parent: 3209 (sudo), args: 'log' 'show' '--start' '2026-10-31 23:19:07' '--predicate' 'eventMessage CONTAINS "COREANIMATION" OR eventMessage CONTAINS "native emitter" OR eventMessage CONTAINS "specialize"'

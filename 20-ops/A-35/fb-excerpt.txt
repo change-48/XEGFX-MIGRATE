@@ -1,0 +1,4 @@
+"XeGfxFbRegistered" = Yes
+"IOFBDependentID" = 6360568414703976449
+"IOFBDependentIndex" = 0
+"IOFBCurrentPixelClock" = 900045000

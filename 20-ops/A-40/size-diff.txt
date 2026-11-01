@@ -1,0 +1,5 @@
+NVMTLObjects.m         local=  405954 upstream=  400115 delta=-5839
+NVMTLDevice.m          local=  149195 upstream=  144194 delta=-5001
+NVMTLLibraryLoad.m     local=  202237 upstream=  196431 delta=-5806
+NVMTLEmbedded.m        local=   19767 upstream=   19323 delta=-444
+NVMTLObjects.h         local=   19889 upstream=   19889 delta=0

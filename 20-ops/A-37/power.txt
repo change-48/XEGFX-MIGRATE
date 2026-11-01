@@ -1,0 +1,4 @@
+Name                               ID     CPU ms/s  User%  Deadlines (<2 ms, 2-5 ms)  Wakeups (Intr, Pkg idle)
+com.apple.WebKit.GPU               2259   1896.50   56.18  33.62   0.00               43.51   0.00              
+WindowServer                       204    1022.53   77.23  6.92    0.99               27.69   0.00              
+XProtectRemediatorDolittle         2336   970.97    91.45  0.00    0.00               0.00    0.00              

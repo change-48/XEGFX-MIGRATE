@@ -1,0 +1,7 @@
+"bufferFlipCount"=0
+"bufferSwapCount"=0
+"contextGLCount"=0
+"gartUsedBytes"=0
+"inUseVidMemoryBytes"=25958528
+"surfaceCount"=0
+"textureCount"=1

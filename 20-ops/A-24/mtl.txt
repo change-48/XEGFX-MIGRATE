@@ -1,0 +1,9 @@
+MTLCopyAllDevices count = 1
+  device: Intel Arrow Lake Xe-LPG+
+default device = Intel Arrow Lake Xe-LPG+
+library compiled: (
+    addone
+)
+pipeline OK
+cmd status = 4
+结果: 全部正确，GPU 真的算出来了 (16/16)

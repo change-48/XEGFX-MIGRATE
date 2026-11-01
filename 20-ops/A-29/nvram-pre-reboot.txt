@@ -1,0 +1,8 @@
+xegfx-disp-expose	%01
+xegfx-auto-boot	0
+xegfx-disp-phase	%00
+xegfx-disp-fail	%01
+xegfx.autostage	6
+xegfx-disp-bootarm	%01
+xegfx-disp-trial	%00
+xegfx-p44-used	1

@@ -1,0 +1,3 @@
+XeGfxIntelKMSFramebuffer     0
+XeGfxIntelFramebuffer        1
+XeGfxDisplayNub              0

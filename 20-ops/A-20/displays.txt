@@ -1,0 +1,21 @@
+Graphics/Displays:
+
+    Display:
+
+      Type: GPU
+      Bus: Built-In
+      VRAM (Total): 24 MB
+      VRAM (Dynamic, Max): 
+      Vendor: Intel
+      Device ID: 0x7d51
+      Revision ID: 0x0003
+      Displays:
+        Display:
+          Resolution: 3120 x 2080
+          UI Looks like: 3120 x 2080 @ 120.00Hz
+          Framebuffer Depth: 24-Bit Color (ARGB8888)
+          Main Display: Yes
+          Mirror: Off
+          Online: Yes
+          Connection Type: Internal
+

@@ -1,0 +1,21 @@
+debug.nmxaccel_headless: 0
+debug.xegfx_agdc: 1
+debug.xegfx_agdc_client_ack: 1
+debug.xegfx_agdc_client_set: 42
+debug.xegfx_agdc_cmds: 107
+debug.xegfx_agdc_fbcapex: 0
+debug.xegfx_agdc_fbcapex_asked: 0
+debug.xegfx_agdc_fbcapex_served: 0
+debug.xegfx_agdc_fbmap: n=1 [0]id 0x1000007dd
+debug.xegfx_agdc_k5: 1
+debug.xegfx_agdc_k5_asked: 0
+debug.xegfx_agdc_k5_caps: 0
+debug.xegfx_agdc_k5_caps_mask: 0
+debug.xegfx_agdc_k5_last_refused_idx: -1
+debug.xegfx_agdc_k5_link: 0
+debug.xegfx_agdc_k5_link_mask: 0
+debug.xegfx_agdc_k5_why: 0
+debug.xegfx_agdc_last_refused: 2369
+debug.xegfx_agdc_maxfb: 1
+debug.xegfx_agdc_refused: 2
+debug.xegfx_agdc_rescans: 8

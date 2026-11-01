@@ -1,0 +1,6 @@
+      Chipset Model: Intel Arrow Lake Xe-LPG+
+      VRAM (Dynamic, Max): 24576 MB
+      Metal Support: Metal 3
+          Resolution: 3120 x 2080
+          Main Display: Yes
+          Online: Yes

@@ -1,0 +1,7 @@
+== t 13:17:36  0x20000 <- desktop 0x800000 ==
+mapped           0x20000 .. 0x207e8 -> phys 0x800000  failures 0
+reg  = 0x20000000  SURFLIVE = 0x20000000
+SURF             0x20000000
+SURFLIVE         0x20000000
+PS_CTRL          0x80000200
+SURF_before      0xfe600000

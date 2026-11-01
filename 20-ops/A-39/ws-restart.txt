@@ -1,0 +1,12 @@
+2026-10-31 23:01:34.533668+0800 0x2af      Default     0x0                  1      0    launchd: [system:] service inactive: com.apple.WindowServer
+2026-10-31 23:01:34.534037+0800 0x25eb     Default     0x0                  216    7    runningboardd: (RunningBoard) [com.apple.runningboard:ttl] [osservice<com.apple.WindowServer(88)>:1463] termination reported by launchd (13, 7, 6)
+2026-10-31 23:01:47.142629+0800 0x202b     Default     0x0                  1      0    launchd: [system:] service inactive: com.apple.WindowServer
+2026-10-31 23:01:47.142961+0800 0x307c     Default     0x0                  216    7    runningboardd: (RunningBoard) [com.apple.runningboard:ttl] [osservice<com.apple.WindowServer(88)>:1515] termination reported by launchd (13, 7, 6)
+2026-10-31 23:01:56.504940+0800 0x202b     Default     0x0                  1      0    launchd: [system:] service inactive: com.apple.WindowServer
+2026-10-31 23:01:56.505120+0800 0x307a     Default     0x0                  216    7    runningboardd: (RunningBoard) [com.apple.runningboard:ttl] [osservice<com.apple.WindowServer(88)>:1576] termination reported by launchd (13, 7, 6)
+2026-10-31 23:02:08.331486+0800 0x202b     Default     0x0                  1      0    launchd: [system:] service inactive: com.apple.WindowServer
+2026-10-31 23:02:08.332031+0800 0x3329     Default     0x0                  216    7    runningboardd: (RunningBoard) [com.apple.runningboard:ttl] [osservice<com.apple.WindowServer(88)>:1623] termination reported by launchd (13, 7, 6)
+2026-10-31 23:02:18.293840+0800 0x2335     Default     0x0                  1      0    launchd: [system:] service inactive: com.apple.WindowServer
+2026-10-31 23:02:18.294445+0800 0x2aa1     Default     0x0                  216    7    runningboardd: (RunningBoard) [com.apple.runningboard:ttl] [osservice<com.apple.WindowServer(88)>:1640] termination reported by launchd (13, 7, 6)
+2026-10-31 23:02:34.308557+0800 0x202b     Default     0x0                  1      0    launchd: [system:] service inactive: com.apple.WindowServer
+2026-10-31 23:02:34.308808+0800 0x3329     Default     0x0                  216    7    runningboardd: (RunningBoard) [com.apple.runningboard:ttl] [osservice<com.apple.WindowServer(88)>:1690] termination reported by launchd (13, 7, 6)

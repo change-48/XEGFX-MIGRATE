@@ -1,0 +1,60 @@
+[  334.500772]: xegfx: ioctl 0xc0186475 (nr 0x75) inst 161 pid 598 -> errno 1
+[  334.501653]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 161 pid 598 -> errno 19
+[  334.501675]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 161 pid 598 -> errno 19
+[  334.502938]: xegfx: ioctl 0xc0186473 (nr 0x73) inst 183 pid 1099 -> errno 22
+[  334.502991]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 183 pid 1099 -> errno 19
+[  334.503108]: xegfx: ioctl 0x80104e42 (nr 0x42) inst 183 pid 1099 -> errno 2
+[  334.503194]: xegfx: ioctl 0xc0186475 (nr 0x75) inst 183 pid 1099 -> errno 1
+[  334.504259]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 183 pid 1099 -> errno 19
+[  334.504276]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 183 pid 1099 -> errno 19
+[  334.527736]: xegfx: ioctl 0xc0186473 (nr 0x73) inst 209 pid 618 -> errno 22
+[  334.527793]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 209 pid 618 -> errno 19
+[  334.527920]: xegfx: ioctl 0x80104e42 (nr 0x42) inst 209 pid 618 -> errno 2
+[  334.528012]: xegfx: ioctl 0xc0186475 (nr 0x75) inst 209 pid 618 -> errno 1
+[  334.529152]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 209 pid 618 -> errno 19
+[  334.529170]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 209 pid 618 -> errno 19
+[  334.560101]: xegfx: ioctl 0xc0186473 (nr 0x73) inst 233 pid 625 -> errno 22
+[  334.560162]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 233 pid 625 -> errno 19
+[  334.560274]: xegfx: ioctl 0x80104e42 (nr 0x42) inst 233 pid 625 -> errno 2
+[  334.560369]: xegfx: ioctl 0xc0186475 (nr 0x75) inst 233 pid 625 -> errno 1
+[  334.561479]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 233 pid 625 -> errno 19
+[  334.561507]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 233 pid 625 -> errno 19
+[  334.564127]: xegfx: ioctl 0xc0186473 (nr 0x73) inst 249 pid 890 -> errno 22
+[  334.564194]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 249 pid 890 -> errno 19
+[  334.564350]: xegfx: ioctl 0x80104e42 (nr 0x42) inst 249 pid 890 -> errno 2
+[  334.564475]: xegfx: ioctl 0xc0186475 (nr 0x75) inst 249 pid 890 -> errno 1
+[  334.565583]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 249 pid 890 -> errno 19
+[  334.565605]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 249 pid 890 -> errno 19
+[  334.590036]: xegfx: ioctl 0xc0186473 (nr 0x73) inst 281 pid 602 -> errno 22
+[  334.590075]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 281 pid 602 -> errno 19
+[  334.590156]: xegfx: ioctl 0x80104e42 (nr 0x42) inst 281 pid 602 -> errno 2
+[  334.590218]: xegfx: ioctl 0xc0186475 (nr 0x75) inst 281 pid 602 -> errno 1
+[  334.591040]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 281 pid 602 -> errno 19
+[  334.591056]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 281 pid 602 -> errno 19
+[  334.669856]: Sandbox: NotificationCenter(671) deny(1) file-ioctl path:/dev/dri/renderD128 ioctl-command:(_IO "d" 21)xegfx: ioctl 0xc0186473 (nr 0x73) inst 314 pid 615 -> errno 22
+[  334.898179]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 314 pid 615 -> errno 19
+[  334.898301]: xegfx: ioctl 0x80104e42 (nr 0x42) inst 314 pid 615 -> errno 2
+[  334.898402]: xegfx: ioctl 0xc0186475 (nr 0x75) inst 314 pid 615 -> errno 1
+[  334.899475]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 314 pid 615 -> errno 19
+[  334.899492]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 314 pid 615 -> errno 19
+[  334.944082]: xegfx: ioctl 0xc0186473 (nr 0x73) inst 338 pid 762 -> errno 22
+[  334.944136]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 338 pid 762 -> errno 19
+[  334.944254]: xegfx: ioctl 0x80104e42 (nr 0x42) inst 338 pid 762 -> errno 2
+[  334.944340]: xegfx: ioctl 0xc0186475 (nr 0x75) inst 338 pid 762 -> errno 1
+[  334.945412]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 338 pid 762 -> errno 19
+[  334.945431]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 338 pid 762 -> errno 19
+[  335.029208]: Sandbox: com.apple.SafariPlatformSupport.(1011) deny(1) file-read-data /dev/driSandbox: iconservicesagent(527) deny(1) file-write-data /dev/dri/renderD1281 duplicate report for Sandbox: iconservicesagent(527) deny(1) file-write-data /dev/dri/renderD128Sandbox: iconservicesagent(527) deny(1) file-write-data /dev/dri/card01 duplicate report for Sandbox: iconservicesagent(527) deny(1) file-write-data /dev/dri/card0Sandbox: iconservicesagent(527) deny(1) file-write-data /dev/dri/renderD1282 duplicate reports for Sandbox: iconservicesagent(527) deny(1) file-write-data /dev/dri/renderD128Sandbox: iconservicesagent(527) deny(1) file-write-data /dev/dri/card0xegfx: ioctl 0xc0186473 (nr 0x73) inst 368 pid 527 -> errno 22
+[  335.208262]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 368 pid 527 -> errno 19
+[  335.208389]: xegfx: ioctl 0x80104e42 (nr 0x42) inst 368 pid 527 -> errno 2
+[  335.211813]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 368 pid 527 -> errno 19
+[  335.211889]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 368 pid 527 -> errno 19
+[  335.219020]: 1 duplicate report for Sandbox: iconservicesagent(527) deny(1) file-write-data /dev/dri/card0Sandbox: iconservicesagent(527) deny(1) file-write-data /dev/dri/renderD128xegfx: ioctl 0xc0186473 (nr 0x73) inst 400 pid 774 -> errno 22
+[  335.270042]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 400 pid 774 -> errno 19
+[  335.270187]: xegfx: ioctl 0x80104e42 (nr 0x42) inst 400 pid 774 -> errno 2
+[  335.270287]: xegfx: ioctl 0xc0186475 (nr 0x75) inst 400 pid 774 -> errno 1
+[  335.271570]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 400 pid 774 -> errno 19
+[  335.271597]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 400 pid 774 -> errno 19
+[  376.197436]: NMXAccel: getStampMemory(<ptr>) -> descriptor <ptr> (4096 stamps, 16 KB)
+[  376.197449]: NMXAccel: getStampMemory(<ptr>) -> descriptor <ptr> (4096 stamps, 16 KB)
+[  376.197613]: NMXAccel: createUserGPUTask -> <ptr> init=1
+[  376.197615]: NMXAccel: createUserGPUTask -> <ptr> init=1

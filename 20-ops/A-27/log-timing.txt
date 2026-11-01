@@ -1,0 +1,3 @@
+Timestamp                       Thread     Type        Activity             PID    TTL  
+2026-10-31 18:32:47.257562+0800 0x1cb0     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: timing fallback: A-27 static panel pclk 900045000 Hz 3120x2080 ht 3400 vt 2208 hs 3332..3336 vs 2202..2203 refresh 119891 mHz
+2026-10-31 18:33:39.090340+0800 0x2232     Default     0x0                  1145   0    log: [com.apple.log:] log run noninteractively, parent: 1143 (sudo), args: 'log' 'show' '--last' '10m' '--predicate' 'eventMessage CONTAINS "XeGfx: timing"'

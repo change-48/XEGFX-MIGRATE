@@ -1,0 +1,2 @@
+debug.xegfx_agdc: 1
+debug.xegfx_agdc_fbmap: n=1 [0]id 0x100000527

@@ -1,0 +1,17 @@
+nonzero_entries  7000
+present_entries  4810
+live_run_pages   6656
+live_phys        0x800000
+ptes_around_live:
+  [liveIdx-1] 0x83431f047526a2cb
+  [liveIdx+0] 0x0000000000800003
+  [liveIdx+1] 0x0000000000801003
+  [liveIdx+2] 0x0000000000802003
+  [liveIdx+3] 0x0000000000803003
+  [liveIdx+4] 0x0000000000804003
+  [liveIdx+5] 0x0000000000805003
+  [liveIdx+6] 0x0000000000806003
+  [liveIdx+7] 0x0000000000807003
+  [liveIdx+8] 0x0000000000808003
+  [liveIdx+9] 0x0000000000809003
+  [liveIdx+10] 0x000000000080a003

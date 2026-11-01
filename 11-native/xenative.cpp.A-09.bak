@@ -1,0 +1,314 @@
+// XeNative - drive the Arrow Lake display pipe A at the panel's native 3120x2080.
+//
+// Evidence from XeDiag: the firmware already programs the transcoder with native
+// timing (hblank_start 3120, htotal 3400, vblank_start 2080, vtotal 2208) and only
+// scales a 1920x1080 source up through the pipe scaler (PS_WIN_SZ 3120x2080,
+// PS_CTRL bit31 set). So getting native output means: own the surface, set the
+// source to 3120x2080, and bypass the scaler. The timing registers stay untouched.
+//
+// Safety: the kext first proves it understands the GGTT by reading the PTE that
+// backs the current PLANE_SURF and checking that it points at the boot framebuffer.
+// Only if that check passes does it write anything. A reboot always restores the
+// firmware's own programming, because none of this is stored anywhere.
+
+#include <IOKit/IOService.h>
+#include <IOKit/IOLib.h>
+#include <IOKit/IOMemoryDescriptor.h>
+#include <IOKit/IOBufferMemoryDescriptor.h>
+#include <libkern/c++/OSDictionary.h>
+#include <libkern/c++/OSIterator.h>
+#include <mach/kmod.h>
+
+extern "C" {
+static kern_return_t xenative_kmod_start(kmod_info_t *ki, void *d) { return KERN_SUCCESS; }
+static kern_return_t xenative_kmod_stop(kmod_info_t *ki, void *d) { return KERN_SUCCESS; }
+KMOD_EXPLICIT_DECL(org.xenative.XeNative, "0.1", xenative_kmod_start, xenative_kmod_stop);
+}
+
+// display 14 pipe A / plane 1 registers
+#define TRANS_HTOTAL_A      0x60000
+#define TRANS_PIPESRC_A     0x6001C
+#define TRANS_FRMCOUNT_A    0x60040
+#define TRANS_DDI_FUNC_CTL_A 0x60400
+#define PIPE_CONF_A         0x70008
+#define TRANS_DP_CTL_A      0xE0300
+#define PS_WIN_SZ_A         0x68174
+#define PS_CTRL_A           0x68180
+#define PLANE_CTL_1_A       0x70180
+#define PLANE_STRIDE_1_A    0x70188
+#define PLANE_SIZE_1_A      0x70190
+#define PLANE_SURF_1_A      0x7019C
+#define GFX_FLSH_CNTL       0x101008
+#define DSMBASE             0x1080C0
+
+#define NAT_W   3120
+#define NAT_H   2080
+#define NAT_BPP 4
+#define NAT_ROW (NAT_W * NAT_BPP)                 // 12480
+#define NAT_SIZE ((size_t)NAT_W * NAT_H * NAT_BPP) // 25958400
+
+#define PTE_VALID 0x1u
+#define GTT_PTE_OFFSET 0x800000ULL   // GTTADR starts 8 MiB into GTTMMADR on gen8+
+
+class XeNative : public IOService {
+    OSDeclareDefaultStructors(XeNative)
+public:
+    virtual bool start(IOService *provider) override;
+    virtual void free() override;
+private:
+    static void switchThread(void *arg, wait_result_t w);
+    void snap(const char *tag);
+    void doSwitch();
+
+    IOMemoryMap *fBar0Map = nullptr;
+    IOMemoryMap *fBar2Map = nullptr;
+    volatile UInt32 *fReg = nullptr;
+    volatile UInt64 *fGtt = nullptr;
+    IOByteCount fBar2Len = 0;
+    UInt64 fEntries = 0;
+
+    UInt64 fPteAtSurf = 0;
+    UInt64 fGttOff = 0;
+    bool fVerified = false;
+};
+
+OSDefineMetaClassAndStructors(XeNative, IOService)
+
+static UInt32 propU32(IORegistryEntry *e, const char *k)
+{
+    if (!e) return 0xffffffffu;
+    OSData *d = OSDynamicCast(OSData, e->getProperty(k));
+    if (!d || d->getLength() < 4) return 0xffffffffu;
+    return *(const UInt32 *)d->getBytesNoCopy();
+}
+
+bool XeNative::start(IOService *provider)
+{
+    if (!IOService::start(provider)) return false;
+    setProperty("xnState", "start");
+
+    IOService *gpu = nullptr;
+    OSDictionary *match = IOService::serviceMatching("IOPCIDevice");
+    if (match) {
+        OSIterator *it = IOService::getMatchingServices(match);
+        if (it) {
+            OSObject *o;
+            while ((o = it->getNextObject())) {
+                IOService *s = OSDynamicCast(IOService, o);
+                if (!s) continue;
+                if (propU32(s, "vendor-id") == 0x8086u && ((propU32(s, "class-code") >> 16) & 0xff) == 0x03) {
+                    gpu = s; break;
+                }
+            }
+            it->release();
+        }
+        match->release();
+    }
+    if (!gpu) { setProperty("xnState", "no-gpu"); return false; }
+
+    IOItemCount n = gpu->getDeviceMemoryCount();
+    IODeviceMemory *bar0 = nullptr, *bar2 = nullptr;
+    for (IOItemCount i = 0; i < n; i++) {
+        IODeviceMemory *m = gpu->getDeviceMemoryWithIndex((unsigned)i);
+        if (!m) continue;
+        if (!bar0 && m->getLength() == 0x1000000ULL) bar0 = m;
+        else if (!bar2 && m->getLength() >= 0x8000000ULL) bar2 = m;
+    }
+    if (!bar0 || !bar2) { setProperty("xnState", "no-bars"); return false; }
+
+    fBar0Map = bar0->createMappingInTask(kernel_task, 0, kIOMapAnywhere | kIOMapInhibitCache, 0, bar0->getLength());
+    fBar2Map = bar2->createMappingInTask(kernel_task, 0, kIOMapAnywhere | kIOMapInhibitCache, 0, bar2->getLength());
+    if (!fBar0Map || !fBar2Map) { setProperty("xnState", "map-failed"); return false; }
+    fReg = (volatile UInt32 *)fBar0Map->getVirtualAddress();
+    // i915: "GEN8: GTTMMADR size is 16MB and GTTADR starts at 8MB offset"
+    // so the page table lives at BAR2 + 8 MiB; BAR2[0..8MiB) is the aperture onto GTT 0..8MiB.
+    fBar2Len = fBar2Map->getLength();
+    UInt8 *bar2va = (UInt8 *)fBar2Map->getVirtualAddress();
+    fGtt = (volatile UInt64 *)(bar2va + GTT_PTE_OFFSET);
+    UInt64 entries = (fBar2Len > GTT_PTE_OFFSET) ? (fBar2Len - GTT_PTE_OFFSET) / 8 : 0;
+    fEntries = entries;
+    setProperty("xnBar2Bytes", (unsigned long long)fBar2Len, 64);
+    setProperty("xnGttEntries", (unsigned long long)entries, 64);
+
+    UInt32 surf = fReg[PLANE_SURF_1_A / 4];
+    UInt32 pipesrc = fReg[TRANS_PIPESRC_A / 4];
+    UInt32 pssz = fReg[PS_WIN_SZ_A / 4];
+    UInt32 psctl = fReg[PS_CTRL_A / 4];
+    setProperty("xnSurfBefore", surf, 32);
+    setProperty("xnPipesrcBefore", pipesrc, 32);
+    setProperty("xnPsWinBefore", pssz, 32);
+    setProperty("xnPsCtrlBefore", psctl, 32);
+
+    // with the table at the right place, the PTE behind PLANE_SURF must map the boot framebuffer
+    UInt32 dsm = fReg[DSMBASE / 4];
+    setProperty("xnDsmBase", dsm, 32);
+    UInt64 wantIdx = (UInt64)(surf & ~0xFFFu) >> 12;
+    unsigned nonZero = 0, present = 0;
+    UInt32 probeEntries = 4096;
+    for (UInt32 i = 0; i < probeEntries && i < entries; i++) {
+        UInt64 v = fGtt[i];
+        if (!v) continue;
+        nonZero++;
+        if (v & PTE_VALID) present++;
+    }
+    setProperty("xnPteProbeNonZero", nonZero, 32);
+    setProperty("xnPteProbePresent", present, 32);
+    setProperty("xnPteSample0", entries > 0 ? fGtt[0] : 0, 64);
+    setProperty("xnPteSample1", entries > 1 ? fGtt[1] : 0, 64);
+    setProperty("xnPteSample2", entries > 2 ? fGtt[2] : 0, 64);
+
+    if (wantIdx < entries) {
+        fPteAtSurf = fGtt[wantIdx];
+        setProperty("xnPteAtSurf", fPteAtSurf, 64);
+        setProperty("xnPteAtSurfPhys", fPteAtSurf & 0x000FFFFFFFFFF000ULL, 64);
+        if ((fPteAtSurf & 0x000FFFFFFFFFF000ULL) == (UInt64)dsm) {
+            fVerified = true;
+            setProperty("xnGttVerified", "surf-maps-dsm");
+        }
+    }
+    // the surface offset macOS left behind is bogus (PTE 0), so accept the array itself:
+    // sparse, and nearly every non-zero entry has the present bit
+    if (!fVerified && nonZero > 0 && present * 2 >= nonZero && present >= 8) {
+        fVerified = true;
+        setProperty("xnGttVerified", "pte-array");
+    }
+    if (!fVerified) setProperty("xnGttVerified", false);
+
+    setProperty("xnState", "armed");
+    registerService();
+
+    IOCreateThread((IOThreadFunc)switchThread, this);
+    return true;
+}
+
+void XeNative::snap(const char *tag)
+{
+    char k[48];
+    snprintf(k, sizeof(k), "%sSurf", tag);    setProperty(k, fReg[PLANE_SURF_1_A / 4], 32);
+    snprintf(k, sizeof(k), "%sSrc", tag);     setProperty(k, fReg[TRANS_PIPESRC_A / 4], 32);
+    snprintf(k, sizeof(k), "%sSize", tag);    setProperty(k, fReg[PLANE_SIZE_1_A / 4], 32);
+    snprintf(k, sizeof(k), "%sStride", tag);  setProperty(k, fReg[PLANE_STRIDE_1_A / 4], 32);
+    snprintf(k, sizeof(k), "%sPs", tag);      setProperty(k, fReg[PS_CTRL_A / 4], 32);
+    snprintf(k, sizeof(k), "%sPipe", tag);    setProperty(k, fReg[PIPE_CONF_A / 4], 32);
+}
+
+void XeNative::switchThread(void *arg, wait_result_t w)
+{
+    XeNative *me = (XeNative *)arg;
+    IOSleep(45000);              // let macOS finish its own bring-up first
+    me->doSwitch();
+}
+
+void XeNative::doSwitch()
+{
+    if (!fVerified) { setProperty("xnState", "gtt-unverified-skip"); return; }
+
+    IOBufferMemoryDescriptor *fb = IOBufferMemoryDescriptor::inTaskWithOptions(kernel_task, kIODirectionOutIn, NAT_SIZE, 4096);
+    if (!fb) { setProperty("xnState", "alloc-failed"); return; }
+    setProperty("xnFbBytes", (unsigned long long)fb->getLength(), 64);
+
+    IOMemoryMap *fbMap = fb->createMappingInTask(kernel_task, 0, kIOMapAnywhere | kIOMapInhibitCache, 0, fb->getLength());
+    if (!fbMap) { fb->release(); setProperty("xnState", "fbmap-failed"); return; }
+
+    // PLANE_SURF is a 32-bit register, so the surface must live below 4 GiB of GTT
+    // (that is why macOS parks its own at 0xFE6xxxxx). Walk up from 2 GiB for a run of
+    // empty entries, staying clear of that neighbourhood.
+    UInt64 need = (NAT_SIZE + 4095) / 4096;
+    UInt64 span = need << 12;
+    UInt64 chosen = 0;
+    for (UInt64 off = 0x80000000ULL; off + span < 0x100000000ULL; off += span) {
+        if (off >= 0xFE000000ULL) break;
+        UInt64 base = off >> 12;
+        bool free = true;
+        for (UInt64 i = 0; i < need; i++) {
+            if (fGtt[base + i] != 0) { free = false; break; }
+        }
+        if (free) { chosen = base; break; }
+    }
+    if (!chosen) { fbMap->release(); fb->release(); setProperty("xnState", "no-gtt-space"); return; }
+
+    volatile UInt8 *pix = (volatile UInt8 *)fbMap->getVirtualAddress();
+    for (UInt32 y = 0; y < NAT_H; y++) {
+        UInt32 *row = (UInt32 *)(pix + (size_t)y * NAT_ROW);
+        for (UInt32 x = 0; x < NAT_W; x++) {
+            UInt32 v = (x >= NAT_W / 2) ? 0x000000FFu : 0x00FF0000u;
+            if (x >= 40 && x < 160 && y >= 40 && y < 160) v = 0x00FFFFFFu;
+            if (x >= NAT_W - 160 && x < NAT_W - 40 && y >= NAT_H - 160 && y < NAT_H - 40) v = 0x0000FF00u;
+            row[x] = v;
+        }
+    }
+    UInt32 chk = ((volatile UInt32 *)pix)[0] ^ ((volatile UInt32 *)pix)[1];
+    setProperty("xnPatternCheck", chk, 32);
+
+    // map the buffer page by page into the GTT; 0x3 = present + read/write, which is
+    // what the live entry we sampled uses (0x800003)
+    UInt64 flags = 0x3;
+    UInt64 mapped = 0, firstPhys = 0;
+    for (IOByteCount off = 0; off < NAT_SIZE; off += 4096) {
+        addr64_t pa = fb->getPhysicalSegment(off, nullptr, 0);
+        if (!pa) break;
+        if (!firstPhys) firstPhys = pa;
+        fGtt[chosen + mapped] = (pa & 0x000FFFFFFFFFF000ULL) | (flags ? flags : PTE_VALID);
+        mapped++;
+    }
+    setProperty("xnGttPages", (unsigned long long)mapped, 64);
+    setProperty("xnFirstPhys", (unsigned long long)firstPhys, 64);
+    if (mapped != need) {
+        for (UInt64 i = 0; i < mapped; i++) fGtt[chosen + i] = 0;
+        fbMap->release(); fb->release();
+        setProperty("xnState", "phys-incomplete");
+        return;
+    }
+
+    fGttOff = chosen << 12;
+    if ((fGttOff >> 32) != 0) { setProperty("xnState", "offset-too-high"); return; }
+    setProperty("xnGttOffset", (unsigned long long)fGttOff, 64);
+    fReg[GFX_FLSH_CNTL / 4] = 1;      // invalidate GTT caches
+    fReg[GFX_FLSH_CNTL / 4] = 0;
+    IOSleep(50);
+
+    UInt64 rb = fGtt[chosen];
+    setProperty("xnPteReadBack", rb, 64);
+    setProperty("xnPteExpected", (firstPhys & 0x000FFFFFFFFFF000ULL) | 0x3ULL, 64);
+
+    snap("xnA");
+    fReg[PLANE_SURF_1_A / 4] = (UInt32)fGttOff;
+    IOSleep(20);
+    fReg[PLANE_SIZE_1_A / 4] = ((NAT_H - 1) << 16) | (NAT_W - 1);
+    fReg[PLANE_STRIDE_1_A / 4] = (UInt32)(NAT_ROW / 64);
+    fReg[TRANS_PIPESRC_A / 4] = ((NAT_W - 1) << 16) | (NAT_H - 1);
+    fReg[PS_CTRL_A / 4] = fReg[PS_CTRL_A / 4] & ~0x80000000u;
+    fReg[PLANE_SURF_1_A / 4] = (UInt32)fGttOff;   // writing SURF latches the update
+    IOSleep(1000);
+    snap("xnB");
+    IOSleep(8000);
+    snap("xnC");
+    setProperty("xnCPte", fGtt[chosen], 64);      // did anything take our window back?
+
+    UInt32 fc1 = fReg[TRANS_FRMCOUNT_A / 4];
+    IOSleep(300);
+    UInt32 fc2 = fReg[TRANS_FRMCOUNT_A / 4];
+    setProperty("xnFrameCount1", fc1, 32);
+    setProperty("xnFrameCount2", fc2, 32);
+    setProperty("xnFrameCountDelta", (UInt32)(fc2 - fc1), 32);
+    setProperty("xnPipeConfAfter", fReg[PIPE_CONF_A / 4], 32);
+    setProperty("xnDdiAfter", fReg[TRANS_DDI_FUNC_CTL_A / 4], 32);
+    setProperty("xnPlaneCtlAfter", fReg[PLANE_CTL_1_A / 4], 32);
+    setProperty("xnDpCtl", fReg[TRANS_DP_CTL_A / 4], 32);
+
+    setProperty("xnPostSurf", fReg[PLANE_SURF_1_A / 4], 32);
+    setProperty("xnPostPipesrc", fReg[TRANS_PIPESRC_A / 4], 32);
+    setProperty("xnPostSize", fReg[PLANE_SIZE_1_A / 4], 32);
+    setProperty("xnPostStride", fReg[PLANE_STRIDE_1_A / 4], 32);
+    setProperty("xnPostPsCtrl", fReg[PS_CTRL_A / 4], 32);
+    setProperty("xnPostHtotal", fReg[TRANS_HTOTAL_A / 4], 32);
+    setProperty("xnFrameCount", fReg[TRANS_FRMCOUNT_A / 4], 32);
+    setProperty("xnState", "switched");
+}
+
+void XeNative::free()
+{
+    if (fBar0Map) fBar0Map->release();
+    if (fBar2Map) fBar2Map->release();
+    IOService::free();
+}

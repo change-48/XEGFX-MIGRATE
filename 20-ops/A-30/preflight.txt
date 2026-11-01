@@ -1,0 +1,24 @@
+== nvram ==
+xegfx-disp-expose	%00
+xegfx-auto-boot	0
+xegfx-disp-phase	%00
+xegfx-disp-starts	%01%00%00%00
+xegfx-disp-fail	%01
+xegfx.autostage	6
+xegfx-disp-bootarm	%01
+xegfx-disp-trial	%00
+xegfx-p44-used	1
+== loaded ==
+  144    0 0xffffff7f966b9000 0x1e62     0x1e62     org.watchthelight.IGPUConsoleRange (0.4) 501286BF-A0FA-35DF-AE94-8C3D51D274AA <19 17 9 7 6 3 1>
+  145    0 0xffffff7f96cdc000 0x2d05     0x2d05     org.watchthelight.XeGfxIntelFB (0.8) D5E3F45B-564C-3B0F-895F-749618804B47 <129 124 19 6 3 1>
+  146    0 0xffffff7f966bd000 0x2db2     0x2db2     com.nullmoth.NMIntelFB (0.3) DEC058CB-B1EB-3D2B-8B2E-0564E186EC53 <124 19 7 6 3>
+  163    0 0xffffff7f96c89000 0x35c4     0x35c4     org.watchthelight.XeGfxAGDC (0.1.1) D3BC8646-C9B1-3328-BA79-0038D8463596 <132 7 6 3 1>
+== NMXAccel ==
+0
+== agdc ==
+debug.xegfx_agdc: 0
+== screen ==
+          Resolution: 3120 x 2080
+          Online: Yes
+== ws ==
+204

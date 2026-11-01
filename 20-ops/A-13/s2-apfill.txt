@@ -1,0 +1,2 @@
+apfill           ok  aperture 268435456  need_end 0x28c1800
+px seen via MMIO [0]=0xffffffff mid=0xff0000ff  sum 0x315541e49cb6

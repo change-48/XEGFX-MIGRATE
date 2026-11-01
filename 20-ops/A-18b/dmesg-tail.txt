@@ -1,0 +1,25 @@
+[  374.969567]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 345 pid 741 -> errno 19
+[  374.970013]: xegfx: ioctl 0x80104e42 (nr 0x42) inst 345 pid 741 -> errno 2
+[  374.970353]: xegfx: ioctl 0xc0186475 (nr 0x75) inst 345 pid 741 -> errno 1
+[  374.974643]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 345 pid 741 -> errno 19
+[  374.974692]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 345 pid 741 -> errno 19
+[  377.237217]: xegfx: ioctl 0xc0186473 (nr 0x73) inst 382 pid 600 -> errno 22
+[  377.237265]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 382 pid 600 -> errno 19
+[  377.237710]: xegfx: ioctl 0x80104e42 (nr 0x42) inst 382 pid 600 -> errno 2
+[  377.238107]: xegfx: ioctl 0xc0186475 (nr 0x75) inst 382 pid 600 -> errno 1
+[  377.241925]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 382 pid 600 -> errno 19
+[  377.241937]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 382 pid 600 -> errno 19
+[  397.129973]: NMXAccel: getStampMemory(<ptr>) -> descriptor <ptr> (4096 stamps, 16 KB)
+[  397.130000]: NMXAccel: getStampMemory(<ptr>) -> descriptor <ptr> (4096 stamps, 16 KB)
+[  397.130799]: NMXAccel: createUserGPUTask -> <ptr> init=1
+[  397.130813]: NMXAccel: createUserGPUTask -> <ptr> init=1
+[  397.820760]: xegfx: ioctl 0xc0186473 (nr 0x73) inst 406 pid 2024 -> errno 22
+[  397.820801]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 406 pid 2024 -> errno 19
+[  397.820989]: xegfx: ioctl 0x80104e42 (nr 0x42) inst 406 pid 2024 -> errno 2
+[  397.821223]: xegfx: ioctl 0xc0186475 (nr 0x75) inst 406 pid 2024 -> errno 1
+[  397.825316]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 406 pid 2024 -> errno 19
+[  397.825358]: xegfx: ioctl 0xc0106446 (nr 0x46) inst 406 pid 2024 -> errno 19
+[  449.463535]: NMXAccel: getStampMemory(<ptr>) -> descriptor <ptr> (4096 stamps, 16 KB)
+[  449.463542]: NMXAccel: getStampMemory(<ptr>) -> descriptor <ptr> (4096 stamps, 16 KB)
+[  449.463710]: NMXAccel: createUserGPUTask -> <ptr> init=1
+[  449.463713]: NMXAccel: createUserGPUTask -> <ptr> init=1

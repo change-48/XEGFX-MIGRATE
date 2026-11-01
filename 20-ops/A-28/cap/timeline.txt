@@ -1,0 +1,12 @@
+== pre 19:02:39 ws=204 ==
+kickstart 19:02:48
+new ws 2152 at 19:02:48
+sampled at 19:02:51
+ioreg 1 19:02:55 ws=2152
+ioreg 2 19:03:04 ws=2195
+ioreg 3 19:03:14 ws=
+00:06  2249
+/Library/Logs/DiagnosticReports/WindowServer-2026-10-31-183951.ips
+/Library/Logs/DiagnosticReports/WindowServer-2026-10-31-175500.ips
+/Library/Logs/DiagnosticReports/WindowServer-2026-10-31-184151.ips
+done 19:03:33

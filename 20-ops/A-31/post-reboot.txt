@@ -1,0 +1,38 @@
+== date ==
+Sat Oct 31 21:15:39 CST 2026
+== uptime ==
+21:15  up 1 min, 1 user, load averages: 5.94 1.95 0.74
+== nvram ==
+xegfx-disp-expose	%00
+xegfx-auto-boot	0
+xegfx-disp-phase	%00
+xegfx-disp-starts	%01%00%00%00
+xegfx-disp-fail	%01
+xegfx.autostage	6
+xegfx-disp-trial	%00
+xegfx-p44-used	1
+== armed ==
+ls: /var/db/xegfx/armed: No such file or directory
+== loaded ==
+No variant specified, falling back to release
+  134    0 0xffffff7f966b9000 0x1e62     0x1e62     org.watchthelight.IGPUConsoleRange (0.4) 501286BF-A0FA-35DF-AE94-8C3D51D274AA <19 17 9 7 6 3 1>
+  139    0 0xffffff7f96cdc000 0x2d05     0x2d05     org.watchthelight.XeGfxIntelFB (0.8) D5E3F45B-564C-3B0F-895F-749618804B47 <138 127 19 6 3 1>
+  148    0 0xffffff7f966bd000 0x2db2     0x2db2     com.nullmoth.NMIntelFB (0.3) DEC058CB-B1EB-3D2B-8B2E-0564E186EC53 <127 19 7 6 3>
+  162    0 0xffffff7f96c89000 0x35c4     0x35c4     org.watchthelight.XeGfxAGDC (0.1.1) D3BC8646-C9B1-3328-BA79-0038D8463596 <142 7 6 3 1>
+== stage/results ==
+sysctl: unknown oid 'debug.xegfx_stage'
+               1668512115       540699764      1852534389       544110447
+                543451503      1650811943      2016307061      2019977061
+               1936028255      1937009781            2599                
+
+== NMXAccel ==
+0
+== screen ==
+          Resolution: 3120 x 2080
+          UI Looks like: 3120 x 2080 @ 120.00Hz
+          Online: Yes
+== ws ==
+01:14   204
+== panic ==
+-rw-rw-rw-@ 1 root  _analyticsusers  9367 Oct 31 21:14 /Library/Logs/DiagnosticReports/Kernel-2026-10-31-211427.panic
+-rw-rw-rw-@ 1 root  _analyticsusers  9233 Oct 31 18:44 /Library/Logs/DiagnosticReports/Kernel-2026-10-31-184440.panic

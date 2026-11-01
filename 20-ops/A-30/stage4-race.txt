@@ -1,0 +1,12 @@
+49:2026-10-31 20:55:30.958450+0800 0x930d     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: boot-armed by NVRAM xegfx-disp-bootarm: stages 1..7 scheduled on a kernel thread
+50:2026-10-31 20:55:30.958589+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: boot-armed: stages 1..7 start in 2000 ms, budget 90 s, stage watchdog off
+69:2026-10-31 20:55:31.047054+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus         drmn0 state 10 driver -
+99:2026-10-31 20:55:31.090338+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: timing fallback: A-27 static panel pclk 900045000 Hz 3120x2080 ht 3400 vt 2208 hs 3332..3336 vs 2202..2203 refresh 119891 mHz
+116:2026-10-31 20:55:31.173158+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) <6>[drm] Initialized i915 1.6.0 for drmn0 on minor 0
+117:2026-10-31 20:55:31.173455+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: ran 58 sysinit_set entries
+123:2026-10-31 20:55:31.173522+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus         drmn0 state 30 driver drmn
+147:2026-10-31 20:55:32.959002+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: boot stage 4 start (t+0 ms)
+151:2026-10-31 20:55:32.961615+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: ran 58 sysinit_set entries
+157:2026-10-31 20:55:32.961679+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus         drmn0 state 30 driver drmn
+179:2026-10-31 20:55:33.063133+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: boot stage 4 rc=-19 in 104 ms (t+104 ms)
+180:2026-10-31 20:55:33.063158+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: M4a bring-up stopped (failed, stage 3, rc -19); manual debug.xegfx_stage unchanged

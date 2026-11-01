@@ -1,0 +1,21 @@
+Graphics/Displays:
+
+    Intel Arrow Lake Xe-LPG+:
+
+      Chipset Model: Intel Arrow Lake Xe-LPG+
+      Type: GPU
+      Bus: Built-In
+      VRAM (Dynamic, Max): 24576 MB
+      Vendor: Intel
+      Device ID: 0x7d51
+      Revision ID: 0x0003
+      Metal: Supported
+      Displays:
+        EDO14.55:
+          Resolution: 3120 x 2080
+          UI Looks like: 3120 x 2080 @ 120.00Hz
+          Framebuffer Depth: 24-Bit Color (ARGB8888)
+          Main Display: Yes
+          Mirror: Off
+          Online: Yes
+

@@ -1,0 +1,40 @@
+2026-10-31 17:24:49.990156+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: newResource -> <private>
+2026-10-31 17:24:49.990157+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: newResource -> <private>
+2026-10-31 17:24:49.990157+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: resource init BEGIN flags=0x40 shared=0x0
+2026-10-31 17:24:49.990158+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: resource init BEGIN flags=0x40 shared=0x0
+2026-10-31 17:24:49.990163+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: resource init END ok=1
+2026-10-31 17:24:49.990164+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: resource init END ok=1
+2026-10-31 17:24:49.990201+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: pipe init END index=0 ok=1
+2026-10-31 17:24:49.990202+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: pipe init END index=0 ok=1
+2026-10-31 17:24:49.990203+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel:   sysctl: index 4 -> pipe 0 (<private>), count 1 (matched after registration)
+2026-10-31 17:24:49.990204+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel:   sysctl: index 4 -> pipe 0 (<private>), count 1 (matched after registration)
+2026-10-31 17:24:49.990206+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel:   framebuffer count after = 1
+2026-10-31 17:24:49.990206+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel:   framebuffer count after = 1
+2026-10-31 17:24:49.990208+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel:   delivering display_mode_will_change/did_change (nest 0, pipes 1)
+2026-10-31 17:24:49.990209+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel:   delivering display_mode_will_change/did_change (nest 0, pipes 1)
+2026-10-31 17:24:49.990215+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: DM displayModeWillChange
+2026-10-31 17:24:49.990216+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: DM displayModeWillChange
+2026-10-31 17:24:49.990216+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: DM displayModeDidChange -> true
+2026-10-31 17:24:49.990217+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: DM displayModeDidChange -> true
+2026-10-31 17:24:49.990219+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: enableAccelerator() from displayModeDidChange (call #2)
+2026-10-31 17:24:49.990220+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: enableAccelerator() from displayModeDidChange (call #2)
+2026-10-31 17:24:49.990299+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: boot framebuffer .Display_boot: 3120 x 2080 pitch 12480, 25958528 bytes at <private> (CPU copy target)
+2026-10-31 17:24:49.990301+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: boot framebuffer .Display_boot: 3120 x 2080 pitch 12480, 25958528 bytes at <private> (CPU copy target)
+2026-10-31 17:24:49.990304+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: newVidMemory -> <private>
+2026-10-31 17:24:49.990305+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: newVidMemory -> <private>
+2026-10-31 17:24:49.990306+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: NVDisplayPipe::initFramebufferResource(head 4, index 0, res <private>) -> vidmem <private> over the LIVE SCANOUT phys 0x70800000 3120 x 2080 pitch 12480 (25958528 bytes)
+2026-10-31 17:24:49.990308+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: NVDisplayPipe::initFramebufferResource(head 4, index 0, res <private>) -> vidmem <private> over the LIVE SCANOUT phys 0x70800000 3120 x 2080 pitch 12480 (25958528 bytes)
+2026-10-31 17:24:49.990312+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: newMemoryMap -> <private>
+2026-10-31 17:24:49.990313+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: newMemoryMap -> <private>
+2026-10-31 17:24:49.990318+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: NVVidMemory::allocPhysical(<private>): SCANOUT phys 0x70800000 (25958528 bytes) -- already backed, nothing allocated
+2026-10-31 17:24:49.990320+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: NVVidMemory::allocPhysical(<private>): SCANOUT phys 0x70800000 (25958528 bytes) -- already backed, nothing allocated
+2026-10-31 17:24:49.990326+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel:   GATES after deliverModeChange: accel+0xc78 = 0x02 (enabled bit 0x2 SET)
+2026-10-31 17:24:49.990327+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel:   GATES after deliverModeChange: accel+0xc78 = 0x02 (enabled bit 0x2 SET)
+2026-10-31 17:24:49.990329+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel:   GATES after deliverModeChange: pipe 0 active(+0x298) = 1, wsaaDefer(+0x282) = 0
+2026-10-31 17:24:49.990330+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel:   GATES after deliverModeChange: pipe 0 active(+0x298) = 1, wsaaDefer(+0x282) = 0
+2026-10-31 17:24:49.990334+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel:   IOGLBundleName=AppleMetalOpenGLRenderer -- NEW GL processes get a hardware renderer over Metal
+2026-10-31 17:24:49.990335+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel:   IOGLBundleName=AppleMetalOpenGLRenderer -- NEW GL processes get a hardware renderer over Metal
+2026-10-31 17:24:49.990336+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel:   debug.xegfxaccelfb now reads 1 -- armed-only Metal clients may have a device THIS BOOT ONLY (heads published 0x10, registered 0x10, piped 0x10)
+2026-10-31 17:24:49.990337+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel:   debug.xegfxaccelfb now reads 1 -- armed-only Metal clients may have a device THIS BOOT ONLY (heads published 0x10, registered 0x10, piped 0x10)
+2026-10-31 17:24:49.990339+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: sysctl debug.xegfxaccelfb=3: scanout-backed display pipe ENABLED; the registration just delivered the mode change -- not delivering it twice
+2026-10-31 17:24:49.990340+0800 0x2181     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: sysctl debug.xegfxaccelfb=3: scanout-backed display pipe ENABLED; the registration just delivered the mode change -- not delivering it twice

@@ -1,0 +1,5 @@
+=== A-33 results (bootarm, after kmutil load core) ===
+0 1 1 1 1 1 1 1   <- od -A n -t d4 debug.xegfx_results @21:45:55
+M4a core ready @21:45:24.389  stages 1..7 passed, AGDC/K5 1/1
+nub lines: 4   ran58=1
+accel rc=0 NMXAccel=1 ; display rc=0 FB@1s AccelPresent@1s(n=2) agdc=1 fbmap n=1 [0]id 0x100000796

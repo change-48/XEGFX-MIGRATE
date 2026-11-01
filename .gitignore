@@ -1,0 +1,10 @@
+# local agent session data
+.workbuddy/
+
+# official third-party driver package — not redistributed
+00-official/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini

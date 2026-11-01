@@ -1,0 +1,21 @@
+=== live S3 registry: the node carrying IOAccelerator2D.plugin (from ioreg-s3.txt) ===
+    | |   |   |   "IOClass" = "NMXAccel"
+    | |   |   |   "NVAccelEnabledFrom" = "start"
+    | |   |   |   "IOPersonalityPublisher" = "org.watchthelight.XeGfxAccel"
+    | |   |   |   "NVAccelSurfaceWait" = 1
+    | |   |   |   "IOReportLegendPublic" = Yes
+    | |   |   |   "AGCInfo" = {"fBusyCount"=0,"poweredOffByAGC"=No,"fSubmissionsSinceLastCheck"=0,"fLastSubmissionPID"=0}
+    | |   |   |   "IOProviderClass" = "IOPCIDevice"
+    | |   |   |   "NVAccelEnableCount" = 1
+    | |   |   |   "MetalPluginName" = "../../../Library/GPUBundles/NVMTLDriver"
+    | |   |   |   "IOProbeScore" = 100
+    | |   |   |   "SurfaceList" = ()
+    | |   |   |   "PerformanceStatisticsAccum" = {"orphanedReusableVidMemoryHitRate"=0,"texturePageOutBytes"=0,"swapCompleteVideoWaitTime"=0,"orphaned
+    | |   |   |   "IOPropertyMatch" = {"nmxgpu-claimed"=Yes}
+    | |   |   |   "IOAccelRevision" = 2
+    | |   |   |   "IOCFPlugInTypes" = {"ACCF0000-0000-0000-0000-000a2789904e"="IOAccelerator2D.plugin"}
+    | |   |   |   "MetalPluginClassName" = "NVMTLDevice"
+    | |   |   |   "CFBundleIdentifierKernel" = "org.watchthelight.XeGfxAccel"
+...
+=== proof of class: search backwards for class NMXAccel ===
+2234:    | |   | +-o NMXAccel  <class NMXAccel, id 0x10000079d, registered, matched, active, busy 0 (1 ms), retain 68>

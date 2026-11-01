@@ -1,0 +1,10 @@
+    | |   "IOClass" = "AppleACPIPlatformExpert"
+    | | | |   "IOClass" = "AppleACPICPU"
+    | | |   |   "IOClass" = "X86PlatformPlugin"
+    | | |   |       "IOClass" = "ApplePlatformEnabler"
+    | | |   |       "IOCFPlugInTypes" = {"CFB68B9A-40AF-437A-AFFE-FE671C6193C5"="ApplePlatformEnabler.kext/Contents/PlugIns/ApplePlatformEnablerLib.plugin"}
+    | | |   |       "IOClass" = "AGPMController"
+    | | |         "IOClass" = "X86PlatformShim"
+    | |       "IOClass" = "SMCProcessor"
+    | |       "IOClass" = "AppleACPICPU"
+    | |       "IOClass" = "AppleACPICPU"

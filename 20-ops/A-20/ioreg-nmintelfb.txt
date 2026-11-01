@@ -1,0 +1,40 @@
+    | |   | +-o NMIntelFB  <class NMIntelFB, id 0x10000050e, registered, matched, active, busy 0 (56 ms), retain 21>
+    | |   |   | {
+    | |   |   |   "IOPMStrictTreeOrder" = Yes
+    | |   |   |   "IOFBMemorySize" = 25958400
+    | |   |   |   "boot-gamma-restored" = <00000000>
+    | |   |   |   "IOFBDependentIndex" = 0
+    | |   |   |   "IOFBUIScale" = <00000000>
+    | |   |   |   "NMIntelFBPipe" = 0
+    | |   |   |   "NMIntelFBDisplayVersion" = 14
+    | |   |   |   "IOFBCurrentPixelCount" = 7507200
+    | |   |   |   "IOFramebufferOpenGLIndex" = 0
+    | |   |   |   "IODisplayParameters" = "IOFramebufferParameterHandler is not serializable"
+    | |   |   |   "startup-timing" = <00000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000093c5ae350000000093c5ae350000000093c5ae3500000000300c000018010000d40000000400000020080000800000007a0000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000>
+    | |   |   |   "IOPCIClassMatch" = "0x03000000&0xff000000"
+    | |   |   |   "built-in" = Yes
+    | |   |   |   "IOPersonalityPublisher" = "com.nullmoth.NMIntelFB"
+    | |   |   |   "IOPowerManagement" = {"ChildrenPowerState"=1,"CurrentPowerState"=1,"CapabilityFlags"=32768,"ChildProxyPowerState"=1,"MaxPowerState"=1}
+    | |   |   |   "IOFBCurrentPixelClock" = 897230515
+    | |   |   |   "IOFBDependentID" = 6360568414703976449
+    | |   |   |   "IOFBConfig" = {"IOFBModes"=({"ID"=1,"DM"=<300c00002008000018847700000000000f00000000000000000000000000000000000000>,"DF"=7,"TM"=<01000000000000000000000000000000000000000000000000000000000000000000000000000000b3a67a3500000000b3a67a3500000000b3a67a3500000000300c000018010000d40000000400000020080000800000007a0000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000>}),"dims"=<ffffffffffffffff0000000000000000>}
+    | |   |   |   "IOFBWaitCursorFrames" = 29
+    | |   |   |   "IOFBIntegrated" = Yes
+    | |   |   |   "IOFBWaitCursorPeriod" = 33333333
+    | |   |   |   "IOFBNeedsRefresh" = Yes
+    | |   |   |   "IOFBTransform" = 0
+    | |   |   |   "CFBundleIdentifier" = "com.nullmoth.NMIntelFB"
+    | |   |   |   "IOFBCursorInfo" = ()
+    | |   |   |   "IOProviderClass" = "IOPCIDevice"
+    | |   |   |   "IOClass" = "NMIntelFB"
+    | |   |   |   "CFBundleIdentifierKernel" = "com.nullmoth.NMIntelFB"
+    | |   |   |   "IOFBCurrentPixelCountReal" = 7507200
+    | |   |   |   "IOGeneralInterest" = "IOCommand is not serializable"
+    | |   |   |   "IOPCIMatch" = "0x00008086&0x0000ffff"
+    | |   |   |   "IOMatchCategory" = "IOFramebuffer"
+    | |   |   |   "IOProbeScore" = 66000
+    | |   |   | }
+    | |   |   | 
+    | |   |   +-o AppleMCCSControlModule  <class AppleMCCSControlModule, id 0x10000056e, registered, matched, active, busy 0 (25 ms), retain 7>
+    | |   |   | | {
+    | |   |   | |   "IOProbeScore" = 0

@@ -1,0 +1,36 @@
+== A-34 results.txt ==
+== 门2 (第一次进 S3, fbgeom 未完成时) ==
+0 1 1 1 -28 0 0 0 (stage4 rc=-28 in 250ms)
+== 门2 (第二次进 S3, fbgeom 完成 22:00:02 后 load core 22:00:15) ==
+results: 0 1 1 1 1 1 1 1
+M4a core ready: 2026-10-31 22:00:18.190617 stages 1..7 passed, AGDC/K5 1/1, XeGfxCoreReady published
+ran58 = 1
+nub = 4 行; NMXAccel = 1
+FB @1s; AccelPresent @1s n=2; agdc=1; fbmap n=1 [0]id 0x1000007f0
+== 门4 ioreg-caps ==
+    | |   |   |   "IOAccelDisplayPipeCapabilities" = {"DisplayPipeSupported"=Yes,"TransactionsSupported"=Yes}
+    | |   |   |   "IOPCIPrimaryMatch" = "0x00008086&0x0000ffff"
+    | |   |   |   "IOMatchCategory" = "IOAccelerator"
+    | |   |   |   "CFBundleIdentifier" = "org.watchthelight.XeGfxAccel"
+    | |   |   |   "InternalStatisticsAccm" = {}
+    | |   |   |   "PerformanceStatistics" = {"orphanedReusableVidMemoryHitRate"=0,"texturePageOutBytes"=0,"swapCompleteVideoWaitTime"=0,"orphanedReusableSysMemoryHitRate"=0,"dataBufferCount"=0,"oolTexturePageInBytes"=0,"textureCount"=0,"iosurfaceTextureCreationCount"=0,"surfaceReadLockIdleWaitTime"=0,"freeDataBufferWaitTime"=0,"orphanedReusableSysMemoryBytes"=0,"ioSurfaceReadOutBytes"=0,"agprefTextureCreationCount"=0,"orphanedReusableSysMemoryCount"=0,"finishAll2DWaitTime"=0,"orphanedNonReusableSysMemoryCount"=0,"ioSurfacePageOutBytes"=0,"surfaceBufferReadOutBytes"=0,"surfaceTextureCreationCount"=0,"textureReadOutBytes"=0,"gartMapInBytesPerSample"=0,"swapBytesPerSample"=0,"dataBytesPerSample"=0,"surfaceCount"=0,"clientGLWaitTime"=0,"surfaceCopyInWaitTime"=0,"clientSharedAllocatedBytes"=184320,"surfaceCopyOutWaitTime"=0,"gartMapOutBytesPerSample"=0,"ioSurfacePageInBytes"=0,"gartCacheBytes"=33554432,"volatileSurfaceCount"=0,"vramEvictionWaitTime"=0,"oolTextureCreationBytes"=0,"freeToAllocGPUAddressWaitTime"=0,"oolTextureCreationCount"=0,"orphanedReusableVidMemoryCount"=0,"orphanedReusableVidMemoryBytes"=0,"context2DCount"=0,"inUseSysMemoryBytes"=0,"bufferSwapCount"=0,"orphanedNonReusableVidMemoryBytes"=0,"contextGLCount"=0,"finish2DWaitTime"=0,"gartSizeBytes"=11453247488,"recoveryCount"=0,"stdTexturePageInBytes"=0,"agprefTextureCreationBytes"=0,"gartUsedBytes"=0,"surfaceWriteLockIdleWaitTime"=0,"surfaceBufferPageInBytes"=0,"finishGLWaitTime"=0,"iosurfaceTextureCreationBytes"=0,"finishCLWaitTime"=0,"finishVideoWaitTime"=0,"contextCLCount"=0,"freeSurfaceBackingWaitTime"=0,"swapCompleteGLWaitTime"=0,"orphanedNonReusableSysMemoryBytes"=0,"inUseVidMemoryBytes"=0,"agpTextureCreationBytes"=0,"stdTextureCreationBytes"=0,"agpTextureCreationCount"=0,"stdTextureCreationCount"=0,"surfaceSetShapeIdleWaitTime"=0,"gartFreeBytes"=11453247488,"textureVolunteerUnloadBytes"=0,"bufferFlipCount"=0,"hardwareSubmitWaitTime"=0,"swapComplete2DWaitTime"=0,"surfaceBufferPageOutBytes"=0,"surfaceBufferTextureCreationCount"=0,"hardwareWaitTime"=0,"contextVideoCount"=0,"freeSurfaceSwapBufferWaitTime"=0,"orphanedNonReusableVidMemoryCount"=0}
+    | |   |   |   "InternalStatistics" = {}
+== 判决点计数 ==
+Unable to create IOAccelDisplayPipe      9
+Interface creation error                 9
+Pipe creation failed                     9
+newDisplayPipe                           0
+initFramebufferResource                  0
+IOAccelerator2D                          1
+transient surface                        8
+has no IOCFPlugInTypes                   36
+has no plugin                            86
+newUserClient(type 0                     8
+0xe00002c9                               8
+== newUserClient type 分布 ==
+   8 0
+   2 4
+  32 5
+  32 6
+== type 0 错误码 ==
+   8 0xe00002c9

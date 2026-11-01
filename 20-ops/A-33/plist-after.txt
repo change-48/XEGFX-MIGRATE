@@ -1,0 +1,20 @@
+  "IOKitPersonalities" => {
+    "XeGfxAccel" => {
+      "CFBundleIdentifier" => "org.watchthelight.XeGfxAccel"
+      "IOCFPlugInTypes" => {
+        "ACCF0000-0000-0000-0000-000a2789904e" => "IOAccelerator2D.plugin"
+      }
+      "IOClass" => "NMXAccel"
+      "IOMatchCategory" => "IOAccelerator"
+      "IOPCIClassMatch" => "0x03000000&0xff000000"
+      "IOPCIPrimaryMatch" => "0x00008086&0x0000ffff"
+      "IOProbeScore" => 100
+      "IOPropertyMatch" => {
+        "nmxgpu-claimed" => true
+      }
+      "IOProviderClass" => "IOPCIDevice"
+      "MetalPluginClassName" => "NVMTLDevice"
+      "MetalPluginName" => "../../../Library/GPUBundles/NVMTLDriver"
+    }
+  }
+  "OSBundleLibraries" => {

@@ -1,0 +1,8 @@
+== t 13:16:16  map 0x1000 <- buf ==
+mapped           0x1000 .. 0x17e8 -> phys 0x3bc3c000  failures 0
+reg  = 0x01000000  SURFLIVE = 0x01000000
+SURF             0x01000000
+SURFLIVE         0x01000000
+PS_CTRL          0x80000200
+PLANE_SIZE       0x0437077f
+SURF_before      0xfe600000

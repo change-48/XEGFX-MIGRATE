@@ -1,0 +1,1 @@
+apcolor          ok  px[0]=0xffffffff mid=0xffffffff

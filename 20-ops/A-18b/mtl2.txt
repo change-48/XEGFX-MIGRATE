@@ -1,0 +1,9 @@
+MTLCopyAllDevices count = 1
+  device: Intel Wi-Fi 6E AX211 (CNVi, spoofed 7E40)
+default device = Intel Wi-Fi 6E AX211 (CNVi, spoofed 7E40)
+library compiled: (
+    addone
+)
+pipeline OK
+cmd status = 4
+结果: 全部正确，GPU 真的算出来了 (16/16)

@@ -1,0 +1,5 @@
+reg[2] wrote 0x000000c3  read 0x000000c3
+reg[1] wrote 0x081f0c2f  read 0x081f0c2f
+reg[3] wrote 0x0c2f081f  read 0x0c2f081f
+SURFLIVE         0x01000000
+PS_CTRL          0x80000200

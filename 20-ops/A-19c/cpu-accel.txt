@@ -1,0 +1,9 @@
+## *** Sampled system activity (Sat Oct 31 16:04:27 2026 +0800) (5039.48ms elapsed) ***
+Name                               ID     CPU ms/s  User%  Deadlines (<2 ms, 2-5 ms)  Wakeups (Intr, Pkg idle)
+WindowServer                       201    134.59    82.59  1.19    0.00               3.57    3.17              
+## *** Sampled system activity (Sat Oct 31 16:04:37 2026 +0800) (5009.77ms elapsed) ***
+Name                               ID     CPU ms/s  User%  Deadlines (<2 ms, 2-5 ms)  Wakeups (Intr, Pkg idle)
+WindowServer                       201    128.40    82.08  1.79    0.00               4.19    1.60              
+## *** Sampled system activity (Sat Oct 31 16:04:47 2026 +0800) (5010.33ms elapsed) ***
+Name                               ID     CPU ms/s  User%  Deadlines (<2 ms, 2-5 ms)  Wakeups (Intr, Pkg idle)
+WindowServer                       201    143.97    81.83  1.20    0.00               3.59    2.19              

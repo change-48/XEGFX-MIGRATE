@@ -1,0 +1,2 @@
+CodeDirectory v=20400 size=12401 flags=0x4000002(adhoc,???) hashes=381+3 location=embedded
+Executable Segment flags=0x0

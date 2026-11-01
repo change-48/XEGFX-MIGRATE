@@ -1,0 +1,829 @@
+Timestamp                       Thread     Type        Activity             PID    TTL  
+2026-10-31 20:55:25.132295+0800 0x936e     Error       0x0                  0      0    kernel: (Sandbox) [com.apple.sandbox.reporting:violation] 1 duplicate report for Sandbox: networkserviceproxy(2011) deny(1) mach-lookup com.apple.usymptomsd
+2026-10-31 20:55:25.132303+0800 0x936e     Error       0x0                  0      0    kernel: (Sandbox) [com.apple.sandbox.reporting:violation] Sandbox: spotlightknowledged(2426) deny(1) iokit-get-properties iokit-class:IOPlatformExpertDevice property:region-info
+2026-10-31 20:55:25.179766+0800 0x9364     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:25.320336+0800 0x9377     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sudo" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:55:25.816660+0800 0x9271     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp_connection_summary (tcp_usrclosed:3234)[<IPv4-redacted>:22<-><IPv4-redacted>:52973] interface: en2 (skipped: 0)
+so_gencnt: 6156 t_state: LAST_ACK process: sshd-session:2410 Duration: 2.705 sec Conn_Time: 0.003 sec bytes in/out: 4442/5734 pkts in/out: 13/26 pkt rxmit: 0 ooo pkts: 0 dup bytes in: 0 ACKs delayed: 0 delayed ACKs sent: 0
+rtt: 13.843 ms rttvar: 15.062 ms base rtt: 1 ms so_error: 0 svc/tc: 0 flow: 0xbd1c26bb
+2026-10-31 20:55:25.816678+0800 0x9271     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp_connection_summary [<IPv4-redacted>:22<-><IPv4-redacted>:52973] interface: en2 (skipped: 0)
+so_gencnt: 6156 t_state: LAST_ACK process: sshd-session:2410 flowctl: 0us (0x) SYN in/out: 1/1 FIN in/out: 1/0 RST in/out: 0/0 AccECN (client/server): Disabled/Not requested
+2026-10-31 20:55:25.998372+0800 0x9364     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:26.144217+0800 0x92ee     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:55:26.817312+0800 0x9364     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:27.440829+0800 0x90c0     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:55:27.635867+0800 0x9399     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:28.454507+0800 0x93a1     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:29.273180+0800 0x93a1     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:29.783883+0800 0x924d     Default     0x0                  0      0    kernel: bpf0 attached to en0 by configd:109
+2026-10-31 20:55:29.783966+0800 0x924d     Default     0x0                  0      0    kernel: bpf0 closed and detached from en0 fcount 0 dcount 0 by configd:109
+2026-10-31 20:55:29.836720+0800 0x47d      Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp connect incoming: [<IPv4-redacted>:22<-><IPv4-redacted>:52985] interface: en2 (skipped: 0)
+so_gencnt: 6176 t_state: SYN_RCVD process: launchd:1 SYN in/out: 1/0 bytes in/out: 0/0 pkts in/out: 0/0 rtt: 0.0 ms rttvar: 250.0 ms base_rtt: 1 ms error: 0 so_error: 0 svc/tc: 0 flow: 0xaa31d10b
+so_qlimit: 128 so_qlen: 1 so_incqlen: 1
+2026-10-31 20:55:29.836815+0800 0x47d      Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[14]: flow_entry_alloc               fe "0 proc kernel_task(0)launchd nx_port 1 flow_uuid 377D3E18-6C1A-4266-B2EC-EBC9889B3A71 flags 0x14120<CONNECTED,QOS_MARKING,EXT_PORT,EXT_FLOWID> ipver=4,src=<IPv4-redacted>.22,dst=<IPv4-redacted>.52985,proto=0x06 mask=0x0000003f,hash=0xe84e6749 tp_proto=0x06"
+2026-10-31 20:55:29.868863+0800 0x47d      Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp connected: [<IPv4-redacted>:22<-><IPv4-redacted>:52985] interface: en2 (skipped: 0)
+so_gencnt: 6176 t_state: ESTABLISHED process: launchd:1 SYN in/out: 1/1 bytes in/out: 0/0 pkts in/out: 0/0 rtt: 0.0 ms rttvar: 250.0 ms base_rtt: 1 ms error: 0 so_error: 0 svc/tc: 0 flow: 0xaa31d10b
+so_qlimit: 128 so_qlen: 1 so_incqlen: 1
+2026-10-31 20:55:29.869122+0800 0x9331     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp accept: [<IPv4-redacted>:22<-><IPv4-redacted>:52985] interface: en2 (skipped: 0)
+so_gencnt: 6176 t_state: ESTABLISHED process: launchd:1 SYN in/out: 1/1 bytes in/out: 0/0 pkts in/out: 0/0 rtt: 32.0 ms rttvar: 16.0 ms base_rtt: 1 ms error: 0 so_error: 0 svc/tc: 0 flow: 0xaa31d10b
+2026-10-31 20:55:29.901150+0800 0x93a7     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sshd" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:55:29.920980+0800 0x93a9     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sshd-session" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:55:29.945059+0800 0x93ac     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sshd-auth" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:55:29.953431+0800 0x93a1     Default     0x0                  0      0    kernel: (IO80211Family) IO80211PeerMonitor::checkForDPS()  Enter
+2026-10-31 20:55:29.953461+0800 0x93a1     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: MonitorTimer en2/5000: packet counts: I0 Q0 O0
+2026-10-31 20:55:29.953473+0800 0x93a1     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BE<0 0 0 0 0 0 0 0 0 0 0> (4999ms)
+2026-10-31 20:55:29.953479+0800 0x93a1     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BK<0 0 0 0 0 0 0 0 0 0 0> (4999ms)
+2026-10-31 20:55:29.953483+0800 0x93a1     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VI<0 0 0 0 0 0 0 0 0 0 0> (4999ms)
+2026-10-31 20:55:29.953486+0800 0x93a1     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VO<0 0 0 0 0 0 0 0 0 0 0> (4999ms)
+2026-10-31 20:55:29.953490+0800 0x93a1     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: postMessageOnInfraInterface:3463 posting msgId:169 on skywalk infraInterface
+2026-10-31 20:55:29.953507+0800 0x93a1     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BE : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:29.953524+0800 0x93a1     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BK : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:29.953526+0800 0x93a1     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VI : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:29.953527+0800 0x93a1     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VO : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:29.953531+0800 0x93a1     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: L3 Control VO TX(00:00:00:00:00:00) Success=0 NoACK=0 Expired=0 OtherErr=0
+2026-10-31 20:55:30.091623+0800 0x93a1     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:30.210822+0800 0x93b5     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "zsh" in keys-off mode due to identity: com.apple.zsh
+2026-10-31 20:55:30.221147+0800 0x93b7     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sudo" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:55:30.910395+0800 0x9399     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:30.947637+0800 0x930d     Default     0x0                  0      0    kernel: KextLog: AuxKC bundle org.watchthelight.XeGfx marked as loadable
+2026-10-31 20:55:30.958450+0800 0x930d     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: boot-armed by NVRAM xegfx-disp-bootarm: stages 1..7 scheduled on a kernel thread
+2026-10-31 20:55:30.958589+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: boot-armed: stages 1..7 start in 2000 ms, budget 90 s, stage watchdog off
+2026-10-31 20:55:30.960397+0800 0x93bf     Default     0x0                  0      0    kernel: Kext com.apple.driver.IOVersatile - can't resolve dependencies; OSBundleLibraries missing/invalid type.
+2026-10-31 20:55:30.960418+0800 0x93bf     Default     0x0                  0      0    kernel: Can't load kext com.apple.driver.IOVersatile - failed to resolve library dependencies.
+2026-10-31 20:55:30.960426+0800 0x93bf     Default     0x0                  0      0    kernel: Kext com.apple.driver.IOVersatile failed to load (0xdc00800e).
+2026-10-31 20:55:30.960432+0800 0x93bf     Default     0x0                  0      0    kernel: Failed to load kext com.apple.driver.IOVersatile (error 0xdc00800e).
+2026-10-31 20:55:30.961020+0800 0x93bf     Default     0x0                  0      0    kernel: Couldn't alloc class "IOVersatileHWA"
+2026-10-31 20:55:30.961559+0800 0x9395     Error       0x0                  0      0    kernel: (Sandbox) [com.apple.sandbox.reporting:violation] 1 duplicate report for Sandbox: spotlightknowledged(2426) deny(1) iokit-get-properties iokit-class:IOPlatformExpertDevice property:region-info
+2026-10-31 20:55:30.961565+0800 0x9395     Error       0x0                  0      0    kernel: (Sandbox) [com.apple.sandbox.reporting:violation] Sandbox: kernelmanagerd(128) deny(1) file-write-create /private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/T/com.apple.kernelmanagerd/TemporaryItems
+2026-10-31 20:55:30.961642+0800 0x9395     Error       0x0                  0      0    kernel: (Sandbox) [com.apple.sandbox.reporting:violation] Sandbox: kernelmanagerd(128) deny(1) file-write-create /private/var/db/loadedkextmt.plist.sb-7ea2085b-VUP61O
+2026-10-31 20:55:30.967018+0800 0x93c3     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sudo" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:55:30.990083+0800 0x93c9     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sudo" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:55:31.045750+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: vm: vmap selftest 0
+2026-10-31 20:55:31.046462+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: iGPU 8086:7d51 stolen base 0x0 size 0 MiB (unused: i915 reads GGC/LMEMBAR on this IP)
+2026-10-31 20:55:31.046476+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: no IOMMU, DMA addresses are physical
+2026-10-31 20:55:31.047004+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus root0 state 30 driver root
+2026-10-31 20:55:31.047013+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus   pcib0 state 30 driver pcib
+2026-10-31 20:55:31.047020+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus     pci0 state 30 driver pci
+2026-10-31 20:55:31.047032+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus       hostb0 state 30 driver hostb pci 8086:7d06 class 060000
+2026-10-31 20:55:31.047043+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus       vgapci0 state 30 driver vgapci pci 8086:7d51 class 030000
+2026-10-31 20:55:31.047054+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus         drmn0 state 10 driver -
+2026-10-31 20:55:31.047065+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus       ? state 10 driver - pci 8086:7702 class 060100
+2026-10-31 20:55:31.047075+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass root:
+2026-10-31 20:55:31.047080+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:31.047088+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass pcib:
+2026-10-31 20:55:31.047093+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:31.047099+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass pci:
+2026-10-31 20:55:31.047103+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:31.047110+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass hostb:
+2026-10-31 20:55:31.047146+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:31.047154+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass vgapci:
+2026-10-31 20:55:31.047160+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:31.047165+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass drmn:
+2026-10-31 20:55:31.047170+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:31.054090+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) <6>[drm] Got Intel graphics stolen memory base 0x0, size 0x0
+2026-10-31 20:55:31.054486+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] xegfx: display left alone (compat.linuxkpi.i915_xegfx_no_display)
+2026-10-31 20:55:31.055373+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] Skipping GT1 (Standalone Media GT) - MEI driver not available on FreeBSD
+2026-10-31 20:55:31.077984+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] xegfx: stolen allocator starts at 0x18d0000, after the boot framebuffer
+2026-10-31 20:55:31.089994+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] XEGFX_DISP: level=2
+2026-10-31 20:55:31.090007+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] XEGFX_DISP: HAS_DISPLAY=1 pipe_mask=0x1
+2026-10-31 20:55:31.090021+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] XEGFX_DISP: opregion=present
+2026-10-31 20:55:31.090036+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] XEGFX_DISP: vbt.header_version=261
+2026-10-31 20:55:31.090050+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] XEGFX_DISP: bdb_blocks=12 child_devices=6
+2026-10-31 20:55:31.090067+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] XEGFX_DISP: bios: bdb_blocks=12 child_devices=6 vbt_version=261
+2026-10-31 20:55:31.090088+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] XEGFX_DISP: child[0] handle=0x0008 type=0x1806 ext=0x0000 port=10 aux=64 ddc=3 i2c=0 addr=0x00 dp=0 hdmi=0 lane=3 rate=0
+2026-10-31 20:55:31.090109+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] XEGFX_DISP: child[1] handle=0x0004 type=0x60d2 ext=0x0000 port=1 aux=16 ddc=2 i2c=0 addr=0x00 dp=0 hdmi=0 lane=3 rate=0
+2026-10-31 20:55:31.090127+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] XEGFX_DISP: child[2] handle=0x0040 type=0x68c6 ext=0x0000 port=13 aux=96 ddc=3 i2c=0 addr=0x00 dp=0 hdmi=0 lane=3 rate=0
+2026-10-31 20:55:31.090144+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] XEGFX_DISP: child[3] handle=0x0020 type=0x68c6 ext=0x0000 port=15 aux=112 ddc=4 i2c=0 addr=0x00 dp=0 hdmi=0 lane=3 rate=0
+2026-10-31 20:55:31.090160+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] XEGFX_DISP: child[4] handle=0x0010 type=0x68c6 ext=0x0000 port=17 aux=128 ddc=5 i2c=0 addr=0x00 dp=0 hdmi=0 lane=3 rate=0
+2026-10-31 20:55:31.090176+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] XEGFX_DISP: child[5] handle=0x0002 type=0x68c6 ext=0x0000 port=19 aux=144 ddc=6 i2c=0 addr=0x00 dp=0 hdmi=0 lane=3 rate=0
+2026-10-31 20:55:31.090338+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: timing fallback: A-27 static panel pclk 900045000 Hz 3120x2080 ht 3400 vt 2208 hs 3332..3336 vs 2202..2203 refresh 119891 mHz
+2026-10-31 20:55:31.090956+0800 0x9402     Default     0x0                  0      0    kernel: (IOPCIFamily) [PCIe:0 3237255882024 ns] [childPublished()] child XeGfxDisplayNub(0x100000a22) published
+2026-10-31 20:55:31.091429+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: successfully loaded firmware image 'i915/mtl_guc_70.bin'
+2026-10-31 20:55:31.096844+0800 0x9402     Default     0x0                  0      0    kernel: (XeGfxDisplay) XEGFX_DISPLAY: probe: enabled (boot-arg=0 nub-contract=1), claiming XeGfxDisplayNub
+2026-10-31 20:55:31.096899+0800 0x9402     Default     0x0                  0      0    kernel: (XeGfxDisplay) XEGFX_DISPLAY: starting (provider XeGfxDisplayNub)
+2026-10-31 20:55:31.097033+0800 0x9402     Default     0x0                  0      0    kernel: (XeGfxDisplay) XEGFX_DISPLAY: nub: xegfx-display-level=2 vbt-bdb-blocks=12 vbt-child-devices=6
+2026-10-31 20:55:31.097051+0800 0x9402     Default     0x0                  0      0    kernel: (XeGfxDisplay) XEGFX_DISPLAY: nub: fb-index=0 vbt-data=7680 vbt-children=240 child-size=40 timing=52
+2026-10-31 20:55:31.097080+0800 0x9402     Default     0x0                  0      0    kernel: (XeGfxDisplay) XEGFX_DISPLAY: mode: timing tag 0x4b350001 pclk 900045000 Hz raster 3120x2080 total 3400x2208 hsync 3332..3336 vsync 2202..2203 refresh 119.891 Hz
+2026-10-31 20:55:31.097098+0800 0x9402     Default     0x0                  0      0    kernel: (XeGfxDisplay) XEGFX_DISPLAY: mode: 0 id 1: 3120x2080 nominal 3120x2080@119.891 clk 900045000 Hz htot 3400 vtot 2208 hsync 212+4 vsync 122+1 polarity +- bpp 32 (native)
+2026-10-31 20:55:31.097116+0800 0x9402     Default     0x0                  0      0    kernel: (XeGfxDisplay) XEGFX_DISPLAY: mode: 1 id 2: 3120x2080 nominal 1560x1040@119.891 clk 900045000 Hz htot 3400 vtot 2208 hsync 212+4 vsync 122+1 polarity +- bpp 32 (HiDPI candidate, not activated)
+2026-10-31 20:55:31.097315+0800 0x9402     Default     0x0                  0      0    kernel: (XeGfxDisplay) XEGFX_DISPLAY: provider has no fb-index
+2026-10-31 20:55:31.100014+0800 0x9395     Error       0x0                  0      0    kernel: (Sandbox) [com.apple.sandbox.reporting:violation] Sandbox: kernelmanagerd(128) deny(1) file-write-create /private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/T/com.apple.kernelmanagerd/TemporaryItems
+2026-10-31 20:55:31.101208+0800 0x9395     Error       0x0                  0      0    kernel: (Sandbox) [com.apple.sandbox.reporting:violation] Sandbox: kernelmanagerd(128) deny(1) file-write-create /private/var/db/loadedkextmt.plist.sb-7ea2085b-0XAufJ
+2026-10-31 20:55:31.154626+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] GT0: GuC firmware i915/mtl_guc_70.bin version 70.53.0
+2026-10-31 20:55:31.165813+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] GT0: GUC: submission enabled
+2026-10-31 20:55:31.165823+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] GT0: GUC: SLPC enabled
+2026-10-31 20:55:31.166071+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) drmn0: [drm] GT0: GUC: RC enabled
+2026-10-31 20:55:31.173158+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) <6>[drm] Initialized i915 1.6.0 for drmn0 on minor 0
+2026-10-31 20:55:31.173455+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: ran 58 sysinit_set entries
+2026-10-31 20:55:31.173470+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus root0 state 30 driver root
+2026-10-31 20:55:31.173480+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus   pcib0 state 30 driver pcib
+2026-10-31 20:55:31.173488+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus     pci0 state 30 driver pci
+2026-10-31 20:55:31.173501+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus       hostb0 state 30 driver hostb pci 8086:7d06 class 060000
+2026-10-31 20:55:31.173512+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus       vgapci0 state 30 driver vgapci pci 8086:7d51 class 030000
+2026-10-31 20:55:31.173522+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus         drmn0 state 30 driver drmn
+2026-10-31 20:55:31.173531+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus           drm128 state 10 driver -
+2026-10-31 20:55:31.173539+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus           drm0 state 10 driver -
+2026-10-31 20:55:31.173548+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus       ? state 10 driver - pci 8086:7702 class 060100
+2026-10-31 20:55:31.173557+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass root:
+2026-10-31 20:55:31.173561+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:31.173566+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass pcib:
+2026-10-31 20:55:31.173570+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:31.173575+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass pci:
+2026-10-31 20:55:31.173578+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:31.173583+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass hostb:
+2026-10-31 20:55:31.173586+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:31.173591+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass vgapci:
+2026-10-31 20:55:31.173598+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx)  drmn
+2026-10-31 20:55:31.173600+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:31.173605+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass drmn:
+2026-10-31 20:55:31.173609+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:31.173614+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass misc:
+2026-10-31 20:55:31.173617+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:31.173622+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass drm:
+2026-10-31 20:55:31.173626+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:31.275082+0800 0x93cd     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: boot surface GGTT 0xfe600000 + 25958400 reserved: -28
+2026-10-31 20:55:31.729180+0800 0x93c6     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:32.547850+0800 0x9408     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:32.959002+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: boot stage 4 start (t+0 ms)
+2026-10-31 20:55:32.959607+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: make_dev drm/0: error 17
+2026-10-31 20:55:32.961555+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) WARNING !xa_empty(&drm_minors_xa) failed at /Users/change48/src/xe-src/drm-kmod/drivers/gpu/drm/drm_drv.c:1122
+2026-10-31 20:55:32.961586+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) <6>[drm] Got Intel graphics stolen memory base 0x0, size 0x0
+2026-10-31 20:55:32.961615+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: ran 58 sysinit_set entries
+2026-10-31 20:55:32.961626+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus root0 state 30 driver root
+2026-10-31 20:55:32.961636+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus   pcib0 state 30 driver pcib
+2026-10-31 20:55:32.961645+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus     pci0 state 30 driver pci
+2026-10-31 20:55:32.961657+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus       hostb0 state 30 driver hostb pci 8086:7d06 class 060000
+2026-10-31 20:55:32.961668+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus       vgapci0 state 30 driver vgapci pci 8086:7d51 class 030000
+2026-10-31 20:55:32.961679+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus         drmn0 state 30 driver drmn
+2026-10-31 20:55:32.961688+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus           drm128 state 10 driver -
+2026-10-31 20:55:32.961696+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus           drm0 state 10 driver -
+2026-10-31 20:55:32.961706+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: newbus       ? state 10 driver - pci 8086:7702 class 060100
+2026-10-31 20:55:32.961716+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass root:
+2026-10-31 20:55:32.961720+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:32.961726+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass pcib:
+2026-10-31 20:55:32.961730+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:32.961735+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass pci:
+2026-10-31 20:55:32.961761+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:32.961766+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass hostb:
+2026-10-31 20:55:32.961771+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:32.961776+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass vgapci:
+2026-10-31 20:55:32.961783+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx)  drmn
+2026-10-31 20:55:32.961788+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx)  drmn
+2026-10-31 20:55:32.961790+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:32.961795+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass drmn:
+2026-10-31 20:55:32.961799+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:32.961804+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass misc:
+2026-10-31 20:55:32.961807+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:32.961812+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) xegfx: devclass drm:
+2026-10-31 20:55:32.961816+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) 
+2026-10-31 20:55:33.063133+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: boot stage 4 rc=-19 in 104 ms (t+104 ms)
+2026-10-31 20:55:33.063158+0800 0x93c0     Default     0x0                  0      0    kernel: (XeGfx) XeGfx: M4a bring-up stopped (failed, stage 3, rc -19); manual debug.xegfx_stage unchanged
+2026-10-31 20:55:33.366540+0800 0x9408     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:34.185209+0800 0x9408     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:34.952844+0800 0x9421     Default     0x0                  0      0    kernel: (IO80211Family) IO80211PeerMonitor::checkForDPS()  Enter
+2026-10-31 20:55:34.952878+0800 0x9421     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: MonitorTimer en2/5000: packet counts: I0 Q0 O0
+2026-10-31 20:55:34.952894+0800 0x9421     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BE<0 0 0 0 0 0 0 0 0 0 0> (4999ms)
+2026-10-31 20:55:34.952901+0800 0x9421     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BK<0 0 0 0 0 0 0 0 0 0 0> (4999ms)
+2026-10-31 20:55:34.952905+0800 0x9421     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VI<0 0 0 0 0 0 0 0 0 0 0> (4999ms)
+2026-10-31 20:55:34.952909+0800 0x9421     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VO<0 0 0 0 0 0 0 0 0 0 0> (4999ms)
+2026-10-31 20:55:34.952915+0800 0x9421     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: postMessageOnInfraInterface:3463 posting msgId:169 on skywalk infraInterface
+2026-10-31 20:55:34.952947+0800 0x9421     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BE : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:34.952950+0800 0x9421     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BK : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:34.952952+0800 0x9421     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VI : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:34.952953+0800 0x9421     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VO : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:34.952958+0800 0x9421     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: L3 Control VO TX(00:00:00:00:00:00) Success=0 NoACK=0 Expired=0 OtherErr=0
+2026-10-31 20:55:35.003896+0800 0x9421     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:35.822588+0800 0x9423     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:36.100259+0800 0x9305     Default     0x0                  0      0    kernel: bluetoothd[2406] Corpse allowed 1 of 5
+2026-10-31 20:55:36.100476+0800 0x9305     Default     0x0                  0      0    kernel: [com.apple.xnu:virtual-memory] vm: WARNING truncating corpse footprint buffer (8320 KiB) to maximum size (8192 KiB) -- footprint data may be lost
+2026-10-31 20:55:36.150427+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: power event 14 args 0x0 0x0
+2026-10-31 20:55:36.150441+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: wrangler RootDomainPower (ps 4, 0->1)
+2026-10-31 20:55:36.150443+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: evaluatePolicy( 0, 0x0 )
+2026-10-31 20:55:36.314128+0800 0x9305     Default     0x0                  0      0    kernel: Full corpse enqueued for bluetoothd
+2026-10-31 20:55:36.315141+0800 0x9305     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][RemoveHCIEventNotification] -- Removed notification port for HIDShim
+2026-10-31 20:55:36.315147+0800 0x9305     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][RemoveHIDShimSharedMemoryRingBuffers] -- Removed input shared memory for HIDShim
+2026-10-31 20:55:36.315148+0800 0x9305     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][RemoveHIDShimSharedMemoryRingBuffers] -- Removed output shared memory for HIDShim
+2026-10-31 20:55:36.315191+0800 0x9305     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][DetachUserClients] -- HIDShim userclient has been terminated
+2026-10-31 20:55:36.316410+0800 0x9305     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[5]: nxctl_close                    nxctl 0x0 UUID B6B3EAD8-9911-490A-9CF4-BFD7684EE598 flags 0x1
+2026-10-31 20:55:36.316417+0800 0x9305     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[5]: nxprov_close                   nxprov 0x0 UUID DF2036CE-AB04-447E-88DC-B17A352A35BF flags 0x9
+2026-10-31 20:55:36.316419+0800 0x9305     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[5]: nxprov_detach                  nxprov 0x0 UUID DF2036CE-AB04-447E-88DC-B17A352A35BF flags 0x9
+2026-10-31 20:55:36.316422+0800 0x9305     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[5]: nxctl_free                     nxctl 0x0 FREE
+2026-10-31 20:55:36.316585+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: power event 14 args 0x0 0x0
+2026-10-31 20:55:36.316595+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: wrangler RootDomainPower (ps 4, 0->1)
+2026-10-31 20:55:36.316597+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: evaluatePolicy( 0, 0x0 )
+2026-10-31 20:55:36.316920+0800 0x92f8     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:442,sel:142:8067: unexpected session uid: -1 requested by: ReportCrash (442)
+2026-10-31 20:55:36.316928+0800 0x92f8     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:442,:13262: operation failed (sel: 142 ret: e00002c2, -1)
+2026-10-31 20:55:36.329940+0800 0x932c     Default     0x0                  0      0    kernel: (apfs) clear_purgeability_log:1797: disk1s1 apfs_vnop_mmap : coresymbolicationd clearing purgeability on ino 1436519 (data ; parent-id 52120)
+2026-10-31 20:55:36.330844+0800 0x7ae7     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Set type=<APPLE80211_IOC_BTCOEX_PROFILE> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:55:36.333900+0800 0x7ae7     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Set type=<APPLE80211_IOC_BTCOEX_PROFILE> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:55:36.337134+0800 0x86c2     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Set type=<APPLE80211_IOC_BTCOEX_PROFILE> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:55:36.338750+0800 0x8e2a     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Set type=<APPLE80211_IOC_BTCOEX_PROFILE> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:55:36.341098+0800 0x7ae7     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Set type=<APPLE80211_IOC_BTCOEX_PROFILE> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:55:36.342758+0800 0x7ae8     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Get type=<APPLE80211_IOC_MAX_NSS_FOR_AP> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:55:36.386581+0800 0x946d     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:2444,sel:7:8067: unexpected session uid: -1 requested by: bluetoothd (2444)
+2026-10-31 20:55:36.386596+0800 0x946d     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:2444,:13262: operation failed (sel: 7 ret: e00002c2, -1)
+2026-10-31 20:55:36.401935+0800 0x946d     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][newUserClient] -- created userclient for HIDShim
+2026-10-31 20:55:36.401979+0800 0x946d     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][AddHCIEventNotification] -- Added notification port for HIDShim
+2026-10-31 20:55:36.402004+0800 0x946d     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][CreateHIDShimSharedMemoryRingBuffer] -- Created input shared memory for HIDShim
+2026-10-31 20:55:36.402023+0800 0x946d     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][CreateHIDShimSharedMemoryRingBuffer] -- Created output shared memory for HIDShim
+2026-10-31 20:55:36.402473+0800 0x946d     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamilyUserClient] **** [IOBluetoothHCIUserClient][SetBTRBOffWL] -- mBluetoothFamily->mACPIMethods->SetBTRB (OFF) returned 0xE00002C7 error
+2026-10-31 20:55:36.402477+0800 0x946d     Default     0x0                  0      0    kernel: (IOBluetoothFamily) **** [IOBluetoothHCIUserClient][SetBTRBOffWL] -- mBluetoothFamily->mACPIMethods->SetBTRB (OFF) returned 0xE00002C7 error
+2026-10-31 20:55:36.402502+0800 0x946d     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamilyUserClient] **** [IOBluetoothHCIUserClient][SetBTLPOffWL] -- mBluetoothFamily->mACPIMethods->SetBTLP (OFF) returned 0xE00002C7 error
+2026-10-31 20:55:36.402503+0800 0x946d     Default     0x0                  0      0    kernel: (IOBluetoothFamily) **** [IOBluetoothHCIUserClient][SetBTLPOffWL] -- mBluetoothFamily->mACPIMethods->SetBTLP (OFF) returned 0xE00002C7 error
+2026-10-31 20:55:36.402525+0800 0x946d     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamilyUserClient] **** [IOBluetoothHCIUserClient][SetBTRSWL] -- mBluetoothFamily->mACPIMethods->SetBTRS() returned 0xE00002C7 error
+2026-10-31 20:55:36.402526+0800 0x946d     Default     0x0                  0      0    kernel: (IOBluetoothFamily) **** [IOBluetoothHCIUserClient][SetBTRSWL] -- mBluetoothFamily->mACPIMethods->SetBTRS() returned 0xE00002C7 error
+2026-10-31 20:55:36.433673+0800 0x946d     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[2]: nxctl_create                   nxctl 0x0 UUID DE3FF881-FD8C-4F80-A92A-3C1FB1DDB0D7
+2026-10-31 20:55:36.433680+0800 0x946d     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[2]: __nexus_open                   bluetoothd(2444) fd 9 guard 0x534b4e583fde1590
+2026-10-31 20:55:36.433691+0800 0x946d     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[2]: nxprov_params_adjust           nxdom "upipe" (<private>) type 0
+2026-10-31 20:55:36.433692+0800 0x946d     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[2]: nxprov_params_adjust           nxp "com.apple.bluetooth.Pipe" (0x0) flags 0x2
+2026-10-31 20:55:36.433694+0800 0x946d     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[2]: nxprov_params_adjust             req 0x1f rings 2/2/0/0/0 slots 32/32/0/0/0 buf 2048 type 2 subtype 2 stats 0 flowadv_max 0 nexusadv_size 0 capabs 0x4 pipes 0 extensions 0 max_frags 1 headguard 0 tailguard 0 large_buf 0
+2026-10-31 20:55:36.433701+0800 0x946d     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[2]: nxprov_create_common           nxprov 0x0 UUID 1034BA45-6850-43F9-B109-E6E180B54E86
+2026-10-31 20:55:36.434253+0800 0x92ee     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:55:36.435306+0800 0x9425     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:55:36.435435+0800 0x9470     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamilyUserClient] **** [IOBluetoothHCIUserClient][SetBTLPOffWL] -- mBluetoothFamily->mACPIMethods->SetBTLP (OFF) returned 0xE00002C7 error
+2026-10-31 20:55:36.435439+0800 0x9470     Default     0x0                  0      0    kernel: (IOBluetoothFamily) **** [IOBluetoothHCIUserClient][SetBTLPOffWL] -- mBluetoothFamily->mACPIMethods->SetBTLP (OFF) returned 0xE00002C7 error
+2026-10-31 20:55:36.435479+0800 0x9470     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamilyUserClient] **** [IOBluetoothHCIUserClient][SetBTPUWL] -- mBluetoothFamily->mACPIMethods->SetBTPU() returned 0xE00002C7 error
+2026-10-31 20:55:36.435481+0800 0x9470     Default     0x0                  0      0    kernel: (IOBluetoothFamily) **** [IOBluetoothHCIUserClient][SetBTPUWL] -- mBluetoothFamily->mACPIMethods->SetBTPU() returned 0xE00002C7 error
+2026-10-31 20:55:36.435620+0800 0x9425     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:55:36.436792+0800 0x9425     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:55:36.466636+0800 0x948a     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:2444,sel:7:8067: unexpected session uid: -1 requested by: bluetoothd (2444)
+2026-10-31 20:55:36.466646+0800 0x948a     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:2444,:13262: operation failed (sel: 7 ret: e00002c2, -1)
+2026-10-31 20:55:36.640951+0800 0x9423     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:37.308937+0800 0x6a       Default     0x0                  0      0    kernel: Corpse released, count at 0
+2026-10-31 20:55:37.459845+0800 0x9423     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:37.993045+0800 0x92ee     Default     0x0                  0      0    kernel: (AppleSmartBatteryManager) Starting poll type 4
+2026-10-31 20:55:37.993067+0800 0x92ee     Default     0x0                  0      0    kernel: (AppleSmartBatteryManager) Restarting poll type 4
+2026-10-31 20:55:37.993085+0800 0x92ee     Default     0x0                  0      0    kernel: (AppleSmartBatteryManager) Transaction triggered Starting poll type 4
+2026-10-31 20:55:38.149684+0800 0x285      Default     0x0                  0      0    kernel: (AppleSmartBatteryManager) SMC read called for cmd 0x120a wih no-op key
+2026-10-31 20:55:38.150460+0800 0x285      Default     0x0                  0      0    kernel: (AppleSmartBatteryManager) SmartBattery: finished polling type 4
+2026-10-31 20:55:38.150700+0800 0x285      Default     0x0                  0      0    kernel: (IOgPTPPlugin) IOTimeSyncgPTPManager::linkStatusForService no link status
+2026-10-31 20:55:38.151423+0800 0x941d     Error       0x0                  0      0    kernel: (Sandbox) [com.apple.sandbox.reporting:violation] Sandbox: dasd(150) deny(1) iokit-get-properties iokit-class:AppleSmartBattery property:SkipperNEIgnoreAtCritical
+2026-10-31 20:55:38.278500+0800 0x9423     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:38.470655+0800 0x94a4     Default     0x0                  0      0    kernel: bpf0 attached to en0 by configd:109
+2026-10-31 20:55:38.470725+0800 0x94a4     Default     0x0                  0      0    kernel: bpf0 closed and detached from en0 fcount 0 dcount 0 by configd:109
+2026-10-31 20:55:39.097313+0800 0x94aa     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:39.915966+0800 0x94ad     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:39.952275+0800 0x94ad     Default     0x0                  0      0    kernel: (IO80211Family) IO80211PeerMonitor::checkForDPS()  Enter
+2026-10-31 20:55:39.952317+0800 0x94ad     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: MonitorTimer en2/5000: packet counts: I0 Q0 O0
+2026-10-31 20:55:39.952337+0800 0x94ad     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BE<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:55:39.952350+0800 0x94ad     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BK<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:55:39.952360+0800 0x94ad     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VI<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:55:39.952369+0800 0x94ad     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VO<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:55:39.952378+0800 0x94ad     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: postMessageOnInfraInterface:3463 posting msgId:169 on skywalk infraInterface
+2026-10-31 20:55:39.952410+0800 0x94ad     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BE : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:39.952417+0800 0x94ad     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BK : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:39.952422+0800 0x94ad     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VI : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:39.952427+0800 0x94ad     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VO : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:39.952436+0800 0x94ad     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: L3 Control VO TX(00:00:00:00:00:00) Success=0 NoACK=0 Expired=0 OtherErr=0
+2026-10-31 20:55:40.734595+0800 0x94ad     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:41.368183+0800 0x9425     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:55:41.553148+0800 0x94ad     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:42.371992+0800 0x94db     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:42.611494+0800 0x9425     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:55:43.190621+0800 0x94e3     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:43.684192+0800 0x9425     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:55:44.009176+0800 0x94e3     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:44.827920+0800 0x94e3     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:44.950777+0800 0x94e3     Default     0x0                  0      0    kernel: (IO80211Family) IO80211PeerMonitor::checkForDPS()  Enter
+2026-10-31 20:55:44.950817+0800 0x94e3     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: MonitorTimer en2/5000: packet counts: I0 Q0 O0
+2026-10-31 20:55:44.950837+0800 0x94e3     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BE<0 0 0 0 0 0 0 0 0 0 0> (4998ms)
+2026-10-31 20:55:44.950851+0800 0x94e3     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BK<0 0 0 0 0 0 0 0 0 0 0> (4998ms)
+2026-10-31 20:55:44.950861+0800 0x94e3     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VI<0 0 0 0 0 0 0 0 0 0 0> (4998ms)
+2026-10-31 20:55:44.950871+0800 0x94e3     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VO<0 0 0 0 0 0 0 0 0 0 0> (4998ms)
+2026-10-31 20:55:44.950880+0800 0x94e3     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: postMessageOnInfraInterface:3463 posting msgId:169 on skywalk infraInterface
+2026-10-31 20:55:44.950910+0800 0x94e3     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BE : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:44.950918+0800 0x94e3     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BK : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:44.950923+0800 0x94e3     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VI : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:44.950928+0800 0x94e3     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VO : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:44.950937+0800 0x94e3     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: L3 Control VO TX(00:00:00:00:00:00) Success=0 NoACK=0 Expired=0 OtherErr=0
+2026-10-31 20:55:45.646638+0800 0x94e3     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:46.465340+0800 0x94fb     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:46.848288+0800 0x9425     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:55:47.266359+0800 0x9505     Default     0x0                  0      0    kernel: bpf0 attached to en0 by configd:109
+2026-10-31 20:55:47.266428+0800 0x9505     Default     0x0                  0      0    kernel: bpf0 closed and detached from en0 fcount 0 dcount 0 by configd:109
+2026-10-31 20:55:47.283949+0800 0x9503     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:48.102720+0800 0x9503     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:48.921347+0800 0x9503     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:49.382740+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: power event 14 args 0x0 0x0
+2026-10-31 20:55:49.382785+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: wrangler RootDomainPower (ps 4, 0->1)
+2026-10-31 20:55:49.382797+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: evaluatePolicy( 0, 0x0 )
+2026-10-31 20:55:49.842327+0800 0x9514     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:49.950100+0800 0x9514     Default     0x0                  0      0    kernel: (IO80211Family) IO80211PeerMonitor::checkForDPS()  Enter
+2026-10-31 20:55:49.950138+0800 0x9514     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: MonitorTimer en2/5000: packet counts: I0 Q0 O0
+2026-10-31 20:55:49.950158+0800 0x9514     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BE<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:55:49.950171+0800 0x9514     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BK<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:55:49.950205+0800 0x9514     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VI<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:55:49.950215+0800 0x9514     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VO<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:55:49.950225+0800 0x9514     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: postMessageOnInfraInterface:3463 posting msgId:169 on skywalk infraInterface
+2026-10-31 20:55:49.950253+0800 0x9514     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BE : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:49.950260+0800 0x9514     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BK : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:49.950265+0800 0x9514     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VI : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:49.950270+0800 0x9514     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VO : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:49.950279+0800 0x9514     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: L3 Control VO TX(00:00:00:00:00:00) Success=0 NoACK=0 Expired=0 OtherErr=0
+2026-10-31 20:55:50.661004+0800 0x9519     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:51.479670+0800 0x9519     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:51.927164+0800 0x9470     Default     0x0                  0      0    kernel: bluetoothd[2444] Corpse allowed 1 of 5
+2026-10-31 20:55:51.927322+0800 0x9470     Default     0x0                  0      0    kernel: [com.apple.xnu:virtual-memory] vm: WARNING truncating corpse footprint buffer (8320 KiB) to maximum size (8192 KiB) -- footprint data may be lost
+2026-10-31 20:55:52.142350+0800 0x9470     Default     0x0                  0      0    kernel: Full corpse enqueued for bluetoothd
+2026-10-31 20:55:52.143214+0800 0x9449     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:442,sel:142:8067: unexpected session uid: -1 requested by: ReportCrash (442)
+2026-10-31 20:55:52.143223+0800 0x9449     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:442,:13262: operation failed (sel: 142 ret: e00002c2, -1)
+2026-10-31 20:55:52.143580+0800 0x9470     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][RemoveHCIEventNotification] -- Removed notification port for HIDShim
+2026-10-31 20:55:52.143587+0800 0x9470     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][RemoveHIDShimSharedMemoryRingBuffers] -- Removed input shared memory for HIDShim
+2026-10-31 20:55:52.143589+0800 0x9470     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][RemoveHIDShimSharedMemoryRingBuffers] -- Removed output shared memory for HIDShim
+2026-10-31 20:55:52.143653+0800 0x9470     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][DetachUserClients] -- HIDShim userclient has been terminated
+2026-10-31 20:55:52.145081+0800 0x9470     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[6]: nxctl_close                    nxctl 0x0 UUID DE3FF881-FD8C-4F80-A92A-3C1FB1DDB0D7 flags 0x1
+2026-10-31 20:55:52.145089+0800 0x9470     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[6]: nxprov_close                   nxprov 0x0 UUID 1034BA45-6850-43F9-B109-E6E180B54E86 flags 0x9
+2026-10-31 20:55:52.145092+0800 0x9470     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[6]: nxprov_detach                  nxprov 0x0 UUID 1034BA45-6850-43F9-B109-E6E180B54E86 flags 0x9
+2026-10-31 20:55:52.145096+0800 0x9470     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[6]: nxctl_free                     nxctl 0x0 FREE
+2026-10-31 20:55:52.145633+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: power event 14 args 0x0 0x0
+2026-10-31 20:55:52.145650+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: wrangler RootDomainPower (ps 4, 0->1)
+2026-10-31 20:55:52.145654+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: evaluatePolicy( 0, 0x0 )
+2026-10-31 20:55:52.161580+0800 0x8e28     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Set type=<APPLE80211_IOC_BTCOEX_PROFILE> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:55:52.164379+0800 0x7ae7     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Set type=<APPLE80211_IOC_BTCOEX_PROFILE> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:55:52.167799+0800 0x7ae7     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Set type=<APPLE80211_IOC_BTCOEX_PROFILE> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:55:52.171412+0800 0x86c0     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Set type=<APPLE80211_IOC_BTCOEX_PROFILE> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:55:52.175320+0800 0x8e28     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Set type=<APPLE80211_IOC_BTCOEX_PROFILE> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:55:52.177345+0800 0x86c0     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Get type=<APPLE80211_IOC_MAX_NSS_FOR_AP> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:55:52.213876+0800 0x94a9     Default     0x0                  0      0    kernel: (apfs) clear_purgeability_log:1797: disk1s1 apfs_vnop_mmap : coresymbolicationd clearing purgeability on ino 1436519 (data ; parent-id 52120)
+2026-10-31 20:55:52.233409+0800 0x958a     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:2448,sel:7:8067: unexpected session uid: -1 requested by: bluetoothd (2448)
+2026-10-31 20:55:52.233417+0800 0x958a     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:2448,:13262: operation failed (sel: 7 ret: e00002c2, -1)
+2026-10-31 20:55:52.248334+0800 0x958a     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][newUserClient] -- created userclient for HIDShim
+2026-10-31 20:55:52.248393+0800 0x958a     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][AddHCIEventNotification] -- Added notification port for HIDShim
+2026-10-31 20:55:52.248441+0800 0x958a     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][CreateHIDShimSharedMemoryRingBuffer] -- Created input shared memory for HIDShim
+2026-10-31 20:55:52.248478+0800 0x958a     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][CreateHIDShimSharedMemoryRingBuffer] -- Created output shared memory for HIDShim
+2026-10-31 20:55:52.249858+0800 0x958a     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamilyUserClient] **** [IOBluetoothHCIUserClient][SetBTRBOffWL] -- mBluetoothFamily->mACPIMethods->SetBTRB (OFF) returned 0xE00002C7 error
+2026-10-31 20:55:52.249861+0800 0x958a     Default     0x0                  0      0    kernel: (IOBluetoothFamily) **** [IOBluetoothHCIUserClient][SetBTRBOffWL] -- mBluetoothFamily->mACPIMethods->SetBTRB (OFF) returned 0xE00002C7 error
+2026-10-31 20:55:52.249886+0800 0x958a     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamilyUserClient] **** [IOBluetoothHCIUserClient][SetBTLPOffWL] -- mBluetoothFamily->mACPIMethods->SetBTLP (OFF) returned 0xE00002C7 error
+2026-10-31 20:55:52.249887+0800 0x958a     Default     0x0                  0      0    kernel: (IOBluetoothFamily) **** [IOBluetoothHCIUserClient][SetBTLPOffWL] -- mBluetoothFamily->mACPIMethods->SetBTLP (OFF) returned 0xE00002C7 error
+2026-10-31 20:55:52.249909+0800 0x958a     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamilyUserClient] **** [IOBluetoothHCIUserClient][SetBTRSWL] -- mBluetoothFamily->mACPIMethods->SetBTRS() returned 0xE00002C7 error
+2026-10-31 20:55:52.249910+0800 0x958a     Default     0x0                  0      0    kernel: (IOBluetoothFamily) **** [IOBluetoothHCIUserClient][SetBTRSWL] -- mBluetoothFamily->mACPIMethods->SetBTRS() returned 0xE00002C7 error
+2026-10-31 20:55:52.298156+0800 0x9519     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:52.300817+0800 0x958a     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[13]: nxctl_create                   nxctl 0x0 UUID 6060A440-DBAD-4E71-8F90-1C0727F92BAA
+2026-10-31 20:55:52.300827+0800 0x958a     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[13]: __nexus_open                   bluetoothd(2448) fd 9 guard 0x534b4e586060b35d
+2026-10-31 20:55:52.300848+0800 0x958a     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[13]: nxprov_params_adjust           nxdom "upipe" (<private>) type 0
+2026-10-31 20:55:52.300851+0800 0x958a     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[13]: nxprov_params_adjust           nxp "com.apple.bluetooth.Pipe" (0x0) flags 0x2
+2026-10-31 20:55:52.300853+0800 0x958a     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[13]: nxprov_params_adjust             req 0x1f rings 2/2/0/0/0 slots 32/32/0/0/0 buf 2048 type 2 subtype 2 stats 0 flowadv_max 0 nexusadv_size 0 capabs 0x4 pipes 0 extensions 0 max_frags 1 headguard 0 tailguard 0 large_buf 0
+2026-10-31 20:55:52.300866+0800 0x958a     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[13]: nxprov_create_common           nxprov 0x0 UUID F379D9F5-992E-4F6A-992E-07A04E51D0E9
+2026-10-31 20:55:52.302046+0800 0x92ee     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:55:52.303145+0800 0x9425     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:55:52.303484+0800 0x958c     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamilyUserClient] **** [IOBluetoothHCIUserClient][SetBTLPOffWL] -- mBluetoothFamily->mACPIMethods->SetBTLP (OFF) returned 0xE00002C7 error
+2026-10-31 20:55:52.303490+0800 0x958c     Default     0x0                  0      0    kernel: (IOBluetoothFamily) **** [IOBluetoothHCIUserClient][SetBTLPOffWL] -- mBluetoothFamily->mACPIMethods->SetBTLP (OFF) returned 0xE00002C7 error
+2026-10-31 20:55:52.303548+0800 0x958c     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamilyUserClient] **** [IOBluetoothHCIUserClient][SetBTPUWL] -- mBluetoothFamily->mACPIMethods->SetBTPU() returned 0xE00002C7 error
+2026-10-31 20:55:52.303551+0800 0x958c     Default     0x0                  0      0    kernel: (IOBluetoothFamily) **** [IOBluetoothHCIUserClient][SetBTPUWL] -- mBluetoothFamily->mACPIMethods->SetBTPU() returned 0xE00002C7 error
+2026-10-31 20:55:52.303762+0800 0x9425     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:55:52.304400+0800 0x9425     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:55:52.324538+0800 0x95a8     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:2448,sel:7:8067: unexpected session uid: -1 requested by: bluetoothd (2448)
+2026-10-31 20:55:52.324547+0800 0x95a8     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:2448,:13262: operation failed (sel: 7 ret: e00002c2, -1)
+2026-10-31 20:55:53.116760+0800 0x9519     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:53.295303+0800 0x6a       Default     0x0                  0      0    kernel: Corpse released, count at 0
+2026-10-31 20:55:53.935630+0800 0x95c3     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:54.754261+0800 0x95ca     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:54.950607+0800 0x95ca     Default     0x0                  0      0    kernel: (IO80211Family) IO80211PeerMonitor::checkForDPS()  Enter
+2026-10-31 20:55:54.950648+0800 0x95ca     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: MonitorTimer en2/5000: packet counts: I0 Q0 O0
+2026-10-31 20:55:54.950691+0800 0x95ca     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BE<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:55:54.950708+0800 0x95ca     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BK<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:55:54.950718+0800 0x95ca     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VI<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:55:54.950728+0800 0x95ca     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VO<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:55:54.950738+0800 0x95ca     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: postMessageOnInfraInterface:3463 posting msgId:169 on skywalk infraInterface
+2026-10-31 20:55:54.950766+0800 0x95ca     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BE : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:54.950773+0800 0x95ca     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BK : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:54.950779+0800 0x95ca     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VI : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:54.950783+0800 0x95ca     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VO : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:54.950793+0800 0x95ca     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: L3 Control VO TX(00:00:00:00:00:00) Success=0 NoACK=0 Expired=0 OtherErr=0
+2026-10-31 20:55:55.572986+0800 0x95ca     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:56.253764+0800 0x93a0     Default     0x0                  0      0    kernel: bpf0 attached to en0 by configd:109
+2026-10-31 20:55:56.253804+0800 0x93a0     Default     0x0                  0      0    kernel: bpf0 closed and detached from en0 fcount 0 dcount 0 by configd:109
+2026-10-31 20:55:56.300709+0800 0x95ce     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sudo" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:55:56.341144+0800 0x95d4     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sudo" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:55:56.365892+0800 0x95dd     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sudo" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:55:56.391536+0800 0x95ca     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:57.210283+0800 0x95e6     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:58.028913+0800 0x95ea     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:58.847604+0800 0x95ea     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:59.666312+0800 0x95ea     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:55:59.692126+0800 0x95f7     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp_connection_summary (tcp_usrclosed:3234)[<IPv4-redacted>:22<-><IPv4-redacted>:52985] interface: en2 (skipped: 0)
+so_gencnt: 6176 t_state: LAST_ACK process: sshd-session:2435 Duration: 29.856 sec Conn_Time: 0.032 sec bytes in/out: 4306/4726 pkts in/out: 15/20 pkt rxmit: 0 ooo pkts: 0 dup bytes in: 0 ACKs delayed: 0 delayed ACKs sent: 0
+rtt: 16.656 ms rttvar: 18.312 ms base rtt: 1 ms so_error: 0 svc/tc: 0 flow: 0xaa31d10b
+2026-10-31 20:55:59.692143+0800 0x95f7     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp_connection_summary [<IPv4-redacted>:22<-><IPv4-redacted>:52985] interface: en2 (skipped: 0)
+so_gencnt: 6176 t_state: LAST_ACK process: sshd-session:2435 flowctl: 0us (0x) SYN in/out: 1/1 FIN in/out: 1/0 RST in/out: 0/0 AccECN (client/server): Disabled/Not requested
+2026-10-31 20:55:59.861870+0800 0x94b3     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:55:59.950118+0800 0x95ea     Default     0x0                  0      0    kernel: (IO80211Family) IO80211PeerMonitor::checkForDPS()  Enter
+2026-10-31 20:55:59.950158+0800 0x95ea     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: MonitorTimer en2/5000: packet counts: I0 Q0 O0
+2026-10-31 20:55:59.950177+0800 0x95ea     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BE<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:55:59.950191+0800 0x95ea     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BK<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:55:59.950201+0800 0x95ea     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VI<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:55:59.950231+0800 0x95ea     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VO<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:55:59.950243+0800 0x95ea     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: postMessageOnInfraInterface:3463 posting msgId:169 on skywalk infraInterface
+2026-10-31 20:55:59.950271+0800 0x95ea     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BE : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:59.950278+0800 0x95ea     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BK : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:59.950284+0800 0x95ea     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VI : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:59.950288+0800 0x95ea     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VO : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:55:59.950298+0800 0x95ea     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: L3 Control VO TX(00:00:00:00:00:00) Success=0 NoACK=0 Expired=0 OtherErr=0
+2026-10-31 20:56:00.485011+0800 0x9604     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:01.231949+0800 0x94b3     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:56:01.303743+0800 0x9607     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:02.122880+0800 0x9607     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:02.941063+0800 0x9607     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:03.759738+0800 0x9604     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:04.578384+0800 0x9621     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:04.640854+0800 0x950a     Default     0x0                  0      0    kernel: bpf0 attached to en0 by configd:109
+2026-10-31 20:56:04.640952+0800 0x950a     Default     0x0                  0      0    kernel: bpf0 closed and detached from en0 fcount 0 dcount 0 by configd:109
+2026-10-31 20:56:04.948847+0800 0x9634     Default     0x0                  0      0    kernel: (IO80211Family) IO80211PeerMonitor::checkForDPS()  Enter
+2026-10-31 20:56:04.948888+0800 0x9634     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: MonitorTimer en2/5000: packet counts: I0 Q0 O0
+2026-10-31 20:56:04.948912+0800 0x9634     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BE<0 0 0 0 0 0 0 0 0 0 0> (4998ms)
+2026-10-31 20:56:04.948927+0800 0x9634     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BK<0 0 0 0 0 0 0 0 0 0 0> (4998ms)
+2026-10-31 20:56:04.948938+0800 0x9634     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VI<0 0 0 0 0 0 0 0 0 0 0> (4998ms)
+2026-10-31 20:56:04.948947+0800 0x9634     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VO<0 0 0 0 0 0 0 0 0 0 0> (4998ms)
+2026-10-31 20:56:04.948957+0800 0x9634     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: postMessageOnInfraInterface:3463 posting msgId:169 on skywalk infraInterface
+2026-10-31 20:56:04.948999+0800 0x9634     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BE : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:56:04.949006+0800 0x9634     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BK : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:56:04.949011+0800 0x9634     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VI : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:56:04.949016+0800 0x9634     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VO : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:56:04.949026+0800 0x9634     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: L3 Control VO TX(00:00:00:00:00:00) Success=0 NoACK=0 Expired=0 OtherErr=0
+2026-10-31 20:56:04.984162+0800 0x47d      Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp connect incoming: [<IPv4-redacted>:22<-><IPv4-redacted>:53057] interface: en2 (skipped: 0)
+so_gencnt: 6278 t_state: SYN_RCVD process: launchd:1 SYN in/out: 1/0 bytes in/out: 0/0 pkts in/out: 0/0 rtt: 0.0 ms rttvar: 250.0 ms base_rtt: 1 ms error: 0 so_error: 0 svc/tc: 0 flow: 0x8976ce9e
+so_qlimit: 128 so_qlen: 1 so_incqlen: 1
+2026-10-31 20:56:04.984234+0800 0x47d      Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[14]: flow_entry_alloc               fe "0 proc kernel_task(0)launchd nx_port 1 flow_uuid 0E30B89F-0575-4C69-AAEB-468A568713C1 flags 0x14120<CONNECTED,QOS_MARKING,EXT_PORT,EXT_FLOWID> ipver=4,src=<IPv4-redacted>.22,dst=<IPv4-redacted>.53057,proto=0x06 mask=0x0000003f,hash=0xf1fbb257 tp_proto=0x06"
+2026-10-31 20:56:04.994412+0800 0x47d      Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp connected: [<IPv4-redacted>:22<-><IPv4-redacted>:53057] interface: en2 (skipped: 0)
+so_gencnt: 6278 t_state: ESTABLISHED process: launchd:1 SYN in/out: 1/1 bytes in/out: 0/0 pkts in/out: 0/0 rtt: 0.0 ms rttvar: 250.0 ms base_rtt: 1 ms error: 0 so_error: 0 svc/tc: 0 flow: 0x8976ce9e
+so_qlimit: 128 so_qlen: 1 so_incqlen: 1
+2026-10-31 20:56:04.994805+0800 0x945e     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp accept: [<IPv4-redacted>:22<-><IPv4-redacted>:53057] interface: en2 (skipped: 0)
+so_gencnt: 6278 t_state: ESTABLISHED process: launchd:1 SYN in/out: 1/1 bytes in/out: 22/0 pkts in/out: 1/0 rtt: 11.0 ms rttvar: 5.500 ms base_rtt: 1 ms error: 0 so_error: 0 svc/tc: 0 flow: 0x8976ce9e
+2026-10-31 20:56:05.030865+0800 0x9638     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sshd" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:56:05.050060+0800 0x963a     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sshd-session" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:56:05.076785+0800 0x963d     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sshd-auth" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:56:05.310725+0800 0x9643     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "zsh" in keys-off mode due to identity: com.apple.zsh
+2026-10-31 20:56:05.335209+0800 0x95f7     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp_connection_summary (tcp_usrclosed:3234)[<IPv4-redacted>:22<-><IPv4-redacted>:53057] interface: en2 (skipped: 0)
+so_gencnt: 6278 t_state: LAST_ACK process: sshd-session:2462 Duration: 0.352 sec Conn_Time: 0.011 sec bytes in/out: 4002/4614 pkts in/out: 14/16 pkt rxmit: 0 ooo pkts: 0 dup bytes in: 0 ACKs delayed: 0 delayed ACKs sent: 0
+rtt: 5.843 ms rttvar: 2.875 ms base rtt: 1 ms so_error: 0 svc/tc: 0 flow: 0x8976ce9e
+2026-10-31 20:56:05.335264+0800 0x95f7     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp_connection_summary [<IPv4-redacted>:22<-><IPv4-redacted>:53057] interface: en2 (skipped: 0)
+so_gencnt: 6278 t_state: LAST_ACK process: sshd-session:2462 flowctl: 0us (0x) SYN in/out: 1/1 FIN in/out: 1/0 RST in/out: 0/0 AccECN (client/server): Disabled/Not requested
+2026-10-31 20:56:05.397003+0800 0x9634     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:05.457854+0800 0x47d      Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp connect incoming: [<IPv4-redacted>:22<-><IPv4-redacted>:53058] interface: en2 (skipped: 0)
+so_gencnt: 6297 t_state: SYN_RCVD process: launchd:1 SYN in/out: 1/0 bytes in/out: 0/0 pkts in/out: 0/0 rtt: 0.0 ms rttvar: 250.0 ms base_rtt: 1 ms error: 0 so_error: 0 svc/tc: 0 flow: 0xa6b73f03
+so_qlimit: 128 so_qlen: 1 so_incqlen: 1
+2026-10-31 20:56:05.457937+0800 0x47d      Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[14]: flow_entry_alloc               fe "0 proc kernel_task(0)launchd nx_port 1 flow_uuid 4D0E388C-F784-4FCB-901E-34BB7B0F428B flags 0x14120<CONNECTED,QOS_MARKING,EXT_PORT,EXT_FLOWID> ipver=4,src=<IPv4-redacted>.22,dst=<IPv4-redacted>.53058,proto=0x06 mask=0x0000003f,hash=0x4bad99e7 tp_proto=0x06"
+2026-10-31 20:56:05.460153+0800 0x47d      Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp connected: [<IPv4-redacted>:22<-><IPv4-redacted>:53058] interface: en2 (skipped: 0)
+so_gencnt: 6297 t_state: ESTABLISHED process: launchd:1 SYN in/out: 1/1 bytes in/out: 0/0 pkts in/out: 0/0 rtt: 0.0 ms rttvar: 250.0 ms base_rtt: 1 ms error: 0 so_error: 0 svc/tc: 0 flow: 0xa6b73f03
+so_qlimit: 128 so_qlen: 1 so_incqlen: 1
+2026-10-31 20:56:05.460595+0800 0x960a     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp accept: [<IPv4-redacted>:22<-><IPv4-redacted>:53058] interface: en2 (skipped: 0)
+so_gencnt: 6297 t_state: ESTABLISHED process: launchd:1 SYN in/out: 1/1 bytes in/out: 0/0 pkts in/out: 0/0 rtt: 3.0 ms rttvar: 1.500 ms base_rtt: 1 ms error: 0 so_error: 0 svc/tc: 0 flow: 0xa6b73f03
+2026-10-31 20:56:05.492457+0800 0x964d     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sshd" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:56:05.515645+0800 0x964f     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sshd-session" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:56:05.540964+0800 0x9652     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sshd-auth" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:56:05.820344+0800 0x9657     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "zsh" in keys-off mode due to identity: com.apple.zsh
+2026-10-31 20:56:05.835412+0800 0x9659     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sudo" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:56:06.219252+0800 0x9634     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:06.304971+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: power event 14 args 0x0 0x0
+2026-10-31 20:56:06.305025+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: wrangler RootDomainPower (ps 4, 0->1)
+2026-10-31 20:56:06.305038+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: evaluatePolicy( 0, 0x0 )
+2026-10-31 20:56:07.034149+0800 0x9634     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:07.122237+0800 0x960a     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp_connection_summary (tcp_usrclosed:3234)[<IPv4-redacted>:22<-><IPv4-redacted>:53058] interface: en2 (skipped: 0)
+so_gencnt: 6297 t_state: LAST_ACK process: sshd-session:2470 Duration: 1.665 sec Conn_Time: 0.003 sec bytes in/out: 3954/8702 pkts in/out: 14/17 pkt rxmit: 0 ooo pkts: 0 dup bytes in: 0 ACKs delayed: 0 delayed ACKs sent: 0
+rtt: 4.750 ms rttvar: 2.625 ms base rtt: 1 ms so_error: 0 svc/tc: 0 flow: 0xa6b73f03
+2026-10-31 20:56:07.122254+0800 0x960a     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp_connection_summary [<IPv4-redacted>:22<-><IPv4-redacted>:53058] interface: en2 (skipped: 0)
+so_gencnt: 6297 t_state: LAST_ACK process: sshd-session:2470 flowctl: 0us (0x) SYN in/out: 1/1 FIN in/out: 1/0 RST in/out: 0/0 AccECN (client/server): Disabled/Not requested
+2026-10-31 20:56:07.807284+0800 0x958c     Default     0x0                  0      0    kernel: bluetoothd[2448] Corpse allowed 1 of 5
+2026-10-31 20:56:07.807480+0800 0x958c     Default     0x0                  0      0    kernel: [com.apple.xnu:virtual-memory] vm: WARNING truncating corpse footprint buffer (8316 KiB) to maximum size (8192 KiB) -- footprint data may be lost
+2026-10-31 20:56:07.852999+0800 0x966b     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:08.022273+0800 0x958c     Default     0x0                  0      0    kernel: Full corpse enqueued for bluetoothd
+2026-10-31 20:56:08.023120+0800 0x9530     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:442,sel:142:8067: unexpected session uid: -1 requested by: ReportCrash (442)
+2026-10-31 20:56:08.023131+0800 0x9530     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:442,:13262: operation failed (sel: 142 ret: e00002c2, -1)
+2026-10-31 20:56:08.023228+0800 0x958c     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][RemoveHCIEventNotification] -- Removed notification port for HIDShim
+2026-10-31 20:56:08.023231+0800 0x958c     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][RemoveHIDShimSharedMemoryRingBuffers] -- Removed input shared memory for HIDShim
+2026-10-31 20:56:08.023233+0800 0x958c     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][RemoveHIDShimSharedMemoryRingBuffers] -- Removed output shared memory for HIDShim
+2026-10-31 20:56:08.023293+0800 0x958c     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][DetachUserClients] -- HIDShim userclient has been terminated
+2026-10-31 20:56:08.024515+0800 0x958c     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[0]: nxctl_close                    nxctl 0x0 UUID 6060A440-DBAD-4E71-8F90-1C0727F92BAA flags 0x1
+2026-10-31 20:56:08.024522+0800 0x958c     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[0]: nxprov_close                   nxprov 0x0 UUID F379D9F5-992E-4F6A-992E-07A04E51D0E9 flags 0x9
+2026-10-31 20:56:08.024524+0800 0x958c     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[0]: nxprov_detach                  nxprov 0x0 UUID F379D9F5-992E-4F6A-992E-07A04E51D0E9 flags 0x9
+2026-10-31 20:56:08.024527+0800 0x958c     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[0]: nxctl_free                     nxctl 0x0 FREE
+2026-10-31 20:56:08.024750+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: power event 14 args 0x0 0x0
+2026-10-31 20:56:08.024791+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: wrangler RootDomainPower (ps 4, 0->1)
+2026-10-31 20:56:08.024802+0800 0x7a       Default     0x0                  0      0    kernel: PMRD: evaluatePolicy( 0, 0x0 )
+2026-10-31 20:56:08.043386+0800 0x86c2     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Set type=<APPLE80211_IOC_BTCOEX_PROFILE> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:56:08.045212+0800 0x8e28     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Set type=<APPLE80211_IOC_BTCOEX_PROFILE> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:56:08.048476+0800 0x7ae7     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Set type=<APPLE80211_IOC_BTCOEX_PROFILE> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:56:08.051321+0800 0x8e28     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Set type=<APPLE80211_IOC_BTCOEX_PROFILE> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:56:08.054631+0800 0x8e28     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Set type=<APPLE80211_IOC_BTCOEX_PROFILE> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:56:08.055772+0800 0x8e28     Default     0x0                  0      0    kernel: (IO80211Family) [IOC DEBUG] EXTERNAL: Get type=<APPLE80211_IOC_MAX_NSS_FOR_AP> Int=<Infrastructure> isDriverAvailable=<1> res=<FAIL:-536870201:0xe00002c7> handler=1
+2026-10-31 20:56:08.078260+0800 0x96d9     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:2475,sel:7:8067: unexpected session uid: -1 requested by: bluetoothd (2475)
+2026-10-31 20:56:08.078271+0800 0x96d9     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:2475,:13262: operation failed (sel: 7 ret: e00002c2, -1)
+2026-10-31 20:56:08.083720+0800 0x95cb     Default     0x0                  0      0    kernel: (apfs) clear_purgeability_log:1797: disk1s1 apfs_vnop_mmap : coresymbolicationd clearing purgeability on ino 1436519 (data ; parent-id 52120)
+2026-10-31 20:56:08.094484+0800 0x96d9     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][newUserClient] -- created userclient for HIDShim
+2026-10-31 20:56:08.094545+0800 0x96d9     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][AddHCIEventNotification] -- Added notification port for HIDShim
+2026-10-31 20:56:08.094592+0800 0x96d9     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][CreateHIDShimSharedMemoryRingBuffer] -- Created input shared memory for HIDShim
+2026-10-31 20:56:08.094623+0800 0x96d9     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][CreateHIDShimSharedMemoryRingBuffer] -- Created output shared memory for HIDShim
+2026-10-31 20:56:08.095445+0800 0x96d9     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamilyUserClient] **** [IOBluetoothHCIUserClient][SetBTRBOffWL] -- mBluetoothFamily->mACPIMethods->SetBTRB (OFF) returned 0xE00002C7 error
+2026-10-31 20:56:08.095449+0800 0x96d9     Default     0x0                  0      0    kernel: (IOBluetoothFamily) **** [IOBluetoothHCIUserClient][SetBTRBOffWL] -- mBluetoothFamily->mACPIMethods->SetBTRB (OFF) returned 0xE00002C7 error
+2026-10-31 20:56:08.095474+0800 0x96d9     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamilyUserClient] **** [IOBluetoothHCIUserClient][SetBTLPOffWL] -- mBluetoothFamily->mACPIMethods->SetBTLP (OFF) returned 0xE00002C7 error
+2026-10-31 20:56:08.095475+0800 0x96d9     Default     0x0                  0      0    kernel: (IOBluetoothFamily) **** [IOBluetoothHCIUserClient][SetBTLPOffWL] -- mBluetoothFamily->mACPIMethods->SetBTLP (OFF) returned 0xE00002C7 error
+2026-10-31 20:56:08.095496+0800 0x96d9     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamilyUserClient] **** [IOBluetoothHCIUserClient][SetBTRSWL] -- mBluetoothFamily->mACPIMethods->SetBTRS() returned 0xE00002C7 error
+2026-10-31 20:56:08.095497+0800 0x96d9     Default     0x0                  0      0    kernel: (IOBluetoothFamily) **** [IOBluetoothHCIUserClient][SetBTRSWL] -- mBluetoothFamily->mACPIMethods->SetBTRS() returned 0xE00002C7 error
+2026-10-31 20:56:08.143757+0800 0x96d9     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[0]: nxctl_create                   nxctl 0x0 UUID A34C24F0-EA27-4786-B6DA-E5567682295F
+2026-10-31 20:56:08.143768+0800 0x96d9     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[0]: __nexus_open                   bluetoothd(2475) fd 9 guard 0x534b4e584ca3c5f6
+2026-10-31 20:56:08.143783+0800 0x96d9     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[0]: nxprov_params_adjust           nxdom "upipe" (<private>) type 0
+2026-10-31 20:56:08.143786+0800 0x96d9     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[0]: nxprov_params_adjust           nxp "com.apple.bluetooth.Pipe" (0x0) flags 0x2
+2026-10-31 20:56:08.143788+0800 0x96d9     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[0]: nxprov_params_adjust             req 0x1f rings 2/2/0/0/0 slots 32/32/0/0/0 buf 2048 type 2 subtype 2 stats 0 flowadv_max 0 nexusadv_size 0 capabs 0x4 pipes 0 extensions 0 max_frags 1 headguard 0 tailguard 0 large_buf 0
+2026-10-31 20:56:08.143798+0800 0x96d9     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[0]: nxprov_create_common           nxprov 0x0 UUID ED3B8769-6CE0-4BF9-8101-67CF80C08940
+2026-10-31 20:56:08.145214+0800 0x95f9     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:56:08.146076+0800 0x95f9     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:56:08.146285+0800 0x96dc     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamilyUserClient] **** [IOBluetoothHCIUserClient][SetBTLPOffWL] -- mBluetoothFamily->mACPIMethods->SetBTLP (OFF) returned 0xE00002C7 error
+2026-10-31 20:56:08.146296+0800 0x96dc     Default     0x0                  0      0    kernel: (IOBluetoothFamily) **** [IOBluetoothHCIUserClient][SetBTLPOffWL] -- mBluetoothFamily->mACPIMethods->SetBTLP (OFF) returned 0xE00002C7 error
+2026-10-31 20:56:08.146324+0800 0x96dc     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamilyUserClient] **** [IOBluetoothHCIUserClient][SetBTPUWL] -- mBluetoothFamily->mACPIMethods->SetBTPU() returned 0xE00002C7 error
+2026-10-31 20:56:08.146326+0800 0x96dc     Default     0x0                  0      0    kernel: (IOBluetoothFamily) **** [IOBluetoothHCIUserClient][SetBTPUWL] -- mBluetoothFamily->mACPIMethods->SetBTPU() returned 0xE00002C7 error
+2026-10-31 20:56:08.146652+0800 0x95f9     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:56:08.147408+0800 0x95f9     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:56:08.178496+0800 0x96f3     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:2475,sel:7:8067: unexpected session uid: -1 requested by: bluetoothd (2475)
+2026-10-31 20:56:08.178515+0800 0x96f3     Default     0x0                  0      0    kernel: (AppleKeyStore) "AppleKeyStore":pid:2475,:13262: operation failed (sel: 7 ret: e00002c2, -1)
+2026-10-31 20:56:08.671737+0800 0x96fe     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:09.490230+0800 0x96fe     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:09.661975+0800 0x6a       Default     0x0                  0      0    kernel: Corpse released, count at 0
+2026-10-31 20:56:09.949333+0800 0x96fe     Default     0x0                  0      0    kernel: (IO80211Family) IO80211PeerMonitor::checkForDPS()  Enter
+2026-10-31 20:56:09.949393+0800 0x96fe     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: MonitorTimer en2/5000: packet counts: I0 Q0 O0
+2026-10-31 20:56:09.949415+0800 0x96fe     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BE<0 0 0 0 0 0 0 0 0 0 0> (5001ms)
+2026-10-31 20:56:09.949428+0800 0x96fe     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BK<0 0 0 0 0 0 0 0 0 0 0> (5001ms)
+2026-10-31 20:56:09.949438+0800 0x96fe     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VI<0 0 0 0 0 0 0 0 0 0 0> (5001ms)
+2026-10-31 20:56:09.949447+0800 0x96fe     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VO<0 0 0 0 0 0 0 0 0 0 0> (5001ms)
+2026-10-31 20:56:09.949457+0800 0x96fe     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: postMessageOnInfraInterface:3463 posting msgId:169 on skywalk infraInterface
+2026-10-31 20:56:09.949488+0800 0x96fe     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BE : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:56:09.949496+0800 0x96fe     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BK : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:56:09.949501+0800 0x96fe     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VI : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:56:09.949505+0800 0x96fe     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VO : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:56:09.949515+0800 0x96fe     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: L3 Control VO TX(00:00:00:00:00:00) Success=0 NoACK=0 Expired=0 OtherErr=0
+2026-10-31 20:56:10.309143+0800 0x96fe     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:11.127805+0800 0x96fe     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:11.946452+0800 0x970a     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:11.993522+0800 0x47d      Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp connect incoming: [<IPv4-redacted>:22<-><IPv4-redacted>:53068] interface: en2 (skipped: 0)
+so_gencnt: 6368 t_state: SYN_RCVD process: launchd:1 SYN in/out: 1/0 bytes in/out: 0/0 pkts in/out: 0/0 rtt: 0.0 ms rttvar: 250.0 ms base_rtt: 1 ms error: 0 so_error: 0 svc/tc: 0 flow: 0x9e4fe3c9
+so_qlimit: 128 so_qlen: 1 so_incqlen: 1
+2026-10-31 20:56:11.993614+0800 0x47d      Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[14]: flow_entry_alloc               fe "0 proc kernel_task(0)launchd nx_port 1 flow_uuid 7CC0F29B-94CF-4060-B74F-7473763AE935 flags 0x14120<CONNECTED,QOS_MARKING,EXT_PORT,EXT_FLOWID> ipver=4,src=<IPv4-redacted>.22,dst=<IPv4-redacted>.53068,proto=0x06 mask=0x0000003f,hash=0x3380391b tp_proto=0x06"
+2026-10-31 20:56:11.996349+0800 0x47d      Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp connected: [<IPv4-redacted>:22<-><IPv4-redacted>:53068] interface: en2 (skipped: 0)
+so_gencnt: 6368 t_state: ESTABLISHED process: launchd:1 SYN in/out: 1/1 bytes in/out: 0/0 pkts in/out: 0/0 rtt: 0.0 ms rttvar: 250.0 ms base_rtt: 1 ms error: 0 so_error: 0 svc/tc: 0 flow: 0x9e4fe3c9
+so_qlimit: 128 so_qlen: 1 so_incqlen: 1
+2026-10-31 20:56:11.996634+0800 0x960a     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp accept: [<IPv4-redacted>:22<-><IPv4-redacted>:53068] interface: en2 (skipped: 0)
+so_gencnt: 6368 t_state: ESTABLISHED process: launchd:1 SYN in/out: 1/1 bytes in/out: 0/0 pkts in/out: 0/0 rtt: 3.0 ms rttvar: 1.500 ms base_rtt: 1 ms error: 0 so_error: 0 svc/tc: 0 flow: 0x9e4fe3c9
+2026-10-31 20:56:12.035036+0800 0x970c     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sshd" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:56:12.055544+0800 0x970e     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sshd-session" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:56:12.084052+0800 0x9711     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sshd-auth" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:56:12.368648+0800 0x9716     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "zsh" in keys-off mode due to identity: com.apple.zsh
+2026-10-31 20:56:12.385326+0800 0x9718     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sudo" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:56:12.450462+0800 0x971f     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sudo" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:56:12.765071+0800 0x9719     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:13.583509+0800 0x9719     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:13.736438+0800 0x95f9     Default     0x0                  0      0    kernel: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+2026-10-31 20:56:14.402115+0800 0x9719     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:14.949661+0800 0x9719     Default     0x0                  0      0    kernel: (IO80211Family) IO80211PeerMonitor::checkForDPS()  Enter
+2026-10-31 20:56:14.949711+0800 0x9719     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: MonitorTimer en2/5000: packet counts: I0 Q0 O0
+2026-10-31 20:56:14.949742+0800 0x9719     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BE<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:56:14.949767+0800 0x9719     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BK<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:56:14.949786+0800 0x9719     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VI<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:56:14.949803+0800 0x9719     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VO<0 0 0 0 0 0 0 0 0 0 0> (5000ms)
+2026-10-31 20:56:14.949821+0800 0x9719     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: postMessageOnInfraInterface:3463 posting msgId:169 on skywalk infraInterface
+2026-10-31 20:56:14.949855+0800 0x9719     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BE : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:56:14.949865+0800 0x9719     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: BK : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:56:14.949871+0800 0x9719     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VI : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:56:14.949877+0800 0x9719     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WiFi: VO : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+2026-10-31 20:56:14.949889+0800 0x9719     Default     0x0                  0      0    kernel: (IO80211Family) LQM-WIFI: L3 Control VO TX(00:00:00:00:00:00) Success=0 NoACK=0 Expired=0 OtherErr=0
+2026-10-31 20:56:15.221018+0800 0x973d     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:16.039693+0800 0x973d     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:16.191903+0800 0x9741     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sudo" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:56:16.255600+0800 0x9747     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sudo" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:56:16.341590+0800 0x9717     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sudo" in keys-off mode due to entitlement: com.apple.private.security.clear-library-validation
+2026-10-31 20:56:16.362055+0800 0x9752     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "shutdown" in keys-off mode due to identity: com.apple.shutdown
+2026-10-31 20:56:16.390905+0800 0x9753     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "sh" in keys-off mode due to identity: com.apple.sh
+2026-10-31 20:56:16.399754+0800 0x9754     Default     0x0                  0      0    kernel: process_is_plugin_host: running binary "bash" in keys-off mode due to identity: com.apple.bash
+2026-10-31 20:56:16.435979+0800 0x960a     Default     0x0                  0      0    kernel: Kext loading now disabled.
+2026-10-31 20:56:16.435986+0800 0x960a     Default     0x0                  0      0    kernel: Kext unloading now disabled.
+2026-10-31 20:56:16.435988+0800 0x960a     Default     0x0                  0      0    kernel: Kext autounloading now disabled.
+2026-10-31 20:56:16.435989+0800 0x960a     Default     0x0                  0      0    kernel: Kernel requests now disabled.
+2026-10-31 20:56:16.436011+0800 0x960a     Default     0x0                  0      0    kernel: (AppleSystemPolicy) ASP: System is shutting down, preventing further ASP upcalls
+2026-10-31 20:56:16.436013+0800 0x960a     Default     0x0                  0      0    kernel: (AppleSystemPolicy) ASP: ASP: shutting down, drained
+2026-10-31 20:56:16.436141+0800 0x9753     Default     0x0                  0      0    kernel: (apfs) is_system_shutting_down:954: System is shutting down - stop any apfs bg work.
+2026-10-31 20:56:16.436192+0800 0x9757     Default     0x0                  0      0    kernel: [System Event] [3282601119797] [INFO] [Subsystem: launchd] [Event: shutdown] shutdown UNINITIALIZED -> COMMITTED
+2026-10-31 20:56:16.436288+0800 0x9757     Default     0x0                  0      0    kernel: [System Event] [3282601216370] [INFO] [Subsystem: launchd] [Event: shutdown] shutdown COMMITTED -> COMMITTED
+2026-10-31 20:56:16.436302+0800 0x9757     Default     0x0                  0      0    kernel: [System Event] [3282601230552] [INFO] [Subsystem: launchd] [Event: shutdown] shutdown COMMITTED -> BEGIN_SHUTDOWN
+2026-10-31 20:56:16.436315+0800 0x9757     Default     0x0                  0      0    kernel: [System Event] [3282601243353] [INFO] [Subsystem: launchd] [Event: shutdown] shutdown BEGIN_SHUTDOWN -> INVALIDATE_UNMANAGED_ENDPOINTS
+2026-10-31 20:56:16.436333+0800 0x9757     Default     0x0                  0      0    kernel: [System Event] [3282601261182] [INFO] [Subsystem: launchd] [Event: shutdown] shutdown INVALIDATE_UNMANAGED_ENDPOINTS -> BOOTOUT_SEMI_ACTIVE_SERVICES
+2026-10-31 20:56:16.442625+0800 0x7d3      Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.stats.en2: IOUC-WIFI: [wifip2pd] virtual IOReturn IO80211APIUserClient::clientClose()
+2026-10-31 20:56:16.447517+0800 0x3ee      Default     0x0                  0      0    kernel: IOConsoleUsers: time(0) 0->0, lin 0, llk 1,
+2026-10-31 20:56:16.447539+0800 0x3ee      Default     0x0                  0      0    kernel: IOConsoleUsers: gIOScreenLockState 3, hs 0, bs 0, now 0, sm 0x0
+2026-10-31 20:56:16.447603+0800 0x9740     Default     0x0                  0      0    kernel: (AppleCredentialManager) ACMTRM-A: stopSegment: segDeviceLockState_Unlocked: count=58 totalDuration=29684 (origStartTime=1793451039 lastDuration=336).
+2026-10-31 20:56:16.447614+0800 0x9740     Default     0x0                  0      0    kernel: (AppleCredentialManager) ACMTRM-S: setData: saving *analytics* (dataLen=400) in 3 seconds (fullSync: NO -> NO).
+2026-10-31 20:56:16.447622+0800 0x9740     Default     0x0                  0      0    kernel: (AppleCredentialManager) ACMTRM-A: resumeSegment: segDeviceLockState_Locked: count=59 totalDuration=10030 startTime=1793451375.
+2026-10-31 20:56:16.447626+0800 0x9740     Default     0x0                  0      0    kernel: (AppleCredentialManager) ACMTRM-S: setData: saving *analytics* (dataLen=400) in 3 seconds (fullSync: NO -> NO).
+2026-10-31 20:56:16.447633+0800 0x9740     Default     0x0                  0      0    kernel: (AppleCredentialManager) ACMTRM: _publish: _onDeviceLockStateChanged LOCKED(1) reason=0 en=NO pro=2/2 pasThr=NO kb=0 con=0 poRsn=0 smExp=NO gpBlk=NO miss=NO seen=0 now=1793451375(1) | PMT=0/0 GPT=0/0/(0) RPT=0/0 UPT=86400/1793537775.
+2026-10-31 20:56:16.447646+0800 0x9740     Default     0x0                  0      0    kernel: (AppleCredentialManager) ACMTRM: _mapAndPublishTRM: set TRM_DeviceLocked = True.
+2026-10-31 20:56:16.447652+0800 0x9740     Default     0x0                  0      0    kernel: (AppleCredentialManager) ACMTRM: _mapAndPublishTRM: set TRM_RelaxedPeriod = False.
+2026-10-31 20:56:16.447659+0800 0x9740     Default     0x0                  0      0    kernel: (AppleCredentialManager) ACMTRM: _mapAndPublishTRM: sent kACMTRMMessage_PropertyChanged(#changes=2) while LOCKED(1), TRM: 604800/U(0) 259200/-(255) M=0/5/0 AFNA(2)/AFNA(2) L=1 BS=0 R=0 RP=259200/0 UP=86400/1, CUR: U(0) X(0).
+2026-10-31 20:56:16.447669+0800 0x9740     Default     0x0                  0      0    kernel: (AppleCredentialManager) ACMTRM: _notifyClientsLocalHelper: sent kIOMessageServicePropertyChange(0xe0000130) -> 0xe00002c7.
+2026-10-31 20:56:16.447674+0800 0x9740     Default     0x0                  0      0    kernel: (AppleCredentialManager) ACMTRM: _logPolicy: SAVING: ver=17 smTm=0 poRsn=0 gpTm=0 smExp=NO gpBlk=NO suTm=0 svTm=1793451375 gpRsn=0 cMs=NO upTm=1793451375 disBy=118 rpTm=0 crTm=1793448096 pFlg=0 maxVer=17.
+2026-10-31 20:56:16.447681+0800 0x9740     Default     0x0                  0      0    kernel: (AppleCredentialManager) ACMTRM-S: setData: saving *policy* (dataLen=105) in 3 seconds (fullSync: NO -> NO).
+2026-10-31 20:56:16.448173+0800 0x3ee      Default     0x0                  0      0    kernel: IOConsoleUsers: time(0) 0->0, lin 0, llk 1,
+2026-10-31 20:56:16.448181+0800 0x3ee      Default     0x0                  0      0    kernel: IOConsoleUsers: gIOScreenLockState 3, hs 0, bs 0, now 0, sm 0x0
+2026-10-31 20:56:16.448505+0800 0x97ba     Default     0x0                  0      0    kernel: Kext loading is disabled (attempt to load kext com.apple.driver.IOVersatile).
+2026-10-31 20:56:16.448512+0800 0x97ba     Default     0x0                  0      0    kernel: Kext com.apple.driver.IOVersatile failed to load (0xdc00800a).
+2026-10-31 20:56:16.448515+0800 0x97ba     Default     0x0                  0      0    kernel: Failed to load kext com.apple.driver.IOVersatile (error 0xdc00800a).
+2026-10-31 20:56:16.448779+0800 0x97ba     Default     0x0                  0      0    kernel: Couldn't alloc class "IOVersatileHWA"
+2026-10-31 20:56:16.449684+0800 0x97ba     Default     0x0                  0      0    kernel: Kext loading is disabled (attempt to load kext com.apple.driver.IOVersatile).
+2026-10-31 20:56:16.449689+0800 0x97ba     Default     0x0                  0      0    kernel: Kext com.apple.driver.IOVersatile failed to load (0xdc00800a).
+2026-10-31 20:56:16.449691+0800 0x97ba     Default     0x0                  0      0    kernel: Failed to load kext com.apple.driver.IOVersatile (error 0xdc00800a).
+2026-10-31 20:56:16.449877+0800 0x97ba     Default     0x0                  0      0    kernel: Couldn't alloc class "IOVersatileHWA"
+2026-10-31 20:56:16.450472+0800 0x3ee      Default     0x0                  0      0    kernel: kPEDisableScreen 1
+2026-10-31 20:56:16.451070+0800 0x3ee      Default     0x0                  0      0    kernel: kPEEnableScreen 1
+2026-10-31 20:56:16.505272+0800 0x960a     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp_connection_summary (tcp_close:1820)[<IPv6-redacted>:22<-><IPv6-redacted>:0] interface:  (skipped: 0)
+so_gencnt: 11 t_state: LISTEN process: launchd:1 Duration: 0.000 sec Conn_Time: 0.000 sec bytes in/out: 0/0 pkts in/out: 0/0 pkt rxmit: 0 ooo pkts: 0 dup bytes in: 0 ACKs delayed: 0 delayed ACKs sent: 0
+rtt: 0.000 ms rttvar: 250.000 ms base rtt: 0 ms so_error: 0 svc/tc: 0 flow: 0x0
+2026-10-31 20:56:16.505282+0800 0x960a     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp_connection_summary [<IPv6-redacted>:22<-><IPv6-redacted>:0] interface:  (skipped: 0)
+so_gencnt: 11 t_state: LISTEN process: launchd:1 flowctl: 0us (0x) SYN in/out: 0/0 FIN in/out: 0/0 RST in/out: 0/0 AccECN (client/server): Disabled/Disabled
+2026-10-31 20:56:16.505307+0800 0x960a     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp_connection_summary (tcp_close:1820)[<IPv4-redacted>:22<-><IPv4-redacted>:0] interface:  (skipped: 0)
+so_gencnt: 12 t_state: LISTEN process: launchd:1 Duration: 0.000 sec Conn_Time: 0.000 sec bytes in/out: 0/0 pkts in/out: 0/0 pkt rxmit: 0 ooo pkts: 0 dup bytes in: 0 ACKs delayed: 0 delayed ACKs sent: 0
+rtt: 0.000 ms rttvar: 250.000 ms base rtt: 0 ms so_error: 0 svc/tc: 0 flow: 0x0
+2026-10-31 20:56:16.505313+0800 0x960a     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp_connection_summary [<IPv4-redacted>:22<-><IPv4-redacted>:0] interface:  (skipped: 0)
+so_gencnt: 12 t_state: LISTEN process: launchd:1 flowctl: 0us (0x) SYN in/out: 0/0 FIN in/out: 0/0 RST in/out: 0/0 AccECN (client/server): Disabled/Disabled
+2026-10-31 20:56:16.507424+0800 0x51e      Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.stats.en2: IOUC-WIFI: [airportd] virtual IOReturn IO80211APIUserClient::clientClose()
+2026-10-31 20:56:16.507616+0800 0x51e      Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.stats.en2: IOUC-WIFI: [airportd] virtual IOReturn IO80211APIUserClient::clientClose()
+2026-10-31 20:56:16.507665+0800 0x51e      Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.stats.en2: IOUC-WIFI: [airportd] virtual IOReturn IO80211APIUserClient::clientClose()
+2026-10-31 20:56:16.507800+0800 0x51e      Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.stats.en2: IOUC-WIFI: [airportd] virtual IOReturn IO80211APIUserClient::clientClose()
+2026-10-31 20:56:16.507923+0800 0x51e      Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.stats.en2: IOUC-WIFI: [airportd] virtual IOReturn IO80211APIUserClient::clientClose()
+2026-10-31 20:56:16.508819+0800 0x43f      Default     0x0                  0      0    kernel: (lifs) ALUC:clientDied(pid: 211 pidversion: 375), fskitd_entitled 1 fsmodule_entitled 0 support_block_resource 0
+2026-10-31 20:56:16.508828+0800 0x43f      Default     0x0                  0      0    kernel: (lifs) Found 2 dangling mount(s).
+2026-10-31 20:56:16.508877+0800 0x97eb     Default     0x0                  0      0    kernel: (lifs) lifs_unmount (lmp <private>) started
+2026-10-31 20:56:16.508889+0800 0x97eb     Error       0x0                  0      0    kernel: (lifs) lifs_u_req no port
+2026-10-31 20:56:16.508907+0800 0x97eb     Error       0x0                  0      0    kernel: (lifs) lifs_unmount_request returned err 5
+2026-10-31 20:56:16.508919+0800 0x70f      Default     0x0                  0      0    kernel: (lifs) lifs_req_callback_thread: thread <private> exiting for mount <private>
+2026-10-31 20:56:16.508943+0800 0x710      Default     0x0                  0      0    kernel: (lifs) lifs_io_strategy_thread: thread <private> exiting for mount <private>
+2026-10-31 20:56:16.508958+0800 0x97eb     Default     0x0                  0      0    kernel: (lifs) lifs_unmount (lmp <private>) done
+2026-10-31 20:56:16.525635+0800 0x97eb     Default     0x0                  0      0    kernel: (lifs) lifs_unmount (lmp <private>) started
+2026-10-31 20:56:16.525648+0800 0x97eb     Error       0x0                  0      0    kernel: (lifs) lifs_u_req no port
+2026-10-31 20:56:16.525669+0800 0x97eb     Error       0x0                  0      0    kernel: (lifs) lifs_unmount_request returned err 5
+2026-10-31 20:56:16.525685+0800 0x735      Default     0x0                  0      0    kernel: (lifs) lifs_req_callback_thread: thread <private> exiting for mount <private>
+2026-10-31 20:56:16.525704+0800 0x736      Default     0x0                  0      0    kernel: (lifs) lifs_io_strategy_thread: thread <private> exiting for mount <private>
+2026-10-31 20:56:16.525714+0800 0x97eb     Default     0x0                  0      0    kernel: (lifs) lifs_unmount (lmp <private>) done
+2026-10-31 20:56:16.530166+0800 0x678      Default     0x0                  0      0    kernel: (lifs) ALUC:clientDied(pid: 281 pidversion: 581), fskitd_entitled 0 fsmodule_entitled 1 support_block_resource 0
+2026-10-31 20:56:16.530168+0800 0x5de      Default     0x0                  0      0    kernel: (lifs) ALUC:clientDied(pid: 264 pidversion: 526), fskitd_entitled 0 fsmodule_entitled 1 support_block_resource 0
+2026-10-31 20:56:16.535084+0800 0x960a     Default     0x0                  0      0    kernel: build_signal_reason: unable to allocate signal reason buffer.
+2026-10-31 20:56:16.555417+0800 0x417f     Default     0x0                  0      0    kernel: (IOgPTPPlugin) IOTimeSyncDaemonService::deregisterProcess 225
+2026-10-31 20:56:16.555906+0800 0x975e     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][RemoveHCIEventNotification] -- Removed notification port for HIDShim
+2026-10-31 20:56:16.555912+0800 0x975e     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][RemoveHIDShimSharedMemoryRingBuffers] -- Removed input shared memory for HIDShim
+2026-10-31 20:56:16.555915+0800 0x975e     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][RemoveHIDShimSharedMemoryRingBuffers] -- Removed output shared memory for HIDShim
+2026-10-31 20:56:16.555987+0800 0x975e     Default     0x0                  0      0    kernel: (IOBluetoothFamily) [com.apple.bluetooth:KernelBluetoothFamily] **** [IOBluetoothFamily][DetachUserClients] -- HIDShim userclient has been terminated
+2026-10-31 20:56:16.622105+0800 0x9636     Default     0x0                  0      0    kernel: (AppleMobileFileIntegrity) AMFI: Denying core dump for pid 2127 (CVMServer)
+2026-10-31 20:56:16.622218+0800 0x9636     Default     0x0                  0      0    kernel: CVMServer[2127] Corpse allowed 1 of 5
+2026-10-31 20:56:16.622570+0800 0x7323     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.stats.en2: IOUC-WIFI: [sharingd] virtual IOReturn IO80211APIUserClient::clientClose()
+2026-10-31 20:56:16.625366+0800 0x9832     Default     0x0                  0      0    kernel: (lifs) lifs_destroy_iouc_volume: remove volume <private> client <private> container <private> (fd: 3 device: disk0s2 fmode: 0x1)
+2026-10-31 20:56:16.628545+0800 0x9930     Default     0x0                  0      0    kernel: (IOPCIFamily) [PCIe:0 3282741913703 ns] [childPublished()] child Basic data partition(0x1000003e4) published
+2026-10-31 20:56:16.632608+0800 0x734      Default     0x0                  0      0    kernel: (lifs) lifs_destroy_iouc_volume: remove volume <private> client <private> container <private> (fd: 3 device: disk0s3 fmode: 0x1)
+2026-10-31 20:56:16.632939+0800 0x6cd      Default     0x0                  0      0    kernel: (lifs) ALUC:clientDied(pid: 290 pidversion: 602), fskitd_entitled 0 fsmodule_entitled 1 support_block_resource 1
+2026-10-31 20:56:16.634019+0800 0x6cd      Default     0x0                  0      0    kernel: (lifs) lifs_destroy_iouc_container: container <private> removed (pid 290 pidversion 602)
+2026-10-31 20:56:16.634371+0800 0x9958     Default     0x0                  0      0    kernel: (IOPCIFamily) [PCIe:0 3282747739649 ns] [childPublished()] child Basic data partition(0x1000003e5) published
+2026-10-31 20:56:16.635173+0800 0x721      Default     0x0                  0      0    kernel: (lifs) ALUC:clientDied(pid: 298 pidversion: 628), fskitd_entitled 0 fsmodule_entitled 1 support_block_resource 1
+2026-10-31 20:56:16.635186+0800 0x721      Default     0x0                  0      0    kernel: (lifs) lifs_destroy_iouc_container: container <private> removed (pid 298 pidversion 628)
+2026-10-31 20:56:16.643629+0800 0x999b     Default     0x0                  0      0    kernel: (AppleSystemPolicy) ASP: System is shutting down, (SIP is DISABLED) allowing process at path: /System/Library/Extensions/IOGraphicsFamily.kext/iogdiagnose
+2026-10-31 20:56:16.655542+0800 0x73c6     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[12]: ch_close_common                ch 0x0 (upipe:com.apple.nexus.upipe:"upipe:0:RapportNetworkAgent}0":0:-1) uuid DD18A53A-B712-49DC-84C7-1B1DC6FDC78E flags 0x3
+2026-10-31 20:56:16.655557+0800 0x73c6     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[12]: nx_upipe_dom_disconnect        channel 0x0 -!- nexus 0x0 (com.apple.nexus.upipe:"upipe:0:RapportNetworkAgent}0":0:-1)
+2026-10-31 20:56:16.657417+0800 0x9761     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[2]: nxctl_close                    nxctl 0x0 UUID A34C24F0-EA27-4786-B6DA-E5567682295F flags 0x1
+2026-10-31 20:56:16.657426+0800 0x9761     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[2]: nxprov_close                   nxprov 0x0 UUID ED3B8769-6CE0-4BF9-8101-67CF80C08940 flags 0x9
+2026-10-31 20:56:16.657428+0800 0x9761     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[2]: nxprov_detach                  nxprov 0x0 UUID ED3B8769-6CE0-4BF9-8101-67CF80C08940 flags 0x9
+2026-10-31 20:56:16.657431+0800 0x9761     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[2]: nxctl_free                     nxctl 0x0 FREE
+2026-10-31 20:56:16.661452+0800 0x9757     Default     0x0                  0      0    kernel: [System Event] [3282774821213] [INFO] [Subsystem: launchd] [Event: shutdown] shutdown BOOTOUT_SEMI_ACTIVE_SERVICES -> BOOTOUT_ACTIVE_SERVICES
+2026-10-31 20:56:16.663634+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxctl_close                    nxctl 0x0 UUID 9086D6A6-5287-49B8-9978-F3F07083E307 flags 0x1
+2026-10-31 20:56:16.663645+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxprov_close                   nxprov 0x0 UUID 90CC0DC2-FDC2-4F65-8B64-EDF038DADCA1 flags 0x9
+2026-10-31 20:56:16.663648+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxprov_detach                  nxprov 0x0 UUID 90CC0DC2-FDC2-4F65-8B64-EDF038DADCA1 flags 0x9
+2026-10-31 20:56:16.663656+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxctl_free                     nxctl 0x0 FREE
+2026-10-31 20:56:16.663664+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxctl_close                    nxctl 0x0 UUID DB2CC9DB-56EA-43E5-9CFF-E4EDB46D1431 flags 0x1
+2026-10-31 20:56:16.663666+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxprov_close                   nxprov 0x0 UUID 64B28D1F-C1AC-475A-85A5-FCD584EAF7C7 flags 0x9
+2026-10-31 20:56:16.663669+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxprov_detach                  nxprov 0x0 UUID 64B28D1F-C1AC-475A-85A5-FCD584EAF7C7 flags 0x9
+2026-10-31 20:56:16.663671+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxctl_free                     nxctl 0x0 FREE
+2026-10-31 20:56:16.663674+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxctl_close                    nxctl 0x0 UUID D44B0E0C-EEAF-4824-9D0D-CF66EEA213E6 flags 0x1
+2026-10-31 20:56:16.663676+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxprov_close                   nxprov 0x0 UUID FAE2EB5E-0769-4B1D-BA59-C619D608D2FF flags 0x9
+2026-10-31 20:56:16.663678+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxprov_detach                  nxprov 0x0 UUID FAE2EB5E-0769-4B1D-BA59-C619D608D2FF flags 0x9
+2026-10-31 20:56:16.663680+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxctl_free                     nxctl 0x0 FREE
+2026-10-31 20:56:16.663816+0800 0x97b5     Default     0x0                  0      0    kernel: utun3 detaching
+2026-10-31 20:56:16.663825+0800 0x1ba2     Error       0x0                  0      0    kernel: mld_dispatch_packet: ip6_output(0x3e43cd4dbfd8af35) = 6
+2026-10-31 20:56:16.663847+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxctl_close                    nxctl 0x0 UUID 78501F5C-8D7B-4D59-AABD-188F8A955959 flags 0x1
+2026-10-31 20:56:16.663850+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxprov_close                   nxprov 0x0 UUID B7F92890-2B90-435C-8C58-7D5D92312F80 flags 0x9
+2026-10-31 20:56:16.663852+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxprov_detach                  nxprov 0x0 UUID B7F92890-2B90-435C-8C58-7D5D92312F80 flags 0x9
+2026-10-31 20:56:16.663855+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxctl_free                     nxctl 0x0 FREE
+2026-10-31 20:56:16.663857+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxctl_close                    nxctl 0x0 UUID F185B869-1C1C-4010-986B-FFC24301156F flags 0x1
+2026-10-31 20:56:16.663859+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxprov_close                   nxprov 0x0 UUID 7645580B-DA96-42B8-87CB-15D439B8A9D7 flags 0x9
+2026-10-31 20:56:16.663861+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxprov_detach                  nxprov 0x0 UUID 7645580B-DA96-42B8-87CB-15D439B8A9D7 flags 0x9
+2026-10-31 20:56:16.663863+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxctl_free                     nxctl 0x0 FREE
+2026-10-31 20:56:16.663875+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxctl_close                    nxctl 0x0 UUID 035574B2-8F50-4FEB-B8FC-6C3A48462250 flags 0x1
+2026-10-31 20:56:16.663878+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxprov_close                   nxprov 0x0 UUID 81FDE34F-AFF9-4EEC-82BC-E06695FB5B4C flags 0x9
+2026-10-31 20:56:16.663880+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxprov_detach                  nxprov 0x0 UUID 81FDE34F-AFF9-4EEC-82BC-E06695FB5B4C flags 0x9
+2026-10-31 20:56:16.663883+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[11]: nxctl_free                     nxctl 0x0 FREE
+2026-10-31 20:56:16.663957+0800 0x20b      Default     0x0                  0      0    kernel: utun3 detached
+2026-10-31 20:56:16.663961+0800 0x20b      Default     0x0                  0      0    kernel: ifclassq instance <private> freed
+2026-10-31 20:56:16.664011+0800 0x75d8     Error       0x0                  0      0    kernel: utun_start: ctl_getenqueuepacketcount returned error 22
+2026-10-31 20:56:16.664026+0800 0x75d8     Error       0x0                  0      0    kernel: utun_start: ctl_getenqueuepacketcount returned error 22
+2026-10-31 20:56:16.664046+0800 0x97b5     Default     0x0                  0      0    kernel: utun2 detaching
+2026-10-31 20:56:16.664071+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[1]: nxctl_close                    nxctl 0x0 UUID 5BF2D638-0C81-4236-90CF-6B9A561AD13C flags 0x1
+2026-10-31 20:56:16.664076+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[1]: nxprov_close                   nxprov 0x0 UUID C51685E4-A941-4B9D-A77C-661BD3414D5F flags 0x9
+2026-10-31 20:56:16.664079+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[1]: nxprov_detach                  nxprov 0x0 UUID C51685E4-A941-4B9D-A77C-661BD3414D5F flags 0x9
+2026-10-31 20:56:16.664081+0800 0x97b5     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[1]: nxctl_free                     nxctl 0x0 FREE
+2026-10-31 20:56:16.664201+0800 0x20b      Default     0x0                  0      0    kernel: utun2 detached
+2026-10-31 20:56:16.664212+0800 0x74e4     Error       0x0                  0      0    kernel: utun_start: ctl_getenqueuepacketcount returned error 22
+2026-10-31 20:56:16.664219+0800 0x20b      Default     0x0                  0      0    kernel: ifclassq instance <private> freed
+2026-10-31 20:56:16.664221+0800 0x74e4     Error       0x0                  0      0    kernel: utun_start: ctl_getenqueuepacketcount returned error 22
+2026-10-31 20:56:16.664237+0800 0x97b5     Default     0x0                  0      0    kernel: utun1 detaching
+2026-10-31 20:56:16.664368+0800 0x20b      Default     0x0                  0      0    kernel: utun1 detached
+2026-10-31 20:56:16.664373+0800 0x20b      Default     0x0                  0      0    kernel: ifclassq instance <private> freed
+2026-10-31 20:56:16.665513+0800 0x990d     Default     0x0                  0      0    kernel: Failed to send exception EXC_CORPSE_NOTIFY. error code: 5 for pid 2127
+2026-10-31 20:56:16.665574+0800 0x975a     Default     0x0                  0      0    kernel: (0): Destroying group 1
+2026-10-31 20:56:16.667042+0800 0x5b9d     Default     0x0                  0      0    kernel: (apfs) tx_flush:1344: disk1 xid 64387 tx stats: # 600 owait 24 19201us finish 609 bar2 598 f 35 enter 379 fq 62 220 1646us close 1us prep 1735us flush 3758us
+2026-10-31 20:56:16.667445+0800 0x68       Default     0x0                  0      0    kernel: Corpse released, count at 0
+2026-10-31 20:56:16.678267+0800 0x44e      Default     0x0                  0      0    kernel: (CoreAnalyticsFamily) virtual IOReturn CoreAnalyticsUserClient::clientClose()::180:unregistering from _hub, and clearing _hub reference to CoreAnalyticsUserClient
+2026-10-31 20:56:16.678270+0800 0x44e      Default     0x0                  0      0    kernel: (CoreAnalyticsFamily) IOReturn CoreAnalyticsHub::setClientGated(CoreAnalyticsUserClient *)::382:clearing userClient
+2026-10-31 20:56:16.682189+0800 0x9757     Default     0x0                  0      0    kernel: [System Event] [3282795557966] [INFO] [Subsystem: launchd] [Event: shutdown] shutdown BOOTOUT_ACTIVE_SERVICES -> BOOTOUT_SERVICES
+2026-10-31 20:56:16.682716+0800 0x975a     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp_connection_summary (tcp_usrclosed:3224)[<IPv4-redacted>:22<-><IPv4-redacted>:53068] interface: en2 (skipped: 0)
+so_gencnt: 6368 t_state: FIN_WAIT_1 process: sshd-session:2479 Duration: 4.638 sec Conn_Time: 0.003 sec bytes in/out: 4146/4406 pkts in/out: 12/14 pkt rxmit: 0 ooo pkts: 0 dup bytes in: 0 ACKs delayed: 0 delayed ACKs sent: 0
+rtt: 19.156 ms rttvar: 26.375 ms base rtt: 1 ms so_error: 0 svc/tc: 0 flow: 0x9e4fe3c9
+2026-10-31 20:56:16.682735+0800 0x975a     Default     0x0                  0      0    kernel: [com.apple.xnu.net.tcp:] tcp_connection_summary [<IPv4-redacted>:22<-><IPv4-redacted>:53068] interface: en2 (skipped: 0)
+so_gencnt: 6368 t_state: FIN_WAIT_1 process: sshd-session:2479 flowctl: 0us (0x) SYN in/out: 1/1 FIN in/out: 0/0 RST in/out: 0/0 AccECN (client/server): Disabled/Not requested
+2026-10-31 20:56:16.690700+0800 0x952b     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[5]: ch_close_common                ch 0x0 (upipe:com.apple.nexus.upipe:"upipe:0:RapportNetworkAgent{0":1:-1) uuid DBAF432D-509A-45E7-ABD1-5FF5B3BB9A15 flags 0x3
+2026-10-31 20:56:16.690711+0800 0x952b     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[5]: nx_upipe_dom_disconnect        channel 0x0 -!- nexus 0x0 (com.apple.nexus.upipe:"upipe:0:RapportNetworkAgent{0":1:-1)
+2026-10-31 20:56:16.691073+0800 0x9757     Default     0x0                  0      0    kernel: [System Event] [3282804441849] [INFO] [Subsystem: launchd] [Event: shutdown] shutdown BOOTOUT_SERVICES -> REMOVE_ALIASED_ENDPOINTS
+2026-10-31 20:56:16.691099+0800 0x9757     Default     0x0                  0      0    kernel: [System Event] [3282804468337] [INFO] [Subsystem: launchd] [Event: shutdown] shutdown REMOVE_ALIASED_ENDPOINTS -> SLAY_CHILD_DOMAIN
+2026-10-31 20:56:16.691753+0800 0x952b     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[5]: nxctl_close                    nxctl 0x0 UUID D02C48F8-5C86-40B7-A3FD-8951CD632F2A flags 0x1
+2026-10-31 20:56:16.691757+0800 0x952b     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[5]: nxprov_close                   nxprov 0x0 UUID 7A2B055F-BF90-4644-8F08-DF70FAEE8E2C flags 0x9
+2026-10-31 20:56:16.691759+0800 0x952b     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[5]: nx_close                       nexus 0x0 (upipe:com.apple.nexus.upipe) UUID 3840E747-C222-4D1C-B337-2191051C3872 flags 0x80000001
+2026-10-31 20:56:16.691761+0800 0x952b     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[5]: nx_detach                      nexus 0x0 UUID 3840E747-C222-4D1C-B337-2191051C3872 flags 0x80000001
+2026-10-31 20:56:16.691762+0800 0x952b     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[5]: nx_upipe_prov_nx_dtor          nexus 0x0 (com.apple.nexus.upipe) upipe 0x0
+2026-10-31 20:56:16.691766+0800 0x952b     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[5]: nxprov_detach                  nxprov 0x0 UUID 7A2B055F-BF90-4644-8F08-DF70FAEE8E2C flags 0x9
+2026-10-31 20:56:16.691768+0800 0x952b     Default     0x0                  0      0    kernel: [com.apple.xnu:skywalk] SK[5]: nxctl_free                     nxctl 0x0 FREE
+2026-10-31 20:56:16.691855+0800 0x1ba2     Error       0x0                  0      0    kernel: mld_dispatch_packet: ip6_output(0x3e43cd4dc007d335) = 6
+2026-10-31 20:56:16.691872+0800 0x952b     Default     0x0                  0      0    kernel: utun0 detaching
+2026-10-31 20:56:16.691954+0800 0x20b      Default     0x0                  0      0    kernel: utun0 detached
+2026-10-31 20:56:16.691977+0800 0x20b      Default     0x0                  0      0    kernel: ifclassq instance <private> freed
+2026-10-31 20:56:16.696396+0800 0x9757     Default     0x0                  0      0    kernel: [System Event] [3282809765413] [INFO] [Subsystem: launchd] [Event: shutdown] shutdown SLAY_CHILD_DOMAIN -> CANCEL_DEATH_SOURCE
+2026-10-31 20:56:16.696423+0800 0x9757     Default     0x0                  0      0    kernel: [System Event] [3282809792750] [INFO] [Subsystem: launchd] [Event: shutdown] shutdown CANCEL_DEATH_SOURCE -> UNPEND_REQUESTS
+2026-10-31 20:56:16.696443+0800 0x9757     Default     0x0                  0      0    kernel: [System Event] [3282809812213] [INFO] [Subsystem: launchd] [Event: shutdown] shutdown UNPEND_REQUESTS -> DOMAIN_DEACTIVATE
+2026-10-31 20:56:16.909864+0800 0x9740     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:17.728688+0800 0x9740     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:18.509248+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 335872 estimate 335872
+2026-10-31 20:56:18.519775+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.529863+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.539860+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.547217+0800 0x9740     Default     0x0                  0      0    kernel: (IO80211Family) com.apple.p2p.en2: IO80211PeerManager::reportDataPathEvents APPLE80211_M_RSSI_CHANGED RSSI 0 noise 0 snr 0. Core0Rssi:0 Core1Rssi:0
+2026-10-31 20:56:18.549817+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.559970+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.569805+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.579661+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.589813+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.599795+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.609765+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.611085+0800 0x83f      Default     0x0                  0      0    kernel: (IOgPTPPlugin) IOTimeSyncDaemonService::deregisterProcess 433
+2026-10-31 20:56:18.619950+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.629754+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.640049+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.650207+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.659777+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.669849+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.679899+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.689808+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.699561+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.709091+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.719457+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.730141+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.739759+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.749860+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.759811+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.769147+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.779885+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.789310+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.799864+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.809931+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.819402+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.829931+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.839990+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.849468+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.860078+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.869566+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.879132+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.889993+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.899684+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.910075+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.919487+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.929997+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.939856+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.949492+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.959920+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.969122+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 376832 estimate 376832
+2026-10-31 20:56:18.970883+0800 0x889      Default     0x0                  0      0    kernel: (com.apple.DriverKit-IOUserDockChannelSerial.dext) IOUserDockChannelSerialClient::<private> stop
+2026-10-31 20:56:18.974475+0800 0x6f       Default     0x0                  0      0    kernel: (IO80211Family) IO80211APIUserClient::stop(806) _onWLANQueue(1)
+2026-10-31 20:56:18.974500+0800 0x6f       Default     0x0                  0      0    kernel: (IO80211Family) IO80211APIUserClient::destroyEventPipe(2232) _onWLANQueue(1)
+2026-10-31 20:56:18.974509+0800 0x6f       Default     0x0                  0      0    kernel: (IO80211Family) destroyEventPipe: enter : pipe count 4
+2026-10-31 20:56:18.974519+0800 0x6f       Default     0x0                  0      0    kernel: (IO80211Family) IO80211IOUCEventPipe::free
+2026-10-31 20:56:18.975360+0800 0x6f       Default     0x0                  0      0    kernel: (IO80211Family) IO80211APIUserClient::stop(806) _onWLANQueue(1)
+2026-10-31 20:56:18.975370+0800 0x6f       Default     0x0                  0      0    kernel: (IO80211Family) IO80211APIUserClient::destroyEventPipe(2232) _onWLANQueue(1)
+2026-10-31 20:56:18.975376+0800 0x6f       Default     0x0                  0      0    kernel: (IO80211Family) destroyEventPipe: enter : pipe count 3
+2026-10-31 20:56:18.975381+0800 0x6f       Default     0x0                  0      0    kernel: (IO80211Family) IO80211IOUCEventPipe::free
+2026-10-31 20:56:18.975477+0800 0x6f       Default     0x0                  0      0    kernel: (IO80211Family) IO80211APIUserClient::stop(806) _onWLANQueue(1)
+2026-10-31 20:56:18.975497+0800 0x6f       Default     0x0                  0      0    kernel: (IO80211Family) IO80211APIUserClient::stop(806) _onWLANQueue(1)
+2026-10-31 20:56:18.975501+0800 0x6f       Default     0x0                  0      0    kernel: (IO80211Family) IO80211APIUserClient::destroyEventPipe(2232) _onWLANQueue(1)
+2026-10-31 20:56:18.975506+0800 0x6f       Default     0x0                  0      0    kernel: (IO80211Family) destroyEventPipe: enter : pipe count 2
+2026-10-31 20:56:18.975510+0800 0x6f       Default     0x0                  0      0    kernel: (IO80211Family) IO80211IOUCEventPipe::free
+2026-10-31 20:56:18.975536+0800 0x6f       Default     0x0                  0      0    kernel: (IO80211Family) IO80211APIUserClient::stop(806) _onWLANQueue(1)
+2026-10-31 20:56:18.975552+0800 0x6f       Default     0x0                  0      0    kernel: (IO80211Family) IO80211APIUserClient::stop(806) _onWLANQueue(1)
+2026-10-31 20:56:18.979088+0800 0x99b5     Error       0x0                  0      0    kernel: stackshot: debugger call failed: 52, try 1, buffer 372736 estimate 372736
+2026-10-31 20:56:18.986917+0800 0x6f       Default     0x0                  0      0    kernel: (IOHIDFamily) [com.apple.iohid:default] evClose by 204

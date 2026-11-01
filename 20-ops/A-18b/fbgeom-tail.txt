@@ -1,0 +1,8 @@
+PIPESRC          0x0c2f081f
+PLANE_SIZE       0x081f0c2f
+PLANE_STRIDE     195
+PLANE_CTL        0x84000008
+SURF_before      0xfe600000
+phys_base        0x71800000
+FRMCOUNT         1749304
+[2026-10-31 15:16:56] 完成

@@ -1,0 +1,89 @@
+== ioreg xn props ==
+"xnACtl" = 18446744071629176840
+"xnAPs" = 18446744071562068480
+"xnASize" = 70715263
+"xnASrc" = 125764663
+"xnAStride" = 120
+"xnASurf" = 18446744073682288640
+"xnASurfLive" = 18446744073682288640
+"xnATileOff" = 0
+"xnArmedSeen" = "yes"
+"xnBCtl" = 18446744071629176840
+"xnBPs" = 512
+"xnBSize" = 136252463
+"xnBSrc" = 204408863
+"xnBStride" = 195
+"xnBSurf" = 16777216
+"xnBSurfLive" = 16777216
+"xnBTileOff" = 0
+"xnBar2Bytes" = 268435456
+"xnCCtl" = 18446744071629176840
+"xnCPs" = 512
+"xnCSize" = 136252463
+"xnCSrc" = 204408863
+"xnCStride" = 195
+"xnCSurf" = 16777216
+"xnCSurfLive" = 16777216
+"xnCTileOff" = 0
+"xnCandAEntries" = 32505856
+"xnCandAPte" = 0
+"xnCandBEntries" = 1048576
+"xnCandBPte" = 8388611
+"xnChosenTable" = "gsm"
+"xnDsmBase64" = 1887436800
+"xnEntries" = 1048576
+"xnFrameCountDelta" = 0
+"xnGgc" = 1216
+"xnGgms" = 3
+"xnGms" = 4
+"xnGsmBase64" = 1879048192
+"xnGttBytes" = 8388608
+"xnGttPhysGsm" = 1879048192
+"xnLivePte" = 8388611
+"xnLivePtePhys" = 8388608
+"xnLiveRun" = 6656
+"xnLiveSurfIdx" = 1041920
+"xnMacSurfPteAfter" = 8388611
+"xnNeededBytes" = 25958400
+"xnPatternPx00" = 18446744073709551615
+"xnPatternPxCenter" = 18446744073692839680
+"xnPatternPxLastRow" = 18446744073709551615
+"xnPhysBase" = 1904214016
+"xnPhysMapped" = Yes
+"xnPipesrcBefore" = 125764663
+"xnPlan" = "preferred-free"
+"xnPlanOffset" = 16777216
+"xnPlanPreferred" = Yes
+"xnPlaneCtlBefore" = 18446744071629176840
+"xnPsCtrlBefore" = 18446744071562068480
+"xnPteFirst" = 1904214019
+"xnPteFlags" = 3
+"xnPteLast" = 1930170371
+"xnPteMatch" = Yes
+"xnPteWantFirst" = 1904214019
+"xnPteWantLast" = 1930170371
+"xnSizeBefore" = 70715263
+"xnState" = "switched"
+"xnStolenBytes" = 134217728
+"xnStolenEnd" = 2021654528
+"xnStrideBefore" = 120
+"xnSurfBefore" = 18446744073682288640
+"xnSurfLiveBefore" = 18446744073682288640
+"xnTileOffBefore" = 0
+== WindowServer ==
+201
+== display ==
+          Resolution: 1920 x 1080 (1080p FHD - Full High Definition)
+          Online: Yes
+== KC ==
+7da3ba4d859e74e207b630a0cad590856ab8b8c1beaa1977dcbbe4dde78fce99  /Library/KernelCollections/AuxiliaryKernelExtensions.kc
+== armed ==
+total 40
+drwxr-xr-x    8 root  wheel   256 Oct 31 12:26 .
+drwxr-xr-x  124 root  wheel  3968 Oct 31 12:25 ..
+-rw-r--r--    1 root  wheel     2 Oct 31 12:26 armed
+-rw-r--r--    1 root  wheel     2 Oct 31 12:20 attempts
+-rw-r--r--    1 root  wheel     0 Oct 31 11:10 guard.err
+-rw-r--r--    1 root  wheel  2141 Oct 31 12:25 guard.log
+-rw-r--r--    1 root  wheel  2141 Oct 31 12:25 guard.out
+-rw-r--r--    1 root  wheel    29 Oct 31 12:20 ok

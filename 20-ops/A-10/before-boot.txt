@@ -1,0 +1,38 @@
+== pre-boot snapshot Sat Oct 31 12:13:35 CST 2026 ==
+-- L/E --
+total 0
+drwxr-xr-x   8 root  wheel   256 Oct 31 12:12 .
+drwxr-xr-x  68 root  wheel  2176 Oct 30 23:44 ..
+drwxr-xr-x   3 root  wheel    96 Jun 25 10:29 HighPointIOP.kext
+drwxr-xr-x   3 root  wheel    96 Jun 25 10:29 HighPointRR.kext
+drwxr-xr-x   3 root  wheel    96 Oct 30 14:03 IGPUConsoleRange.kext
+drwxr-xr-x   3 root  wheel    96 Oct 31 11:48 XeDiag.kext
+drwxr-xr-x   3 root  wheel    96 Oct 31 11:22 XeGfx.kext
+drwxr-xr-x   3 root  wheel    96 Oct 31 12:12 XeNative.kext
+-- KC sha --
+2021dd9430ba36a8bcdb2fc27aeb25aed275dce5900f5823430a7e776f501a15  /Library/KernelCollections/AuxiliaryKernelExtensions.kc
+-- instructions XeNative --
+    "org.xenative.XeNative" => {
+      "bundlePathMainOS" => "/Library/Extensions/XeNative.kext"
+      "cdHash" => "38970c6212f59fff71b3778ec962cb05b50f2b03"
+      "teamID" => ""
+-- L/E cdhash --
+CDHash=38970c6212f59fff71b3778ec962cb05b50f2b03
+-- display --
+      Kernel Extension Info: No Kext Loaded
+          Resolution: 1920 x 1080 (1080p FHD - Full High Definition)
+          Online: Yes
+-- WindowServer --
+201
+-- armed/attempts --
+total 32
+drwxr-xr-x    7 root  wheel   224 Oct 31 12:02 .
+drwxr-xr-x  124 root  wheel  3968 Oct 31 12:01 ..
+-rw-r--r--    1 root  wheel     2 Oct 31 12:02 attempts
+-rw-r--r--    1 root  wheel     0 Oct 31 11:10 guard.err
+-rw-r--r--    1 root  wheel  1427 Oct 31 12:02 guard.log
+-rw-r--r--    1 root  wheel  1427 Oct 31 12:02 guard.out
+-rw-r--r--    1 root  wheel    29 Oct 31 12:02 ok
+-- panic latest --
+/Library/Logs/DiagnosticReports/Kernel-2026-10-30-182724.panic
+/Library/Logs/DiagnosticReports/Kernel-2026-10-30-181718.panic

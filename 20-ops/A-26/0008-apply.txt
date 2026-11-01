@@ -1,0 +1,4 @@
+patching file 'gpu/xegfx/shim/include/xg_i915.h'
+patching file 'gpu/xegfx/shim/src/xnu/xg_kext.cpp'
+patching file 'gpu/xkpi/src/i915/xg_i915_exec.c'
+patching file 'gpu/xkpi/src/i915/xg_i915_flip.c'

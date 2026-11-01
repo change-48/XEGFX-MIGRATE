@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>kextsToBuild</key>
+	<dict>
+		<key>com.apple.driver.AppleMobileDevice</key>
+		<dict>
+			<key>bundlePathMainOS</key>
+			<string>/Library/Apple/System/Library/Extensions/AppleMobileDevice.kext</string>
+			<key>cdHash</key>
+			<string>8242afbcf7dfbda1567aa297447380f5292f369b</string>
+			<key>teamID</key>
+			<string>Apple Software</string>
+		</dict>
+		<key>com.highpoint-tech.kext.HighPointIOP</key>
+		<dict>
+			<key>bundlePathMainOS</key>
+			<string>/Library/Extensions/HighPointIOP.kext</string>
+			<key>cdHash</key>
+			<string>e917a18aeefac30f0249fe451715c48100d5a1fc</string>
+			<key>teamID</key>
+			<string>DX6G69M9N2</string>
+		</dict>
+		<key>com.highpoint-tech.kext.HighPointRR</key>
+		<dict>
+			<key>bundlePathMainOS</key>
+			<string>/Library/Extensions/HighPointRR.kext</string>
+			<key>cdHash</key>
+			<string>4fb1f14d2b3d9639665a4df7e953b63765306616</string>
+			<key>teamID</key>
+			<string>DX6G69M9N2</string>
+		</dict>
+		<key>org.watchthelight.IGPUConsoleRange</key>
+		<dict>
+			<key>bundlePathMainOS</key>
+			<string>/Library/Extensions/IGPUConsoleRange.kext</string>
+			<key>cdHash</key>
+			<string>7387cd47d33f36cddbbba69d02394febaf56b552</string>
+			<key>teamID</key>
+			<string></string>
+		</dict>
+		<key>org.watchthelight.XeGfx</key>
+		<dict>
+			<key>bundlePathMainOS</key>
+			<string>/Library/Extensions/XeGfx.kext</string>
+			<key>cdHash</key>
+			<string>041008d92d0d788bde12ee983fbc21388cf9447a</string>
+			<key>teamID</key>
+			<string></string>
+		</dict>
+		<key>org.xediag.XeDiag</key>
+		<dict>
+			<key>bundlePathMainOS</key>
+			<string>/Library/Extensions/XeDiag.kext</string>
+			<key>cdHash</key>
+			<string>fff2a403521a3583dd278ae668dd016636e595ee</string>
+			<key>teamID</key>
+			<string></string>
+		</dict>
+		<key>org.xenative.XeNative</key>
+		<dict>
+			<key>bundlePathMainOS</key>
+			<string>/Users/change48/xenative/XeNative.kext</string>
+			<key>cdHash</key>
+			<string>27d35dc6e48d8d89cad36aaf2327974214d01396</string>
+			<key>teamID</key>
+			<string></string>
+		</dict>
+	</dict>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>

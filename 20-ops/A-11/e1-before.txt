@@ -1,0 +1,36 @@
+== pre (after reboot, XeNative 0.8) ==
+Sat Oct 31 12:49:28 CST 2026
+magic            0x5845
+switched         0
+gtt_mapped       1
+gtt_entries      1048576
+live_pte         0x800003
+plan_offset      0x1000000
+SURF             0xfe600000
+SURFLIVE         0xfe600000
+PS_CTRL          0x80000200
+PIPESRC          0x077f0437
+PLANE_SIZE       0x0437077f
+PLANE_STRIDE     120
+PLANE_CTL        0x84000008
+SURF_before      0xfe600000
+phys_base        0x71800000
+FRMCOUNT         1749304
+-- scan --
+nonzero_entries  1048575
+present_entries  528278
+live_run_pages   6656
+live_phys        0x800000
+ptes_around_live:
+  [liveIdx-1] 0x83431f047526a2cb
+  [liveIdx+0] 0x0000000000800003
+  [liveIdx+1] 0x0000000000801003
+  [liveIdx+2] 0x0000000000802003
+  [liveIdx+3] 0x0000000000803003
+  [liveIdx+4] 0x0000000000804003
+  [liveIdx+5] 0x0000000000805003
+  [liveIdx+6] 0x0000000000806003
+  [liveIdx+7] 0x0000000000807003
+  [liveIdx+8] 0x0000000000808003
+  [liveIdx+9] 0x0000000000809003
+  [liveIdx+10] 0x000000000080a003

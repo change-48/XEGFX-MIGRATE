@@ -1,0 +1,62 @@
+Machine model: MacBookPro16,2
+SMC version: Unknown
+EFI version: 2094.80.5.0.0
+OS version: 25F84
+Boot arguments: -v keepsyms=1 -vi2c-force-polling -amfipassbeta amfi_get_out_of_my_way=0x1 amfi=0x80 ipc_control_port_options=0 itlwm_cc=CN
+Boot time: Sat Oct 31 15:59:34 2026
+
+
+
+*** Sampled system activity (Sat Oct 31 16:09:14 2026 +0800) (5007.66ms elapsed) ***
+
+*** Running tasks ***
+
+Name                               ID     CPU ms/s  User%  Deadlines (<2 ms, 2-5 ms)  Wakeups (Intr, Pkg idle)
+WindowServer                       2597   274.89    65.82  1.60    0.00               61.68   58.49             
+kernel_task                        0      21.08     0.00   0.40    0.00               162.49  112.59            
+com.apple.AppleUserHIDDrivers      379    22.30     32.22  0.00    0.00               0.00    0.00              
+airportd                           239    9.66      62.08  0.00    0.00               2.00    1.40              
+SecurityAgent                      2630   3.83      54.17  0.00    0.00               12.38   10.78             
+powermetrics                       2899   2.55      23.49  0.00    0.00               0.20    0.20              
+bluetoothd                         2875   0.95      14.36  0.00    0.00               9.78    5.99              
+mdworker_shared                    2871   2.25      64.87  0.00    0.00               0.00    0.00              
+symptomsd                          237    2.02      69.73  0.00    0.00               0.20    0.20              
+audioclocksyncd                    422    1.65      44.41  0.00    0.00               0.00    0.00              
+logd                               94     1.12      59.67  0.00    0.00               0.00    0.00              
+locationd                          144    0.99      55.35  0.00    0.00               1.20    0.80              
+mds                                124    1.10      54.18  0.00    0.00               0.20    0.00              
+mds_stores                         348    0.90      73.75  0.00    0.00               0.00    0.00              
+systemstats                        103    0.60      51.48  0.00    0.00               0.00    0.00              
+launchservicesd                    139    0.37      47.71  0.00    0.00               0.20    0.20              
+SafeEjectGPUStartupDaemon          2583   0.22      26.37  0.00    0.00               1.00    0.80              
+clash-verge-service                303    0.12      40.27  0.00    0.00               1.80    1.20              
+apsd                               138    0.23      64.68  0.00    0.00               0.40    0.40              
+PerfPowerServices                  153    0.37      61.95  0.00    0.00               0.20    0.00              
+mDNSResponder                      234    0.20      38.79  0.60    0.20               1.20    0.40              
+corebrightnessd                    164    0.22      44.09  0.00    0.00               0.00    0.00              
+gamecontrollerd                    540    0.14      40.04  0.00    0.00               0.40    0.40              
+com.apple.geod                     612    0.17      61.50  0.00    0.00               0.20    0.20              
+notifyd                            162    0.17      35.97  0.00    0.00               0.00    0.00              
+mDNSResponderHelper                244    0.09      36.57  0.00    0.00               1.00    0.40              
+contextstored                      135    0.16      56.10  0.00    0.00               0.20    0.20              
+fseventsd                          99     0.07      58.98  0.00    0.00               0.60    0.40              
+configd                            107    0.08      28.85  0.00    0.00               0.20    0.20              
+wifip2pd                           313    0.15      39.72  0.00    0.00               0.00    0.00              
+dasd                               148    0.07      16.81  0.00    0.00               0.20    0.20              
+nsurlsessiond                      240    0.08      24.76  0.00    0.00               0.20    0.20              
+kernelmanager_helper               380    0.05      27.44  0.00    0.00               0.20    0.20              
+ReportCrash                        431    0.03      30.84  0.00    0.00               0.20    0.20              
+coresymbolicationd                 436    0.04      21.39  0.00    0.00               0.20    0.20              
+mobileassetd                       248    0.03      38.68  0.00    0.00               0.20    0.20              
+trustd                             224    0.03      35.41  0.00    0.00               0.20    0.20              
+kernelmanagerd                     126    0.03      37.07  0.00    0.00               0.20    0.20              
+syspolicyd                         259    0.02      23.86  0.00    0.00               0.20    0.20              
+AssetCacheLocatorService           1016   0.03      34.90  0.00    0.00               0.20    0.20              
+cloudd                             277    0.03      29.91  0.00    0.00               0.20    0.20              
+backgroundtaskmanagementd          257    0.03      27.66  0.00    0.00               0.20    0.20              
+tccd                               203    0.02      25.48  0.00    0.00               0.20    0.20              
+launchd                            1      0.06      38.58  0.00    0.00               0.00    0.00              
+universalaccessd                   2594   0.05      52.39  0.00    0.00               0.20    0.00              
+powerd                             109    0.04      25.32  0.00    0.00               0.20    0.00              
+securityd                          142    0.02      65.23  0.00    0.00               0.00    0.00              
+ALL_TASKS                          -2     349.43    58.63  2.60    0.20               260.60  197.90            

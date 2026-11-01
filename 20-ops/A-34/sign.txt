@@ -1,0 +1,22 @@
+== codesign ==
+Identifier=org.watchthelight.XeGfxAccel
+Signature=adhoc
+TeamIdentifier=not set
+/Library/Extensions/XeGfxAccel.kext: valid on disk
+/Library/Extensions/XeGfxAccel.kext: satisfies its Designated Requirement
+== kc md5 after ==
+e6517c4dd980c3cd6ebb31ca243b3468
+== ids ==
+Extension
+com.apple.driver.AppleMobileDevice
+com.highpoint-tech.kext.HighPointIOP
+com.highpoint-tech.kext.HighPointRR
+com.nullmoth.NMIntelFB
+org.watchthelight.IGPUConsoleRange
+org.watchthelight.XeGfx
+org.watchthelight.XeGfxAGDC
+org.watchthelight.XeGfxAccel
+org.watchthelight.XeGfxDisplay
+org.watchthelight.XeGfxIntelFB
+org.xediag.XeDiag
+org.xenative.XeNative

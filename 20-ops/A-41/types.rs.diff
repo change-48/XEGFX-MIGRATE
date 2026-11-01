@@ -1,0 +1,14 @@
+--- types.rs.before	2026-10-29 04:20:49
++++ /Users/change48/src/NvGfx-xe-2.6.2/translator/translator/src/native/emitter/types.rs	2026-11-01 08:38:13
+@@ -541,6 +541,11 @@
+             },
+             LlValue::Float32Bits(bits) => match self.resolve_type(ty)? {
+                 LlType::Float => self.const_float32_bits(*bits),
++                /* AIR carries an f32 bit pattern for a half constant when Core Animation
++                 * specializes fixed_frag_lph_cph (spec "Xh"): it hands us 0x7fc00000, a float32
++                 * quiet NaN, declared Half.  The Float arm above already narrows to half this
++                 * way; do the same here instead of refusing the module. */
++                LlType::Half => self.const_float16_bits(f32_to_f16_bits(f32::from_bits(*bits))),
+                 other => Err(format!(
+                     "native emitter: float32 bit literal f0x{bits:08x} used as non-float type {other:?}"
+                 )),

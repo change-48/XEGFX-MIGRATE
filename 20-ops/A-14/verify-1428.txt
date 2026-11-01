@@ -1,0 +1,30 @@
+2026-10-31 14:26:15.499515+0800 0x7ed      Default     0x0                  0      0    kernel: (IGPUConsoleRange) IGPUConsoleRange: console 0x70800000 (3120x2080 rowBytes 12480) is DSM+0x0: added as device memory 2 for IONDRVFramebuffer
+Graphics/Displays:
+
+    Display:
+
+      Type: GPU
+      Bus: Built-In
+      VRAM (Total): 24 MB
+      VRAM (Dynamic, Max): 
+      Vendor: Intel
+      Device ID: 0x7d51
+      Revision ID: 0x0003
+      Kernel Extension Info: No Kext Loaded
+      Displays:
+        Display:
+          Resolution: 3120 x 2080
+          UI Looks like: 3120 x 2080
+          Framebuffer Depth: 24-Bit Color (ARGB8888)
+          Main Display: Yes
+          Mirror: Off
+          Online: Yes
+
+    | |   |   |   "IOFBMemorySize" = 25958400
+  0x060000 = 0x0d470c2f
+  0x060004 = 0x0d470c2f
+  0x060400 = 0x8a000006
+  0x070008 = 0xc0000000
+  0x070024 = 0x00000000
+  0x068184 = 0x0001ddbd
+  0x068190 = 0x00016dee

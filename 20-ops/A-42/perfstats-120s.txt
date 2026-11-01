@@ -1,0 +1,4 @@
+"surfaceCount"=81
+"bufferSwapCount"=0
+"contextGLCount"=0
+"bufferFlipCount"=0

@@ -1,0 +1,27 @@
+== pre-boot snapshot #2 Sat Oct 31 12:17:57 CST 2026 ==
+-- L/E --
+total 0
+drwxr-xr-x   8 root  wheel   256 Oct 31 12:12 .
+drwxr-xr-x  68 root  wheel  2176 Oct 30 23:44 ..
+drwxr-xr-x   3 root  wheel    96 Jun 25 10:29 HighPointIOP.kext
+drwxr-xr-x   3 root  wheel    96 Jun 25 10:29 HighPointRR.kext
+drwxr-xr-x   3 root  wheel    96 Oct 30 14:03 IGPUConsoleRange.kext
+drwxr-xr-x   3 root  wheel    96 Oct 31 11:48 XeDiag.kext
+drwxr-xr-x   3 root  wheel    96 Oct 31 11:22 XeGfx.kext
+drwxr-xr-x   3 root  wheel    96 Oct 31 12:12 XeNative.kext
+-- KC sha --
+abb74ce642d4f0b7b481583a04b9a536632ae7a88054d24a4a2a0bbc94860c8f  /Library/KernelCollections/AuxiliaryKernelExtensions.kc
+-- XeNative cdhash --
+CDHash=9a878db3dc72ce4e6cef78c80540f1268cba910a
+-- display --
+          Resolution: 1920 x 1080 (1080p FHD - Full High Definition)
+          Online: Yes
+-- WindowServer --
+201
+-- guard --
+0
+attempts
+guard.err
+guard.log
+guard.out
+ok

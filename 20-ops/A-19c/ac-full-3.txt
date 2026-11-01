@@ -1,0 +1,118 @@
+Machine model: MacBookPro16,2
+SMC version: Unknown
+EFI version: 2094.80.5.0.0
+OS version: 25F84
+Boot arguments: -v keepsyms=1 -vi2c-force-polling -amfipassbeta amfi_get_out_of_my_way=0x1 amfi=0x80 ipc_control_port_options=0 itlwm_cc=CN
+Boot time: Sat Oct 31 15:59:34 2026
+
+
+
+*** Sampled system activity (Sat Oct 31 16:04:47 2026 +0800) (5010.33ms elapsed) ***
+
+*** Running tasks ***
+
+Name                               ID     CPU ms/s  User%  Deadlines (<2 ms, 2-5 ms)  Wakeups (Intr, Pkg idle)
+WindowServer                       201    143.97    81.83  1.20    0.00               3.59    2.19              
+kernel_task                        0      71.26     0.00   2.39    0.20               457.58  245.64            
+Electron                           583    79.94     62.44  51.04   3.99               136.38  50.44             
+WorkBuddy Helper (Renderer)        782    32.40     67.09  2.59    4.39               67.59   38.28             
+WorkBuddy Helper (GPU)             748    31.85     58.76  0.00    0.00               29.71   15.95             
+DEAD_TASKS                         -1     31.22     46.16  0.20    0.00               0.40    0.20              
+com.apple.AppleUserHIDDrivers      379    24.20     28.19  0.00    0.00               0.00    0.00              
+mds_stores                         348    21.95     18.85  0.00    0.00               4.39    2.39              
+clash-verge                        587    9.45      47.17  0.00    0.00               44.46   26.92             
+Electron                           788    10.64     64.95  27.12   0.20               48.65   13.96             
+airportd                           239    8.42      60.76  0.00    0.00               1.60    0.60              
+mds                                124    5.14      30.33  0.00    0.00               7.18    4.79              
+timed                              140    5.28      44.04  0.00    0.00               0.20    0.00              
+powermetrics                       1767   4.62      19.50  0.00    0.00               0.20    0.20              
+mDNSResponder                      234    4.32      49.38  2.99    0.00               3.79    0.40              
+sandbox-center                     875    2.27      29.73  0.00    0.00               11.17   6.78              
+Electron                           874    1.99      48.01  11.17   0.00               22.33   7.18              
+mdworker_shared                    1723   4.22      70.04  0.00    0.00               0.00    0.00              
+lsd                                216    3.67      97.79  0.00    0.00               0.00    0.00              
+symptomsd                          237    3.50      65.33  0.00    0.00               0.20    0.00              
+logd                               94     2.77      36.63  0.00    0.00               0.00    0.00              
+bluetoothd                         1755   1.47      13.67  0.00    0.00               10.17   5.58              
+fseventsd                          99     1.59      26.01  0.20    0.00               6.38    3.79              
+audioclocksyncd                    422    2.20      38.91  0.00    0.00               0.00    0.00              
+runningboardd                      215    2.12      69.59  0.00    0.00               0.60    0.60              
+bash                               307    1.88      26.87  0.00    0.00               0.00    0.00              
+secd                               531    1.43      71.31  0.00    0.00               0.00    0.00              
+verge-mihomo                       885    0.88      35.10  6.38    0.00               8.77    2.19              
+clash-verge-service                303    0.79      33.01  0.00    0.00               1.79    1.00              
+heard                              803    0.72      37.91  0.00    0.00               1.00    0.80              
+powerd                             109    0.91      61.06  0.00    0.00               0.20    0.00              
+WiFiAgent                          591    0.76      78.53  0.00    0.00               0.20    0.20              
+locationd                          144    0.82      55.67  0.00    0.00               1.20    0.60              
+gamepolicyd                        447    0.69      56.42  0.00    0.00               0.60    0.40              
+launchd                            1      0.53      33.44  0.00    0.00               0.20    0.00              
+node                               886    0.48      79.08  1.00    0.00               1.40    0.20              
+systemstats                        103    0.49      47.22  0.00    0.00               0.20    0.00              
+sleep                              1788   0.68      51.47  0.00    0.00               0.00    0.00              
+Finder                             601    0.34      36.43  0.00    0.00               0.00    0.00              
+com.apple.geod                     331    0.38      45.39  0.00    0.00               0.40    0.20              
+mDNSResponderHelper                244    0.23      27.98  0.00    0.00               1.20    0.60              
+opendirectoryd                     137    0.30      64.80  0.00    0.00               0.00    0.00              
+WorkBuddy Helper                   749    0.21      76.08  0.00    0.00               0.40    0.40              
+CVMServer                          692    0.26      10.58  0.00    0.00               0.20    0.00              
+configd                            107    0.21      25.76  0.00    0.00               0.20    0.00              
+gamecontrolleragentd               946    0.16      36.17  0.00    0.00               0.20    0.20              
+accountsd                          565    0.19      59.12  0.00    0.00               0.00    0.00              
+corebrightnessd                    164    0.18      47.27  0.00    0.00               0.00    0.00              
+amsaccountsd                       729    0.17      46.62  0.00    0.00               0.20    0.20              
+amsengagementd                     738    0.14      32.89  0.00    0.00               0.20    0.20              
+appstoreagent                      823    0.13      28.64  0.00    0.00               0.20    0.20              
+sysextd                            250    0.18      27.56  0.00    0.00               0.20    0.00              
+betterleaks                        884    0.06      42.90  0.00    0.00               0.60    0.40              
+aslmanager                         204    0.10      17.09  0.00    0.00               0.20    0.20              
+jetpackassetd                      648    0.12      32.84  0.00    0.00               0.20    0.20              
+ManagedClient                      1765   0.09      34.88  0.00    0.00               0.20    0.20              
+contextstored                      135    0.16      61.67  0.00    0.00               0.00    0.00              
+universalaccessd                   549    0.13      42.79  0.00    0.00               0.20    0.00              
+launchservicesd                    139    0.09      32.80  0.00    0.00               0.20    0.20              
+systemsoundserverd                 470    0.07      14.35  0.00    0.00               0.20    0.20              
+askpermissiond                     810    0.09      30.10  0.00    0.00               0.20    0.20              
+mdmclient                          1764   0.14      46.39  0.00    0.00               0.20    0.00              
+photoanalysisd                     839    0.11      36.74  0.00    0.00               0.20    0.00              
+spotlightknowledged                1510   0.14      37.34  0.00    0.00               0.00    0.00              
+notifyd                            162    0.10      37.35  0.00    0.00               0.00    0.00              
+wifip2pd                           313    0.13      38.83  0.00    0.00               0.00    0.00              
+remindd                            709    0.08      27.02  0.00    0.00               0.40    0.20              
+securityd                          142    0.06      50.21  0.00    0.00               0.20    0.20              
+sharingd                           599    0.10      61.64  0.00    0.00               0.00    0.00              
+mobiletimerd                       660    0.04      15.12  0.00    0.00               0.20    0.20              
+PerfPowerServices                  153    0.10      61.56  0.00    0.00               0.00    0.00              
+tccd                               203    0.05      23.07  0.00    0.00               0.20    0.20              
+searchpartyd                       374    0.04      30.06  0.00    0.00               0.20    0.20              
+adprivacyd                         958    0.08      46.41  0.00    0.00               0.20    0.00              
+backgroundtaskmanagementd          257    0.03      29.74  0.00    0.00               0.20    0.20              
+AssetCacheLocatorService           1016   0.03      30.57  0.00    0.00               0.20    0.20              
+mobileassetd                       248    0.03      34.63  0.00    0.00               0.20    0.20              
+calaccessd                         630    0.02      18.88  0.00    0.00               0.20    0.20              
+maild                              898    0.02      43.58  0.00    0.00               0.20    0.20              
+duetexpertd                        794    0.07      57.32  0.00    0.00               0.00    0.00              
+gamecontrollerd                    540    0.07      32.99  0.00    0.00               0.20    0.00              
+XProtectPluginService              266    0.07      44.59  0.00    0.00               0.20    0.00              
+cloudd                             277    0.02      24.72  0.00    0.00               0.20    0.20              
+kernelmanagerd                     126    0.02      20.40  0.00    0.00               0.20    0.20              
+dasd                               148    0.05      24.79  0.00    0.00               0.20    0.00              
+kernelmanager_helper               380    0.01      29.51  0.00    0.00               0.20    0.20              
+trustd                             224    0.06      31.07  0.00    0.00               0.40    0.00              
+nsurlsessiond                      580    0.01      34.18  0.00    0.00               0.20    0.20              
+distnoted                          151    0.04      21.32  0.00    0.00               0.20    0.00              
+softwareupdated                    282    0.05      39.78  0.00    0.00               0.00    0.00              
+syspolicyd                         259    0.04      27.51  0.00    0.00               0.20    0.00              
+secinitd                           339    0.05      25.97  0.00    0.00               0.20    0.00              
+endpointsecurityd                  108    0.04      25.32  0.00    0.00               0.20    0.00              
+authd                              247    0.04      44.66  0.00    0.00               0.20    0.00              
+UserEventAgent                     96     0.02      35.30  0.00    0.00               0.20    0.00              
+searchpartyuseragent               689    0.03      37.68  0.00    0.00               0.20    0.00              
+nsurlsessiond                      240    0.03      30.50  0.00    0.00               0.20    0.00              
+smd                                95     0.03      21.37  0.00    0.00               0.20    0.00              
+secinitd                           262    0.02      45.85  0.00    0.00               0.20    0.00              
+trustd                             345    0.01      36.62  0.00    0.00               0.20    0.00              
+apsd                               138    0.01      21.53  0.00    0.00               0.20    0.00              
+com.apple.geod                     612    0.01      34.09  0.00    0.00               0.20    0.00              
+promotedcontentd                   858    0.01      38.72  0.00    0.00               0.20    0.00              
+ALL_TASKS                          -2     527.78    52.94  106.38  8.78               885.77  438.09            

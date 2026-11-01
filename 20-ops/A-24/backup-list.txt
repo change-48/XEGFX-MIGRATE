@@ -1,0 +1,11 @@
+total 8
+drwxr-xr-x  10 root  wheel  320 Oct 31 16:24 .
+drwxr-xr-x  10 root  wheel  320 Oct 31 17:21 ..
+drwxr-xr-x   3 root  wheel   96 Oct 31 16:18 NMIntelFB.kext
+lrwxr-xr-x   1 root  wheel   18 Oct 31 11:41 NVMTLDriver -> NVMTLDriver.bundle
+drwxr-xr-x   3 root  wheel   96 Oct 31 11:41 NVMTLDriver.bundle
+drwxr-xr-x   3 root  wheel   96 Oct 31 11:22 XeGfx.kext
+drwxr-xr-x   3 root  wheel   96 Oct 31 14:52 XeGfxAccel.kext
+drwxr-xr-x   3 root  wheel   96 Oct 31 13:46 XeNative.kext
+drwxr-xr-x  13 root  wheel  416 Oct 31 11:41 nvmtl
+-rw-r--r--   1 root  wheel  111 Oct 30 15:34 nvmtl-allow.txt

@@ -1,0 +1,18 @@
+Sat Oct 31 14:57:28 CST 2026
+--- results ---
+                        0               1               1               1
+                      -28               1               1               1
+
+--- ioreg NMXAccel ---
++-o Root  <class IORegistryEntry, id 0x100000100, retain 19>
+  | {
+  |   "IOKitBuildVersion" = "Darwin Kernel Version 25.5.0: Tue Jun  9 22:26:23 PDT 2026; root:xnu-12377.121.10~1/RELEASE_X86_64"
+  |   "OS Build Version" = "25F84"
+  |   "IONDRVFramebufferGeneration" = <0100000001000000>
+--- drm clients ---
+--- showloaded ---
+No variant specified, falling back to release
+  175    0 0xffffff7f966bb000 0x31782e   0x31782e   org.watchthelight.XeGfx (0.0.46) 06FC5327-CEEB-3586-A915-848C0D24F306 <20 19 9 7 6 3 1>
+  177    0 0xffffff7f96c75000 0x1c1ea    0x1c1ea    org.watchthelight.XeGfxAccel (0.1) 4BF33E76-24B4-31F0-A930-8362196EE513 <176 125 109 19 7 6 3 1>
+--- panics ---
+       9

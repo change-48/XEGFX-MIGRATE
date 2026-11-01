@@ -1,0 +1,8 @@
+com.highpoint-tech.kext.HighPointIOP	4.4.5	/Library/Extensions/HighPointIOP.kext	
+com.nullmoth.NMIntelFB	0.3	/Library/Extensions/NMIntelFB.kext	
+org.watchthelight.XeGfxAccel	0.1	/Library/Extensions/XeGfxAccel.kext	
+org.xenative.XeNative	0.14	/Library/Extensions/XeNative.kext	
+org.watchthelight.IGPUConsoleRange	0.4	/Library/Extensions/IGPUConsoleRange.kext	
+org.watchthelight.XeGfxIntelFB	0.8	/Library/Extensions/XeGfxIntelFB.kext	
+com.highpoint-tech.kext.HighPointRR	4.22.1	/Library/Extensions/HighPointRR.kext	
+org.watchthelight.XeGfx	0.0.46	/Library/Extensions/XeGfx.kext	

@@ -1,0 +1,1 @@
+mapped   0xfe600 .. 0xfffff  first 0x0000000000800003 last 0x00000000021ff003  bad 0

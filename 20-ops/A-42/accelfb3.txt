@@ -1,0 +1,4 @@
+2026-11-01 08:53:27.574118+0800 0xf67f     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel:   level 3: registering any published head that has no pipe yet
+2026-11-01 08:53:27.574136+0800 0xf67f     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel:   level 3: registering any published head that has no pipe yet
+2026-11-01 08:53:27.574159+0800 0xf67f     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: sysctl debug.xegfxaccelfb=3: scanout-backed display pipe ENABLED, re-delivering the mode change
+2026-11-01 08:53:27.574161+0800 0xf67f     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: sysctl debug.xegfxaccelfb=3: scanout-backed display pipe ENABLED, re-delivering the mode change

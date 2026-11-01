@@ -1,0 +1,68 @@
+2026-11-01 09:11:35 === bringup start (boot=2026-11-01 08:04:45) ===
+2026-11-01 09:11:35 console user=change48 after 1s
+2026-11-01 09:11:35 WindowServer up after 1s
+2026-11-01 09:12:01 core already loaded
+2026-11-01 09:12:04 stages ok: 0 1 1 1 1 1 1 1 (after 1s)
+2026-11-01 09:12:05 accel already loaded
+2026-11-01 09:12:09 accelfb=3 written (read-back 1)
+2026-11-01 09:12:14 scanout-backed display pipe ENABLED seen
+2026-11-01 09:12:20 iop=1  iop_ok 4007 -> 4007 (fail=0 empty=0)
+2026-11-01 09:12:20 WARN: iop_ok did not advance (panel keeps the firmware frame)
+2026-11-01 09:14:27 === bringup start (boot=2026-11-01 08:04:45) ===
+2026-11-01 09:14:27 console user=change48 after 1s
+2026-11-01 09:14:27 WindowServer up after 1s
+2026-11-01 09:14:53 core already loaded
+2026-11-01 09:14:57 stages ok: 0 1 1 1 1 1 1 1 (after 1s)
+2026-11-01 09:14:58 accel already loaded
+2026-11-01 09:15:05 accelfb=3 written (read-back 1)
+2026-11-01 09:15:10 scanout-backed display pipe ENABLED seen
+2026-11-01 09:15:16   sample 1: iop_ok 4672 -> 4672
+2026-11-01 09:15:19   sample 2: iop_ok 4672 -> 4672
+2026-11-01 09:15:22   sample 3: iop_ok 4672 -> 4672
+2026-11-01 09:15:25   sample 4: iop_ok 4672 -> 4672
+2026-11-01 09:15:28   sample 5: iop_ok 4672 -> 4672
+2026-11-01 09:15:31   sample 6: iop_ok 4672 -> 4672
+2026-11-01 09:15:35   sample 7: iop_ok 4672 -> 4672
+2026-11-01 09:15:38   sample 8: iop_ok 4672 -> 4672
+2026-11-01 09:15:41   sample 9: iop_ok 4672 -> 4672
+2026-11-01 09:15:44   sample 10: iop_ok 4672 -> 4672
+2026-11-01 09:15:47   sample 11: iop_ok 4672 -> 4672
+2026-11-01 09:15:50   sample 12: iop_ok 4672 -> 4672
+2026-11-01 09:15:53   sample 13: iop_ok 4672 -> 4672
+2026-11-01 09:15:57   sample 14: iop_ok 4672 -> 4672
+2026-11-01 09:16:00   sample 15: iop_ok 4672 -> 4673
+2026-11-01 09:16:03   sample 1: iop_ok 4673 -> 4673
+2026-11-01 09:16:06   sample 2: iop_ok 4673 -> 4673
+2026-11-01 09:16:09   sample 3: iop_ok 4673 -> 4674
+2026-11-01 09:16:09 iop=1  iop_ok 4673 -> 4674 (fail=0 empty=0)
+2026-11-01 09:16:09 OK: frames are reaching the panel
+2026-11-01 09:17:23 === bringup start (boot=2026-11-01 08:04:45) ===
+2026-11-01 09:17:23 console user=change48 after 1s
+2026-11-01 09:17:23 WindowServer up after 1s
+2026-11-01 09:17:49 core already loaded
+2026-11-01 09:17:52 stages ok: 0 1 1 1 1 1 1 1 (after 1s)
+2026-11-01 09:17:53 accel already loaded
+2026-11-01 09:19:35 === bringup start (boot=2026-11-01 08:04:45) ===
+2026-11-01 09:19:35 console user=change48 after 1s
+2026-11-01 09:19:36 WindowServer up after 1s
+2026-11-01 09:20:01 core already loaded
+2026-11-01 09:20:05 stages ok: 0 1 1 1 1 1 1 1 (after 1s)
+2026-11-01 09:20:06 accel already loaded
+2026-11-01 09:20:10 already live (debug.xegfxaccel_iop=1) -- skipping pipe + hooks, not re-delivering the mode change
+2026-11-01 09:20:13   sample 1: iop_ok 7624 -> 7691
+2026-11-01 09:20:13 iop=1  iop_ok 7624 -> 7691 (fail=0 empty=0)
+2026-11-01 09:20:13 OK: frames are reaching the panel
+2026-11-01 09:21:51 === bringup start (boot=2026-11-01 09:21:46) ===
+2026-11-01 09:22:02 console user=_windowserver after 9s
+2026-11-01 09:22:02 WindowServer up after 1s
+2026-11-01 09:22:28 core already loaded
+2026-11-01 09:24:05 === bringup start (boot=2026-11-01 09:21:47) ===
+2026-11-01 09:24:05 console user=change48 (uid 501) after 1s
+2026-11-01 09:24:05 GUI session + WindowServer up after 1s
+2026-11-01 09:24:33 core loaded (debug.xegfx_stage present, attempt 1)
+2026-11-01 09:24:33 stages ok: 0 1 1 1 1 1 1 1 (after 1s)
+2026-11-01 09:24:36 accel already loaded
+2026-11-01 09:24:41 accelfb=3 written (read-back 1)
+2026-11-01 09:24:46 scanout-backed display pipe ENABLED seen
+2026-11-01 09:26:54 iop=1  iop_ok 0 -> 0 (fail=0 empty=0)
+2026-11-01 09:26:54 WARN: iop_ok did not advance (panel keeps the firmware frame)

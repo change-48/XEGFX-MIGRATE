@@ -1,0 +1,4 @@
+nonzero_entries  7000
+present_entries  3518
+live_run_pages   6656
+live_phys        0x800000

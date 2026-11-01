@@ -1,0 +1,56 @@
+22:25:18.985 [CoreDisplay] [WARN] - Creating FB 1 of 2
+22:25:18.996 [CoreDisplay] [WARN] - Setting mode 0x0 with depth 0x0 on displayID: 0x0 fbRegID: 0x100000520
+22:25:18.996 [CoreDisplay] [WARN] - Failed to obtain mode info from IOFBGetDisplayModeInformation()
+22:25:19.005 [CoreDisplay] [WARN] - Created FB 1 of 2
+22:25:19.005 [CoreDisplay] [WARN] - Creating FB 2 of 2
+22:25:19.005 [XeGfxDisplay] XEGFX_DISPLAY: M3d: accel service NMXAccel found (XeGfxAccelPresent=true)
+22:25:19.005 [XeGfxDisplay] XEGFX_DISPLAY: M3d: XeGfxFbReady=TRUE (super::start() returned; accel may program PLANE_SURF now)
+22:25:19.009 [XeGfxDisplay] XEGFX_DISPLAY: M3d: first present accepted (phys 0x34e71000 ggtt 0x80000000 pitch 12480 3120x2080 flip 1); head 4 now scans our buffer
+22:25:19.009 [XeGfxDisplay] XEGFX_DISPLAY: S3: published IOFBDetailedTimings with 1 entry (3120x2080 clk 900045000 Hz)
+22:25:19.009 [XeGfxDisplay] XEGFX_DISPLAY: M3d: enableController READY -- scanout 0x34e71000 3120x2080 pitch 12480 ggtt 0x80000000, present=1, 1 IOFBDetailedTimings (3120x2080 cl
+22:25:19.009 [XeGfxDisplay] XEGFX_DISPLAY: M3d enableController: gate=1 armed=1 candidate=1 checks=0x3f scanout=1 (handle 0x101 phys 0x34e71000 3120x2080 pitch 12480 ggtt 0x80000
+22:25:19.009 [XeGfxDisplay] XEGFX_DISPLAY: M3d: vblank source armed (accel frame counter)
+22:25:19.009 [XeGfxDisplay] XEGFX_DISPLAY: vblank: client registered (M3d accel/timer source)
+22:25:19.010 [XeGfxDisplay] XEGFX_DISPLAY: M3d: open() RELEASED (opens=1) -- aperture 0x0/0 live, head 4 scans our buffer
+22:25:19.010 [XeGfxDisplay] XEGFX_DISPLAY: M3d open/ok: gate=1 armed=1 candidate=1 checks=0x3f scanout=1 (handle 0x101 phys 0x34e71000 3120x2080 pitch 12480 ggtt 0x80000000) pres
+22:25:19.022 [XeGfxDisplay] XEGFX_DISPLAY: S3: setDisplayMode(1) accepted; raster unchanged, 0 register writes
+22:25:19.022 [XeGfxDisplay] XEGFX_DISPLAY: M3d: aperture served phys 0x34e71000 len 25958400 (3120x2080 pitch 12480)
+22:25:19.021 [CoreDisplay] [WARN] - Setting mode 0x0 with depth 0x0 on displayID: 0x0 fbRegID: 0x1000007bf
+22:25:19.021 [CoreDisplay] [WARN] - Failed to obtain mode info from IOFBGetDisplayModeInformation()
+22:25:19.031 [CoreDisplay] [WARN] - Setting mode 0x0 with depth 0x0 on displayID: 0x0 fbRegID: 0x100000520
+22:25:19.031 [CoreDisplay] [WARN] - Failed to obtain mode info from IOFBGetDisplayModeInformation()
+22:25:19.038 [XeGfxAccel] NMXAccel: newUserClient(type 4 / 0x4) -> family returned 0x0, client IOAccelDisplayPipeUserClient2
+22:25:19.039 [XeGfxAccel] NMXAccel: newUserClient(type 4 / 0x4) -> family returned 0x0, client IOAccelDisplayPipeUserClient2
+22:25:19.039 [IOPresentment] Error: Unable to create IOAccelDisplayPipe
+22:25:19.039 [IOPresentment] Error: Interface creation error: 0x2002.
+22:25:19.042 [CoreDisplay] [WARN] - Created FB 2 of 2
+22:25:19.976 [CoreDisplay] [ERROR] - System set to use IOP but no display pipes are present
+22:25:20.939 [CoreDisplay] [WARN] - Setting mode 0x64 with depth 0x0 on displayID: 0x23d05e40 fbRegID: 0x100000520
+22:25:20.939 [CoreDisplay] [WARN] - Mode has dimensions 3120x2080
+22:25:20.939 [CoreDisplay] [WARN] - Setting mode 0x1 with depth 0x0 on displayID: 0x5b81c5c0 fbRegID: 0x1000007bf
+22:25:20.939 [CoreDisplay] [WARN] - Mode has dimensions 3120x2080
+22:25:20.939 [XeGfxDisplay] XEGFX_DISPLAY: S3: setDisplayMode(1) accepted; raster unchanged, 0 register writes
+22:26:16.571 [CoreDisplay] [WARN] - Creating FB 1 of 2
+22:26:16.604 [CoreDisplay] [WARN] - Setting mode 0x0 with depth 0x0 on displayID: 0x0 fbRegID: 0x100000520
+22:26:16.604 [CoreDisplay] [WARN] - Failed to obtain mode info from IOFBGetDisplayModeInformation()
+22:26:16.608 [CoreDisplay] [WARN] - Created FB 1 of 2
+22:26:16.608 [CoreDisplay] [WARN] - Creating FB 2 of 2
+22:26:16.608 [XeGfxDisplay] XEGFX_DISPLAY: M3d: open() RELEASED (opens=6) -- aperture 0x34e71000/25958400 live, head 4 scans our buffer
+22:26:16.608 [XeGfxDisplay] XEGFX_DISPLAY: M3d open/ok: gate=1 armed=1 candidate=1 checks=0x3f scanout=1 (handle 0x101 phys 0x34e71000 3120x2080 pitch 12480 ggtt 0x80000000) pres
+22:26:16.612 [XeGfxDisplay] XEGFX_DISPLAY: S3: setDisplayMode(1) accepted; raster unchanged, 0 register writes
+22:26:16.612 [CoreDisplay] [WARN] - Setting mode 0x0 with depth 0x0 on displayID: 0x0 fbRegID: 0x1000007bf
+22:26:16.612 [CoreDisplay] [WARN] - Failed to obtain mode info from IOFBGetDisplayModeInformation()
+22:26:16.613 [CoreDisplay] [WARN] - Setting mode 0x0 with depth 0x0 on displayID: 0x0 fbRegID: 0x100000520
+22:26:16.614 [CoreDisplay] [WARN] - Failed to obtain mode info from IOFBGetDisplayModeInformation()
+22:26:16.616 [IOPresentment] Error: Unable to create IOAccelDisplayPipe
+22:26:16.616 [IOPresentment] Error: Interface creation error: 0x2002.
+22:26:16.617 [CoreDisplay] [WARN] - Created FB 2 of 2
+22:26:17.424 [CoreDisplay] [ERROR] - System set to use IOP but no display pipes are present
+22:26:18.173 [CoreDisplay] [WARN] - Setting mode 0x64 with depth 0x0 on displayID: 0x23d05e40 fbRegID: 0x100000520
+22:26:18.173 [CoreDisplay] [WARN] - Mode has dimensions 3120x2080
+22:26:18.174 [CoreDisplay] [WARN] - Setting mode 0x1 with depth 0x0 on displayID: 0x5b81c5c0 fbRegID: 0x1000007bf
+22:26:18.174 [XeGfxDisplay] XEGFX_DISPLAY: S3: setDisplayMode(1) accepted; raster unchanged, 0 register writes
+22:26:18.174 [CoreDisplay] [WARN] - Mode has dimensions 3120x2080
+22:26:18.575 [CoreDisplay] [ERROR] - Unable to find display pipe for IOFB service / regID: 0x16b93 / 0x1000007bf
+22:26:18.575 [CoreDisplay] [ERROR] - Unable to find display pipe for IOFB service / regID: 0x16e13 / 0x100000520
+22:26:19.147 [XeGfxDisplay] XEGFX_DISPLAY: M3d: vblank source armed (accel frame counter)

@@ -1,0 +1,41 @@
+=== before ===
+  NVMTLDriver: CodeDirectory v=20400 size=12401 flags=0x4000002(adhoc,???) hashes=381+3 location=embedded
+  libLLVM.dylib: CodeDirectory v=20400 size=1168649 flags=0x4000002(adhoc,???) hashes=36514+2 location=embedded
+  libSPIRV-Tools-diff.dylib: CodeDirectory v=20400 size=2517 flags=0x2(adhoc) hashes=72+2 location=embedded
+  libSPIRV-Tools-link.dylib: CodeDirectory v=20400 size=2133 flags=0x2(adhoc) hashes=60+2 location=embedded
+  libSPIRV-Tools-lint.dylib: CodeDirectory v=20400 size=1237 flags=0x2(adhoc) hashes=32+2 location=embedded
+  libSPIRV-Tools-opt.dylib: CodeDirectory v=20400 size=32980 flags=0x2(adhoc) hashes=1024+2 location=embedded
+  libSPIRV-Tools-reduce.dylib: CodeDirectory v=20400 size=2199 flags=0x2(adhoc) hashes=62+2 location=embedded
+  libSPIRV-Tools-shared.dylib: CodeDirectory v=20400 size=21015 flags=0x2(adhoc) hashes=650+2 location=embedded
+  libSPIRV-Tools.dylib: CodeDirectory v=20400 size=18480 flags=0x2(adhoc) hashes=571+2 location=embedded
+  libdrm.2.dylib: CodeDirectory v=20400 size=833 flags=0x4000002(adhoc,???) hashes=21+2 location=embedded
+  libnvmtl_translate.dylib: CodeDirectory v=20400 size=115956 flags=0x4000002(adhoc,???) hashes=3617+2 location=embedded
+  libvulkan_intel.dylib: CodeDirectory v=20400 size=256721 flags=0x4000002(adhoc,???) hashes=8016+2 location=embedded
+=== patching ===
+  /Library/GPUBundles/NVMTLDriver.bundle/Contents/MacOS/NVMTLDriver: flags 0x4000002 -> 0x4000002, platform 1 -> 1
+  /Library/GPUBundles/NVMTLDriver.bundle/Contents/MacOS/air-runtime/libLLVM.dylib: flags 0x4000002 -> 0x4000002, platform 1 -> 1
+  /Library/GPUBundles/nvmtl/libSPIRV-Tools-diff.dylib: flags 0x2 -> 0x4000002, platform 0 -> 1
+  /Library/GPUBundles/nvmtl/libSPIRV-Tools-link.dylib: flags 0x2 -> 0x4000002, platform 0 -> 1
+  /Library/GPUBundles/nvmtl/libSPIRV-Tools-lint.dylib: flags 0x2 -> 0x4000002, platform 0 -> 1
+  /Library/GPUBundles/nvmtl/libSPIRV-Tools-opt.dylib: flags 0x2 -> 0x4000002, platform 0 -> 1
+  /Library/GPUBundles/nvmtl/libSPIRV-Tools-reduce.dylib: flags 0x2 -> 0x4000002, platform 0 -> 1
+  /Library/GPUBundles/nvmtl/libSPIRV-Tools-shared.dylib: flags 0x2 -> 0x4000002, platform 0 -> 1
+  /Library/GPUBundles/nvmtl/libSPIRV-Tools.dylib: flags 0x2 -> 0x4000002, platform 0 -> 1
+  /Library/GPUBundles/nvmtl/libdrm.2.dylib: flags 0x4000002 -> 0x4000002, platform 1 -> 1
+  /Library/GPUBundles/nvmtl/libnvmtl_translate.dylib: flags 0x4000002 -> 0x4000002, platform 1 -> 1
+  /Library/GPUBundles/nvmtl/libvulkan_intel.dylib: flags 0x4000002 -> 0x4000002, platform 1 -> 1
+=== after ===
+  NVMTLDriver: CodeDirectory v=20400 size=12401 flags=0x4000002(adhoc,???) hashes=381+3 location=embedded
+  libLLVM.dylib: CodeDirectory v=20400 size=1168649 flags=0x4000002(adhoc,???) hashes=36514+2 location=embedded
+  libSPIRV-Tools-diff.dylib: CodeDirectory v=20400 size=2517 flags=0x4000002(adhoc,???) hashes=72+2 location=embedded
+  libSPIRV-Tools-link.dylib: CodeDirectory v=20400 size=2133 flags=0x4000002(adhoc,???) hashes=60+2 location=embedded
+  libSPIRV-Tools-lint.dylib: CodeDirectory v=20400 size=1237 flags=0x4000002(adhoc,???) hashes=32+2 location=embedded
+  libSPIRV-Tools-opt.dylib: CodeDirectory v=20400 size=32980 flags=0x4000002(adhoc,???) hashes=1024+2 location=embedded
+  libSPIRV-Tools-reduce.dylib: CodeDirectory v=20400 size=2199 flags=0x4000002(adhoc,???) hashes=62+2 location=embedded
+  libSPIRV-Tools-shared.dylib: CodeDirectory v=20400 size=21015 flags=0x4000002(adhoc,???) hashes=650+2 location=embedded
+  libSPIRV-Tools.dylib: CodeDirectory v=20400 size=18480 flags=0x4000002(adhoc,???) hashes=571+2 location=embedded
+  libdrm.2.dylib: CodeDirectory v=20400 size=833 flags=0x4000002(adhoc,???) hashes=21+2 location=embedded
+  libnvmtl_translate.dylib: CodeDirectory v=20400 size=115956 flags=0x4000002(adhoc,???) hashes=3617+2 location=embedded
+  libvulkan_intel.dylib: CodeDirectory v=20400 size=256721 flags=0x4000002(adhoc,???) hashes=8016+2 location=embedded
+=== flush signature cache ===
+  amfid/taskgated signalled (a reboot is the certain way to drop the cached CDHash)

@@ -1,0 +1,13 @@
+    | |   "IOClass" = "AppleACPIPlatformExpert"
+    | | | |   "IOClass" = "AppleACPICPU"
+    | | |   |   "IOClass" = "X86PlatformPlugin"
+    | | |   |       "IOClass" = "ApplePlatformEnabler"
+    | | |   |       "IOClass" = "AGPMController"
+    | | |         "IOClass" = "X86PlatformShim"
+    | |       "IOClass" = "SMCProcessor"
+    | |       "IOClass" = "AppleACPICPU"
+    | |       "IOClass" = "AppleACPICPU"
+    | |       "IOClass" = "AppleACPICPU"
+---
+1
+0

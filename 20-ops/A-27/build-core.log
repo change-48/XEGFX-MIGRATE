@@ -1,0 +1,66 @@
+exported by macOS: 67   to implement: 44
+stubs: 0 functions, 0 variables
+/Users/change48/src/NvGfx-xe-2.6.2/gpu/xegfx/shim/src/xnu/xg_kext.cpp:255:40: warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+  255 |         OSNumber *n = OSNumber::withNumber(v, bits);
+      |                       ~~~~~~~~                ^~~~
+/Users/change48/src/NvGfx-xe-2.6.2/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1025:23: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 1025 |                 xg_put(d, "gts", st.gts, 8);
+      |                 ~~~~~~           ~~~^~~
+/Users/change48/src/NvGfx-xe-2.6.2/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1026:26: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 1026 |                 xg_put(d, "wedged", st.wedged, 8);
+      |                 ~~~~~~              ~~~^~~~~~
+/Users/change48/src/NvGfx-xe-2.6.2/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1029:34: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 1029 |                 xg_put(d, "guc-submission", st.guc_submission, 8);
+      |                 ~~~~~~                      ~~~^~~~~~~~~~~~~~
+/Users/change48/src/NvGfx-xe-2.6.2/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1032:27: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 1032 |                 xg_put(d, "engines", st.engines, 8);
+      |                 ~~~~~~               ~~~^~~~~~~
+/Users/change48/src/NvGfx-xe-2.6.2/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1080:27: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 1080 |                 xg_put(d, "engines", ex.engines, 8);
+      |                 ~~~~~~               ~~~^~~~~~~
+/Users/change48/src/NvGfx-xe-2.6.2/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1081:24: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 1081 |                 xg_put(d, "done", ex.done, 8);
+      |                 ~~~~~~            ~~~^~~~
+/Users/change48/src/NvGfx-xe-2.6.2/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1137:30: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 1137 |                 clock_interval_to_deadline(gWdog, NSEC_PER_SEC, &dl);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~ ^~~~~
+/Users/change48/src/NvGfx-xe-2.6.2/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1395:30: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 1395 |         return SYSCTL_OUT(req, buf, n);
+      |                ~~~~~~~~~~~~~~~~~~~~~^~
+/Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk/System/Library/Frameworks/Kernel.framework/Headers/sys/sysctl.h:260:48: note: expanded from macro 'SYSCTL_OUT'
+  260 | #define SYSCTL_OUT(r, p, l) (r->oldfunc)(r, p, l)
+      |                             ~                  ^
+/Users/change48/src/NvGfx-xe-2.6.2/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1425:32: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 1425 |         return SYSCTL_OUT(req, buf, n + 1);
+      |                ~~~~~~~~~~~~~~~~~~~~~~~^~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk/System/Library/Frameworks/Kernel.framework/Headers/sys/sysctl.h:260:48: note: expanded from macro 'SYSCTL_OUT'
+  260 | #define SYSCTL_OUT(r, p, l) (r->oldfunc)(r, p, l)
+      |                             ~                  ^
+/Users/change48/src/NvGfx-xe-2.6.2/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1454:30: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 1454 |         return SYSCTL_OUT(req, b, n + 1);
+      |                ~~~~~~~~~~~~~~~~~~~~~^~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk/System/Library/Frameworks/Kernel.framework/Headers/sys/sysctl.h:260:48: note: expanded from macro 'SYSCTL_OUT'
+  260 | #define SYSCTL_OUT(r, p, l) (r->oldfunc)(r, p, l)
+      |                             ~                  ^
+/Users/change48/src/NvGfx-xe-2.6.2/gpu/xegfx/shim/src/xnu/xg_kext.cpp:126:1: warning: unused function 'strstr_kpi' [-Wunused-function]
+  126 | strstr_kpi(const char *h, const char *n)
+      | ^~~~~~~~~~
+/Users/change48/src/NvGfx-xe-2.6.2/gpu/xegfx/shim/src/xnu/xg_kext.cpp:318:22: warning: unused variable 'gPanelEdidDtd' [-Wunused-const-variable]
+  318 | static const uint8_t gPanelEdidDtd[18] = {
+      |                      ^~~~~~~~~~~~~
+/Users/change48/src/NvGfx-xe-2.6.2/gpu/xegfx/shim/src/xnu/xg_kext.cpp:405:1: warning: unused function 'xg_vbt_internal_child' [-Wunused-function]
+  405 | xg_vbt_internal_child(uint16_t *handle, uint16_t *type, uint8_t *port)
+      | ^~~~~~~~~~~~~~~~~~~~~
+/Users/change48/src/NvGfx-xe-2.6.2/gpu/xegfx/shim/src/xnu/xg_kext.cpp:456:1: warning: unused function 'xg_timing_from_vbt' [-Wunused-function]
+  456 | xg_timing_from_vbt(uint32_t *w)
+      | ^~~~~~~~~~~~~~~~~~
+15 warnings generated.
+XeGfx.kext 4425488 B
+XeGfx.kext: 451 undefined symbols, collection BootKernelExtensions.kc
+  com.apple.driver.AppleACPIPlatform              1  ok
+  com.apple.iokit.IOPCIFamily                     7  ok
+  com.apple.kernel                              443  ok
+link check ok
+kpi check ok (451 symbols)
+shadow check ok (5321 defined symbols)
+xgprobe 17328 B

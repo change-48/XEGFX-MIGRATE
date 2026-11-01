@@ -1,0 +1,15 @@
+date: Sat Oct 31 21:27:49 CST 2026
+--- nvram
+xegfx-disp-expose	%01
+xegfx-disp-phase	%02
+xegfx-disp-starts	%01%00%00%00
+xegfx-disp-fail	%00
+xegfx-disp-trial	%01
+--- results
+                        0               1               1               1
+                        1               1               1               1
+
+--- nmxgpu
+2
+--- nub in reg
+1

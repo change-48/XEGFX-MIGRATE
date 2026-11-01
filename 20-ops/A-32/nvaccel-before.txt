@@ -1,0 +1,10 @@
+debug.nmxaccel_headless: 0
+debug.xegfx_agdc_cmds: 0
+debug.xegfx_agdc_k5: 0
+debug.xegfx_agdc_k5_asked: 0
+debug.xegfx_agdc_k5_caps: 0
+debug.xegfx_agdc_k5_caps_mask: 0
+debug.xegfx_agdc_k5_last_refused_idx: -1
+debug.xegfx_agdc_k5_link: 0
+debug.xegfx_agdc_k5_link_mask: 0
+debug.xegfx_agdc_k5_why: 0
