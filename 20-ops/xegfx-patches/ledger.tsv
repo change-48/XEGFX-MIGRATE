@@ -7,3 +7,7 @@
 2026-11-03	NVMTLDriver(plugin)	verified-source-restored	83cff86d(+5 same)	e5bb42b0	A-79 backup+patch_a80+1行 == ~/src/NvGfx-xe-2.6.2/plugin（逐字节）；重建 UUID 与 A-80 件相同
 2026-11-03	NVMTLDriver(plugin)	install-probe(c8de9b53)	-	c8de9b53	A-86 探针件（fc census 日志）；行为同 A-80，p50 24.59
 2026-11-03	NVMTLDriver(plugin)	install-knobs(df1b5083)	-	df1b5083	A-86 开关件（/private/tmp/nvmtl-a86）；无开关文件时 == A-80 基线 p50 24.97
+2026-11-03	NVMTLDriver(plugin)	install-lock(3017d765)	-	3017d765	A-87 锁实验件（/private/tmp/nvmtl-a87 oollock）；claim内/submit外，类锁等待4.08→0.01ms，p50 25.30→25.00；源码见 a87-lock/
+2026-11-03	NVMTLDriver(plugin)	install-spin(7f8cc6e1)	-	7f8cc6e1	A-88 自旋件（/private/tmp/nvmtl-spin）；无开关文件 == A-87 base；源码见 a88-spin-early/
+2026-11-03	XeGfxAccel(kext)	install-early(985ee9df)	-	985ee9df	A-88 accel（A-84 件 + debug.xegfxaccel_iop_xe_early 默认 0）；AuxKC 已重建；源码见 a88-spin-early/
+2026-11-03	XeGfxAccel(kext)	install-tlraw(e51946c8)	-	e51946c8	A-89 accel（A-88 件 + 环加 sub/vcnt + debug.xegfxaccel_iop_tl_raw，零行为改动）；AuxKC 已重建；源码见 a89-tl-raw/
