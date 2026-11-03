@@ -1,0 +1,9 @@
+# date	kext	action	source_sha	binary_sha	note
+2026-10-30	XeGfxIntelFB	install	44e32ba6	ce9baccb	A-55 前基线；rebuild 与装机逐字节一致
+2026-11-02	XeGfxAccel	installed-baseline	unknown	ac73184c	现存源码重建得 902cc946，无法复现；见 MANIFEST 缺口
+2026-11-02	XeGfxIntelFB	verified-in-sync	a53a5c1e	ce9baccb	verify.sh 重建逐字节一致（SDKROOT=MacOSX15.4）
+2026-11-02	XeGfxAccel	verified-out-of-sync	902cc946	ac73184c	缺口已记录；下次装 accel 时闭合
+2026-11-02	XeGfxAccel	patch-series-validated	4f445170+	-	0001..0004 应用后 == state/a53a54（逐字节）
+2026-11-03	NVMTLDriver(plugin)	verified-source-restored	83cff86d(+5 same)	e5bb42b0	A-79 backup+patch_a80+1行 == ~/src/NvGfx-xe-2.6.2/plugin（逐字节）；重建 UUID 与 A-80 件相同
+2026-11-03	NVMTLDriver(plugin)	install-probe(c8de9b53)	-	c8de9b53	A-86 探针件（fc census 日志）；行为同 A-80，p50 24.59
+2026-11-03	NVMTLDriver(plugin)	install-knobs(df1b5083)	-	df1b5083	A-86 开关件（/private/tmp/nvmtl-a86）；无开关文件时 == A-80 基线 p50 24.97
