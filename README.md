@@ -140,6 +140,19 @@ sysctl debug.xegfxaccel_iop_ok
 
 ---
 
+## 上游提交记录
+
+| 日期 | 位置 | 内容 |
+| --- | --- | --- |
+| 2026-11-01 | [WTLIntelGfx#14](https://github.com/watchthelight-labs/WTLIntelGfx/issues/14) | 3120 宽面板的 `12480 / 12544` stride 失配、defer 队列不接帧（初版报告，描述的是当时的 copy 路径状态） |
+| 2026-11-01 | [research PR #2](https://github.com/watchthelight-labs/research/pull/2) → [commit `c5395e6`](https://github.com/watchthelight-labs/research/commit/c5395e6) | 9 份日志集；上游代做脱敏并直接提交 main，PR 因此关闭（不是被拒） |
+| 2026-11-07 | [#14 更新评论](https://github.com/watchthelight-labs/WTLIntelGfx/issues/14#issuecomment-6704448668) | 更正：flip 已是开机默认、39.6fps / p90 34ms；pitch 失配的真实绕过方式；40fps 上限归因 |
+| 2026-11-07 | [ArrowWhatever#2](https://github.com/Mountainatic/ArrowWhatever/issues/2) | 把 Finding 1（patch 0008/0009 的 `q.pitch == P` gate）转给该栈作者 |
+
+两篇 11-07 稿件原文见 `20-ops/upstream-*.md`。上游 README 里 "frames copied, not flipped" 那行由维护者自行更新，本项目不为其措辞开 PR。
+
+---
+
 ## 许可与致谢
 
 本仓库只包含**本项目的记录、脚本与自研诊断工具**，不包含上游驱动源码，也不包含任何 Apple 或第三方的驱动分发物。
