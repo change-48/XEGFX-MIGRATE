@@ -1,0 +1,16 @@
+iop_ok                   3858
+iop_flip                 0
+iop_flips                0
+iop_xe_flips             0
+iop_xe_flip_miss         0
+iop_xe_flip_fail         0
+iop_xe_defer_queued      0
+iop_xe_defer_armed       0
+iop_xe_defer_dropped     0
+iop_xe_defer_coalesced   0
+iop_xe_arm_last_us       0
+iop_xe_idle_waits        0
+iop_copy_sum_us          18719611
+iop_copy_overrun         20
+iop_copy_cross           648
+iop_blank                10

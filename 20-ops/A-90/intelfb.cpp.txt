@@ -1,0 +1,374 @@
+// XeGfxIntelFramebuffer: Apple's IONDRVFramebuffer under a class name with "Intel" in it. CoreDisplay picks the GPU
+// vendor from the IOFramebuffer class name, and IONDRVFramebuffer reads as no vendor, which turns IOPresentment off
+// for WindowServer (I-108). Lives in the AuxKC because IONDRVSupport is in the system collection.
+// <wtl> fork: nvgfx | author: watchthelight </wtl>
+#include <IOKit/ndrvsupport/IONDRVFramebuffer.h>
+#include <IOKit/IODeviceTreeSupport.h>
+#include <IOKit/IOLib.h>
+#include <libkern/c++/OSData.h>
+#include <libkern/c++/OSArray.h>
+#include <pexpert/pexpert.h>
+#include <kern/thread_call.h>
+#include <kern/clock.h>
+#include <IOKit/pci/IOPCIDevice.h>
+#include "xe/firmware-timing.h"
+
+#define XIFBLOG(fmt, ...) IOLog("XeGfxIntelFB: " fmt "\n", ##__VA_ARGS__)
+
+// L0: the interface that IOFramebuffers use to describe scaled desktops is the regular mode list.  A mode whose
+// IODisplayModeInformation nominal size is a fraction of the raster described by its detailed timing is a scaled
+// mode to CoreDisplay; at 2:1 it becomes a HiDPI mode.  Our raster is the panel mode (2560x1600), so the one exact
+// 2:1 desktop that needs no scaler in the display pipe is 1280x800: the WindowServer backing is 2560x1600, i.e. the
+// same 16 MB frame the accel already copies to the panel.  Other scaled desktops need the pipe's scaler (or a real
+// modeset), which is the L2 work, so they are deliberately not offered here.
+#define XIFB_HIDPI_W 1280
+#define XIFB_HIDPI_H 800
+#define XIFB_HIDPI_MODE_ID ((IODisplayModeID)0x7f000001)
+
+// Boot guard as in NMIntelFB: each start counts in NVRAM, 120 s of uptime after start clears it, and two counted starts
+// in a row make probe decline so IONDRVFramebuffer drives the panel again. Boot-arg -xeintelfboff declines always.
+#define XIFB_GUARD_VAR "xeintelfb-starts"
+static unsigned xifbGuardStarts(IORegistryEntry *o)
+{
+    OSObject *v = o->copyProperty(XIFB_GUARD_VAR); OSData *d = OSDynamicCast(OSData, v);
+    unsigned n = (d && d->getLength() >= 1) ? *(const unsigned char *)d->getBytesNoCopy() : 0;
+    if (v) v->release();
+    return n;
+}
+static bool xifbGuardTripped()
+{
+    IORegistryEntry *o = IORegistryEntry::fromPath("/options", gIODTPlane); if (!o) return false;
+    bool t = xifbGuardStarts(o) >= 2; o->release(); return t;
+}
+static void xifbGuardCount()
+{
+    IORegistryEntry *o = IORegistryEntry::fromPath("/options", gIODTPlane); if (!o) return;
+    unsigned char n = (unsigned char)(xifbGuardStarts(o) + 1);
+    if (OSData *d = OSData::withBytes(&n, 1)) { if (o->setProperty(XIFB_GUARD_VAR, d)) XIFBLOG("boot guard: start %u without WindowServer so far (off after 2)", n); d->release(); }
+    o->release();
+}
+static void xifbGuardClear()
+{
+    static bool done; if (done) return; done = true;
+    IORegistryEntry *o = IORegistryEntry::fromPath("/options", gIODTPlane); if (!o) return;
+    // removeProperty did not reach NVRAM (N-283); a zero count does, the same way the count itself is written
+    unsigned char z = 0;
+    if (OSData *d = OSData::withBytes(&z, 1)) { if (o->setProperty(XIFB_GUARD_VAR, d)) XIFBLOG("boot guard cleared: still up 120 s after start"); d->release(); }
+    o->release();
+}
+
+// kmutil places a kext in a kernel collection only with a _kmod_info symbol (Xcode generates it; this build does not)
+#include <mach/kmod.h>
+extern "C" kern_return_t _start(kmod_info_t *ki, void *d); extern "C" kern_return_t _stop(kmod_info_t *ki, void *d);
+extern "C" { KMOD_EXPLICIT_DECL(org.watchthelight.XeGfxIntelFB, "0.5", _start, _stop) }
+extern "C" kern_return_t _start(kmod_info_t *ki, void *d) { return KERN_SUCCESS; }
+extern "C" kern_return_t _stop(kmod_info_t *ki, void *d)  { return KERN_SUCCESS; }
+
+class XeGfxIntelFramebuffer : public IONDRVFramebuffer {
+    OSDeclareDefaultStructors(XeGfxIntelFramebuffer)
+    uint32_t fTiming[NVK5_TIMING_WORDS] = {};
+    bool fTimingValid = false;
+    IOMemoryMap *fBarMap = nullptr;
+    volatile uint32_t *fBar = nullptr;
+    uint64_t fAperturePhys = 0;
+    uint64_t fApertureLen = 0;
+    uint32_t fPlanSurf = 0;
+    bool fMmioReady = false;
+
+    // L0 state
+    bool fHidpi = false;                 // -xeintelfbhidpi=0 turns the scaled mode off (default 1)
+    bool fPublishDt = false;             // -xeintelfbdt=0 stops the IOFBDetailedTimings publication (default 1)
+    IODisplayModeID fNativeMode = 0;     // the firmware/panel mode, as the base class numbers it
+    IODisplayModeID fCurrentMode = 0;    // last successfully selected mode (0 = ask the base class)
+
+    bool xifbMapBar(IOPCIDevice *pci) {
+        if (fBar) return true;
+        if (!pci) return false;
+        IOMemoryDescriptor *bar = pci->getDeviceMemoryWithRegister(kIOPCIConfigBaseAddress0);
+        fBarMap = bar ? bar->map(kIOMapInhibitCache) : nullptr;
+        if (!fBarMap || fBarMap->getLength() < 0x71000) { if (fBarMap) { fBarMap->release(); fBarMap = nullptr; } return false; }
+        fBar = (volatile uint32_t *)fBarMap->getVirtualAddress();
+        fMmioReady = true;
+        return true;
+    }
+
+    // The panel is already running from the boot framebuffer when this driver starts, and the firmware's own
+    // description of its mode carries no timing at all: refreshRate 0, flags 0, and no IOFBDetailedTimings, so
+    // CoreDisplay records 0 Hz and WindowServer derives a 30 Hz VBL delta.  Read the live transcoder and plane
+    // registers plus the frame counter across half a second once, and describe the mode we are actually driving.
+    bool xifbMeasurePanelTiming(IOPCIDevice *pci) {
+        if (!xifbMapBar(pci)) { XIFBLOG("panel timing not measured: BAR0 unavailable"); return false; }
+        volatile uint32_t *r = fBar;
+        XeGfxFirmwareTiming s = {};
+        s.conf = r[0x70008 / 4]; s.plane = r[0x70180 / 4]; s.size = r[0x70190 / 4];
+        s.ht = r[0x60000 / 4]; s.hs = r[0x60008 / 4]; s.vt = r[0x6000c / 4]; s.vs = r[0x60014 / 4];
+        s.ddi = r[0x60400 / 4];
+        uint64_t t0 = 0, t1 = 0, ns0 = 0, ns1 = 0;
+        clock_get_uptime(&t0);
+        const uint32_t f0 = r[0x70040 / 4];
+        IOSleep(500);
+        const uint32_t f1 = r[0x70040 / 4];
+        clock_get_uptime(&t1);
+        absolutetime_to_nanoseconds(t0, &ns0);
+        absolutetime_to_nanoseconds(t1, &ns1);
+        const bool stable = s.conf == r[0x70008 / 4] && s.ht == r[0x60000 / 4] && s.vt == r[0x6000c / 4];
+        fPlanSurf = r[0x7019c / 4];
+        if (!stable) { XIFBLOG("panel timing not measured: the mode changed while sampling"); return false; }
+        s.frames = f1 - f0;
+        s.elapsed = ns1 - ns0;
+        XeGfxPanelMode m = {};
+        uint32_t t[NVK5_TIMING_WORDS];
+        if (!xeFirmwareMode(s, m) || !xegfxPanelTiming(m, t)) {
+            XIFBLOG("panel timing not measured: firmware mode rejected (conf %#x plane %#x frames %u, %llu ns)",
+                    s.conf, s.plane, s.frames, (unsigned long long)s.elapsed);
+            return false;
+        }
+        for (unsigned i = 0; i < NVK5_TIMING_WORDS; i++) fTiming[i] = t[i];
+        fTimingValid = true;
+        if (OSData *d = OSData::withBytes(fTiming, sizeof fTiming)) { setProperty("XeGfxMeasuredPanelTiming", d); d->release(); }
+        XIFBLOG("panel timing measured: %u x %u, pixel clock %u kHz, refresh %u.%03u Hz",
+                fTiming[NVK5_T_HVIS], fTiming[NVK5_T_VVIS], fTiming[NVK5_T_PCLK] / 1000,
+                fTiming[NVK5_T_REFRESH_MHZ] / 1000, fTiming[NVK5_T_REFRESH_MHZ] % 1000);
+        return true;
+    }
+    // IODetailedTimingInformationV2 carries the same facts in the shape CoreDisplay expects; publishing it is what
+    // keeps IOFBDetailedTimings non-NULL, which in turn keeps IOFB0Hz=Yes out of IOFBConfig.
+    void xifbFillDetailedTiming(IODetailedTimingInformationV2 &t) const {
+        bzero(&t, sizeof t);
+        t.pixelClock = fTiming[NVK5_T_PCLK];
+        // setVBLTiming() clears the pixel count when min != max, and with no pixel count the shared-memory VBL
+        // delta is never written (iofb.cpp:10615).  Keep them equal.
+        t.minPixelClock = t.pixelClock;
+        t.maxPixelClock = t.pixelClock;
+        t.horizontalActive = fTiming[NVK5_T_HVIS];
+        t.horizontalBlanking = fTiming[NVK5_T_HTOT] - fTiming[NVK5_T_HVIS];
+        t.horizontalSyncOffset = fTiming[NVK5_T_HSS] - fTiming[NVK5_T_HVIS];
+        t.horizontalSyncPulseWidth = fTiming[NVK5_T_HSE] - fTiming[NVK5_T_HSS];
+        t.verticalActive = fTiming[NVK5_T_VVIS];
+        t.verticalBlanking = fTiming[NVK5_T_VTOT] - fTiming[NVK5_T_VVIS];
+        t.verticalSyncOffset = fTiming[NVK5_T_VSS] - fTiming[NVK5_T_VVIS];
+        t.verticalSyncPulseWidth = fTiming[NVK5_T_VSE] - fTiming[NVK5_T_VSS];
+        t.horizontalSyncConfig = fTiming[NVK5_T_HSYNCPOS] ? kIOSyncPositivePolarity : 0;
+        t.verticalSyncConfig = fTiming[NVK5_T_VSYNCPOS] ? kIOSyncPositivePolarity : 0;
+        t.numLinks = 1;
+        t.pixelEncoding = 1;            // RGB, CTA-861
+        t.bitsPerColorComponent = 1;    // 8 bits
+        t.colorimetry = 1;              // sRGB
+        t.dynamicRange = 1;             // SDR
+        t.horizontalScaled = t.horizontalActive;
+        t.verticalScaled = t.verticalActive;
+    }
+
+    void xifbReadBootArgs() {
+        int v = 1;
+        fHidpi = !PE_parse_boot_argn("-xeintelfbhidpi", &v, sizeof v) || v != 0;
+        v = 1;
+        fPublishDt = !PE_parse_boot_argn("-xeintelfbdt", &v, sizeof v) || v != 0;
+        if (!fHidpi || !fPublishDt)
+            XIFBLOG("L0 options: hidpi %s, detailed timings %s", fHidpi ? "on" : "off", fPublishDt ? "on" : "off");
+    }
+
+    // Publish the raster timing under the property CoreDisplay looks for.  This is the same shape NVRMFB publishes
+    // ("IOFBDetailedTimings" on the framebuffer), and an empty list is what makes IOFBBuildModeList record
+    // IOFB0Hz=Yes in IOFBConfig, which is what zeroes CGDisplayModeGetRefreshRate().
+    void xifbPublishDetailedTimings() {
+        if (!fPublishDt || !fTimingValid) { XIFBLOG("IOFBDetailedTimings not published: dt %d timing %d", (int)fPublishDt, (int)fTimingValid); return; }
+        IODetailedTimingInformationV2 dtv;
+        xifbFillDetailedTiming(dtv);
+        OSData *d = OSData::withBytes(&dtv, sizeof dtv);
+        if (!d) { XIFBLOG("published IOFBDetailedTimings: OSData::withBytes failed"); return; }
+        OSArray *a = OSArray::withCapacity(1);
+        if (!a) { d->release(); return; }
+        a->setObject(d);
+        const bool ok = setProperty("IOFBDetailedTimings", a);
+        XIFBLOG("published IOFBDetailedTimings: 1 timing %u x %u, pixel clock %u kHz (ok %d)%s",
+                fTiming[NVK5_T_HVIS], fTiming[NVK5_T_VVIS], fTiming[NVK5_T_PCLK] / 1000, (int)ok,
+                fHidpi ? ", scaled 1280x800 offered" : "");
+        a->release();
+        d->release();
+    }
+
+    // The base class numbers the firmware mode; find out which ID that is before we append our own.
+    bool xifbEnsureNativeMode() {
+        if (fNativeMode) return true;
+        const IOItemCount n = IONDRVFramebuffer::getDisplayModeCount();
+        if (n < 1 || n > 16) { XIFBLOG("mode discovery: unexpected base mode count %u", (unsigned)n); return false; }
+        IODisplayModeID ids[16] = {};
+        if (IONDRVFramebuffer::getDisplayModes(ids) != kIOReturnSuccess) { XIFBLOG("mode discovery: base getDisplayModes failed"); return false; }
+        fNativeMode = ids[0];
+        XIFBLOG("base mode %#x (%u from the firmware): scaled 1280x800 is %s",
+                (unsigned)fNativeMode, (unsigned)n, fHidpi ? "offered" : "off");
+        return true;
+    }
+public:
+    IOService *probe(IOService *provider, SInt32 *score) override {
+        int off = 0;
+        if (PE_parse_boot_argn("-xeintelfboff", &off, sizeof off)) { XIFBLOG("off by boot-arg"); return nullptr; }
+        if (xifbGuardTripped()) { XIFBLOG("boot guard tripped (two starts without WindowServer): declining"); return nullptr; }
+        return IONDRVFramebuffer::probe(provider, score);
+    }
+    IOItemCount getDisplayModeCount(void) override {
+        const IOItemCount n = IONDRVFramebuffer::getDisplayModeCount();
+        if (!fHidpi || !fTimingValid) return n;
+        if (!xifbEnsureNativeMode()) return n;
+        static unsigned logged;
+        if (logged++ < 3) XIFBLOG("getDisplayModeCount: base %u -> %u", (unsigned)n, (unsigned)(n + 1));
+        return n + 1;
+    }
+    IOReturn getDisplayModes(IODisplayModeID *allDisplayModes) override {
+        const IOItemCount n = IONDRVFramebuffer::getDisplayModeCount();
+        const IOReturn r = IONDRVFramebuffer::getDisplayModes(allDisplayModes);
+        if (r == kIOReturnSuccess && allDisplayModes && fHidpi && fTimingValid && xifbEnsureNativeMode()) {
+            allDisplayModes[n] = XIFB_HIDPI_MODE_ID;
+            static unsigned logged;
+            if (logged++ < 3) XIFBLOG("getDisplayModes: base %u + scaled mode %#x", (unsigned)n, (unsigned)XIFB_HIDPI_MODE_ID);
+        }
+        return r;
+    }
+    // The firmware framebuffer describes its modes with no timing: refreshRate 0 makes CoreDisplay/CVDisplayLink
+    // fall back to 30 Hz, and IOFBConfig then reports IOFB0Hz.  AGDC measured the real panel and left
+    // XeGfxMeasuredPanelTiming (u32[TIMING_WORDS]) on this service; word 10 is the refresh rate in mHz.
+    IOReturn getInformationForDisplayMode(IODisplayModeID mode, IODisplayModeInformation *info) override {
+        if (!info) return kIOReturnBadArgument;
+        if (mode == XIFB_HIDPI_MODE_ID && fTimingValid && xifbEnsureNativeMode()) {
+            IODisplayModeInformation base = {};
+            const IOReturn br = IONDRVFramebuffer::getInformationForDisplayMode(fNativeMode, &base);
+            if (br != kIOReturnSuccess) return br;
+            *info = base;
+            info->nominalWidth = XIFB_HIDPI_W;
+            info->nominalHeight = XIFB_HIDPI_H;
+            info->flags = (base.flags & kDisplayModeSafetyFlags) | kDisplayModeValidFlag | kDisplayModeSafeFlag | kDisplayModeNativeFlag;
+            info->refreshRate = (IOFixed1616)(((uint64_t)fTiming[NVK5_T_REFRESH_MHZ] << 16) / 1000000);
+            static unsigned logged;
+            if (logged++ < 3)
+                XIFBLOG("scaled mode %#x: %ux%u on the %ux%u raster, refresh %u.%03u Hz, flags %#x (was %#x)",
+                        (unsigned)mode, XIFB_HIDPI_W, XIFB_HIDPI_H, fTiming[NVK5_T_HVIS], fTiming[NVK5_T_VVIS],
+                        fTiming[NVK5_T_REFRESH_MHZ] / 1000, fTiming[NVK5_T_REFRESH_MHZ] % 1000,
+                        (unsigned)info->flags, (unsigned)base.flags);
+            return kIOReturnSuccess;
+        }
+        IOReturn r = IONDRVFramebuffer::getInformationForDisplayMode(mode, info);
+        uint32_t hz = fTimingValid ? fTiming[NVK5_T_REFRESH_MHZ] : 0;
+        if (!hz && !fTimingValid)
+            if (OSData *t = OSDynamicCast(OSData, getProperty("XeGfxMeasuredPanelTiming")))
+                if (t->getLength() >= 11 * sizeof(uint32_t)) hz = ((const uint32_t *)t->getBytesNoCopy())[10];
+        if (r == kIOReturnSuccess && info && hz) {
+            const IOFixed1616 fixed = (IOFixed1616)(((uint64_t)hz << 16) / 1000000);
+            static unsigned logged;
+            if (fixed != info->refreshRate && logged < 3) { logged++;
+                XIFBLOG("display mode %#x: refresh %u.%03u Hz (was %#x) from the measured panel timing", (unsigned)mode,
+                        (unsigned)(hz / 1000), (unsigned)(hz % 1000), (unsigned)info->refreshRate); }
+            info->refreshRate = fixed;
+            // CoreDisplay's IOFBBuildModeList keeps only modes flagged for the display link (IOFBModes DM word 4).
+            info->flags |= kDisplayModeValidFlag | kDisplayModeSafeFlag | kDisplayModeNativeFlag;
+        }
+        return r;
+    }
+    IOReturn getPixelInformation(IODisplayModeID mode, IOIndex depth, IOPixelAperture aperture,
+                                 IOPixelInformation *info) override {
+        // the scaled mode renders into the same backing store as the raster mode, so its pixels are the raster's
+        if (mode == XIFB_HIDPI_MODE_ID && xifbEnsureNativeMode())
+            return IONDRVFramebuffer::getPixelInformation(fNativeMode, depth, aperture, info);
+        return IONDRVFramebuffer::getPixelInformation(mode, depth, aperture, info);
+    }
+    IOReturn getCurrentDisplayMode(IODisplayModeID *displayMode, IOIndex *depth) override {
+        if (fCurrentMode == XIFB_HIDPI_MODE_ID && displayMode && depth) {
+            IODisplayModeID native; IOIndex nativeDepth;
+            if (IONDRVFramebuffer::getCurrentDisplayMode(&native, &nativeDepth) == kIOReturnSuccess) {
+                *displayMode = XIFB_HIDPI_MODE_ID; *depth = nativeDepth; return kIOReturnSuccess;
+            }
+        }
+        return IONDRVFramebuffer::getCurrentDisplayMode(displayMode, depth);
+    }
+    IOReturn setDisplayMode(IODisplayModeID displayMode, IOIndex depth) override {
+        if (displayMode == XIFB_HIDPI_MODE_ID && fTimingValid && xifbEnsureNativeMode()) {
+            // The raster is unchanged (2560x1600 is exactly 2x 1280x800): the WindowServer renders the 2x backing
+            // store into the same frame, and the panel keeps scanning it out.  No hardware register change.
+            fCurrentMode = XIFB_HIDPI_MODE_ID;
+            static unsigned logged;
+            if (logged++ < 3)
+                XIFBLOG("scaled mode %#x selected: raster unchanged (%ux%u), 1280x800 desktop at 2x",
+                        (unsigned)displayMode, fTiming[NVK5_T_HVIS], fTiming[NVK5_T_VVIS]);
+            return kIOReturnSuccess;
+        }
+        const IOReturn r = IONDRVFramebuffer::setDisplayMode(displayMode, depth);
+        if (r == kIOReturnSuccess) fCurrentMode = displayMode;
+        return r;
+    }
+    // CoreDisplay only builds a display mode with a detailed timing when this returns one (IOFBBuildModeList reads
+    // its mode list from IOFBConfig and leaves IOFB0Hz set when IOFBDetailedTimings is empty).
+    IOReturn getTimingInfoForDisplayMode(IODisplayModeID mode, IOTimingInformation *info) override {
+        if (!info) return kIOReturnBadArgument;
+        if (!fTimingValid) return IONDRVFramebuffer::getTimingInfoForDisplayMode(mode, info);
+        // both the panel's own mode and the scaled mode scan out the panel raster; they differ only in the
+        // nominal size of the desktop above it
+        bool fill = (mode == XIFB_HIDPI_MODE_ID);
+        if (!fill) {
+            IODisplayModeInformation mi = {};
+            fill = kIOReturnSuccess == IONDRVFramebuffer::getInformationForDisplayMode(mode, &mi)
+                && (uint32_t)mi.nominalWidth == fTiming[NVK5_T_HVIS]
+                && (uint32_t)mi.nominalHeight == fTiming[NVK5_T_VVIS];
+        }
+        if (!fill) return IONDRVFramebuffer::getTimingInfoForDisplayMode(mode, info);
+        xifbFillDetailedTiming(info->detailedInfo.v2);
+        info->flags |= kIODetailedTimingValid;
+        info->flags &= ~kIOScalingInfoValid;
+        info->appleTimingID = (IOAppleTimingID)kIOTimingIDInvalid;
+        static unsigned logged;
+        if (logged++ < 3)
+            XIFBLOG("detailed timing for mode %#x: %u x %u, pixel clock %u kHz",
+                    (unsigned)mode, fTiming[NVK5_T_HVIS], fTiming[NVK5_T_VVIS], fTiming[NVK5_T_PCLK] / 1000);
+        return kIOReturnSuccess;
+    }
+    // The OS sometimes wants to install a programmable mode; we only describe the raster the firmware drives, so
+    // tell it these are not supported rather than accepting a mode the pipe cannot produce.
+    IOReturn validateDetailedTiming(void *description, IOByteCount length) override {
+        static unsigned logged;
+        if (logged++ < 3) XIFBLOG("validateDetailedTiming: %u bytes offered; programmable modes are not supported", (unsigned)length);
+        return kIOReturnUnsupported;
+    }
+    IOReturn setDetailedTimings(OSArray *array) override {
+        XIFBLOG("setDetailedTimings: %u timing(s) offered by the OS, ignored (raster is fixed)",
+                (unsigned)(array ? array->getCount() : 0));
+        return kIOReturnUnsupported;
+    }
+    bool start(IOService *provider) override {
+        xifbReadBootArgs();
+        if (IOPCIDevice *pci = OSDynamicCast(IOPCIDevice, provider)) xifbMeasurePanelTiming(pci);
+        else XIFBLOG("panel timing not measured: provider is not an IOPCIDevice");
+        {
+            char mk[96];
+            snprintf(mk, sizeof mk, "hidpi=%d dt=%d timing=%d", (int)fHidpi, (int)fPublishDt, (int)fTimingValid);
+            if (OSData *m2 = OSData::withBytes(mk, (UInt32)strlen(mk) + 1)) { setProperty("XeGfxL0State", m2); m2->release(); }
+        }
+        xifbPublishDetailedTimings();
+        xifbGuardCount();
+        // System Profiler names the GPU from the PCI device's "model"; without it About This Mac shows a bare "Display"
+        static const char model[] = "Intel Xe Graphics";
+        if (!provider->getProperty("model"))
+            if (OSData *m = OSData::withBytes(model, sizeof model)) { provider->setProperty("model", m); m->release(); }
+        // the guard is for boots that hang: still running 120 s after start clears it. IOGraphics keeps the
+        // WindowServer-active attribute and WindowServer's connection skips newUserClient here (N-282 to N-284)
+        static thread_call_t tc;
+        if (!tc) tc = thread_call_allocate([](thread_call_param_t, thread_call_param_t) { xifbGuardClear(); }, nullptr);
+        if (tc) { uint64_t dl; clock_interval_to_deadline(120, kSecondScale, &dl); thread_call_enter_delayed(tc, dl); }
+        const bool started = IONDRVFramebuffer::start(provider);
+        // re-publish after the base class has built its mode list: the property is read with the other
+        // framebuffer properties, and being present is what stops CoreDisplay from recording IOFB0Hz
+        if (started) {
+            xifbPublishDetailedTimings();
+            // The accelerator may take this framebuffer's display pipe only after this point: delivering the
+            // mode change asks IOFramebuffer for attributes and a framebuffer whose start has not returned is
+            // not safe to ask (kernel panics on 2026-10-27).  The boot daemon waits for this property.
+            if (setProperty("XeGfxL0Ready", kOSBooleanTrue))
+                XIFBLOG("start complete: XeGfxL0Ready published -- the accelerator may register this framebuffer now");
+        }
+        return started;
+    }
+    void stop(IOService *provider) override {
+        if (fBarMap) { fBarMap->release(); fBarMap = nullptr; fBar = nullptr; fMmioReady = false; }
+        IONDRVFramebuffer::stop(provider);
+    }
+};
+
+OSDefineMetaClassAndStructors(XeGfxIntelFramebuffer, IONDRVFramebuffer)

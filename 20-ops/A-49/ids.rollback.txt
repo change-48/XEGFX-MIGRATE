@@ -1,0 +1,13 @@
+Extension
+com.apple.driver.AppleMobileDevice
+com.highpoint-tech.kext.HighPointIOP
+com.highpoint-tech.kext.HighPointRR
+com.nullmoth.NMIntelFB
+org.watchthelight.IGPUConsoleRange
+org.watchthelight.XeGfx
+org.watchthelight.XeGfxAGDC
+org.watchthelight.XeGfxAccel
+org.watchthelight.XeGfxDisplay
+org.watchthelight.XeGfxIntelFB
+org.xediag.XeDiag
+org.xenative.XeNative

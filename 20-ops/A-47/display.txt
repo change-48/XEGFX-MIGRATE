@@ -1,0 +1,4 @@
+          Resolution: 3120 x 2080
+          UI Looks like: 1560 x 1040 @ 120.00Hz
+          Main Display: Yes
+          Online: Yes

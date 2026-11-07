@@ -1,0 +1,5 @@
+   0    kernel: (XeGfxAccel) NMXAccel: iop: K6 plane 0: surface yes id 0x4 3120x2080 row 12544 fmt 0x42475241 | resource NMXResource w 3120 h 2080 +0xb8 1 +0xc0 12544 vidmem 26091520 bytes kva 1 scanout 0
+   0    kernel: (XeGfxAccel) NMXAccel: iop: K6 plane 0: surface yes id 0x5 3120x2080 row 12544 fmt 0x42475241 | resource NMXResource w 3120 h 2080 +0xb8 1 +0xc0 12544 vidmem 26091520 bytes kva 1 scanout 0
+   0    kernel: (XeGfxAccel) NMXAccel: iop: K6 plane 0: surface yes id 0x6 3120x2080 row 12544 fmt 0x42475241 | resource NMXResource w 3120 h 2080 +0xb8 1 +0xc0 12544 vidmem 26091520 bytes kva 1 scanout 0
+   0    log: [com.apple.log:] log run noninteractively, parent: 3396 (sudo), args: 'log' 'show' '--last' '40m' '--predicate' 'eventMessage CONTAINS "K6 plane 0"'
+   TTL  

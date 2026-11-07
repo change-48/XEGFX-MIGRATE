@@ -1,0 +1,2 @@
+/Library/Logs/DiagnosticReports/Kernel-2026-10-31-225145.panic
+/Library/Logs/DiagnosticReports/Kernel-2026-10-31-211427.panic

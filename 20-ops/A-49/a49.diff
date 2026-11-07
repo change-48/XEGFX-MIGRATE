@@ -1,0 +1,25 @@
+--- /Users/USER/xegfx-log/A-49/nvrm-accel.cpp.before	2026-11-01 15:43:22
++++ /Users/USER/xegfx-log/A-49/nvrm-accel.cpp.a49-patched	2026-11-01 19:01:09
+@@ -2495,7 +2495,21 @@
+             for (unsigned i = 0; i < sizeof q; i++) ((volatile unsigned char *)&q)[i] = 0;
+             q.version = NVRM_VRAM_ABI_VERSION;
+             const IOReturn qr = a->askFramebufferForScanout(&q, fb);
+-            if (qr == kIOReturnSuccess && q.kva && q.pitch == P && q.height &&
++            /*
++             * The scanout answer carries the firmware console's row pitch (12480 here), while
++             * CoreAnimation allocates its IOSurface rows 256-byte aligned (3120*4 = 12480 -> 12544).
++             * On the 2560-wide panels this was written for the two are equal (2560*4 = 10240 = 256*40),
++             * so the flip never had to touch PLANE_STRIDE.  On a 3120-wide panel they differ, and the
++             * equality below then rejects every frame: the deferred flip never runs and each frame is
++             * copied by the CPU instead (4.4 ms at 3120x2080, plus WindowServer blocking on
++             * waitUntilCompleted every frame -- measured 666/669 samples on 2026-11-01).
++             *
++             * nvAccelXeFlipArm() already programs PLANE_STRIDE together with PLANE_SURF, so allow the
++             * arm when the surface pitch is one the register can hold.  Anything else keeps the copy.
++             */
++            const bool pitchArmable = (P == q.pitch) ||
++                (P % 64u == 0u && (P / 64u) <= 0x7FFu);
++            if (qr == kIOReturnSuccess && q.kva && pitchArmable && q.height &&
+                 W == q.width && H == q.height && s->getPixelFormat() == 0x42475241u) {
+                 nvAccelXeFlipDeferQueue(this, s, W, H, P);
+                 nvIopStat(&gIopTxnLastUs, &gIopTxnMaxUs, &gIopTxnSumUs, nvIopUsBetween(txnStart, mach_absolute_time()));

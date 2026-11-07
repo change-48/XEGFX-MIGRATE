@@ -1,0 +1,19 @@
+xe_defer_queued 0 -> 0
+debug.xegfxaccel_iop_ok: 3277
+debug.xegfxaccel_iop_src_surf: 3277
+debug.xegfxaccel_iop_flip: 0
+debug.xegfxaccel_iop_flips: 0
+debug.xegfxaccel_iop_flip_refused: 0
+debug.xegfxaccel_iop_xe_flips: 0
+debug.xegfxaccel_iop_xe_flip_miss: 0
+debug.xegfxaccel_iop_xe_flip_fail: 0
+debug.xegfxaccel_iop_xe_defer_queued: 0
+debug.xegfxaccel_iop_xe_defer_dropped: 0
+debug.xegfxaccel_iop_copy_sum_us: 14869019
+kernel_task                        0      28.02     0.00   0.00    0.00               151.67  105.59             WindowServer                       2113   1.45      47.28  1.92    0.00               1.92    0.00               
+kernel_task                        0      17.79     0.00   0.00    0.00               154.34  119.01             
+kernel_task                        0      13.07     0.00   0.00    0.00               142.72  125.60             WindowServer                       2113   1.55      44.66  1.90    0.00               1.90    1.90               
+          Resolution: 3120 x 2080
+          UI Looks like: 1560 x 1040 @ 120.00Hz
+          Main Display: Yes
+          Online: Yes

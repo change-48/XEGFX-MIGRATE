@@ -1,0 +1,236 @@
+=== 0001 args:
+patching file 'gpu/xegfx/shim/src/fbsd/xg_vm.c'
+rc=0
+=== 0002 args:
+patching file 'kexts/NVRM/accel/nvrm-accel.cpp'
+patching file 'kexts/NVRM/accel/xegfx_accel_names.h'
+rc=0
+=== 0003 args:
+patching file 'kexts/XeGfxIntelFB/intelfb.cpp'
+patching file 'kexts/XeGfxIntelFB/xe/firmware-timing.h'
+patching file 'kexts/XeGfxIntelFB/xe/panel-timing.h'
+patching file 'kexts/XeGfxIntelFB/nvrm-agdc-k5.h'
+rc=0
+=== 0004 args:
+patching file 'kexts/NVRMAGDC/nvrm-agdc.cpp'
+patching file 'kexts/NVRMAGDC/xe/Info.plist'
+patching file 'kexts/NVRMAGDC/xe/firmware-timing.h'
+patching file 'kexts/NVRMAGDC/xe/panel-timing.h'
+rc=0
+=== 0008 args:
+patching file 'gpu/xegfx/shim/include/xg_i915.h'
+patching file 'gpu/xegfx/shim/src/xnu/xg_kext.cpp'
+patching file 'gpu/xkpi/src/i915/xg_i915_exec.c'
+patching file 'gpu/xkpi/src/i915/xg_i915_flip.c'
+rc=0
+=== 0009 args:
+patching file 'kexts/NVRM/accel/nvrm-accel.cpp'
+patching file 'kexts/NVRM/accel/xegfx_accel_names.h'
+rc=0
+=== 0010 args:
+patching file 'kexts/XeGfxIntelFB/intelfb.cpp'
+rc=0
+=== 0011 args:
+patching file 'gpu/xegfx/harness/score.py'
+patching file 'gpu/xegfx/shim/include/xg_i915.h'
+patching file 'gpu/xegfx/shim/src/xnu/xg_kext.cpp'
+patching file 'gpu/xegfx/tools/kexport.py'
+patching file 'gpu/xegfx/tools/kpi_split.py'
+patching file 'gpu/xegfx/tools/link.sh'
+patching file 'gpu/xegfx/tools/shadow_check.py'
+patching file 'gpu/xegfx/tools/stubs.py'
+patching file 'gpu/xkpi/exclude.txt'
+patching file 'gpu/xkpi/src/i915/intel_bios.c'
+patching file 'gpu/xkpi/src/i915/intel_display_driver.c'
+patching file 'gpu/xkpi/src/i915/xg_display_hook.c'
+patching file 'gpu/xkpi/src/i915/xg_display_hook.h'
+patching file 'gpu/xkpi/src/i915/xg_i915_flip.c'
+rc=0
+=== 0012 args:
+patching file 'kexts/NVRM/accel/nvaccel_stubs.h'
+patching file 'kexts/NVRM/accel/nvrm-accel.cpp'
+patching file 'kexts/NVRM/accel/xe/Info.plist'
+patching file 'kexts/NVRM/accel/xegfx_accel_names.h'
+rc=0
+=== 0013 args:-E
+patching file 'kexts/NVRMAGDC/nvrm-agdc.cpp'
+patching file 'kexts/NVRMAGDC/xe/Info.plist'
+patching file 'kexts/NVRMAGDC/xe/firmware-timing.h'
+patching file 'kexts/NVRMAGDC/xe/panel-timing.h'
+rc=0
+=== 0014 args:
+patching file 'kexts/XeGfxIntelFB/intelfb.cpp'
+rc=0
+=== 0015 args:
+patching file 'kexts/XeGfxDisplay/Info.plist'
+patching file 'kexts/XeGfxDisplay/src/XeGfxDisplay.h'
+patching file 'kexts/XeGfxDisplay/src/XeGfxDisplay.cpp'
+patching file 'kexts/XeGfxDisplay/src/xegfx_kms_kapi.h'
+rc=0
+=== 0016 args:
+patching file 'tools/build-xegfxdisplay.sh'
+patching file 'tools/com.xegfx.bootarm.plist'
+patching file 'tools/com.xegfx.m4a2bootguard.plist'
+patching file 'tools/install-m0.sh'
+patching file 'tools/install-m1a.sh'
+patching file 'tools/install-m1b.sh'
+patching file 'tools/install-m2c.py'
+patching file 'tools/install-m3d.py'
+patching file 'tools/install-m3s2.py'
+patching file 'tools/m0-probe.sh'
+patching file 'tools/m1a-bringup.sh'
+patching file 'tools/m1b-bringup.sh'
+patching file 'tools/m2c-bringup.sh'
+patching file 'tools/m2c-restart-ws.py'
+patching file 'tools/m2c-start-ws-check.py'
+patching file 'tools/m3c-baseline.sh'
+patching file 'tools/m3c-gates.sh'
+patching file 'tools/m3d-install.sh'
+patching file 'tools/m3d-verify.sh'
+patching file 'tools/m3db-arm.applescript'
+patching file 'tools/m3db-arm.sh'
+patching file 'tools/m3db-bounded-probe.py'
+patching file 'tools/m3db-control.py'
+patching file 'tools/m3db-disarm.applescript'
+patching file 'tools/m3db-disarm.sh'
+patching file 'tools/m3db-health.py'
+patching file 'tools/m3db-preflight.applescript'
+patching file 'tools/m3db-preflight.sh'
+patching file 'tools/m3db-ws-report.py'
+patching file 'tools/m3s2-verify.sh'
+patching file 'tools/m4a1-bootarm.sh'
+patching file 'tools/m4a1-install.sh'
+patching file 'tools/m4a1-verify.sh'
+patching file 'tools/m4a2-bootguard.sh'
+patching file 'tools/m4a2-verify.sh'
+patching file 'tools/preflight-m3d.sh'
+patching file 'tools/repair-m3d-metal.py'
+patching file 'tools/rollback-core.sh'
+patching file 'tools/test_xegfx_metal_contract.py'
+patching file 'tools/xegfx-metal-probe.m'
+patching file 'tools/xegfx-ws-preflight.py'
+patching file 'tools/xegfx_metal_contract.py'
+rc=0
+=== 0017 args:
+patching file 'kexts/NVRMAGDC/nvrm-agdc.cpp'
+rc=0
+=== 0018 args:
+patching file 'kexts/XeGfxDisplay/src/XeGfxDisplay.h'
+patching file 'kexts/XeGfxDisplay/src/XeGfxDisplay.cpp'
+patching file 'kexts/XeGfxDisplay/Info.plist'
+rc=0
+=== 0019 args:
+patching file 'tools/m3db-health.py'
+patching file 'tools/xegfx-ws-preflight.py'
+patching file 'tools/m4a2-verify.sh'
+patching file 'tools/m3db-preflight.sh'
+patching file 'tools/m3db-control.py'
+rc=0
+=== 0020 args:
+patching file 'gpu/xkpi/src/i915/xg_display_hook.c'
+patching file 'gpu/xkpi/src/i915/xg_display_hook.h'
+patching file 'gpu/xegfx/shim/src/xnu/xg_kext.cpp'
+rc=0
+=== 0021 args:
+patching file 'kexts/XeGfxDisplay/src/XeGfxDisplay.h'
+patching file 'kexts/XeGfxDisplay/src/XeGfxDisplay.cpp'
+rc=0
+=== 0022 args:
+patching file 'gpu/xkpi/src/i915/xg_display_hook.c'
+patching file 'gpu/xkpi/src/i915/xg_display_hook.h'
+patching file 'gpu/xkpi/src/i915/intel_bios.c'
+patching file 'gpu/xkpi/src/i915/intel_display_driver.c'
+patching file 'gpu/xkpi/exclude.txt'
+patching file 'gpu/xegfx/shim/src/xnu/xg_kext.cpp'
+patching file 'gpu/xkpi/src/i915/intel_modeset_setup.c'
+rc=0
+=== 0023 args:
+patching file 'gpu/xegfx/shim/src/xnu/xg_kext.cpp'
+patching file 'gpu/xegfx/shim/include/xg_i915.h'
+patching file 'gpu/xkpi/src/i915/xg_display_hook.c'
+patching file 'gpu/xkpi/src/i915/xg_display_hook.h'
+patching file 'gpu/xkpi/src/i915/intel_display_driver.c'
+patching file 'gpu/xkpi/src/i915/intel_modeset_setup.c'
+patching file 'gpu/xkpi/src/i915/xg_i915_exec.c'
+patching file 'gpu/xkpi/exclude.txt'
+patching file 'gpu/xkpi/src/i915/i915_gem_execbuffer.c'
+rc=0
+=== 0024 args:
+patching file 'kexts/NVRM/accel/nvrm-accel.cpp'
+patching file 'kexts/NVRM/accel/xegfx_accel_names.h'
+rc=0
+=== 0025 args:
+patching file 'kexts/XeGfxDisplay/src/XeGfxDisplay.h'
+patching file 'kexts/XeGfxDisplay/src/XeGfxDisplay.cpp'
+patching file 'kexts/XeGfxDisplay/src/xegfx_kms_kapi.h'
+rc=0
+=== 0027 args:
+patching file 'tools/ab-probe.sh'
+patching file 'tools/anim-probe.m'
+patching file 'tools/anim-summary.py'
+patching file 'tools/apple-kc/fn.py'
+patching file 'tools/apple-kc/kcx.py'
+patching file 'tools/apple-kc/lockcross.py'
+patching file 'tools/apple-kc/lockstat.py'
+patching file 'tools/apple-kc/sl.py'
+patching file 'tools/apple-kc/summ.py'
+patching file 'tools/display-capture.sh'
+patching file 'tools/display-modes-all.m'
+patching file 'tools/display-modes.m'
+patching file 'tools/display-set-mode.m'
+patching file 'tools/display-trace.sh'
+patching file 'tools/e1/com.xegfx.ws-nowait.plist'
+patching file 'tools/e1/ws-nowait.sh'
+patching file 'tools/e3-check.sh'
+patching file 'tools/eb-measure.py'
+patching file 'tools/flip-sampler.pl'
+patching file 'tools/fps-probe.m'
+patching file 'tools/list-modes.m'
+patching file 'tools/lockseed-test.c'
+patching file 'tools/m3db-preflight.sh'
+patching file 'tools/m4a2-bootguard.sh'
+patching file 'tools/mark-timeout-watch.sh'
+patching file 'tools/pass-bench.m'
+patching file 'tools/passtime-sizes.py'
+patching file 'tools/passtime-summ.py'
+patching file 'tools/rt-bench.c'
+patching file 'tools/screen-fps.m'
+patching file 'tools/sysctl-once.c'
+rc=0
+=== plugin 0005 args:--remove-empty-files
+patching file 'plugin/NVMTLDevice.m'
+patching file 'plugin/NVMTLDevice_contract.m'
+patching file 'plugin/NVMTLEmbedded.m'
+patching file 'plugin/NVMTLEventSync.m'
+patching file 'plugin/NVMTLForward.m'
+patching file 'plugin/NVMTLGL.m'
+patching file 'plugin/NVMTLGLVBlank.m'
+patching file 'plugin/NVMTLLibraryLoad.m'
+patching file 'plugin/NVMTLObjects.h'
+patching file 'plugin/NVMTLObjects.m'
+patching file 'plugin/NVMTLSass.m'
+patching file 'plugin/NVMTLSassLaunch.m'
+patching file 'plugin/NVMTLSassResolve.m'
+patching file 'plugin/NVMTLVendorCompiler.m'
+patching file 'plugin/XeMTLDevice.m'
+patching file 'plugin/nvmtl_log_failure.h'
+patching file 'plugin/nvmtl_vk.c'
+rc=0
+=== plugin 0006 args:
+patching file 'plugin/nvmtl_vk.c'
+rc=0
+=== plugin 0007 args:
+patching file 'plugin/NVMTLObjects.m'
+patching file 'plugin/XeMTLDevice.m'
+patching file 'plugin/nvmtl_first_loss.h'
+patching file 'plugin/nvmtl_vk.c'
+patching file 'plugin/nvmtl_vk.h'
+rc=0
+=== plugin 0026 args:
+patching file 'plugin/NVMTLEventSync.m'
+patching file 'plugin/NVMTLObjects.h'
+patching file 'plugin/NVMTLObjects.m'
+patching file 'plugin/XeMTLDevice.m'
+patching file 'plugin/nvmtl_vk.c'
+patching file 'plugin/nvmtl_vk.h'
+rc=0

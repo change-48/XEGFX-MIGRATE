@@ -1,0 +1,25 @@
+d: 2113>; reason: Deferring to <frontmost>
+
+08              2120   7    loginwindow: (SetupAssistantFramework) [com.apple.macbuddy:MacBuddyX] Log fault in function: -[SASoftwareUpdateManager requiresDeferredMandatoryUpdate], at line: 31. Error checking for deferred mandatory update: <Error domain: SUOSUErrorDomain, code 1101>
+                2120   7    loginwindow: (SetupAssistantFramework) [com.apple.macbuddy:MacBuddyX] Requires deferred mandatory update: 0
+                2113   0    WindowServer: (BackBoardHIDEventFoundation) [com.apple.BackBoard:EventDelivery] flushing changes: {
+[2113-7]];
+
+                2113   0    WindowServer: (BackBoardHIDEventFoundation) [com.apple.BackBoard:EventDelivery] new deferring rules for pid:2113: [
+ -> <pid: 2173>; reason: frontmost PSN --> outbound target,
+curityAgent:0x0-0x54054; pid: 2113>; reason: frontmost PSN,
+d: 2113>; reason: Deferring to <frontmost>
+
+                2113   0    WindowServer: (NVMTLDriver) NVMTL: commit: G-SUB 1 parts submitted ahead, peak 1 in flight | NVK G-SUB ABSENT submits 0 acquires 0 cpuwaits 0 slotwaits 0 fifowaits 0 deferred 0 reaped 0 waits 0
+                2113   0    WindowServer: (NVMTLDriver) NVMTL: commit: G-SUB 2 parts submitted ahead, peak 1 in flight | NVK G-SUB ABSENT submits 0 acquires 0 cpuwaits 0 slotwaits 0 fifowaits 0 deferred 0 reaped 0 waits 0
+                2113   0    WindowServer: (NVMTLDriver) NVMTL: commit: G-SUB 4 parts submitted ahead, peak 1 in flight | NVK G-SUB ABSENT submits 0 acquires 0 cpuwaits 0 slotwaits 0 fifowaits 0 deferred 0 reaped 0 waits 0
+                2113   0    WindowServer: (NVMTLDriver) NVMTL: commit: G-SUB 8 parts submitted ahead, peak 1 in flight | NVK G-SUB ABSENT submits 0 acquires 0 cpuwaits 0 slotwaits 0 fifowaits 0 deferred 0 reaped 0 waits 0
+                2173   0    SecurityAgent: (NVMTLDriver) NVMTL: commit: G-SUB 1 parts submitted ahead, peak 1 in flight | NVK G-SUB ABSENT submits 0 acquires 0 cpuwaits 0 slotwaits 0 fifowaits 0 deferred 0 reaped 0 waits 0
+                2173   0    SecurityAgent: (NVMTLDriver) NVMTL: commit: G-SUB 2 parts submitted ahead, peak 1 in flight | NVK G-SUB ABSENT submits 0 acquires 0 cpuwaits 0 slotwaits 0 fifowaits 0 deferred 0 reaped 0 waits 0
+                2173   0    SecurityAgent: (NVMTLDriver) NVMTL: commit: G-SUB 4 parts submitted ahead, peak 1 in flight | NVK G-SUB ABSENT submits 0 acquires 0 cpuwaits 0 slotwaits 0 fifowaits 0 deferred 0 reaped 0 waits 0
+                2113   0    WindowServer: (NVMTLDriver) NVMTL: commit: G-SUB 16 parts submitted ahead, peak 1 in flight | NVK G-SUB ABSENT submits 0 acquires 0 cpuwaits 0 slotwaits 0 fifowaits 0 deferred 0 reaped 0 waits 0
+                2113   0    WindowServer: (BackBoardHIDEventFoundation) [com.apple.BackBoard:EventDelivery] new deferring rules for pid:2173: [[2173-2]; <keyboardFocus>; () -> <token: viewbridge-key-window; pid: 2173>; reason: …RemoteView deferKeyboardEventsToParticularWindow:forReason:]]
+                2113   0    WindowServer: (BackBoardHIDEventFoundation) [com.apple.BackBoard:EventDelivery] [keyboardFocus 0x600002e38be0] setRules:forPID(2173): [[2173-2]; <keyboardFocus>; () -> <token: viewbridge-key-window; pid: 2173>; reason: -[NSRemoteView deferKeyboardEventsToParticularWindow:forReason:]]
+                2113   0    WindowServer: (BackBoardHIDEventFoundation) [com.apple.BackBoard:EventDelivery] new deferring rules for pid:2173: [[2173-4]; <keyboardFocus>; () -> <token: viewbridge-key-window; pid: 2173>; reason: …RemoteView deferKeyboardEventsToParticularWindow:forReason:]]
+                2113   0    WindowServer: (BackBoardHIDEventFoundation) [com.apple.BackBoard:EventDelivery] [keyboardFocus 0x600002e38be0] setRules:forPID(2173): [[2173-4]; <keyboardFocus>; () -> <token: viewbridge-key-window; pid: 2173>; reason: -[NSRemoteView deferKeyboardEventsToParticularWindow:forReason:]]
+                2223   0    log: [com.apple.log:] log run noninteractively, parent: 2219 (sudo), args: 'log' 'show' '--last' '5m' '--predicate' 'eventMessage CONTAINS "flip" OR eventMessage CONTAINS "defer" OR eventMessage CONTAINS "PLANE_SURF"'

@@ -1,0 +1,39 @@
+--- nvrm-accel.cpp.before	2026-11-01 15:54:18.000000000 +0800
++++ nvrm-accel.cpp.after	2026-11-01 15:54:44.000000000 +0800
+@@ -1553,6 +1553,7 @@
+ static IOSurface *gXeFlipUncertain; // pinned after a latch timeout until home is confirmed
+ static SInt64 gCntXeFlip, gCntXeFlipMiss, gCntXeFlipFail;
+ #define NV_PLANE_SURF_A 0x7019cu
++#define NV_PLANE_STRIDE_A 0x70188u		/* PLANE_STRIDE_1_A: row bytes / 64, 11 bits */
+ #define NV_XE_FLIP_MAX_PAGES 4224
+ 
+ // --- K9: deferred Intel zero-copy flip (plan 2, kernel-level ordering).  The no-wait compositor hands WindowServer's
+@@ -1763,8 +1764,20 @@
+         }
+         gXeDeferIdleLastUs = idleUs; if (idleUs > gXeDeferIdleMaxUs) gXeDeferIdleMaxUs = idleUs;
+     }
++    /*
++     * The plane has its own stride and it has to agree with the surface we arm.
++     * CoreAnimation allocates its IOSurface rows 256-byte aligned, so a 3120-wide
++     * panel gets pitch 12544 while the firmware console scans 12480 -- and the
++     * deferred flip in performTransaction() refuses to run unless q.pitch == P.
++     * Programming the stride with the surface makes the two equal, which is what
++     * this panel needs; on the 2560-wide panels upstream tested the values already
++     * matched and this write is a no-op.  Restored with the surf on every exit.
++     */
++    const uint32_t strideReg = (pitch % 64u == 0u && (pitch / 64u) <= 0x7FFu) ? (pitch / 64u) : 0u;
+     const uint32_t f0 = gDispMmio[NV_DISP_FRAME_COUNTER / 4];
+     const uint32_t previousSurf = gDispMmio[NV_PLANE_SURF_A / 4];
++    const uint32_t previousStride = gDispMmio[NV_PLANE_STRIDE_A / 4];
++    if (strideReg) gDispMmio[NV_PLANE_STRIDE_A / 4] = strideReg;
+     gDispMmio[NV_PLANE_SURF_A / 4] = (uint32_t)gXeFlipGgtt[slot];	/* the arming write */
+     const uint64_t t0 = mach_absolute_time();
+     bool latched = false;
+@@ -1775,6 +1788,7 @@
+     if (!latched) {
+         // The display may still be scanning the previous front. Preserve its
+         // reference chain and restore the arming register before returning.
++        if (strideReg) gDispMmio[NV_PLANE_STRIDE_A / 4] = previousStride;
+         gDispMmio[NV_PLANE_SURF_A / 4] = previousSurf;
+         (void)gDispMmio[NV_PLANE_SURF_A / 4];
+         gXeFlipUncertain = s; ((OSObject *)s)->retain();

@@ -1,0 +1,9 @@
+iop_ok                   
+iop_xe_flips             
+iop_xe_flip_miss         
+iop_xe_flip_fail         
+iop_xe_defer_queued      
+iop_xe_defer_dropped     
+iop_xe_arm_last_us       
+iop_copy_sum_us          
+iop_txn_sum_us           

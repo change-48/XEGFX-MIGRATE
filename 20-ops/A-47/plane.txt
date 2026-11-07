@@ -1,0 +1,10 @@
+PLANE ctl=84000008 stride=000000c3 size=081f0c2f pos=00000000 surf=fd000000
+PLANE ctl=84000008 stride=000000c3 size=081f0c2f pos=00000000 surf=fd000000
+PLANE ctl="'
+2026-11-01 15:34:21.024401+0800 0x70cb     Default     0x0                  3401   0    log: [com.apple.log:] log run noninteractively, parent: 3396 (sudo), args: 'log' 'show' '--last' '40m' '--predicate' 'eventMessage CONTAINS "K6 plane 0"'
+2026-11-01 15:42:03.986034+0800 0x9238     Default     0x0                  3871   0    log: [com.apple.log:] log run noninteractively, parent: 3867 (sudo), args: 'log' 'show' '--last' '2h' '--predicate' 'eventMessage CONTAINS "K6 plane 0"'
+debug.xegfxaccel_iop_ok: 5431
+debug.xegfxaccel_iop_flip: 0
+debug.xegfxaccel_iop_xe_flips: 0
+debug.xegfxaccel_iop_xe_defer_queued: 0
+debug.xegfxaccel_iop_copy_sum_us: 24618680

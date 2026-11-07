@@ -1,0 +1,30 @@
+2026-11-01 11:37:32   sample 1: iop_ok 3 -> 8
+2026-11-01 11:37:32 iop=1  iop_ok=8 (fail=0 empty=0)
+2026-11-01 11:37:32 OK: frames are reaching the panel
+2026-11-01 11:46:46 === bringup start (boot=2026-11-01 11:46:39) ===
+2026-11-01 11:49:35 console user=change48 (uid 501) after 148s
+2026-11-01 11:49:36 GUI session + WindowServer up after 2s
+2026-11-01 11:50:11 core loaded (debug.xegfx_stage present, attempt 1)
+2026-11-01 11:50:58 stages NOT ok: 0 1 1 1 -19 0 0 0 -- abort
+2026-11-01 12:08:55 === bringup start (boot=2026-11-01 12:08:50) ===
+2026-11-01 12:09:19 console user=change48 (uid 501) after 21s
+2026-11-01 12:09:21 GUI session + WindowServer up after 2s
+2026-11-01 12:09:48 core loaded (debug.xegfx_stage present, attempt 1)
+2026-11-01 12:09:50 stages ok: 0 1 1 1 1 1 1 1 (after 1s)
+2026-11-01 12:09:51 accel already loaded
+2026-11-01 12:09:56 accelfb=3 written (read-back 1)
+2026-11-01 12:10:09 scanout-backed display pipe ENABLED seen
+2026-11-01 12:10:34 no frames yet -- restarting WindowServer so it re-registers against the open pipe
+2026-11-01 12:10:49 WindowServer back (pid 1229)
+2026-11-01 12:10:52   sample 1: iop_ok 0 -> 7
+2026-11-01 12:10:53 iop=1  iop_ok=7 (fail=0 empty=0)
+2026-11-01 12:10:53 OK: frames are reaching the panel
+2026-11-01 15:25:25 === bringup start (boot=2026-11-01 15:25:19) ===
+2026-11-01 15:25:52 console user=change48 (uid 501) after 23s
+2026-11-01 15:26:01 GUI session + WindowServer up after 2s
+2026-11-01 15:26:29 core loaded (debug.xegfx_stage present, attempt 1)
+2026-11-01 15:26:41 stages ok: 0 1 1 1 1 1 1 1 (after 1s)
+2026-11-01 15:26:49 accel already loaded
+2026-11-01 15:26:53 already live (debug.xegfxaccel_iop=1) -- skipping pipe + hooks, not re-delivering the mode change
+2026-11-01 15:26:54 bootArm is driving (debug.xegfxaccel_boot=2) -- not touching accelfb/iop, waiting for its steps
+2026-11-01 15:26:55 boot_steps=123 (bit32 iop, bit64 flip)

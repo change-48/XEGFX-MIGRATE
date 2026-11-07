@@ -1,0 +1,10 @@
+--- src/NVMTLObjects.h	2026-11-03 20:17:43.963689400 +0800
++++ dry/NVMTLObjects.h	2026-11-03 20:20:32.063988000 +0800
+@@ -123,6 +123,7 @@
+   NSError *_cbError;
+   NSMutableDictionary *_userDictionary;
+   @public nvk_cmdbuf _c; NVMTLCommandQueue *_queue; BOOL _committed, _commitMarking, _partsRetiring; BOOL _capacityHeld; MTLCommandBufferStatus _cbstatus;   // <wtl>
++  int _aheadBusy;   // <A87> parts of this buffer the ahead pass holds outside the class lock (atomic)
+   NVMTLTexture *_present;
+   NSMutableArray *_presentations;
+   NSMutableArray *_handlers;

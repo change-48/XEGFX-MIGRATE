@@ -1,0 +1,218 @@
+--- src/NVMTLEventSync.m	2026-11-03 20:17:45.595394100 +0800
++++ dry/NVMTLEventSync.m	2026-11-03 20:20:32.089895100 +0800
+@@ -20,12 +20,41 @@
+     BOOL waitFolded;
+     BOOL aheadEmpty;
+     BOOL claimed;
++    BOOL aheadBusy;   // <A87> claimed by the ahead pass, being submitted outside the class lock
+     NSArray<NVMTLBuffer *> *copyInputs;
+     BOOL copyInputsPrepared, hasHostCopies;
+ }
+ @end
++// <A87> the ahead pass, split by phase: claim and land under the class lock, the 0.45 ms submit between them outside it
++@interface NVMTLCommandBuffer (A87Ahead)
++- (BOOL)nvmtlA87Claim:(NVMTLSubmissionPart **)outPart inflight:(nvmtl_inflight **)outInflight;
++- (void)nvmtlA87Run:(NVMTLSubmissionPart *)part inflight:(nvmtl_inflight *)f;
++- (void)nvmtlA87Land:(NVMTLSubmissionPart *)part inflight:(nvmtl_inflight *)f failed:(int)r;
++@end
+ static _Atomic unsigned gsub_inflight;
+ static _Atomic unsigned long long gsub_ahead, gsub_peak;
++// <A87> claim inside the class lock, submit outside it. gA87claim == gA87land + gA87fail + (parts still running).
++static _Atomic unsigned long long gA87claim, gA87land, gA87fail;
++static _Atomic int nvmtl_a87_passing;   // one ahead pass at a time: a pass drops the class lock while it submits
++static int nvmtl_a87_oollock(void) {
++    static _Atomic int on, seen = -1;
++    static _Atomic uint64_t last;
++    const uint64_t now = clock_gettime_nsec_np(CLOCK_MONOTONIC_RAW);
++    const uint64_t was = atomic_load(&last);
++    if (!was || now - was >= 200000000ull) {
++        atomic_store(&last, now);
++        int v = 0;
++        FILE *fd = fopen("/private/tmp/nvmtl-a87", "r");
++        if (fd) { char line[160]; while (fgets(line, sizeof line, fd)) if (!strncmp(line, "oollock", 7)) v = 1; fclose(fd); }
++        if (v != atomic_load(&seen)) {
++            atomic_store(&seen, v);
++            nvlog("A87 switch: submit-ahead %s", v ? "claims in the class lock, submits OUTSIDE it"
++                                                  : "all under the class lock (A-80 behaviour)");
++        }
++        atomic_store(&on, v);
++    }
++    return atomic_load(&on);
++}
+ static NSMutableArray *nvmtl_quarantined_parts;
+ static int nvmtl_gsub_finish(NVMTLSubmissionPart *part) {
+     nvmtl_inflight *const f = part->inflight;
+@@ -446,6 +475,10 @@
+     // part this loop has already passed: that part's fence and its in-flight slot would never come back.
+     @synchronized ([NVMTLCommandBuffer class]) { _partsRetiring = YES; }
+     // </wtl>
++    // <A87> a part the ahead pass claimed is being submitted outside the class lock. _partsRetiring stops new claims;
++    // this waits the one in flight out (bounded, it is one submit) before _parts is emptied below, or that part's
++    // in-flight slot and fence would never come back. No lock is held here: the ahead thread needs it to land.
++    for (int i = 0; i < 4000 && __atomic_load_n(&_aheadBusy, __ATOMIC_ACQUIRE); i++) usleep(25);
+     if (_scheduleAfterPublish) { _scheduleAfterPublish = NO; [self nvmtlMarkScheduled]; }
+     for (NSUInteger i = _nextPart; i < _parts.count; i++) {
+         NVMTLSubmissionPart *p = _parts[i];
+@@ -565,7 +598,10 @@
+     }
+     part->copyInputsPrepared = YES;
+ }
+-- (BOOL)nvmtlSubmitAhead {
++// <A87> Claim ONE part. Called with the class lock held; the part comes back with aheadBusy set, which is the promise
++// the execution worker reads (nvmtlAdvancePart waits it out) -- otherwise ahead and the worker both submit the same part.
++- (BOOL)nvmtlA87Claim:(NVMTLSubmissionPart **)outPart inflight:(nvmtl_inflight **)outInflight {
++    *outPart = nil; *outInflight = NULL;
+     // a commit still putting its kernel marks in (nvmtlSubmitWithEvents) must not reach the GPU before them
+     if (_executionDone || _partsRetiring || _cbError || !_committed || _commitMarking) return NO;   // <wtl>
+     if (_nextSubmit < _nextPart) _nextSubmit = _nextPart;
+@@ -573,7 +609,7 @@
+         if (atomic_load(&gsub_inflight) >= nvmtl_gsub_cap()) return NO;
+         NVMTLSubmissionPart *part = _parts[_nextSubmit];
+         if (![part isKindOfClass:[NVMTLSubmissionPart class]]) return NO;
+-        if (part->claimed) return NO;
++        if (part->claimed || part->aheadBusy) return NO;
+         if (part->waitEvent) {
+             if (!nvmtl_evfold_on() || nvmtl_evfold_promised(part->waitEvent) < part->value) return NO;
+             part->waitFolded = YES; _nextSubmit++; nvmtl_evfold_census(&gEvFold, "event waits ordered by the channel (no CPU hold)");
+@@ -598,43 +634,87 @@
+         }
+         nvmtl_inflight *f = nvmtl_vk_inflight_new();
+         if (!f) return NO;
+-        for (NVMTLBuffer *buffer in part->copyInputs) nvmtl_buffer_sync_in(buffer);
+-        [self nvmtlMarkScheduled];
+-        if (!_legacyKernelStart) _legacyKernelStart = clock_gettime_nsec_np(CLOCK_UPTIME_RAW) / 1e9;
+-        const int r = nvmtl_vk_submit_begin(&part->commands, f);
+-        _nextSubmit++;
+-        if (r) {
+-            nvmtl_vk_inflight_free(f);
+-            part->aheadFailed = r;
+-            return NO;
+-        }
++        _nextSubmit++;                       // claimed: from here only this pass may touch the part
++        part->aheadBusy = YES;
++        __atomic_add_fetch(&_aheadBusy, 1, __ATOMIC_ACQ_REL);
++        const unsigned long long k = atomic_fetch_add(&gA87claim, 1) + 1;
++        if (!(k & (k - 1)))
++            nvlog("A87 out-of-lock: %llu parts claimed, %llu landed, %llu failed",
++                  k, (unsigned long long)atomic_load(&gA87land), (unsigned long long)atomic_load(&gA87fail));
++        *outPart = part; *outInflight = f;
++        return YES;
++    }
++    return NO;
++}
++// <A87> The work that used to happen inside the class lock: host copies in, then vkQueueSubmit (~451 us a part).
++// The part is held by _parts and by this stack frame; nvmtlFinishExecution waits _aheadBusy out before it empties _parts.
++- (void)nvmtlA87Run:(NVMTLSubmissionPart *)part inflight:(nvmtl_inflight *)f {
++    for (NVMTLBuffer *buffer in part->copyInputs) nvmtl_buffer_sync_in(buffer);
++    [self nvmtlMarkScheduled];
++    if (!_legacyKernelStart) _legacyKernelStart = clock_gettime_nsec_np(CLOCK_UPTIME_RAW) / 1e9;
++    const int r = nvmtl_vk_submit_begin(&part->commands, f);
++    @synchronized ([NVMTLCommandBuffer class]) { [self nvmtlA87Land:part inflight:f failed:r]; }
++}
++- (void)nvmtlA87Land:(NVMTLSubmissionPart *)part inflight:(nvmtl_inflight *)f failed:(int)r {
++    part->aheadBusy = NO;
++    __atomic_sub_fetch(&_aheadBusy, 1, __ATOMIC_ACQ_REL);
++    if (r) {
++        nvmtl_vk_inflight_free(f);
++        part->aheadFailed = r;
++        atomic_fetch_add(&gA87fail, 1);
++    } else {
+         part->inflight = f;
+         nvmtl_evfold_promise_part(part);
+         const unsigned long long n = atomic_fetch_add(&gsub_inflight, 1) + 1;
+         if (n > atomic_load(&gsub_peak)) atomic_store(&gsub_peak, n);
+         atomic_fetch_add(&gsub_ahead, 1);
++        const unsigned long long k = atomic_fetch_add(&gA87land, 1) + 1;
++        if (!(k & (k - 1)))
++            nvlog("A87 out-of-lock: %llu parts landed, %llu claimed, %llu failed, %u in flight",
++                  k, (unsigned long long)atomic_load(&gA87claim), (unsigned long long)atomic_load(&gA87fail),
++                  (unsigned)atomic_load(&gsub_inflight));
+         nvmtl_gsub_census();
+     }
+-    return YES;
++    // the worker may have given up while this part was out of the lock; put the pipeline back on its feet
++    if (!nvmtl_pumping && _nextPart < _parts.count) nvmtl_pump_buffers();
+ }
+ static void nvmtl_gsub_ahead_pass1(void);
++// <A87> The pass no longer runs inside the caller's @synchronized: it takes the class lock per claim and per land, and
++// the submit in between happens without it. One pass at a time (CAS), because two passes would drop the lock into each
++// other's window; a second caller simply returns -- the running pass picks up whatever it left behind.
+ static void nvmtl_gsub_ahead_pass(void) {
++    int expected = 0;
++    if (!atomic_compare_exchange_strong(&nvmtl_a87_passing, &expected, 1)) return;
+     for (int round = 0; round < 64; round++) {
+-        const unsigned long long before = atomic_load(&gEvFold);
++        const unsigned long long before = atomic_load(&gEvFold) + atomic_load(&gA87claim);
+         nvmtl_gsub_ahead_pass1();
+-        if (atomic_load(&gEvFold) == before) break;
++        if (atomic_load(&gEvFold) + atomic_load(&gA87claim) == before) break;
+     }
++    atomic_store(&nvmtl_a87_passing, 0);
+ }
+ static void nvmtl_gsub_ahead_pass1(void) {
+     NSMutableSet *queues = [NSMutableSet new];
+-    for (NVMTLCommandBuffer *cb in nvmtl_pending_buffers) {
++    NSArray *pending; @synchronized ([NVMTLCommandBuffer class]) { pending = [nvmtl_pending_buffers copy]; }
++    for (NVMTLCommandBuffer *cb in pending) {
+         id q = cb->_queue;
+         if (!q || [queues containsObject:q]) continue;
+         [queues addObject:q];
+-        for (NVMTLQueueReservation *r in [cb->_queue->_reservations copy]) {
++        NSArray *reservations; @synchronized ([NVMTLCommandBuffer class]) { reservations = [cb->_queue->_reservations copy]; }
++        for (NVMTLQueueReservation *r in reservations) {
+             NVMTLCommandBuffer *b = r->buffer;
+             if (!b) continue;
+-            if (![b nvmtlSubmitAhead]) break;
++            for (;;) {   // every part of b, in order, as before
++                const BOOL outside = nvmtl_a87_oollock();
++                NVMTLSubmissionPart *part = nil; nvmtl_inflight *f = NULL;
++                BOOL claimed = NO;
++                @synchronized ([NVMTLCommandBuffer class]) {
++                    if (!nvmtl_pumping) return;
++                    claimed = [b nvmtlA87Claim:&part inflight:&f];
++                    if (claimed && !outside) [b nvmtlA87Run:part inflight:f];   // switch off: the A-80 path, lock held
++                }
++                if (!claimed) break;
++                if (outside) [b nvmtlA87Run:part inflight:f];
++            }
+         }
+     }
+ }
+@@ -643,8 +723,17 @@
+     if (_cbError) { [self nvmtlFinishExecution:_cbError]; return YES; }
+     if (_nextPart >= _parts.count) { [self nvmtlFinishExecution:nil]; return YES; }
+     NVMTLSubmissionPart *part = _parts[_nextPart];
++    // <A87> the ahead pass may be submitting exactly this part outside the class lock: it is 0.45 ms, wait it out rather
++    // than reading inflight too early or reporting "no progress" while the part is still on its way to the GPU
++    if (__atomic_load_n(&part->aheadBusy, __ATOMIC_ACQUIRE)) {
++        for (int i = 0; i < 2000 && __atomic_load_n(&part->aheadBusy, __ATOMIC_ACQUIRE); i++) usleep(10);
++        if (__atomic_load_n(&part->aheadBusy, __ATOMIC_ACQUIRE)) return NO;
++    }
+     BOOL ahead;   // claimed under the class lock: the commit-time pass stops at a claimed part
+-    @synchronized ([NVMTLCommandBuffer class]) { ahead = part->inflight || part->aheadFailed; part->claimed = YES; }
++    @synchronized ([NVMTLCommandBuffer class]) {
++        if (part->aheadBusy) return NO;   // <A87> claimed by the ahead pass between the wait above and this lock
++        ahead = part->inflight || part->aheadFailed; part->claimed = YES;
++    }
+     if (part->waitEvent && !ahead && !part->waitFolded) {
+         if (![part->waitEvent respondsToSelector:@selector(signaledValue)]) {
+             [self nvmtlFinishExecution:[NSError errorWithDomain:MTLCommandBufferErrorDomain code:MTLCommandBufferErrorInternal
+@@ -782,7 +871,7 @@
+     dispatch_async(ahead, ^{
+         do {
+             atomic_store(&nvmtl_ahead_state, 1);
+-            @autoreleasepool { @synchronized ([NVMTLCommandBuffer class]) { if (nvmtl_pumping) nvmtl_gsub_ahead_pass(); } }
++            @autoreleasepool { nvmtl_gsub_ahead_pass(); }   // <A87> the pass takes the class lock itself, per part
+             int running = 1;
+             if (atomic_compare_exchange_strong(&nvmtl_ahead_state, &running, 0)) break;
+         } while (1);
+@@ -807,8 +896,8 @@
+             for (;;) { @autoreleasepool {
+                 nvmtl_vk_clock_refresh();
+                 NSArray *batch; uint64_t generation;
++                if (nvmtl_gsub_ahead_on()) nvmtl_gsub_ahead_pass();   // <A87> not under the class lock any more
+                 @synchronized ([NVMTLCommandBuffer class]) {
+-                    if (nvmtl_gsub_ahead_on()) nvmtl_gsub_ahead_pass();
+                     batch = [nvmtl_pending_buffers copy]; generation = nvmtl_pump_generation;
+                 }
+                 BOOL progress = NO;

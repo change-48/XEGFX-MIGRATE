@@ -1,0 +1,7 @@
+debug.xegfxaccel_boot: 0
+debug.xegfxaccel_boot_steps: 0
+debug.xegfxaccel_iop: 1
+debug.xegfxaccel_iop_memcpy: 1
+debug.xegfxaccel_iop_ok: 229617
+debug.xegfxaccel_iop_flip: 0
+debug.xegfxaccel_iop_flips: 0

@@ -1,0 +1,20 @@
+boot-armed: 3/6 debug.xegfxaccelfb=1 -> head 4 registered (0x10) after 0 ms
+boot-armed: 4/6 debug.xegfxaccelfb=3 -> head 4 has a display pipe (piped 0x10) after 0 ms
+boot-armed: 4/6 debug.xegfxaccelfb=3 -> head 4 has a display pipe (piped 0x10) after 0 ms
+boot-armed: 5/6 debug.xegfxaccel_iop=1 -> display-pipe capabilities published, transaction hooks OPEN
+boot-armed: 5/6 debug.xegfxaccel_iop=1 -> display-pipe capabilities published, transaction hooks OPEN
+boot-armed: 6/6 debug.xegfxaccel_iop_xe_flip=1 + debug.xegfxaccel_iop_xe_defer=1 (wait_idle 1, idle_ms 40, report_busy 1)
+boot-armed: 6/6 debug.xegfxaccel_iop_xe_flip=1 + debug.xegfxaccel_iop_xe_defer=1 (wait_idle 1, idle_ms 40, report_busy 1)
+boot-armed: AGDC request left on the GPU node (XeGfxAccelAgdcRequest=1); debug.xegfx_agdc/_k5 still need org.watchthelight.XeGfxAGDC or a boot helper
+boot-armed: AGDC request left on the GPU node (XeGfxAccelAgdcRequest=1); debug.xegfx_agdc/_k5 still need org.watchthelight.XeGfxAGDC or a boot helper
+boot-armed: READY in 3001 ms -- head 4 registered and piped, scanout 1 aperture 0, iop/flip/defer armed; awaiting WindowServer desktop validation
+boot-armed: READY in 3001 ms -- head 4 registered and piped, scanout 1 aperture 0, iop/flip/defer armed; awaiting WindowServer desktop validation
+boot-armed"'
+debug.xegfxaccel_boot: 2
+debug.xegfxaccel_boot_steps: 123
+debug.xegfxaccel_iop: 1
+debug.xegfxaccel_iop_memcpy: 1
+debug.xegfxaccel_iop_ok: 0
+debug.xegfxaccel_iop_flip: 0
+debug.xegfxaccel_iop_flips: 0
+debug.xegfxaccel_iop_copy_skip: 0

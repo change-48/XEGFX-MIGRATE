@@ -38,9 +38,33 @@ Resolution: 3120 x 2080
 UI Looks like: 1560 x 1040 @ 120.00Hz     ← HiDPI（2×）
 Online: Yes / Main Display: Yes
 液态玻璃（Liquid Glass）效果正常
+拖动帧率：p50 24.8ms（≈40fps）/ p90 34ms
+GPU 频率：拖动时 1625MHz（max 2150）、拷贝路径只有 800MHz
 ```
 
 开机 → 登录 → 约 2 分钟自动出桌面（脚本见 `20-ops/A-44/xegfx-bringup.sh`）。
+
+### 帧率的正式结论（G7，2026-11-03 收关）
+
+四个关卡、五次装机、跨三个版本，**p50 全程落在 24.6–25.3ms（≈40fps），没有一版越过 24.6**。
+逐帧打点（A-89）把一帧精确拆成五段后，结论是确定的：
+
+| 段 | p50 | 与帧时间的相关 |
+| --- | --- | --- |
+| 提交 → worker 取到 | 0.03ms | +0.04 |
+| worker → GT idle → arm | 5.81ms | −0.05 |
+| arm → 面板 latch（等 vblank） | 4.89ms | +0.02 |
+| **驱动内合计** | **10.84ms** | **−0.01** |
+| **信号之后（WS 合成 + Present + `AccessComplete`）** | **14.10ms** | **+0.95** |
+
+三点：
+1. **帧时间与驱动段零相关**——压驱动（锁、提交、latch、提前信号）实测四次全部无效，
+   因为时间会被后面那 14ms 吸掉（`corr(L,G) = −0.3`，链上有半拍松弛）。
+2. **面板不是限速器**：1 拍帧真实存在（4–5%，dt 11.6ms = 86fps），说明 display link 收得下 86 帧/秒。
+3. **上限来自"一次只有一个 command buffer 在飞"的串行链**：`AccessComplete → waitUntilScheduled`
+   要等这一帧的提交被调度，然后才轮到下一帧合成。**要让 60fps 成立，需要 CPU 合成与面板扫描重叠**
+   —— 那要第二个 command buffer/第二队列，属整树换血（ArrowWhatever 同负载 82 翻/秒），不是本栈能改出来的。
+
 
 ---
 
@@ -105,9 +129,14 @@ sysctl debug.xegfxaccel_iop_ok
 | 限制 | 说明 |
 | --- | --- |
 | 需要真人登录 | 脚本靠 `/dev/console` 判定会话，未开 auto-login |
-| 首次遇到新的着色器变体会卡约 8 秒 | 之后永久命中 `spvcache` |
-| 帧是 **拷贝** 而非 **翻转** | 上游自己也是（"frames are still copied rather than flipped"），零拷贝属下一阶段 |
-| HiDPI 上限 1560×1040 | 更高需要 pipe scaler（上游 issue #19 仍开放） |
+| **帧率上限 ≈40fps** | 串行链 + 单槽提交（A-89 实测驱动段与帧时间相关 −0.01，天花板已确认）。60fps 需整树换血 |
+| **开机要重启一次 WindowServer（本栈无解）** | WindowServer 在开机 ~20s 完成显示枚举，此时 display pipe 还不存在（"Unable to find display pipe for IOFB service … 0x1000004f4"），CoreDisplay 记下"没有 pipe"后再也不问第二次；脚本在 22s 后 kickstart 一次（**用户需重新登录，代价约 40 秒**）。A-90 试过三种修法全部证伪：显示器关/开（唤醒事件到了但不设模式）、加速器重送模式变更（`accelfb=3`，110 秒零帧）、FB 重放 `kIOFBNotifyOnlineChange`+`DisplayModeDidChange`（通知确实发出，CoreDisplay 无反应）。详见 `20-ops/G7-A90报告.md` §2 |
+| **每个 App 启动都要多花约 2 s（冷热都一样）** | 不是着色器缓存：普通 App 在自己进程里**一次着色器都不翻译**（A-90 实测：把 1919 文件共享缓存整体搬走，两个 App 启动后缓存增量为 0）。真因是 `vkEnumeratePhysicalDevices -> 0 devices` → "NVK did not come up … refusing to be the Metal device"，**每次**启动白付 2.08 s，然后整个 App 走 CPU 渲染。见 `20-ops/G7-A90报告.md` §3；修法是下一关的 B0 |
+| 首次遇到新的着色器变体会卡几秒 | **只发生在 WindowServer 与 iconservicesagent 这类真的拿到 GPU 的进程**（各自 `…/C/<progname>/nvmtl/spvcache`：1088 文件/290MB 与 1353 文件/42MB），之后永久命中 |
+| 帧是 **翻转** 而非拷贝（G7 已达成） | A-84 起 flip/defer 是开机默认；拷贝路径下 GPU 只有 800MHz（RPn 地板） |
+| HiDPI 上限 1560×1040 | 更高需要 pipe scaler（上游 issue #19 仍开放；A-55/58/60 三轮证伪：原生面板无 scaler） |
+| 显式 `sleep` 不可触发 | `sleep 0` + `.Display_boot` preventer；显示器关/开可用（A-79 自愈链已验证） |
+
 
 ---
 

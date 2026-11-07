@@ -1,0 +1,79 @@
+exported by macOS: 67   to implement: 45
+stubs: 0 functions, 0 variables
+/Users/USER/src/a83-arrow/gpu/xegfx/shim/src/xnu/xg_fd.cpp:422:24: warning: null character(s) preserved in char literal [-Wnull-character]
+  422 |         for (i = 0; ws[i] != '<U+0000>'; i++)
+      |                               ^
+/Users/USER/src/a83-arrow/gpu/xegfx/shim/src/xnu/xg_fd.cpp:425:22: warning: null character(s) preserved in char literal [-Wnull-character]
+  425 |         return (name[i] == '<U+0000>');
+      |                             ^
+2 warnings generated.
+/Users/USER/src/a83-arrow/gpu/xegfx/shim/src/xnu/xg_kext.cpp:292:40: warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+  292 |         OSNumber *n = OSNumber::withNumber(v, bits);
+      |                       ~~~~~~~~                ^~~~
+/Users/USER/src/a83-arrow/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1077:23: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 1077 |                 xg_put(d, "gts", st.gts, 8);
+      |                 ~~~~~~           ~~~^~~
+/Users/USER/src/a83-arrow/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1078:26: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 1078 |                 xg_put(d, "wedged", st.wedged, 8);
+      |                 ~~~~~~              ~~~^~~~~~
+/Users/USER/src/a83-arrow/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1081:34: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 1081 |                 xg_put(d, "guc-submission", st.guc_submission, 8);
+      |                 ~~~~~~                      ~~~^~~~~~~~~~~~~~
+/Users/USER/src/a83-arrow/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1084:27: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 1084 |                 xg_put(d, "engines", st.engines, 8);
+      |                 ~~~~~~               ~~~^~~~~~~
+/Users/USER/src/a83-arrow/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1131:27: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 1131 |                 xg_put(d, "engines", ex.engines, 8);
+      |                 ~~~~~~               ~~~^~~~~~~
+/Users/USER/src/a83-arrow/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1132:24: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 1132 |                 xg_put(d, "done", ex.done, 8);
+      |                 ~~~~~~            ~~~^~~~
+/Users/USER/src/a83-arrow/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1188:30: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 1188 |                 clock_interval_to_deadline(gWdog, NSEC_PER_SEC, &dl);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~ ^~~~~
+/Users/USER/src/a83-arrow/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1450:47: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 1450 |         err = n <= 0 ? ENOENT : SYSCTL_OUT(req, buf, n);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~^~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Kernel.framework/Headers/sys/sysctl.h:260:48: note: expanded from macro 'SYSCTL_OUT'
+  260 | #define SYSCTL_OUT(r, p, l) (r->oldfunc)(r, p, l)
+      |                             ~                  ^
+/Users/USER/src/a83-arrow/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1468:30: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 1468 |         return SYSCTL_OUT(req, b, n + 1);
+      |                ~~~~~~~~~~~~~~~~~~~~~^~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Kernel.framework/Headers/sys/sysctl.h:260:48: note: expanded from macro 'SYSCTL_OUT'
+  260 | #define SYSCTL_OUT(r, p, l) (r->oldfunc)(r, p, l)
+      |                             ~                  ^
+/Users/USER/src/a83-arrow/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1507:49: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 1507 |         err = n <= 0 ? ENOENT : SYSCTL_OUT(req, buf, n + 1);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~^~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Kernel.framework/Headers/sys/sysctl.h:260:48: note: expanded from macro 'SYSCTL_OUT'
+  260 | #define SYSCTL_OUT(r, p, l) (r->oldfunc)(r, p, l)
+      |                             ~                  ^
+/Users/USER/src/a83-arrow/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1526:49: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 1526 |         err = n <= 0 ? ENOENT : SYSCTL_OUT(req, buf, n + 1);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~^~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Kernel.framework/Headers/sys/sysctl.h:260:48: note: expanded from macro 'SYSCTL_OUT'
+  260 | #define SYSCTL_OUT(r, p, l) (r->oldfunc)(r, p, l)
+      |                             ~                  ^
+/Users/USER/src/a83-arrow/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1558:32: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 1558 |         return SYSCTL_OUT(req, buf, n + 1);
+      |                ~~~~~~~~~~~~~~~~~~~~~~~^~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Kernel.framework/Headers/sys/sysctl.h:260:48: note: expanded from macro 'SYSCTL_OUT'
+  260 | #define SYSCTL_OUT(r, p, l) (r->oldfunc)(r, p, l)
+      |                             ~                  ^
+/Users/USER/src/a83-arrow/gpu/xegfx/shim/src/xnu/xg_kext.cpp:1587:30: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 1587 |         return SYSCTL_OUT(req, b, n + 1);
+      |                ~~~~~~~~~~~~~~~~~~~~~^~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Kernel.framework/Headers/sys/sysctl.h:260:48: note: expanded from macro 'SYSCTL_OUT'
+  260 | #define SYSCTL_OUT(r, p, l) (r->oldfunc)(r, p, l)
+      |                             ~                  ^
+14 warnings generated.
+XeGfx.kext 4469184 B
+XeGfx.kext: 452 undefined symbols, collection BootKernelExtensions.kc
+  com.apple.driver.AppleACPIPlatform              1  ok
+  com.apple.iokit.IOPCIFamily                     7  ok
+  com.apple.kernel                              444  ok
+link check ok
+kpi check ok (452 symbols)
+shadow check ok (5345 defined symbols)
+xgprobe 17328 B

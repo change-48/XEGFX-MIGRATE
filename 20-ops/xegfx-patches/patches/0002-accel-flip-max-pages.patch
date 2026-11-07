@@ -1,0 +1,26 @@
+--- a/kexts/NVRM/accel/nvrm-accel.cpp
++++ b/kexts/NVRM/accel/nvrm-accel.cpp
+@@ -1554,7 +1554,10 @@
+ static SInt64 gCntXeFlip, gCntXeFlipMiss, gCntXeFlipFail;
+ #define NV_PLANE_SURF_A 0x7019cu
+ #define NV_PLANE_STRIDE_A 0x70188u		/* PLANE_STRIDE_1_A: row bytes / 64, 11 bits */
+-#define NV_XE_FLIP_MAX_PAGES 4224
++// 4224 pages is 16.5 MB -- the 2560x1600 panel this was written for.  A 3120x2080 surface at the
++// compositor's 12544 row pitch is 24.9 MB, i.e. 6370 pages, so the mapping below would refuse it
++// even with the pitch gate open.  8192 pages is 32 MB.
++#define NV_XE_FLIP_MAX_PAGES 8192
+ 
+ // --- K9: deferred Intel zero-copy flip (plan 2, kernel-level ordering).  The no-wait compositor hands WindowServer's
+ // frame to the display pipe as soon as its GPU work is submitted, so arming the plane here would scan out a frame that
+@@ -1743,7 +1746,10 @@
+         md->release(); gScanoutState = 3; return false;
+     }
+     const unsigned int need = (unsigned int)((bytes + 4095ull) >> 12);
+-    if (need > NV_XE_FLIP_MAX_PAGES) { md->release(); gScanoutState = 3; return false; }
++    if (need > NV_XE_FLIP_MAX_PAGES) {
++        ALOG("scanout: %llu B needs %u pages, cap is %u -- refusing", bytes, need, (unsigned)NV_XE_FLIP_MAX_PAGES);
++        md->release(); gScanoutState = 3; return false; }
++
+     static unsigned long long sphys[NV_XE_FLIP_MAX_PAGES];
+     unsigned int npages = 0; IOByteCount off = 0;
+     while (off < (IOByteCount)bytes && npages < need) {

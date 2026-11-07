@@ -1,0 +1,84 @@
+--- a/kexts/NVRM/accel/nvrm-accel.cpp
++++ b/kexts/NVRM/accel/nvrm-accel.cpp
+@@ -28,6 +28,22 @@
+ #include "IOAccelLegacyDisplayMachine.h"
+ #include "IOAccelTask.h"
+ #include "IOAccelMemoryMap.h"
++
++#ifdef NMX_XEGFX
++// A scanout owned by the accelerator, laid out at the compositor's row pitch (see nvScanoutAlloc).
++struct NVScanoutBuf {
++    IOBufferMemoryDescriptor *md;
++    void    *kva;
++    IOPhysicalAddress phys;
++    unsigned long long bytes;
++    unsigned pitch;
++    unsigned ggtt;
++    bool     live;
++};
++static NVScanoutBuf gScanout;
++static unsigned gScanoutState;	/* 0 idle, 1 mapped (copies go here), 2 plane taken, 3 failed */
++static bool nvScanoutAlloc(void);
++#endif
+ #include "../nvrm_gpuva_abi.h"
+ class NVMemoryMap;
+ static unsigned long long nvAccelGpuVaAlloc(IOAccelMemoryMap *map,
+@@ -923,6 +939,15 @@
+            software desktop has; if it disappears without this, the write-combined map of the
+            aperture below is what corrupts the scanout.  Remove to restore the copy target. */
+         if (0) { ALOG("describeBootFramebuffer: DISABLED by experiment -- no copy target"); return kIOReturnUnsupported; }
++        // A-53: once the 12544-wide scanout exists, describe it instead of the firmware raster.  Copies
++        // then go there at 12544 stride, and q.pitch becomes equal to the compositor's P -- the one thing
++        // the deferred flip asks for.
++        if (gScanout.live) {
++            r->kva = gScanout.kva; r->phys = gScanout.phys;
++            r->width = 3120; r->height = 2080; r->pitch = gScanout.pitch;
++            r->actualSize = r->size = gScanout.bytes;
++            return kIOReturnSuccess;
++        }
+         if (fBootDescOK) {
+             r->kva = fBootDesc.kva; r->phys = fBootDesc.phys; r->width = fBootDesc.width; r->height = fBootDesc.height;
+             r->pitch = fBootDesc.pitch; r->actualSize = fBootDesc.actualSize; r->size = fBootDesc.size;
+@@ -1715,17 +1740,6 @@
+ // cannot simply be widened (25,958,400 B; 12544 x 2080 needs 26,091,520), but XeGfx already reserves GGTT
+ // slots of exactly the surface size -- take one for a scanout that is 12544 wide and the equality holds
+ // without touching that check.  Stage 1 allocates and maps only: no plane register is written here.
+-struct NVScanoutBuf {
+-    IOBufferMemoryDescriptor *md;
+-    void    *kva;
+-    IOPhysicalAddress phys;
+-    unsigned long long bytes;
+-    unsigned pitch;
+-    unsigned ggtt;
+-    bool     live;
+-};
+-static NVScanoutBuf gScanout;
+-static unsigned gScanoutState;		/* 0 idle, 1 mapped, 3 failed */
+ 
+ static bool nvScanoutAlloc(void)
+ {
+@@ -1736,7 +1750,7 @@
+         kIODirectionOutIn | kIOMemoryKernelUserShared, (vm_size_t)bytes, 4096);
+     if (!md) { ALOG("scanout: %llu B allocation failed", bytes); gScanoutState = 3; return false; }
+     unsigned long long ggtt[8] = { 0 }; unsigned n = 0;
+-    if (nvAccelResidentCall("xgFlipInit", (void *)(uintptr_t)bytes, (void *)(uintptr_t)1, ggtt, &n)
++    if (nvAccelResidentCall("xgFlipInit", (void *)(uintptr_t)bytes, (void *)(uintptr_t)4, ggtt, &n)
+             != kIOReturnSuccess || n == 0) {
+         ALOG("scanout: xgFlipInit refused (%u slots)", n); md->release(); gScanoutState = 3; return false;
+     }
+@@ -2685,6 +2699,15 @@
+         return kIOReturnSuccess; // Keep the prior frame, without claiming a displayed copy.
+     }
+ #endif
++    // A-53: the buffer the copies go to is not on the panel yet.  A complete frame is in it now, so hand
++    // the plane over -- row pitch first, then the surface (the order the flip path uses too).
++    if (gScanout.live && gScanoutState == 1 && (void *)q.kva == gScanout.kva) {
++        gDispMmio[NV_PLANE_STRIDE_A / 4] = gScanout.pitch / 64u;
++        gDispMmio[NV_PLANE_SURF_A / 4] = gScanout.ggtt;
++        (void)gDispMmio[NV_PLANE_SURF_A / 4];
++        gScanoutState = 2;
++        ALOG("scanout: plane taken -- stride %u, surf 0x%x (after a full frame)", gScanout.pitch / 64u, gScanout.ggtt);
++    }
+     nvIopStat(&gIopCopyLastUs, &gIopCopyMaxUs, &gIopCopySumUs, nvIopUsBetween(copyStart, mach_absolute_time()));
+     if (gIopCopyLastUs > 12000) OSAddAtomic64(1, &gCntIopCopyOverrun);
+     {

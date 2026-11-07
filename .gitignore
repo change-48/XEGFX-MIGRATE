@@ -8,3 +8,8 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# large binary captures - cannot be redacted, kept locally only
+/20-ops/A-47/aux-before-a47.kc
+/20-ops/A-47/XeGfxAccel.before
+/20-ops/A-83/a83-arrow-src.tar.gz

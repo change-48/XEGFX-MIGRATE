@@ -1,0 +1,7 @@
+### 装机 vs 右树新产物
+installed md5: 3957b1cd5c8254bd312a06d9eb1f427d size 339648
+rebuilt   md5: a325b40bedd6a4eafe9692fbb5c994d0 size 318872
+strings 737/737 全同；__TEXT 118784/__text 82165/__cstring 32936 全同；仅 __LINKEDIT 151K vs 172K（装机侧重签）
+
+### 误树（NvGfx-xe-2.6.2）产物对照
+size 262224, debug.nvaccel_* 命名, 无 debug.xegfxaccelfb → 装进去会让 bringup 段全废

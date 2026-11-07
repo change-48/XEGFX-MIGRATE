@@ -1,0 +1,15 @@
+113a114,127
+> # bootArm (xegfxaccelboot=1) runs steps 4..6 itself, including the K9b deferred zero-copy flip.
+> # Writing accelfb=3 a second time stalls the transaction counter for 1-2 minutes (A-44), so stand aside.
+> BA=$(/usr/sbin/sysctl -n debug.xegfxaccel_boot 2>/dev/null || echo 0)
+> if [ "${BA:-0}" != "0" ]; then
+>   need=0
+>   WRITE "bootArm is driving (debug.xegfxaccel_boot=$BA) -- not touching accelfb/iop, waiting for its steps"
+>   for i in $(seq 1 40); do
+>     ST=$(/usr/sbin/sysctl -n debug.xegfxaccel_boot_steps 2>/dev/null || echo 0)
+>     [ $(( ST & 32 )) -ne 0 ] && break
+>     sleep 3
+>   done
+>   WRITE "boot_steps=$ST (bit32 iop, bit64 flip)"
+> fi
+> 

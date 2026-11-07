@@ -1,0 +1,47 @@
+### boot 19:02 / 19:12 / 19:16 (patched binary)
+2026-11-01 19:02:45 === bringup start (boot=2026-11-01 19:02:39) ===
+2026-11-01 19:03:42 console user=change48 (uid 501) after 48s
+2026-11-01 19:03:46 GUI session + WindowServer up after 3s
+2026-11-01 19:04:29 core loaded (debug.xegfx_stage present, attempt 1)
+2026-11-01 19:04:37 stages ok: 0 1 1 1 1 1 1 1 (after 1s)
+2026-11-01 19:04:39 accel already loaded
+2026-11-01 19:04:43 already live (debug.xegfxaccel_iop=1) -- skipping pipe + hooks, not re-delivering the mode change
+2026-11-01 19:04:43 bootArm is driving (debug.xegfxaccel_boot=2) -- not touching accelfb/iop, waiting for its steps
+2026-11-01 19:04:43 boot_steps=123 (bit32 iop, bit64 flip)
+2026-11-01 19:05:05 bootArm armed but no frames yet -- restarting WindowServer once
+2026-11-01 19:12:55 === bringup start (boot=2026-11-01 19:12:49) ===
+2026-11-01 19:13:20 console user=change48 (uid 501) after 24s
+2026-11-01 19:13:23 GUI session + WindowServer up after 2s
+2026-11-01 19:13:54 core loaded (debug.xegfx_stage present, attempt 1)
+2026-11-01 19:13:55 stages ok: 0 1 1 1 1 1 1 1 (after 1s)
+2026-11-01 19:13:55 accel already loaded
+2026-11-01 19:14:00 already live (debug.xegfxaccel_iop=1) -- skipping pipe + hooks, not re-delivering the mode change
+2026-11-01 19:14:00 bootArm is driving (debug.xegfxaccel_boot=2) -- not touching accelfb/iop, waiting for its steps
+2026-11-01 19:14:00 boot_steps=123 (bit32 iop, bit64 flip)
+2026-11-01 19:14:22 bootArm armed but no frames yet -- restarting WindowServer once
+2026-11-01 19:16:43 === bringup start (boot=2026-11-01 19:16:37) ===
+2026-11-01 19:17:32 console user=change48 (uid 501) after 41s
+2026-11-01 19:17:39 GUI session + WindowServer up after 3s
+2026-11-01 19:18:07 core loaded (debug.xegfx_stage present, attempt 1)
+2026-11-01 19:18:08 stages ok: 0 1 1 1 1 1 1 1 (after 1s)
+2026-11-01 19:18:09 accel already loaded
+2026-11-01 19:18:14 bootArm is driving (debug.xegfxaccel_boot=1) -- not touching accelfb/iop, waiting for its steps
+### kernel: boot-armed FAILED
+2026-11-01 19:23:09.001429+0800 0x1f10     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: boot-armed: FAILED -- no XeGfx framebuffer with an open start gate after 30000 ms (published 0x0): the display stack never came up this boot (steps 0x0, published 0x0, registered 0x0, piped 0x0, igpu 1, fb 0, iop 0, flip 0/defer 0). Nothing was torn down and the accelerator stays inert, so WindowServer keeps whichever framebuffer owns the panel: IntelFB, the placeholder or XeGfxFramebuffer is still the safe display. Retry by hand: debug.xegfxaccelfb=1, debug.xegfxaccelfb=3, debug.xegfxaccel_iop=1
+2026-11-01 19:23:09.001451+0800 0x1f10     Default     0x0                  0      0    kernel: (XeGfxAccel) NMXAccel: boot-armed: FAILED -- no XeGfx framebuffer with an open start gate after 30000 ms (published 0x0): the display stack never came up this boot (steps 0x0, published 0x0, registered 0x0, piped 0x0, igpu 1, fb 0, iop 0, flip 0/defer 0). Nothing was torn down and the accelerator stays inert, so WindowServer keeps whichever framebuffer owns the panel: IntelFB, the placeholder or XeGfxFramebuffer is still the safe display. Retry by hand: debug.xegfxaccelfb=1, debug.xegfxaccelfb=3, debug.xegfxaccel_iop=1
+2026-11-01 19:25:11.175186+0800 0x3dcf     Default     0x0                  2062   0    log: [com.apple.log:] log run noninteractively, parent: 2059 (sudo), args: 'log' 'show' '--last' '15m' '--predicate' 'eventMessage CONTAINS[c] "boot-armed" OR eventMessage CONTAINS[c] "nvaccel" OR eventMessage CONTAINS[c] "xegfx"'
+### kernel: intelfb guard tripped
+2026-11-01 19:21:36.892073+0800 0x82c      Default     0x0                  0      0    kernel: (XeGfxIntelFB) XeGfxIntelFB: boot guard tripped (two starts without WindowServer): declining
+### boot 19:30 (rolled back + guard cleared)
+2026-11-01 19:31:13 GUI session + WindowServer up after 2s
+2026-11-01 19:31:54 core loaded (debug.xegfx_stage present, attempt 1)
+2026-11-01 19:31:55 stages ok: 0 1 1 1 1 1 1 1 (after 1s)
+2026-11-01 19:31:57 accel already loaded
+2026-11-01 19:32:01 already live (debug.xegfxaccel_iop=1) -- skipping pipe + hooks, not re-delivering the mode change
+2026-11-01 19:32:01 bootArm is driving (debug.xegfxaccel_boot=2) -- not touching accelfb/iop, waiting for its steps
+2026-11-01 19:32:01 boot_steps=123 (bit32 iop, bit64 flip)
+2026-11-01 19:32:23 bootArm armed but no frames yet -- restarting WindowServer once
+2026-11-01 19:32:38 WindowServer back (pid 1425)
+2026-11-01 19:32:42   sample 1: iop_ok 3 -> 10
+2026-11-01 19:32:42 iop=1  iop_ok=10 (fail=0 empty=0)
+2026-11-01 19:32:42 OK: frames are reaching the panel
